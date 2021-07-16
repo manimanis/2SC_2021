@@ -2,31 +2,70 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="resources/css/bootstrap-grid.min.css">
-    <link rel="stylesheet" href="resources/css/default.css">
-    <title>Document</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="resources/css/bootstrap.min.css">
+	<link rel="stylesheet" href="resources/css/default.css">
+	<title>Document</title>
 </head>
 
 <body>
-    <main class="container">
+	<aside>
+		<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#aside_navbar"
+				aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span> Menu
+			</button>
+			<div class="collapse navbar-collapse" id="aside_navbar"></div>
+		</nav>
+	</aside>
 
-    </main>
-    <footer class="d-print-none bg-dark text-white p-2">
-        <div class="text-center">Page créée avec ♥ par Mohamed Anis MANI</div>
-        <div class="text-center small">Année scolaire : 2020/2021</div>
-    </footer>
+	<main class="container">
+		<h1></h1>
 
-    <script src="resources/js/jquery.min.js"></script>
-    <script src="resources/js/bootstrap.bundle.min.js"></script>
-    <script src="resources/js/highlight.pack.js"></script>
-    <script src="resources/js/hljs.algorithm.js"></script>
-    <script src="resources/js/pages.js"></script>
-    <script>
-        hljs.initHighlightingOnLoad();
-    </script>
+		<article>
+			<h2></h2>
+
+			<section>
+				<h3>Page 1</h3>
+
+				<p>On donne le code <code>Python</code> suivant :</p>
+				<pre><code class="language-python">print("Bonjour, Adem! Vous avez 17 ans.")</code></pre>
+
+				<p>Que fait la fonction <code>print(...)</code> ?</p>
+
+				<p>Afficher un message de bienvenue comportant votre nom et votre age ?</p>
+			</section>
+
+			<section>
+				<h3>Page 2</h3>
+
+				<p>On donne le code <code>Python</code> suivant :</p>
+				<pre><code>prenom = "Adem"
+print("Bonjour,", prenom)</code></pre>
+
+				<p>Quel sera l'affichage de ces instructions ?</p>
+				<p>Proposer le changement nécessaire pour obtenir votre prénom à la place de celui d'Adem.</p>
+
+				<p>Ajouter, aussi, un message pour afficher votre age sur la même ligne.</p>
+				<pre><code>Bonjour, Youssef! Vous avez 16 ans.</code></pre>
+			</section>
+		</article>
+	</main>
+	<footer class="d-print-none bg-dark text-white p-2">
+		<div class="text-center">Page créée avec ♥ par Mohamed Anis MANI</div>
+		<div class="text-center small">Année scolaire : 2020/2021</div>
+	</footer>
+
+	<script src="resources/js/jquery.min.js"></script>
+	<script src="resources/js/bootstrap.bundle.min.js"></script>
+	<script src="resources/js/highlight.pack.js"></script>
+	<script src="resources/js/hljs.algorithm.js"></script>
+	<script src="resources/js/pages.js"></script>
+	<script>
+		hljs.initHighlightingOnLoad();
+	</script>
 </body>
 
 </html>
