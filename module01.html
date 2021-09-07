@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="resources/css/bootstrap.min.css">
+  <link rel="stylesheet" href="resources/css/default.css">
+  <link rel="stylesheet" href="resources/css/style.css">
+  <title>Sorties</title>
+</head>
+
+<body>
+  <aside>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#aside_navbar"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span> Menu
+      </button>
+      <div class="collapse navbar-collapse" id="aside_navbar"></div>
+    </nav>
+  </aside>
+
+  <main class="container">
+    <h1>Module 1 : Sorties</h1>
+
+    <article>
+      <h2>Fiche de renseignements</h2>
+
+      <section>
+        <h3>Version 1</h3>
+
+        <p>En s'inspirant du code <code>Python</code> suivant, écris ta fiche de renseignements. Les élèves âgés
+          de 18 ans et plus sont considérés comme majeurs.</p>
+
+        <pre><code class="language-python">print("Nom & Prénom : Ahmed BEN HASSINE")
+print("Âge : 17 ans")
+print("Moyenne Info : 16.5")
+print("Majeur : Non")</code></pre>
+
+        <ol>
+          <li>Quel est le rôle de la fonction print ?</li>
+          <li>Enlever les guillemets " de l'une des instructions et réexécuter le programme.
+            <ol>
+              <li>Que remarquez-vous ?</li>
+              <li>En déduire l'utilité des guillemets ?</li>
+            </ol>
+          </li>
+          <li>Aouter l'instruction <code>print()</code>, il n'y a rien entre parenthèses, après la ligne 2 du programme.
+            <ol>
+              <li>Exécuter et observer le changement.</li>
+              <li>En déduire la fonction de <code>print</code> sans arguments.</li>
+            </ol>
+          </li>
+        </ol>
+      </section>
+
+      <section>
+        <h3>Version 2</h3>
+
+        <p>En comparant les programmes des élèves nous remarquons que nous avons écrit des programmes différents pour
+          faire la même chose.</p>
+
+        <p>On pourra améliorer ce programme en utilisant des variables. Le programme de l'exercice précédent devient
+          alors :</p>
+
+        <pre><code class="language-python">np = "Ahmed BEN HASSINE"
+age = 17
+moy = 16.5
+mejeur = age >= 18
+print("Nom & Prénom :", np)
+print("Âge :", age, "ans")
+print("Moyenne Info :", moy)
+print("Majeur :", majeur)</code></pre>
+
+        <ol>
+          <li>Modifier ce nouveau programme par votre information pour obtenir le même affichage de l'exercice 1.</li>
+          <li>Combien de parties y a-t'il dans le programme ?</li>
+          <li>Quel est l'apport de l'ajout des variables ?</li>
+        </ol>
+      </section>
+    </article>
+
+    <article>
+      <h2>Résumés</h2>
+
+      <section>
+        <h3>Résumé 1</h3>
+
+        <pre><code class="language-python">print()</code></pre>
+        <p>Afficher une ligne vide.</p>
+
+        <pre><code class="language-python">print("Bonjour")</code></pre>
+        <p>Afficher le message entre guillemets.</p>
+      </section>
+
+      
+    </article>
+  </main>
+  <footer class="d-print-none bg-dark text-white p-2">
+    <div class="text-center">Page créée avec ♥ par Mohamed Anis MANI</div>
+    <div class="text-center small">Année scolaire : 2020/2021</div>
+  </footer>
+
+  <script src="resources/js/jquery.min.js"></script>
+  <script src="resources/js/bootstrap.bundle.min.js"></script>
+  <script src="resources/js/highlight.pack.js"></script>
+  <script src="resources/js/hljs.algorithm.js"></script>
+  <script src="resources/js/pages.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+  </script>
+</body>
+
+</html>
