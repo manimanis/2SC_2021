@@ -285,6 +285,12 @@ table.col-20 td {
 /****Tables end****/
 
 @media print {
+  body { 
+    zoom: .75; 
+    -moz-transform: scale(.75); 
+    -moz-transform-origin: 0 0;
+  } 
+
   .p-break {
     page-break-before: always;
   }

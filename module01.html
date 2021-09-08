@@ -104,39 +104,39 @@ print(27)</code></pre>
       </section>
     </article>
 
-    <article>
+    <article class="p-break">
       <h2>Résumés</h2>
 
       <section>
         <h3>Affichage</h3>
 
         <div class="row">
-          <div class="col-lg-6">
+          <div class="col-sm-6">
             <pre><code class="language-python">print()</code></pre>
           </div>
-          <div class="col-lg-6">
+          <div class="col-sm-6">
             <pre><code class="language-algorithm">Ecrire()</code></pre>
           </div>
           <p>Afficher une ligne vide.</p>
         </div>
 
         <div class="row">
-          <div class="col-lg-6">
+          <div class="col-sm-6">
             <pre><code class="language-python">print("Bonjour")</code></pre>
           </div>
-          <div class="col-lg-6">
+          <div class="col-sm-6">
             <pre><code class="language-algorithm">Ecrire("Bonjour")</code></pre>
           </div>
           <p>Afficher le message entre guillemets.</p>
         </div>
 
         <div class="row">
-          <div class="col-lg-6">
+          <div class="col-sm-6">
             <pre><code class="language-python">x, y, z = 4, 7, 9
 print(x, y, z)</code></pre>
 
           </div>
-          <div class="col-lg-6">
+          <div class="col-sm-6">
             <pre><code class="language-algorithm">x &larr; 4 ; y &larr; 7 ; z &larr; 9
 Ecrire(x, y, z)</code></pre>
           </div>
@@ -144,32 +144,32 @@ Ecrire(x, y, z)</code></pre>
         </div>
 
         <div class="row">
-          <div class="col-lg-6">
+          <div class="col-sm-6">
             <pre><code class="language-python">print(x, y, z, sep=":")</code></pre>
           </div>
-          <div class="col-lg-6">
+          <div class="col-sm-6">
             <pre><code class="language-algorithm">Ecrire(x, ":", y, ":", z)</code></pre>
           </div>
           <p>Afficher le contenu des variables sur une seule ligne, séparées par le symbole <code>:</code>.</p>
         </div>
 
         <div class="row">
-          <div class="col-lg-6">
+          <div class="col-sm-6">
             <pre><code class="language-python">print("x =", x)</code></pre>
           </div>
-          <div class="col-lg-6">
+          <div class="col-sm-6">
             <pre><code class="language-algorithm">Ecrire("x =", x)</code></pre>
           </div>
           <p>Afficher le message <code>x =</code> suivi par la valeur de la variable <code>x</code>.</p>
         </div>
 
         <div class="row">
-          <div class="col-lg-6">
+          <div class="col-sm-6">
             <pre><code class="language-python">print(x, end=" - ")
 print(y, end=" - ")
 print(z, end=" - ")</code></pre>
           </div>
-          <div class="col-lg-6">
+          <div class="col-sm-6">
             <pre><code class="language-python">Ecrire(x, " - ", y, " - ", z, " - ")</code></pre>
           </div>
           <p>Afficher un message tout en remplaçant le retour à la ligne par le symbole <code> - </code>.</p>
@@ -216,14 +216,106 @@ x = 4
       </section>
     </article>
 
-    <article>
+    <article class="p-break">
       <h2>Renforcement</h2>
 
-      <section>
+      <section class="d-print-none">
         <h3>QCM</h3>
 
         Le QCM est accessible dans cette
         <a href="qcm01.html" target="_blank" rel="noopener noreferrer">page</a>.
+      </section>
+
+      <section>
+        <h3>Le vétérénaire</h3>
+
+        <figure class="d-print-none">
+          <img src="resources/images/veterenaire.jpg" alt="Vétérénaire">
+          <figcaption>Chez le vétérénaire</figcaption>
+        </figure>
+
+        <p>Un vétérénaire a soigné pendant la journée :</p>
+        <ul>
+          <li>4 chats</li>
+          <li>2 chiens</li>
+          <li>une vache</li>
+        </ul>
+        <p>Ecrire un programme qui déclare trois variables : <code>chats</code>, <code>chiens</code> et
+          <code>vaches</code>, puis affiche le message suivant : <br>
+          <b>Nous avons soigné 7 animaux : 4 chat(s), 2 chien(s) et 1 vache(s).</b>
+        </p>
+      </section>
+
+      <section>
+        <h3>Le porte monnaie</h3>
+
+        <figure class="d-print-none">
+          <img src="resources/images/porte_monnaie.jpg" alt="Le porte monnaie de grand-mère">
+          <figcaption>Le porte monnaie de grand-mère</figcaption>
+        </figure>
+
+        <p>Le porte monnaie de grand-mère contient les pièces de monnaie suivantes :</p>
+        <ul>
+          <li>5 pièces de 50 millimes</li>
+          <li>2 pièces de 100 millimes</li>
+          <li>4 pièces de 200 millimes</li>
+          <li>3 pièces de 500 millimes</li>
+          <li>4 pièces de 2 DT</li>
+        </ul>
+
+        <p>Ecrire un programme qui déclare cinq variables contenant le nombre de pièces de chaque type, puis calcule et
+          affiche le montant total.</p>
+      </section>
+
+      <section>
+        <h3>La masse des animaux</h3>
+
+        <figure class="d-print-none">
+          <img src="resources/images/animaux.gif" alt="La masse des animaux">
+          <figcaption>La masse des animaux</figcaption>
+        </figure>
+
+        <p>Dans notre ferme il y a un chat, un chien et un mouton.</p>
+
+        <ul>
+          <li>La masse du chat et du mouton est 54 kg.</li>
+          <li>La masse du chat et du chien est 20 kg.</li>
+          <li>La masse du chien et du mouton est 66 kg.</li>
+        </ul>
+
+        <p>Ecrire un programme qui calcule la masse totale des trois animaux, puis détermine et affiche la masse de chaque animal.</p>
+      </section>
+
+      <section>
+        <h3>Mon âge</h3>
+
+        <figure class="d-print-none">
+          <img src="resources/images/ages.png" alt="Mon âge">
+          <figcaption>Mon âge</figcaption>
+        </figure>
+
+        <p>Aujourd'hui mon age est le double de celui de ma soeur. Après trois ans, mon âge sera 1.5 fois l'âge de ma soeur.</p>
+
+        <p>Déterminer mon age et celui de ma soeur.</p>
+
+        <p>Ecrire un programme qui affiche mon âge est celui de ma soeur, aujourd'hui et après 3 ans.</p>
+      </section>
+
+      <section>
+        <h3>Corriger l'erreur</h3>
+
+        <pre><code class="language-python">4 = haut
+7 = larg
+aire = h * l
+print Calcul d'aire d'un rectangle
+print Largeur = l, Hauteur = h
+print Aire = aire</code></pre>
+
+          <p>Corriger le programme Python pour obtenir l'affichage suivant :</p>
+
+<pre><code class="nohighlight shell python" data-text="Résultat désiré">ِCalcul d'aire d'un rectangle
+Largeur = 7, Hauteur = 4
+Aire = 28</code></pre>
       </section>
     </article>
   </main>
