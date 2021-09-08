@@ -22,14 +22,14 @@
     </nav>
   </aside>
 
-  <main class="container">
+  <main class="container my-3">
     <h1>Module 1 : Sorties</h1>
 
     <article>
-      <h2>Fiche de renseignements</h2>
+      <h2>Situations</h2>
 
       <section>
-        <h3>Version 1</h3>
+        <h3>Fiche de renseignements - Version 1</h3>
 
         <p>En s'inspirant du code <code>Python</code> suivant, écris ta fiche de renseignements. Les élèves âgés
           de 18 ans et plus sont considérés comme majeurs.</p>
@@ -57,7 +57,7 @@ print("Majeur : Non")</code></pre>
       </section>
 
       <section>
-        <h3>Version 2</h3>
+        <h3>Fiche de renseignements - Version 2</h3>
 
         <p>En comparant les programmes des élèves nous remarquons que nous avons écrit des programmes différents pour
           faire la même chose.</p>
@@ -80,22 +80,151 @@ print("Majeur :", majeur)</code></pre>
           <li>Quel est l'apport de l'ajout des variables ?</li>
         </ol>
       </section>
+
+      <section>
+        <h3>Lotterie d'Italie</h3>
+
+        <p>Soit le programme suivant qui affiche le nombre gagnant dans la lotteria d'Italia :</p>
+
+        <pre><code class="language-python">print("Lotteria d'Italia")
+print("Nombre Gagnant")
+print(47)
+print(49)
+print(69)
+print(32)
+print(40)
+print(27)</code></pre>
+
+        <ol>
+          <li>Utiliser des variables pour réécrire le programme précédent.</li>
+          <li>Faire de sorte que l'affichage du programme soit comme suit, sur une seule ligne :
+            <p class="text-center">Nombre gagnant : 47-49-69-32-40-27</p>
+          </li>
+        </ol>
+      </section>
     </article>
 
     <article>
       <h2>Résumés</h2>
 
       <section>
-        <h3>Résumé 1</h3>
+        <h3>Affichage</h3>
 
-        <pre><code class="language-python">print()</code></pre>
-        <p>Afficher une ligne vide.</p>
+        <div class="row">
+          <div class="col-lg-6">
+            <pre><code class="language-python">print()</code></pre>
+          </div>
+          <div class="col-lg-6">
+            <pre><code class="language-algorithm">Ecrire()</code></pre>
+          </div>
+          <p>Afficher une ligne vide.</p>
+        </div>
 
-        <pre><code class="language-python">print("Bonjour")</code></pre>
-        <p>Afficher le message entre guillemets.</p>
+        <div class="row">
+          <div class="col-lg-6">
+            <pre><code class="language-python">print("Bonjour")</code></pre>
+          </div>
+          <div class="col-lg-6">
+            <pre><code class="language-algorithm">Ecrire("Bonjour")</code></pre>
+          </div>
+          <p>Afficher le message entre guillemets.</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6">
+            <pre><code class="language-python">x, y, z = 4, 7, 9
+print(x, y, z)</code></pre>
+
+          </div>
+          <div class="col-lg-6">
+            <pre><code class="language-algorithm">x &larr; 4 ; y &larr; 7 ; z &larr; 9
+Ecrire(x, y, z)</code></pre>
+          </div>
+          <p>Afficher le contenu des variables sur une seule ligne, séparées par des espaces.</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6">
+            <pre><code class="language-python">print(x, y, z, sep=":")</code></pre>
+          </div>
+          <div class="col-lg-6">
+            <pre><code class="language-algorithm">Ecrire(x, ":", y, ":", z)</code></pre>
+          </div>
+          <p>Afficher le contenu des variables sur une seule ligne, séparées par le symbole <code>:</code>.</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6">
+            <pre><code class="language-python">print("x =", x)</code></pre>
+          </div>
+          <div class="col-lg-6">
+            <pre><code class="language-algorithm">Ecrire("x =", x)</code></pre>
+          </div>
+          <p>Afficher le message <code>x =</code> suivi par la valeur de la variable <code>x</code>.</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6">
+            <pre><code class="language-python">print(x, end=" - ")
+print(y, end=" - ")
+print(z, end=" - ")</code></pre>
+          </div>
+          <div class="col-lg-6">
+            <pre><code class="language-python">Ecrire(x, " - ", y, " - ", z, " - ")</code></pre>
+          </div>
+          <p>Afficher un message tout en remplaçant le retour à la ligne par le symbole <code> - </code>.</p>
+        </div>
+
+        <pre><code class="nohighlight shell python" data-text="Terminal">
+Bonjour
+4 7 9
+4:7:9
+x = 4
+4 - 7 - 9 - </code></pre>
       </section>
 
-      
+      <section>
+        <h3>Affectation</h3>
+
+        <p>L'affectation permet de donner une <u>valeur</u> à une <u>variable</u>.</p>
+
+        <p>La valeur peut-être :</p>
+        <ol>
+          <li>une constante</li>
+          <li>la valeur d'une autre variable</li>
+          <li>le résultat d'une expression</li>
+        </ol>
+
+        <figure>
+          <img src="resources/images/affectation01.png" alt="Les types d'affectations">
+          <figcaption>Les types d'affectations</figcaption>
+        </figure>
+
+        <p>Une variable possède :</p>
+
+        <ul>
+          <li><strong>Un nom</strong> : qui doit commencer <u>obligatoirement</u> par une lettre alphabétique et <i>ne
+              doit pas contenir ni des espaces, ni des symboles</i>.</li>
+          <li><strong>Un type</strong> : qui dépend de la valeur qu'on peut stocker dans la variable.</li>
+          <li><strong>Une valeur.</strong></li>
+        </ul>
+
+        <figure>
+          <img src="resources/images/affectation02.png" alt="Les types de variables">
+          <figcaption>Les types de variables</figcaption>
+        </figure>
+      </section>
+    </article>
+
+    <article>
+      <h2>Renforcement</h2>
+
+      <section>
+        <h3>QCM</h3>
+
+        Le QCM est accessible dans cette
+        <a href="qcm01.html" target="_blank" rel="noopener noreferrer">page</a>.
+      </section>
     </article>
   </main>
   <footer class="d-print-none bg-dark text-white p-2">
@@ -107,9 +236,27 @@ print("Majeur :", majeur)</code></pre>
   <script src="resources/js/bootstrap.bundle.min.js"></script>
   <script src="resources/js/highlight.pack.js"></script>
   <script src="resources/js/hljs.algorithm.js"></script>
+  <script src="resources/js/clipboard.min.js"></script>
   <script src="resources/js/pages.js"></script>
   <script>
     hljs.initHighlightingOnLoad();
+
+    document.querySelectorAll('.language-algorithm,.language-python')
+      .forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'bd-clipboard d-print-none';
+        const btn = document.createElement('button');
+        btn.className = 'btn-clipboard';
+        btn.textContent = "📋";
+        btn.title = "Copier";
+        div.appendChild(btn);
+        item.parentElement.insertBefore(div, item);
+      });
+    new ClipboardJS('.btn-clipboard', {
+      target: (trigger) => {
+        return trigger.parentElement.nextElementSibling;
+      }
+    });
   </script>
 </body>
 
