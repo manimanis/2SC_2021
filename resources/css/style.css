@@ -286,9 +286,8 @@ table.col-20 td {
 
 @media print {
   body { 
-    zoom: .75; 
-    -moz-transform: scale(.75); 
-    -moz-transform-origin: 0 0;
+    font-family: serif;
+    font-size: 10pt;
   } 
 
   .p-break {

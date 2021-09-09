@@ -47,7 +47,8 @@ print("Majeur : Non")</code></pre>
               <li>En déduire l'utilité des guillemets ?</li>
             </ol>
           </li>
-          <li>Aouter l'instruction <code>print()</code>, il n'y a rien entre parenthèses, après la ligne 2 du programme.
+          <li>Ajouter l'instruction <code>print()</code>, il n'y a rien entre parenthèses, après la ligne 2 du
+            programme.
             <ol>
               <li>Exécuter et observer le changement.</li>
               <li>En déduire la fonction de <code>print</code> sans arguments.</li>
@@ -68,7 +69,7 @@ print("Majeur : Non")</code></pre>
         <pre><code class="language-python">np = "Ahmed BEN HASSINE"
 age = 17
 moy = 16.5
-mejeur = age >= 18
+majeur = age >= 18
 print("Nom & Prénom :", np)
 print("Âge :", age, "ans")
 print("Moyenne Info :", moy)
@@ -96,9 +97,9 @@ print(40)
 print(27)</code></pre>
 
         <ol>
-          <li>Utiliser des variables pour réécrire le programme précédent.</li>
-          <li>Faire de sorte que l'affichage du programme soit comme suit, sur une seule ligne :
-            <p class="text-center">Nombre gagnant : 47-49-69-32-40-27</p>
+          <li>Utiliser des variables pour le réécrire.</li>
+          <li>Faire de sorte que l'affichage du programme soit sur une seule ligne, comme suit :
+            <pre><code class="nohighlight shell python" data-text="Résultat du programme">Nombre gagnant : 47-49-69-32-40-27</code></pre>
           </li>
         </ol>
       </section>
@@ -112,74 +113,89 @@ print(27)</code></pre>
 
         <div class="row">
           <div class="col-sm-6">
-            <pre><code class="language-python">print()</code></pre>
-          </div>
-          <div class="col-sm-6">
-            <pre><code class="language-algorithm">Ecrire()</code></pre>
-          </div>
-          <p>Afficher une ligne vide.</p>
-        </div>
+            <pre><code class="language-python"># Afficher ce qui est entre guillemets "..."
+print("Bonjour")
 
-        <div class="row">
-          <div class="col-sm-6">
-            <pre><code class="language-python">print("Bonjour")</code></pre>
-          </div>
-          <div class="col-sm-6">
-            <pre><code class="language-algorithm">Ecrire("Bonjour")</code></pre>
-          </div>
-          <p>Afficher le message entre guillemets.</p>
-        </div>
+# Sauter d'une ligne
+print()
 
-        <div class="row">
-          <div class="col-sm-6">
-            <pre><code class="language-python">x, y, z = 4, 7, 9
-print(x, y, z)</code></pre>
+# Afficher le contenu des variables
+# sur une seule ligne
+# séparées par des espaces
+x, y, z = 4, 7, 9
+print(x, y, z)
 
-          </div>
-          <div class="col-sm-6">
-            <pre><code class="language-algorithm">x &larr; 4 ; y &larr; 7 ; z &larr; 9
-Ecrire(x, y, z)</code></pre>
-          </div>
-          <p>Afficher le contenu des variables sur une seule ligne, séparées par des espaces.</p>
-        </div>
+# Affichage mixte sur une seule ligne
+print("x =", x)
 
-        <div class="row">
-          <div class="col-sm-6">
-            <pre><code class="language-python">print(x, y, z, sep=":")</code></pre>
-          </div>
-          <div class="col-sm-6">
-            <pre><code class="language-algorithm">Ecrire(x, ":", y, ":", z)</code></pre>
-          </div>
-          <p>Afficher le contenu des variables sur une seule ligne, séparées par le symbole <code>:</code>.</p>
-        </div>
+# Afficher le contenu des variables
+# sur une seule ligne
+# séparées par le symbole ":"
+print(x, y, z, sep=":")
 
-        <div class="row">
-          <div class="col-sm-6">
-            <pre><code class="language-python">print("x =", x)</code></pre>
-          </div>
-          <div class="col-sm-6">
-            <pre><code class="language-algorithm">Ecrire("x =", x)</code></pre>
-          </div>
-          <p>Afficher le message <code>x =</code> suivi par la valeur de la variable <code>x</code>.</p>
-        </div>
+# afficher le contenu des variables
+# sur plusieurs ligne 
+# une variable par ligne
+print(x)
+print(y)
+print(z)
 
-        <div class="row">
-          <div class="col-sm-6">
-            <pre><code class="language-python">print(x, end=" - ")
+# Afficher le contenu des variables
+# sur une seule ligne
+# remplacer le retour à la ligne
+# par le symbole " - "
+print(x, end=" - ")
 print(y, end=" - ")
-print(z, end=" - ")</code></pre>
+print(z, end=" - ")
+</code></pre>
           </div>
           <div class="col-sm-6">
-            <pre><code class="language-python">Ecrire(x, " - ", y, " - ", z, " - ")</code></pre>
+            <pre><code class="language-algorithm">// Afficher ce qui est entre guillemets "..."
+Ecrire("Bonjour")
+
+// Sauter d'une ligne
+Ecrire()
+
+// Afficher le contenu des variables
+// sur une seule ligne
+// séparées par des espaces
+x, y, z &larr; 4, 7, 9
+Ecrire(x, y, z)
+
+// Affichage mixte sur une seule ligne
+Ecrire("x =", x)
+
+// Afficher le contenu des variables
+// sur une seule ligne
+// séparées par le symbole ":"
+Ecrire(x, ":", y , ":", z)
+
+// afficher le contenu des variables
+// sur plusieurs ligne 
+// une variable par ligne
+Ecrire(x)
+Ecrire(y)
+Ecrire(z)
+
+// Afficher le contenu des variables
+// sur une seule ligne
+// remplacer le retour à la ligne
+// par le symbole " - "
+Ecrire(x, " - ", y, " - ", z, " - ")
+
+
+</code></pre>
           </div>
-          <p>Afficher un message tout en remplaçant le retour à la ligne par le symbole <code> - </code>.</p>
         </div>
 
-        <pre><code class="nohighlight shell python" data-text="Terminal">
-Bonjour
+        <pre><code class="nohighlight shell python" data-text="Affichage dans le terminal">Bonjour
+
 4 7 9
-4:7:9
 x = 4
+4:7:9
+4
+7
+9
 4 - 7 - 9 - </code></pre>
       </section>
 
@@ -283,7 +299,8 @@ x = 4
           <li>La masse du chien et du mouton est 66 kg.</li>
         </ul>
 
-        <p>Ecrire un programme qui calcule la masse totale des trois animaux, puis détermine et affiche la masse de chaque animal.</p>
+        <p>Ecrire un programme qui calcule la masse totale des trois animaux, puis détermine et affiche la masse de
+          chaque animal.</p>
       </section>
 
       <section>
@@ -294,7 +311,8 @@ x = 4
           <figcaption>Mon âge</figcaption>
         </figure>
 
-        <p>Aujourd'hui mon age est le double de celui de ma soeur. Après trois ans, mon âge sera 1.5 fois l'âge de ma soeur.</p>
+        <p>Aujourd'hui mon age est le double de celui de ma soeur. Après trois ans, mon âge sera 1.5 fois l'âge de ma
+          soeur.</p>
 
         <p>Déterminer mon age et celui de ma soeur.</p>
 
@@ -311,9 +329,9 @@ print Calcul d'aire d'un rectangle
 print Largeur = l, Hauteur = h
 print Aire = aire</code></pre>
 
-          <p>Corriger le programme Python pour obtenir l'affichage suivant :</p>
+        <p>Corriger le programme Python pour obtenir l'affichage suivant :</p>
 
-<pre><code class="nohighlight shell python" data-text="Résultat désiré">ِCalcul d'aire d'un rectangle
+        <pre><code class="nohighlight shell python" data-text="Résultat désiré">ِCalcul d'aire d'un rectangle
 Largeur = 7, Hauteur = 4
 Aire = 28</code></pre>
       </section>

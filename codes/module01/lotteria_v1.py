@@ -1,0 +1,8 @@
+print("Lotteria d'Italia")
+print("Nombre Gagnant")
+print(47)
+print(49)
+print(69)
+print(32)
+print(40)
+print(27)
