@@ -115,10 +115,20 @@ print(27)</code></pre>
 
         <p>Cette fonction offre plusieurs possibilités d'affichage :</p>
         <ul>
-          <li>Afficher un message : Le messsage doit être <strong>entre guillemets doubles</strong> <code>"..."</code>
-            ou <strong>entre guillemets simples</strong> <code>'...'</code>. Exemple :
-            <code>print("Votre message")</code> ou <code>print('Votre message')</code></li>
-          <li>Afficher la valeur d'une variable : <strong>En l'absence de guillemets</strong><code>print(x)</code></li>
+          <li><strong><em>Affichage d'un message :</em></strong> Le messsage doit être <strong>entre guillemets
+              doubles</strong> <code>"..."</code>
+            ou <strong>entre guillemets simples</strong> <code>'...'</code>.
+            <p>Exemple : <br><code>print("Votre message")</code><br><code>print('Votre message')</code></p>
+          </li>
+          <li><strong><em>Affichage de la valeur d'une variable :</em></strong> <strong>Sans guillemets</strong> Python
+            affiche la valeur de la
+            variable portant ce nom.
+            <p>Exemple : <br><code>print(x)</code></p>
+          </li>
+          <li><strong><em>Affichage mixte :</em></strong> On peut combiner l'affichage de messages et de variables dans
+            une instruction <code>print(...)</code>
+            <p>Exemple : <br><code>print("x =", x)</code></p>
+          </li>
         </ul>
 
         <h4>Exemple</h4>
@@ -145,9 +155,8 @@ print("x =", x)
 # séparées par le symbole ":"
 print(x, y, z, sep=":")
 
-# afficher le contenu des variables
-# sur plusieurs ligne 
-# une variable par ligne
+# Afficher le contenu des variables
+# sur plusieurs ligne, une variable par ligne
 print(x)
 print(y)
 print(z)
@@ -183,8 +192,7 @@ Ecrire("x =", x)
 Ecrire(x, ":", y , ":", z)
 
 // afficher le contenu des variables
-// sur plusieurs ligne 
-// une variable par ligne
+// sur plusieurs ligne, une variable par ligne
 Ecrire(x)
 Ecrire(y)
 Ecrire(z)
@@ -211,7 +219,7 @@ x = 4
 4 - 7 - 9 - </code></pre>
       </section>
 
-      <section class="p-break">
+      <section>
         <h3>Affectation</h3>
 
         <p>L'affectation permet de donner une <u>valeur</u> à une <u>variable</u>.</p>
@@ -272,6 +280,8 @@ x = 4
           <code>vaches</code>, puis affiche le message suivant : <br>
           <b>Nous avons soigné 7 animaux : 4 chat(s), 2 chien(s) et 1 vache(s).</b>
         </p>
+
+        <pre class="d-print-none"><code class="nohighlight shell python" data-text="Résultat du programme">Nous avons soigné 7 animaux : 4 chat(s), 2 chien(s) et 1 vache(s).</code></pre>
       </section>
 
       <section>
@@ -293,6 +303,8 @@ x = 4
 
         <p>Ecrire un programme qui déclare cinq variables contenant le nombre de pièces de chaque type, puis calcule et
           affiche le montant total.</p>
+
+          <pre class="d-print-none"><code class="nohighlight shell python" data-text="Résultat du programme">Il y'a 10750 millimes dans le porte monnaie de grand-mère.</code></pre>
       </section>
 
       <section>
@@ -313,6 +325,11 @@ x = 4
 
         <p>Ecrire un programme qui calcule la masse totale des trois animaux, puis détermine et affiche la masse de
           chaque animal.</p>
+
+          <pre class="d-print-none"><code class="nohighlight shell python" data-text="Résultat du programme">La masse total est 70.0 Kg
+Chat = 4.0
+Chien = 16.0
+Mouton = 50.0</code></pre>
       </section>
 
       <section>
@@ -329,10 +346,22 @@ x = 4
         <p>Déterminer mon age et celui de ma soeur.</p>
 
         <p>Ecrire un programme qui affiche mon âge est celui de ma soeur, aujourd'hui et après 3 ans.</p>
+
+        <pre class="d-print-none"><code class="nohighlight shell python" data-text="Résultat du programme">Aujourd'hui
+J'ai 6.0 ans
+Ma soeur a 3.0 ans
+Dans 3 ans
+J'aurai 9.0 ans
+Ma soeur ara 6.0 ans</code></pre>
       </section>
 
       <section>
-        <h3>Corriger l'erreur</h3>
+        <h3>Où est l'erreur ?</h3>
+
+        <figure class="d-print-none">
+          <img src="resources/images/bug_informatique.jpg" alt="Débogage d'un programme">
+          <figcaption>Débogage d'un programme</figcaption>
+        </figure>
 
         <pre><code class="language-python">4 = haut
 7 = larg
@@ -343,7 +372,7 @@ print Aire = aire</code></pre>
 
         <p>Corriger le programme Python pour obtenir l'affichage suivant :</p>
 
-        <pre><code class="nohighlight shell python" data-text="Résultat désiré">ِCalcul d'aire d'un rectangle
+        <pre><code class="nohighlight shell python" data-text="Résultat désiré">Calcul d'aire d'un rectangle
 Largeur = 7, Hauteur = 4
 Aire = 28</code></pre>
       </section>
