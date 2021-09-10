@@ -32,13 +32,13 @@
         <h3>Peinture du toit du salon</h3>
 
         <p>Ce mois-ci, M Fethi veut peindre le plafond du salon de sa maison. On suppose que le salon est de forme
-          rectangulaire et qu'il mesure 6m30 de longueur et 5m20 de largeur. </p>
+          rectangulaire et qu'il mesure 6m30 de longueur et 5m20 de largeur.</p>
 
         <p>Sachant que le rendement de la peinture utilisée est de 6m²/Kg, on veut calculer la quantité de peinture
           nécessaire pour peindre le salon de M Fethi 3 couches.</p>
 
         <figure>
-          <img src="resources/images/peinture.jpg" alt="Peinture">
+          <img class="h4cm" src="resources/images/peinture.jpg" alt="Peinture">
           <figcaption>Peinture & Décor</figcaption>
         </figure>
 
@@ -66,14 +66,15 @@ print("Surface totale =", sp, "m²")
 print("Rendement =", rend, "m²/Kg")
 print("La quantité de peinture =", qp, "Kg")</code></pre>
 
-        <p>On demande de compléter, puis d'exécuter le programme et vérifier, enfin, qu'il affiche le bon résultat.</p>
+        <p>On demande de compléter, puis d'exécuter le programme et de vérifier, enfin, qu'il affiche le bon résultat.
+        </p>
         <p><strong>Quelle est la quantité de peinture nécessaire pour peindre le salon ?</strong></p>
       </section>
 
       <section>
         <h3>Peinture de la cuisine</h3>
 
-        <p>Maintenant M Fethi veut peindre le toit de la cuisine qui mesure 4m50 &times; 3m90, 2 couches seulement,
+        <p>Maintenant M Fethi veut peindre le plafond de la cuisine qui mesure 4m50 &times; 3m90, 2 couches seulement,
           avec une peinture dont le rendement est de 4.5m²/Kg.</p>
         <ol>
           <li>Quelle est la quantité de peinture nécessaire ?</li>
@@ -83,6 +84,11 @@ print("La quantité de peinture =", qp, "Kg")</code></pre>
 
       <section>
         <h3>Peintre professionnel</h3>
+
+        <figure class="d-print-none">
+          <img src="resources/images/peintre_professionnel.jpg" alt="Sahbi peintre professionel">
+          <figcaption>Sahbi peintre professionel</figcaption>
+        </figure>
 
         <p>Sahbi, le professionnel de peinture, est intéressé par notre programme de calcul de quantité de peinture
           puisqu'il lui permet d'estimer la quantité de peinture à acheter par ses clients.</p>
@@ -100,7 +106,16 @@ print("La quantité de peinture =", qp, "Kg")</code></pre>
       <section>
         <h3>Programme version finale</h3>
 
-        <pre><code class="language-python"># Longueur de la pièce en m
+        <p>Le programme comporte trois parties :</p>
+
+        <ul>
+          <li>Saisie des données</li>
+          <li>Calculs</li>
+          <li>Affichage des résultats</li>
+        </ul>
+
+        <pre><code class="language-python"># -- Saisie de données --
+# Longueur de la pièce en m
 long = float(input("Longueur de la pièce en m ? "))
 # Largeur de la pièce en m
 larg = float(input("Largeur de la pièce en m ? "))
@@ -109,6 +124,7 @@ nbc = int(input("Nombre de couches de peinture ? "))
 # Rendement en m²/Kg
 rend = float(input("Rendement en m²/Kg ? "))
 
+# -- Calculs --
 # Surface du toit m²
 st = long * larg
 # Surface à peindre
@@ -116,11 +132,41 @@ sp = st * nbc
 # Quantité de peinture
 qp = sp / rend
 
+# -- Affichages des rséultats --
 print("Surface pièce =", st, "m²")
 print("Nombre de couches =", nbc)
 print("Surface totale =", sp, "m²")
 print("Rendement =", rend, "m²/Kg")
 print("La quantité de peinture =", qp, "Kg")</code></pre>
+
+        <h4>Exemples d'exécution</h4>
+
+        <p>Le nouveau programme affiche des résultats différents selon les entrées de l'utilisateur.</p>
+
+        <div class="row">
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Résultat du programme">Longueur de la pièce en m ? 6
+Largeur de la pièce en m ? 3.5
+Nombre de couches de peinture ? 2
+Rendement en m²/Kg ? 10
+Surface pièce = 21.0 m²
+Nombre de couches = 2
+Surface totale = 42.0 m²
+Rendement = 10.0 m²/Kg
+La quantité de peinture = 4.2 Kg</code></pre>
+          </div>
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Résultat du programme">Longueur de la pièce en m ? 4
+Largeur de la pièce en m ? 2.5
+Nombre de couches de peinture ? 1
+Rendement en m²/Kg ? 6
+Surface pièce = 10.0 m²
+Nombre de couches = 1
+Surface totale = 10.0 m²
+Rendement = 6.0 m²/Kg
+La quantité de peinture = 1.6666666666666667 Kg</code></pre>
+          </div>
+        </div>
       </section>
     </article>
 
@@ -136,7 +182,7 @@ print("La quantité de peinture =", qp, "Kg")</code></pre>
         </p>
 
         <figure>
-          <img src="resources/images/input_syntax.png" alt="Syntaxe de la fonction input">
+          <img class="h4cm" src="resources/images/input_syntax.png" alt="Syntaxe de la fonction input">
           <figcaption>Syntaxe de la fonction <code>input(...)</code></figcaption>
         </figure>
 
@@ -148,7 +194,7 @@ print("La quantité de peinture =", qp, "Kg")</code></pre>
         </ul>
 
         <figure>
-          <img src="resources/images/input_syntax_cast.png" alt="Conversions de types">
+          <img class="h4cm" src="resources/images/input_syntax_cast.png" alt="Conversions de types">
           <figcaption>Conversions de types</figcaption>
         </figure>
 
@@ -182,6 +228,38 @@ Ecrire("Quelle est ta moyenne ? ")
 Lire(moy)</code></pre>
           </div>
         </div>
+      </section>
+    </article>
+
+    <article>
+      <h2>Renforcement</h2>
+
+      <section class="d-print-none">
+        <h3>QCM</h3>
+      </section>
+
+      <section>
+        <h3>Point de rencontre</h3>
+
+        <figure class="d-print-none">
+          <img src="resources/images/point_rencontre.jpg" alt="Point de rencontre de deux véhicules">
+          <figcaption>Point de rencontre de deux véhicules</figcaption>
+        </figure>
+
+        <p>Sofien et Saber habitent dans deux villes différentes éloignées d'une distance <strong>d</strong>. Si les
+          deux camarades partent en même temps, on désire calculer et afficher à quel instant ils vont se rencontrer.
+        </p>
+
+        <p>On donne la formule qui permet de calculer le temps de rencontre en fonction de la distance et de la vitesse
+          des deux personnes.</p>
+
+        <figure>
+          <img src="resources/images/temps_rencontre.png" alt="Temps de rencontre des deux personnes">
+          <figcaption>Temps de rencontre des deux personnes</figcaption>
+        </figure>
+
+        <p>Ecrire un programme qui permet de simuler cette situation.</p>
+
       </section>
     </article>
   </main>
