@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="resources/css/bootstrap.min.css">
+  <link rel="stylesheet" href="resources/css/default.css">
+  <link rel="stylesheet" href="resources/css/style.css">
+  <title>Entrées</title>
+</head>
+
+<body>
+  <aside>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#aside_navbar"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span> Menu
+      </button>
+      <div class="collapse navbar-collapse" id="aside_navbar"></div>
+    </nav>
+  </aside>
+
+  <main class="container my-3">
+    <h1>Module 2 : Entrées</h1>
+
+    <article>
+      <h2>Situations</h2>
+
+      <section>
+        <h3>Peinture du toit du salon</h3>
+
+        <p>Ce mois-ci, M Fethi veut peindre le plafond du salon de sa maison. On suppose que le salon est de forme
+          rectangulaire et qu'il mesure 6m30 de longueur et 5m20 de largeur. </p>
+
+        <p>Sachant que le rendement de la peinture utilisée est de 6m²/Kg, on veut calculer la quantité de peinture
+          nécessaire pour peindre le salon de M Fethi 3 couches.</p>
+
+        <figure>
+          <img src="resources/images/peinture.jpg" alt="Peinture">
+          <figcaption>Peinture & Décor</figcaption>
+        </figure>
+
+        <p>Nous avons écrit le programme suivant pour résoudre le problème :</p>
+
+        <pre><code class="language-python"># Longueur de la pièce en m
+long = 6.30 
+# Largeur de la pièce en m
+larg = 5.20
+# Nombre de couches de peinture
+nbc = 3
+# Rendement en m²/Kg
+rend = 6
+
+# Surface du toit m²
+st = 32.76 # todo : indiquer la formule
+# Surface à peindre
+sp = 98.28 # todo : indiquer la formule
+# Quantité de peinture
+qp = 16.38 # todo : indiquer la formule
+
+print("Surface pièce =", st, "m²")
+print("Nombre de couches =", nbc)
+print("Surface totale =", sp, "m²")
+print("Rendement =", rend, "m²/Kg")
+print("La quantité de peinture =", qp, "Kg")</code></pre>
+
+        <p>On demande de compléter, puis d'exécuter le programme et vérifier, enfin, qu'il affiche le bon résultat.</p>
+        <p><strong>Quelle est la quantité de peinture nécessaire pour peindre le salon ?</strong></p>
+      </section>
+
+      <section>
+        <h3>Peinture de la cuisine</h3>
+
+        <p>Maintenant M Fethi veut peindre le toit de la cuisine qui mesure 4m50 &times; 3m90, 2 couches seulement,
+          avec une peinture dont le rendement est de 4.5m²/Kg.</p>
+        <ol>
+          <li>Quelle est la quantité de peinture nécessaire ?</li>
+          <li><strong>Modifier le programme pour répondre à cette question.</strong></li>
+        </ol>
+      </section>
+
+      <section>
+        <h3>Peintre professionnel</h3>
+
+        <p>Sahbi, le professionnel de peinture, est intéressé par notre programme de calcul de quantité de peinture
+          puisqu'il lui permet d'estimer la quantité de peinture à acheter par ses clients.</p>
+
+        <p>Cependant, Sahbi est <abbr title="ennuyé">las</abbr> de la nécessité de modifier le programme avant chaque
+          exécution, il veut un programme qui <strong>demande toutes les données nécessaires</strong>, effectue les
+          calculs et affiche le résultat.</p>
+
+        <ol>
+          <li>Comment faire ?</li>
+          <li>Effectuer les changements requis sur le programme pour qu'il réponde aux exigences de Sahbi.</li>
+        </ol>
+      </section>
+
+      <section>
+        <h3>Programme version finale</h3>
+
+        <pre><code class="language-python"># Longueur de la pièce en m
+long = float(input("Longueur de la pièce en m ? "))
+# Largeur de la pièce en m
+larg = float(input("Largeur de la pièce en m ? "))
+# Nombre de couches de peinture
+nbc = int(input("Nombre de couches de peinture ? "))
+# Rendement en m²/Kg
+rend = float(input("Rendement en m²/Kg ? "))
+
+# Surface du toit m²
+st = long * larg
+# Surface à peindre
+sp = st * nbc
+# Quantité de peinture
+qp = sp / rend
+
+print("Surface pièce =", st, "m²")
+print("Nombre de couches =", nbc)
+print("Surface totale =", sp, "m²")
+print("Rendement =", rend, "m²/Kg")
+print("La quantité de peinture =", qp, "Kg")</code></pre>
+      </section>
+    </article>
+
+    <article>
+      <h2>Résumé</h2>
+
+      <section>
+        <h3>Saisie</h3>
+
+        <p>L'entrée des données utilisateur est, principalement, effectuée à partir du clavier à l'aide de la fonction
+          <code>input(...)</code>. <strong>Cette fonction retourne toujours une chaîne de caractères (type
+            string).</strong>
+        </p>
+
+        <figure>
+          <img src="resources/images/input_syntax.png" alt="Syntaxe de la fonction input">
+          <figcaption>Syntaxe de la fonction <code>input(...)</code></figcaption>
+        </figure>
+
+        <p>Souvent, on désire saisir des données numériques de type <strong>entier</strong> ou <strong>réel</strong>.
+          Dans ce cas, il faudra convertir la valeur saisie à l'aide des fonctions :</p>
+        <ul>
+          <li><code>int(...)</code> pour récupérer un <strong>entier</strong></li>
+          <li>Et, <code>float(...)</code> pour récupérer un <strong>réel</strong>.</li>
+        </ul>
+
+        <figure>
+          <img src="resources/images/input_syntax_cast.png" alt="Conversions de types">
+          <figcaption>Conversions de types</figcaption>
+        </figure>
+
+        <h4>Exemple</h4>
+
+        <div class="row">
+          <div class="col-sm-6">
+            <pre><code class="language-python"># Saisie d'une chaîne de caractères
+ch = input("Votre nom ? ")
+
+
+# Saisie d'un nombre entier
+age = int(input("Quel âge as-tu ? "))
+
+
+# Saisie d'un nombre réel
+moy = float(input("Quelle est ta moyenne ? "))
+ </code></pre>
+          </div>
+          <div class="col-sm-6">
+            <pre><code class="language-algorithm">// Saisie d'une chaîne de caractères
+Ecrire("Votre nom ? ")
+Lire(ch)
+
+// Saisie d'un nombre entier
+Ecrire("Quel âge as-tu ? ")
+Lire(age)
+
+// Saisie d'un nombre réel
+Ecrire("Quelle est ta moyenne ? ")
+Lire(moy)</code></pre>
+          </div>
+        </div>
+      </section>
+    </article>
+  </main>
+  <footer class="d-print-none bg-dark text-white p-2">
+    <div class="text-center">Page créée avec ♥ par Mohamed Anis MANI</div>
+    <div class="text-center small">Année scolaire : 2020/2021</div>
+  </footer>
+
+  <script src="resources/js/jquery.min.js"></script>
+  <script src="resources/js/bootstrap.bundle.min.js"></script>
+  <script src="resources/js/highlight.pack.js"></script>
+  <script src="resources/js/hljs.algorithm.js"></script>
+  <script src="resources/js/clipboard.min.js"></script>
+  <script src="resources/js/pages.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+
+    document.querySelectorAll('.language-algorithm,.language-python')
+      .forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'bd-clipboard d-print-none';
+        const btn = document.createElement('button');
+        btn.className = 'btn-clipboard';
+        btn.textContent = "📋";
+        btn.title = "Copier";
+        div.appendChild(btn);
+        item.parentElement.insertBefore(div, item);
+      });
+    new ClipboardJS('.btn-clipboard', {
+      target: (trigger) => {
+        return trigger.parentElement.nextElementSibling;
+      }
+    });
+  </script>
+</body>
+
+</html>
