@@ -170,7 +170,7 @@ La quantité de peinture = 1.6666666666666667 Kg</code></pre>
       </section>
     </article>
 
-    <article>
+    <article class="p-break">
       <h2>Résumé</h2>
 
       <section>
@@ -231,7 +231,7 @@ Lire(moy)</code></pre>
       </section>
     </article>
 
-    <article>
+    <article class="p-break">
       <h2>Renforcement</h2>
 
       <section class="d-print-none">
@@ -250,16 +250,213 @@ Lire(moy)</code></pre>
           deux camarades partent en même temps, on désire calculer et afficher à quel instant ils vont se rencontrer.
         </p>
 
+        <p>On suppose que Sofien avance à une vitesse constante notée <b>v1</b> et que Saber avance à une vitesse
+          constante notée <b>v2</b>.</p>
+
         <p>On donne la formule qui permet de calculer le temps de rencontre en fonction de la distance et de la vitesse
           des deux personnes.</p>
 
         <figure>
-          <img src="resources/images/temps_rencontre.png" alt="Temps de rencontre des deux personnes">
+          <img class="h2cm" src="resources/images/temps_rencontre.png" alt="Temps de rencontre des deux personnes">
           <figcaption>Temps de rencontre des deux personnes</figcaption>
         </figure>
 
         <p>Ecrire un programme qui permet de simuler cette situation.</p>
 
+        <div class="d-print-none">
+          <div class="row">
+            <div class="col-sm-4">
+              <pre><code class="nohighlight shell python" data-text="Exemple d'exécution n°1">Distance en km ? 3
+  Vitesse de Sahbi km/h ? 7
+  Vitesse de Sofien km/h ? 8
+  Rencontre après 12 mn et 0 s
+  Sahbi se trouve à 1.4 km de sa maison
+  Sofien se trouve à 1.6 km de sa maison</code></pre>
+            </div>
+            <div class="col-sm-4">
+              <pre><code class="nohighlight shell python" data-text="Exemple d'exécution n°2">Distance en km ? 0.5
+  Vitesse de Sahbi km/h ? 8
+  Vitesse de Sofien km/h ? 9
+  Rencontre après 1 mn et 45 s
+  Sahbi se trouve à 0.235 km de sa maison 
+  Sofien se trouve à 0.265 km de sa maison</code></pre>
+            </div>
+            <div class="col-sm-4">
+              <pre><code class="nohighlight shell python" data-text="Exemple d'exécution n°3">Distance en km ? 0.2
+  Vitesse de Sahbi km/h ? 3
+  Vitesse de Sofien km/h ? 3.5
+  Rencontre après 1 mn et 50 s
+  Sahbi se trouve à 0.092 km de sa maison
+  Sofien se trouve à 0.108 km de sa maison</code></pre>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>Calcul Résistance</h3>
+
+        <p>Le courant qui traverse une diode LED ne doit pas dépasser 20mA et la tension à ses bornes doit être limitée
+          selon sa couleur.</p>
+
+        <p>Pour celà, on utilise souvent une résistance en série avec une diode LED pour limiter le courant dans la
+          diode, et ainsi éviter de la griller.</p>
+
+        <figure>
+          <img src="resources/images/schema-led.gif" alt="Alimentation Diode LED">
+          <img src="resources/images/led_voltage.png" alt="Tension selon la couleur du LED">
+          <figcaption>Alimentation Diode LED</figcaption>
+        </figure>
+
+        <p>On demande de concevoir un programme qui :</p>
+        <ul>
+          <li>Saisit les valeurs suivantes :
+            <ul>
+              <li>La tension d'alimentation en Volts, notée U</li>
+              <li>La tension au bornes de la diode en Volts (voir tableau), notée U<sub>f</sub></li>
+              <li>Le courant parcourant la diode (entre 10mA à 20mA), noté I<sub>f</sub></li>
+            </ul>
+          </li>
+          <li>Calcule la résistance R : R = (U - U<sub>f</sub>) * 1000 / I<sub>f</sub></li>
+          <li>Affiche sa valeur</li>
+        </ul>
+
+        <div class="d-print-none">
+          <div class="row">
+            <div class="col-sm-4">
+              <pre><code class="nohighlight shell python" data-text="Exemple d'exécution n°1">Tension d'alimentation ? 5
+Tension LED ? 1.8
+Courant diode mA ? 15
+R = 213 Ω</code></pre>
+            </div>
+            <div class="col-sm-4">
+              <pre><code class="nohighlight shell python" data-text="Exemple d'exécution n°2">Tension d'alimentation ? 12
+Tension LED ? 3.2
+Courant diode mA ? 15
+R = 586 Ω</code></pre>
+            </div>
+            <div class="col-sm-4">
+              <pre><code class="nohighlight shell python" data-text="Exemple d'exécution n°3">Tension d'alimentation ? 9
+Tension LED ? 2.1
+Courant diode mA ? 10
+R = 690 Ω</code></pre>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>Distributeur de Jus</h3>
+
+        <figure class="d-print-none">
+          <img src="resources/images/distributeur_jus.jpg" alt="Distributeur de jus">
+          <img src="resources/images/gobelets_jus.jpg" alt="Gobelets de jus">
+          <figcaption>Distributeur de jus / Gobelets de jus</figcaption>
+        </figure>
+
+        <p>Ayoub est un élève intelligent, il a conçu dans le club de robotique un distributeur de jus ingénieux. Ce
+          système demande à l'utilisateur d'entrer la quantité de jus <strong>qj</strong> à sa disposition (en Cl) et le
+          nombre de personnes à servir <strong>np</strong>.</p>
+
+        <p>Une fois les informations validées le robot remplit automatiquement les <strong>np</strong> gobelets de jus.
+        </p>
+
+        <p>On demande d'écrire un programme qui calcule la quantité de jus à mettre dans chaque gobelet, et puis
+          l'affiche.</p>
+
+        <p><i>On rappelle que : 1 litre = 100 Cl</i></p>
+
+        <div class="d-print-none">
+          <div class="row">
+            <div class="col-sm-6">
+              <pre><code class="nohighlight shell python" data-text="Exemple d'exécution n°1">Quantité de jus en Cl ? 100
+Nombre de personnes ? 5
+Quantité de jus/Gobelet = 20 Cl</code></pre>
+            </div>
+            <div class="col-sm-6">
+              <pre><code class="nohighlight shell python" data-text="Exemple d'exécution n°2">Quantité de jus en Cl ? 75
+Nombre de personnes ? 4
+Quantité de jus/Gobelet = 18 C</code></pre>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>Jogging</h3>
+
+        <p>Tous les matins, Samir aime faire un jogging dans son quartier qui possède la forme d'un triangle rectangle.
+        </p>
+
+        <p>Pour mesurer sa performance, Samir désire calculer sa vitesse moyenne après un jogging.</p>
+
+        <p>On rappelle que :</p>
+        <ul>
+          <li>vitesse = distance / temps</li>
+          <li>vitesse(km/h) = vitesse(m/s) * 3.6</li>
+        </ul>
+
+        <p>Ecrire un programme qui :</p>
+
+        <ul>
+          <li>Saisit le temps total du jogging <code>tj</code>, en secondes.</li>
+          <li>Saisit le nombre de tours effectué autour du quartier <code>nbt</code>.</li>
+          <li>Saisit la longueur de la base du triangle <code>a</code></li>
+          <li>Saisit la longueur de l'hauteur <code>b</code></li>
+          <li>Calcule la longueur de l'hypoténus <code>c</code>, On rappelle que c peut être calculé à l'aide de la
+            formule de Pythagore : c² = a² + b²</li>
+          <li>Calcule le périmètre du quartier <code>pq</code>, pq = (a + b + c)</li>
+          <li>Calcule la vitesse de Samir <code>v</code>, v = pq * nbt / tj</li>
+          <li>Affiche le résultat en m/s et en km/h</li>
+        </ul>
+
+        <div class="d-print-none">
+          <div class="row">
+            <div class="col-sm-6">
+              <pre><code class="nohighlight shell python" data-text="Exemple d'exécution n°1">Temps jogging (s) ? 4000
+Nombre de tours ? 19
+Longueur de la base (m) ? 500
+Longueur de l'hauteur (m) ? 100
+Vitesse de Samir = 5 m/s =  18 km/h</code></pre>
+            </div>
+            <div class="col-sm-6">
+              <pre><code class="nohighlight shell python" data-text="Exemple d'exécution n°2">Temps jogging (s) ? 3600
+Nombre de tours ? 15
+Longueur de la base (m) ? 500
+Longueur de l'hauteur (m) ? 100
+Vitesse de Samir = 4 m/s =  16 km/h</code></pre>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>Corrigez-moi !</h3>
+
+        <figure class="d-print-none">
+          <img src="resources/images/bug_informatique.jpg" alt="Débogage d'un programme">
+          <figcaption>Débogage d'un programme</figcaption>
+        </figure>
+
+        <pre><code class="language-python">input("Donner un entier [10, 99] : ") = a
+b = "Donner un entier [10, 99] : "
+
+moy = a + b sur 2
+
+print La moyenne de a et b est moy</code></pre>
+
+        <div class="row">
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple de résultat n°1">Donner un entier [10, 99] : 15
+Donner un entier [10, 99] : 30
+La moyenne de 15 et 30 est 22</code></pre>
+          </div>
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple de résultat n°2">Donner un entier [10, 99] : 16
+Donner un entier [10, 99] : 80
+La moyenne de 16 et 80 est 48</code></pre>
+          </div>
+        </div>
       </section>
     </article>
   </main>
