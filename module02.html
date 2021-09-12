@@ -382,7 +382,7 @@ Quantité de jus/Gobelet = 18 C</code></pre>
         </div>
       </section>
 
-      <section>
+      <section class="p-break">
         <h3>Jogging</h3>
 
         <p>Tous les matins, Samir aime faire un jogging dans son quartier qui possède la forme d'un triangle rectangle.
@@ -428,6 +428,68 @@ Vitesse de Samir = 4 m/s =  16 km/h</code></pre>
             </div>
           </div>
         </div>
+      </section>
+
+      <section>
+        <h3>Citerne d'huile</h3>
+
+        <p>Dans une presse d'huile, l'huile est conservée dans des citernes cylindriques de diamètre <b>d</b> et de
+          profondeur <b>h</b>. Sur la paroie de la citerne un indicateur gradué indique le niveau <b>nh</b> de l'huile
+          sous forme d'un pourcentage.</p>
+        <ul>
+          <li>Si l'indicateur affiche 0%, la citerne est vide.</li>
+          <li>Si l'indicateur affiche 20%, la citerne est remplie à 20% de sa capacité.</li>
+          <li>Si l'indicateur affiche 100%, la citerne est totalement remplie.</li>
+        </ul>
+        <p>On demande d'écrire l'algorithme d'un programme qui saisit les données de l'utilisateur (en mètres), puis
+          affiche la quantité de l'huile en litres.</p>
+        <p>On donne :</p>
+        <ul>
+          <li>Le diamètre de la citerne <b>d</b> et son hauteur (h) sont mesurés en mètres.</li>
+          <li>Le niveau de l'huile <b>nh</b> est mesuré en pourcentage (%).</li>
+          <li>1 m<sup>3</sup> = 1000 litres</li>
+          <li>La constante π (<code>pi</code>) peut être importée du module <code>math</code> :</li>
+        </ul>
+
+        <pre><code class="language-python">from math import pi
+# calcul de l'aire d'un cercle
+r = 1.5
+print(pi*r*r)</code></pre>
+
+        <figure>
+          <img src="resources/images/citerne_huile.svg" alt="Citerne d'huile" class="h4cm">
+          <figcaption>Citerne d'huile</figcaption>
+        </figure>
+
+        <pre><code class="nohighlight shell python" data-text="Exemple d'exécution">Donner le diamètre de la citerne (m) : 1.2
+Donner l'heuteur de la citerne (m) : 3
+Donne le niveau de l'huile (%) : 20
+La citerne contient 678 litres d'huile.</code></pre>
+      </section>
+
+      <section>
+        <h3>Gare routière</h3>
+
+        <figure class="d-print-none">
+          <img src="resources/images/gare_routiere.png" alt="Gare routière">
+          <figcaption>Gare routière</figcaption>
+        </figure>
+
+        <p>Un bus dans une gare routière, commence ses courses à partir de <code>hd</code> (heure de départ) du matin.
+          Ses courses continuent jusqu'au soir <code>hf</code> (heure fin). Sachant que le bus revient à la gare
+          routière toutes les <code>dt</code> (durée trajet) minutes, on veut calculer le nombre de voyages de ce bus en
+          une journée.
+        </p>
+
+        <p>On demande d'écrire un programme qui permet de trouver le nombre de voyages effectués par le bus le long de
+          la journée.</p>
+
+        <p class="explication">Exemple d'exécution</p>
+
+        <pre><code class="nohighlight shell python" data-text="Exemple d'exécution">Quelle est l'heure de départ (hh:00) ? 5
+Quelle est l'heure de fin (hh:00) ? 17
+Quelle est la durée du trajet ? 20
+Le bus fait 36 voyages de 5h à 17h.</code></pre>
       </section>
 
       <section>

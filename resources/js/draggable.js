@@ -500,6 +500,7 @@ class QcmExercise {
       .addClass('list-group');
     const thisObj = this;
     this.retries_count = $('<div>')
+      .addClass("d-print-none")
       .text((this.number_of_tries > 1000000) ? 'Essais illimités' : `${this.number_of_tries} essais restants`)
       .appendTo(this.node);
     this.props = this.prop_container
