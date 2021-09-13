@@ -338,6 +338,21 @@ table.col-20 td {
   figure img.h10cm {
     max-height: 10cm !important;
   }
+  figure img.h11cm {
+    max-height: 11cm !important;
+  }
+  figure img.h12cm {
+    max-height: 12cm !important;
+  }
+  figure img.h13cm {
+    max-height: 13cm !important;
+  }
+  figure img.h14cm {
+    max-height: 14cm !important;
+  }
+  figure img.h15cm {
+    max-height: 15cm !important;
+  }
   @page {
     counter-increment: page;
     counter-reset: page 1;
