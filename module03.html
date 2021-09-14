@@ -138,6 +138,7 @@ car = chr(num) # car = "@"</code></pre>
 
         <p>Une chaîne de caractères est formée par un ensemble de caractères.</p>
 
+        <h4>Longueur</h4>
         <p>Une chaîne possède une <strong>longueur</strong> qui indique le nombre de ses caractères. On utilise la
           fonction <code>len(chaine)</code> pour déterminer la longueur d'une chaîne.</p>
 
@@ -145,10 +146,12 @@ car = chr(num) # car = "@"</code></pre>
           <code>''</code> et <code>len("") &rarr; 0</code>.
         </p>
 
+        <h4>Concaténation</h4>
         <p>Une chaîne peut être le résultat de <abbr title="collage">concaténation</abbr> de deux ou plusieurs chaînes
           <code>"Sa" + "mi" &rarr; "Sami"</code>.
         </p>
 
+        <h4>Indexation</h4>
         <p>On peut <strong>accéder aux caractères individuels</strong> d'une chaîne à travers l'opérateur
           <code>[]</code>. Une chaîne peut-être <strong>indexée</strong> de deux façons différentes.
         </p>
@@ -161,6 +164,61 @@ car = chr(num) # car = "@"</code></pre>
         <p>D'après la figure précédente, on peut retrouver le premier caractère de la <code>chaine</code> soit en
           utilisant <strong>l'indexation positive</strong> <code>chaine[0]</code> soit en utilisant <strong>l'indexation
             négative</strong> <code>chaine[-6]</code>.</p>
+
+        <h4>Sous chaîne</h4>
+        <p>On peut <strong>extraire une partie de la chaîne</strong> en utilisant l'opérateur <code>[:]</code>.</p>
+
+        <figure>
+          <img src="resources/images/string-slicing.png" alt="Extraction d'une sous-chaîne">
+          <figcaption>Extraction d'une sous-chaîne</figcaption>
+        </figure>
+
+        <p>Pour extraire une partie d'une chaîne on écrit <code>chaine[deb:fin]</code>. Cette instruction extrait les
+          caractères compris entre les indices <strong>deb</strong> inclu et <strong>fin</strong> non inclu,
+          <strong>deb</strong> est l'indice de début, et <strong>fin</strong> est l'indice de fin.
+        </p>
+
+        <h4>Recherche de position</h4>
+        <p>Pour retrouver la position d'une sous-chaine <code>sch</code> dans une chaine <code>ch</code> on écrit
+          <code>ch.find(sch)</code>, cette instruction retourne la première occurence de <code>sch</code> dans
+          <code>ch</code>, ou <code>-1</code> si elle est introuvable.
+        </p>
+
+        <h4>Recherche d'existence</h4>
+        <p>Pour tester l'existance d'une sous-chaîne <code>sch</code> dans une autre chaine <code>ch</code>, on écrit
+          <code>sch in ch</code>. Cette expression renvoie un booléen : <code>True</code> / <code>False</code>.
+        </p>
+
+        <figure>
+          <img src="resources/images/string-find_in.jpg" alt="Recherche dans une chaîne">
+          <figcaption>Recherche dans une chaîne</figcaption>
+        </figure>
+
+        <h4>Effacer une sous-chaîne</h4>
+        <p>Il n'existe pas une instruction Python pour <strong>effacer une partie d'une chaîne</strong>. Cependant, il
+          est possible d'utiliser une concaténation de sous-chaines.</p>
+
+        <p>Pour effacer la partie comprise entre les indices <code>deb</code> (inclu) et <code>fin</code> (non inclu)
+          dans une <code>chaine</code>, on écrit <code>chaine[:deb] + chaine[fin:]</code>.</p>
+
+        <figure>
+          <img src="resources/images/string-erase.png" alt="Effacer une sous-chaîne">
+          <figcaption>Effacer une sous-chaîne</figcaption>
+        </figure>
+
+        <h4>Changer la casse des lettres</h4>
+        <p>Python offre plusieurs <abbr title="fonctions">méthodes</abbr> pour changer la casse d'une chaine de
+          caractère, voici quelques-unes.</p>
+        <ul>
+          <li><code>chaine.upper()</code> : <span style="text-transform: uppercase;">Convertit toute une chaine en
+              majuscules</span>.</li>
+          <li><code>chaine.lower()</code> : <span style="text-transform: lowercase;">Convertit toute une chaine en
+              miniscules</span>.</li>
+          <li><code>chaine.capitalize()</code> : Met la première lettre en majuscule et les toutes autres en miniscules.
+          </li>
+          <li><code>chaine.title()</code> : <span style="text-transform: capitalize;">Convertit la première lettre de
+              chaque mot en majuscules</span>.</li>
+        </ul>
       </section>
     </article>
 
