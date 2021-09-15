@@ -206,7 +206,7 @@ car = chr(num) # car = "@"</code></pre>
           <figcaption>Effacer une sous-chaîne</figcaption>
         </figure>
 
-        <h4>Changer la casse des lettres</h4>
+        <h4>Changer la casse</h4>
         <p>Python offre plusieurs <abbr title="fonctions">méthodes</abbr> pour changer la casse d'une chaine de
           caractère, voici quelques-unes.</p>
         <ul>
@@ -219,7 +219,29 @@ car = chr(num) # car = "@"</code></pre>
           <li><code>chaine.title()</code> : <span style="text-transform: capitalize;">Convertit la première lettre de
               chaque mot en majuscules</span>.</li>
         </ul>
+
+        <figure>
+          <img src="resources/images/string-case.png" alt="Modifier la casse d'une chaîne">
+          <figcaption>Modifier la casse d'une chaîne</figcaption>
+        </figure>
+
+        <h4>Conversions</h4>
+        <p>Une <strong>chaîne</strong> qui <em>contient une valeur numérique</em> peut-être transformée en <strong>un
+            entier</strong> à
+          l'aide de la fonction <code>int(chaine)</code> ou en <strong>un réel</strong> à l'aide de la fonction
+          <code>float(chaine)</code>. La fonction <code>str(nombre)</code> est utilisée pour convertir un
+          <strong>entier</strong> ou un <strong>réel</strong> en une <strong>chaîne de caractères</strong>.
+        </p>
+
+        <figure>
+          <img src="resources/images/string-cast.png" alt="Conversions d'une chaîne">
+          <figcaption>Conversions d'une chaîne</figcaption>
+        </figure>
       </section>
+
+      <p>La conversion d'une chaîne qui ne contient pas une valeur numérique produit <strong>une erreur
+          d'exécution</strong> qui peut interrompre l'exécution d'un programme pour cela on peut utiliser la fonction
+        <code>chaine.isdigit()</code> pour tester si une chaine <strong>contient uniquement des chiffres</strong>.</p>
     </article>
 
     <article class="p-break">
