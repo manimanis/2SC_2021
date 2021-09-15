@@ -233,15 +233,71 @@ car = chr(num) # car = "@"</code></pre>
           <strong>entier</strong> ou un <strong>réel</strong> en une <strong>chaîne de caractères</strong>.
         </p>
 
-        <figure>
+        <figure>))
           <img src="resources/images/string-cast.png" alt="Conversions d'une chaîne">
           <figcaption>Conversions d'une chaîne</figcaption>
         </figure>
+
+        <p>La conversion d'une chaîne qui ne contient pas une valeur numérique produit <strong>une erreur
+            d'exécution</strong> qui peut interrompre l'exécution d'un programme pour cela on peut utiliser la fonction
+          <code>chaine.isdigit()</code> pour tester si une chaine <strong>contient uniquement des chiffres</strong>.
+        </p>
       </section>
 
-      <p>La conversion d'une chaîne qui ne contient pas une valeur numérique produit <strong>une erreur
-          d'exécution</strong> qui peut interrompre l'exécution d'un programme pour cela on peut utiliser la fonction
-        <code>chaine.isdigit()</code> pour tester si une chaine <strong>contient uniquement des chiffres</strong>.</p>
+      <section>
+        <h3>Type entier</h3>
+
+        <p>Le type entier couvre une partie de l'ensemble des entiers relatifs &Zopf;, c'est à dire l'ensembles des
+          entiers positifs 0, 1, 2, 3, etc. et des entiers négatifs -1, -2, -3, etc.</p>
+
+        <p>Les opérateurs possibles avec les entiers sont :</p>
+        <ul>
+          <li><strong>L'addition</strong> <code>8 + 5 &rarr; 13</code></li>
+          <li><strong>La soustraction</strong> <code>8 - 5 &rarr; 3</code></li>
+          <li><strong>La multiplication</strong> <code>8 * 5 &rarr; 40</code></li>
+          <li><strong>La division réelle</strong> <code>8 / 5 &rarr; 1.6</code></li>
+          <li><strong>Le quotient de la division entière</strong> <code>8 // 5 &rarr; 1</code></li>
+          <li><strong>Le reste de la divion entière</strong> <code>18 % 7 &rarr; 4</code></li>
+          <li><strong>L'exponentiation</strong> <code>5 ** 3 &rarr; 125</code></li>
+        </ul>
+
+        <p>Voici quelques fonctions possibles avec les entiers :</p>
+        <ul>
+          <li><strong>La valeur absolue</strong> <code>abs(-9) &rarr; 9</code></li>
+          <li><strong>Choix d'une valeur aléatoire</strong> dans un intervalle
+            <code>randint(1, 6) &rarr; une valeur au hasard dans l'intervalle [1, 6]</code>.
+            <br><span class="text-danger">Attention</span><br>
+            <span>Pour utiliser <code>randint(a, b)</code>, il faut veiller à importer cette fonction du module
+              <code>random</code> <abbr title="en utilisant">via</abbr> l'instruction
+              <code>from random import randint</code>.</span>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Type réel</h3>
+
+        <p>Le type réel couvre une partie de l'ensemble des réels &Ropf;, c'est à dire les nombres à virgule flottante.
+        </p>
+
+        <p>Les opérateurs possibles avec les réels sont <strong>les mêmes que ceux disponibles avec les
+            entiers</strong>, <a href="#section-2-3">voir opérateurs avec les entiers</a>.</p>
+
+        <p>Certaines fonctions avec les réels doivent être importées depuis le module <code>math</code>. Parmi ces
+          fonctions on cite :</p>
+        <ul>
+          <li><strong>La racine carré</strong> <code>sqrt(5) &rarr; <script>document.write(Math.sqrt(5))</script></code>
+          </li>
+          <li><strong>La partie entière</strong> d'un réel <code>trunc(6.2545) &rarr; 6</code></li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Type booléen</h3>
+
+        <p></p>
+      </section>
+
     </article>
 
     <article class="p-break">

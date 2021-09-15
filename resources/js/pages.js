@@ -1,15 +1,31 @@
 $(() => {
+  const curPos = new URL(location.href);
+  let sectionNum = -1;
+  let articleNum = -1;
+  if (curPos.hash.startsWith("#section")) {
+    const hs = curPos.hash.split('-');
+    articleNum = +hs[1] - 1;
+    sectionNum = +hs[2] - 1;
+  }
+
   const aside = $('aside #aside_navbar');
   const articles = $('main article');
   const articles_count = articles.length;
   const STORAGE_KEY = location.pathname + '#art_obj';
-  const art_obj = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {
+  const localStorageData = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {
     article: null,
     article_index: 0,
     sections: null,
     section: null,
     section_index: 0
   };
+  const art_obj = (sectionNum != -1 && articleNum != -1) ? {
+    article: null,
+    article_index: articleNum,
+    sections: null,
+    section: null,
+    section_index: sectionNum
+  } : localStorageData;
 
   const link_list = $('<ul>')
     .addClass('navbar-nav mr-auto')
@@ -102,17 +118,21 @@ $(() => {
     }));
   };
 
-  const links = aside.find('a')
-    .click(e => {
-      // e.preventDefault();
-      const link = $(e.currentTarget);
-      const href = link.attr('href');
-      const href_parts = href.split('-');
-      if (href_parts.length >= 3) {
-        displayArticle(+href_parts[1] - 1);
-        displaySection(+href_parts[2] - 1);
-      }
-    });
+  const linkClickHandler = e => {
+    // e.preventDefault();
+    const link = $(e.currentTarget);
+    const href = link.attr('href');
+    const href_parts = href.split('-');
+    if (href_parts.length >= 3) {
+      displayArticle(+href_parts[1] - 1);
+      displaySection(+href_parts[2] - 1);
+    }
+  };
+
+  const pageLinks = $("a[href^=\"#section\"]")
+    .click(linkClickHandler);
+  // const links = aside.find('a')
+  //   .click(linkClickHandler);
   displayArticle(art_obj.article_index);
   displaySection(art_obj.section_index);
 });
