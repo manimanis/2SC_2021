@@ -29,7 +29,7 @@
       <h2>Situations</h2>
 
       <section>
-        <h3>Situation 1</h3>
+        <h3>Caractères & Codes</h3>
 
         <p>On donne le programme suivant :</p>
 
@@ -75,6 +75,58 @@ print("Code :", ord(car))</code></pre>
           <img src="resources/images/ascii-table.jpg" alt="Table ASCII">
           <figcaption>Table ASCII</figcaption>
         </figure>
+      </section>
+
+      <section>
+        <h3>Nombre automorphe</h3>
+
+        <p>Un <strong>nombre automorphe</strong> est un entier naturel dont la suite des chiffres du carré se termine
+          par celle du nombre
+          lui-même. Par exemple, <span class="text-danger">5</span>² = 2<span class="text-danger">5</span>, <span
+            class="text-danger">6</span>² = 3<span class="text-danger">6</span>, <span class="text-danger">25</span>² =
+          6<span class="text-danger">25</span>, <span class="text-danger">76</span>² = 57<span
+            class="text-danger">76</span>, et <span class="text-danger">890625</span>² = 793212<span
+            class="text-danger">890625</span>.</p>
+
+        <p>On demande d'écrire un programme qui teste si un nombre est automorphe. On donne, pour celà, le programme
+          incomplet suivant :</p>
+
+        <pre><code class="language-python"># Todo 1 : Enlever le commentaire # de la ligne suivante
+# n = int("Donner un nombre > 0 ? ")
+
+# Todo 2 : à supprimer
+n = 76
+
+# Todo 3 : calculer le carré de n
+nc = 5776
+
+# Todo 4 : convertir n et nc en chaînes de caractères
+nch = "76"
+ncch = "5776"
+
+# Todo 5 : trouver la longueur de nch
+l = 2
+
+# Todo 6 : utiliser l pour retrouver les l derniers caractères de ncch
+dcar = "76"
+
+# Todo 7 : déterminer si n est automorphe
+automorphe = True
+
+print(n, "est automorphe ?", automorphe)</code></pre>
+
+        <p>On demande de :</p>
+        <ol>
+          <li>Calculer le carré de <code>n</code>, todo 3. Afficher la valeur de <code>nc</code>. 
+            <pre><code class="language-python">print("nc=", nc)</code></pre>
+          </li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ol>
       </section>
 
     </article>
@@ -295,7 +347,109 @@ car = chr(num) # car = "@"</code></pre>
       <section>
         <h3>Type booléen</h3>
 
-        <p></p>
+        <p>Les variables de ce type peuvent prendre uniquement les deux valeurs <code>True</code> ou <code>False</code>.
+        </p>
+
+        <p>On utilise les <strong>opérateurs de comparaison</strong> pour comparer des valeurs de mêmes types ou de
+          types compatibles :</p>
+
+        <table class="table table-sm table-striped table-hover">
+          <thead>
+            <tr>
+              <th>Opérateur</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>&lt;</td>
+              <td>Inférieur</td>
+            </tr>
+            <tr>
+              <td>&lt;=</td>
+              <td>Inférieur ou égal</td>
+            </tr>
+            <tr>
+              <td>&gt;</td>
+              <td>Supérieur</td>
+            </tr>
+            <tr>
+              <td>&gt;=</td>
+              <td>Supérieur ou égal</td>
+            </tr>
+            <tr>
+              <td>==</td>
+              <td>égal</td>
+            </tr>
+            <tr>
+              <td>!=</td>
+              <td>Différent</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>On utilise les <strong>opérateurs logiques</strong> pour construire des expressions booléennes plus
+          sophistiquées.</p>
+
+        <table class="table table-sm table-striped table-hover">
+          <thead>
+            <tr>
+              <th>Opérateur</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>not a</td>
+              <td>Négation logique, si <code>a</code> est vraie <code>not a</code> est fausse, sinon <code>not a</code>
+                est vraie.</td>
+            </tr>
+            <tr>
+              <td>a and b</td>
+              <td>Et logique, <code>a and b</code> est vraie uniquement lorsque <code>a</code> est vraie et
+                <code>b</code> est vraie.
+              </td>
+            </tr>
+            <tr>
+              <td>a or b</td>
+              <td>Ou logique, <code>a or b</code> est fausse uniquement lorsque <code>a</code> est fausse et
+                <code>b</code> est fausse, elle est vraie lorsque l'un des <strong>opérandes</strong> <code>a</code> ou
+                <code>b</code> est vrai.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4>Priorité des opérateurs</h4>
+        <p>Les opérateurs logiques sont ordonnés dans le tableau précédent selon leurs <strong>priorités</strong>
+          respectives.</p>
+        <p>Il est <strong>vivement conseillé</strong> d'utiliser les parenthèses pour imposer l'ordre
+          d'évaluation des opérateurs.</p>
+
+        <p>Exemple, l'expression <code>not a or b and c</code> est évaluée comme suit <code>(not a) or (b and c)</code>.
+          Si on veut écrire <code>not ((a or b) and c)</code> ou <code>(not (a or b)) and c</code> , il faudra utiliser
+          impérativement les parenthèses.</p>
+
+        <h4>Comparaison des variables de type de numérique</h4>
+
+        <p>Pour les entiers et les réels <code>a &gt; b</code> si et seulement si <code>a - b &gt; 0</code>,
+          <code>a == b</code> si et seulement si <code>a - b == 0</code>.
+        </p>
+
+        <h4>Comparaison des caractères et des chaînes de caractères</h4>
+        <p>La comparaison pour les <strong>caractères</strong> est basée sur le <strong>code ASCII/Unicode</strong>.</p>
+        <p class="text-center">
+          <code>" " &lt; "!"  &lt; ...  &lt; "0" &lt; "1" &lt; ... &lt; "A" &lt; "B" &lt; ... &lt; "a" &lt; "b" &lt; ...</code>
+        </p>
+
+        <p>Pour les <strong>chaînes de caractères</strong> on applique le même principe avec chacune des lettres des
+          deux chaînes.</p>
+        <p><code>"Amine" &lt; "Eya"</code> puisque <code>"A" &lt; "E"</code></p>
+        <p><code>"bassine" &lt; "bassins"</code> bien qu'il soient de même longueur mais la dernière lettre
+          <code>"e" &lt; "s"</code>
+        </p>
+        </p>
+
       </section>
 
     </article>

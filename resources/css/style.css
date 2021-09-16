@@ -360,4 +360,7 @@ table.col-20 td {
       content: "Page " counter(page) " of " counter(pages);
     }
   }
+  table th, table td {
+    border: thin solid #000;
+  }
 }
