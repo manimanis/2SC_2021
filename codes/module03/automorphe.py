@@ -1,5 +1,5 @@
 # Todo 1 : Enlever le commentaire # de la ligne suivante
-# n = int("Donner un nombre > 0 ? ")
+# n = int(input("Donner un nombre > 0 ? "))
 
 # Todo 2 : à supprimer
 n = 76

@@ -92,7 +92,7 @@ print("Code :", ord(car))</code></pre>
           incomplet suivant :</p>
 
         <pre><code class="language-python"># Todo 1 : Enlever le commentaire # de la ligne suivante
-# n = int("Donner un nombre > 0 ? ")
+# n = int(input("Donner un nombre > 0 ? "))
 
 # Todo 2 : à supprimer
 n = 76
@@ -117,8 +117,8 @@ print(n, "est automorphe ?", automorphe)</code></pre>
 
         <p>On demande de :</p>
         <ol>
-          <li>Calculer le carré de <code>n</code>, todo 3. Afficher la valeur de <code>nc</code>. 
-            <pre><code class="language-python">print("nc=", nc)</code></pre>
+          <li>Calculer le carré de <code>n</code>, todo 3, puis afficher la valeur de <code>nc</code>.
+            <pre><code class="language-python">print(n, "^ 2 =", nc)</code></pre>
           </li>
           <li></li>
           <li></li>
@@ -209,7 +209,7 @@ car = chr(num) # car = "@"</code></pre>
         </p>
 
         <figure>
-          <img src="resources/images/string-indexing.png" alt="Indexation d'une chaîne de caractères">
+          <img class="h2cm" src="resources/images/string-indexing.png" alt="Indexation d'une chaîne de caractères">
           <figcaption>Indexation d'une chaîne de caractères</figcaption>
         </figure>
 
@@ -221,7 +221,7 @@ car = chr(num) # car = "@"</code></pre>
         <p>On peut <strong>extraire une partie de la chaîne</strong> en utilisant l'opérateur <code>[:]</code>.</p>
 
         <figure>
-          <img src="resources/images/string-slicing.png" alt="Extraction d'une sous-chaîne">
+          <img class="h3cm" src="resources/images/string-slicing.png" alt="Extraction d'une sous-chaîne">
           <figcaption>Extraction d'une sous-chaîne</figcaption>
         </figure>
 
@@ -242,7 +242,7 @@ car = chr(num) # car = "@"</code></pre>
         </p>
 
         <figure>
-          <img src="resources/images/string-find_in.jpg" alt="Recherche dans une chaîne">
+          <img class="h3cm" src="resources/images/string-find_in.jpg" alt="Recherche dans une chaîne">
           <figcaption>Recherche dans une chaîne</figcaption>
         </figure>
 
@@ -254,7 +254,7 @@ car = chr(num) # car = "@"</code></pre>
           dans une <code>chaine</code>, on écrit <code>chaine[:deb] + chaine[fin:]</code>.</p>
 
         <figure>
-          <img src="resources/images/string-erase.png" alt="Effacer une sous-chaîne">
+          <img class="h2cm" src="resources/images/string-erase.png" alt="Effacer une sous-chaîne">
           <figcaption>Effacer une sous-chaîne</figcaption>
         </figure>
 
@@ -273,7 +273,7 @@ car = chr(num) # car = "@"</code></pre>
         </ul>
 
         <figure>
-          <img src="resources/images/string-case.png" alt="Modifier la casse d'une chaîne">
+          <img class="h5cm" src="resources/images/string-case.png" alt="Modifier la casse d'une chaîne">
           <figcaption>Modifier la casse d'une chaîne</figcaption>
         </figure>
 
@@ -285,8 +285,8 @@ car = chr(num) # car = "@"</code></pre>
           <strong>entier</strong> ou un <strong>réel</strong> en une <strong>chaîne de caractères</strong>.
         </p>
 
-        <figure>))
-          <img src="resources/images/string-cast.png" alt="Conversions d'une chaîne">
+        <figure>
+          <img class="h2cm" src="resources/images/string-cast.png" alt="Conversions d'une chaîne">
           <figcaption>Conversions d'une chaîne</figcaption>
         </figure>
 
@@ -420,6 +420,70 @@ car = chr(num) # car = "@"</code></pre>
           </tbody>
         </table>
 
+        <h4>Tables de vérité</h4>
+        <div class="row">
+          <div class="col-sm-6">
+            <h5>Opérateur unaire</h5>
+            <table class="table table-sm table-striped table-hover">
+              <thead>
+                <tr>
+                  <th>a</th>
+                  <th>not a</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="text-danger">False</span></td>
+                  <td><span class="text-success">True</span></td>
+                </tr>
+                <tr>
+                  <td><span class="text-success">True</span></td>
+                  <td><span class="text-danger">False</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="col-sm-6">
+            <h5>Opérateurs binaires</h5>
+            <table class="table table-sm table-striped table-hover">
+              <thead>
+                <tr>
+                  <th>a</th>
+                  <th>b</th>
+                  <th>a and b</th>
+                  <th>a or b</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="text-danger">False</span></td>
+                  <td><span class="text-danger">False</span></td>
+                  <td><span class="text-danger">False</span></td>
+                  <td><span class="text-danger">False</span></td>
+                </tr>
+                <tr>
+                  <td><span class="text-success">True</span></td>
+                  <td><span class="text-danger">False</span></td>
+                  <td><span class="text-danger">False</span></td>
+                  <td><span class="text-success">True</span></td>
+                </tr>
+                <tr>
+                  <td><span class="text-danger">False</span></td>
+                  <td><span class="text-success">True</span></td>
+                  <td><span class="text-danger">False</span></td>
+                  <td><span class="text-success">True</span></td>
+                </tr>
+                <tr>
+                  <td><span class="text-success">True</span></td>
+                  <td><span class="text-success">True</span></td>
+                  <td><span class="text-success">True</span></td>
+                  <td><span class="text-success">True</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
         <h4>Priorité des opérateurs</h4>
         <p>Les opérateurs logiques sont ordonnés dans le tableau précédent selon leurs <strong>priorités</strong>
           respectives.</p>
@@ -429,6 +493,94 @@ car = chr(num) # car = "@"</code></pre>
         <p>Exemple, l'expression <code>not a or b and c</code> est évaluée comme suit <code>(not a) or (b and c)</code>.
           Si on veut écrire <code>not ((a or b) and c)</code> ou <code>(not (a or b)) and c</code> , il faudra utiliser
           impérativement les parenthèses.</p>
+
+        <table class="table table-sm table-striped table-hover">
+          <thead>
+            <tr>
+              <th>a</th>
+              <th>b</th>
+              <th>c</th>
+              <th>not a or b and c</th>
+              <th>(not a) or (b and c)</th>
+              <th>not ((a or b) and c)</th>
+              <th>(not (a or b)) and c</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="text-danger">False</span></td>
+              <td><span class="text-danger">False</span></td>
+              <td><span class="text-danger">False</span></td>
+              <td><span class="text-success">True</span></td>
+              <td><span class="text-success">True</span></td>
+              <td><span class="text-success">True</span></td>
+              <td><span class="text-danger">False</span></td>
+            </tr>
+            <tr>
+              <td><span class="text-danger">False</span></td>
+              <td><span class="text-danger">False</span></td>
+              <td><span class="text-success">True</span></td>
+              <td><span class="text-success">True</span></td>
+              <td><span class="text-success">True</span></td>
+              <td><span class="text-success">True</span></td>
+              <td><span class="text-success">True</span></td>
+            </tr>
+            <tr>
+              <td><span class="text-danger">False</span></td>
+              <td><span class="text-success">True</span></td>
+              <td><span class="text-danger">False</span></td>
+              <td><span class="text-success">True</span></td>
+              <td><span class="text-success">True</span></td>
+              <td><span class="text-success">True</span></td>
+              <td><span class="text-danger">False</span></td>
+            </tr>
+            <tr>
+              <td><span class="text-danger">False</span></td>
+              <td><span class="text-success">True</span></td>
+              <td><span class="text-success">True</span></td>
+              <td><span class="text-success">True</span></td>
+              <td><span class="text-success">True</span></td>
+              <td><span class="text-danger">False</span></td>
+              <td><span class="text-danger">False</span></td>
+            </tr>
+            <tr>
+              <td><span class="text-success">True</span></td>
+              <td><span class="text-danger">False</span></td>
+              <td><span class="text-danger">False</span></td>
+              <td><span class="text-danger">False</span></td>
+              <td><span class="text-danger">False</span></td>
+              <td><span class="text-success">True</span></td>
+              <td><span class="text-danger">False</span></td>
+            </tr>
+            <tr>
+              <td><span class="text-success">True</span></td>
+              <td><span class="text-danger">False</span></td>
+              <td><span class="text-success">True</span></td>
+              <td><span class="text-danger">False</span></td>
+              <td><span class="text-danger">False</span></td>
+              <td><span class="text-danger">False</span></td>
+              <td><span class="text-danger">False</span></td>
+            </tr>
+            <tr>
+              <td><span class="text-success">True</span></td>
+              <td><span class="text-success">True</span></td>
+              <td><span class="text-danger">False</span></td>
+              <td><span class="text-danger">False</span></td>
+              <td><span class="text-danger">False</span></td>
+              <td><span class="text-success">True</span></td>
+              <td><span class="text-danger">False</span></td>
+            </tr>
+            <tr>
+              <td><span class="text-success">True</span></td>
+              <td><span class="text-success">True</span></td>
+              <td><span class="text-success">True</span></td>
+              <td><span class="text-success">True</span></td>
+              <td><span class="text-success">True</span></td>
+              <td><span class="text-danger">False</span></td>
+              <td><span class="text-danger">False</span></td>
+            </tr>
+          </tbody>
+        </table>
 
         <h4>Comparaison des variables de type de numérique</h4>
 
