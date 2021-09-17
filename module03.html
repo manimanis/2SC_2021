@@ -95,20 +95,21 @@ print("Code :", ord(car))</code></pre>
 # n = int(input("Donner un nombre > 0 ? "))
 
 # Todo 2 : à supprimer
-n = 76
+n = 90625
 
 # Todo 3 : calculer le carré de n
-nc = 5776
+nc = 8212890625
 
 # Todo 4 : convertir n et nc en chaînes de caractères
-nch = "76"
-ncch = "5776"
+nch = "90625"
+ncch = "8212890625"
 
-# Todo 5 : trouver la longueur de nch
-l = 2
+# Todo 5 : trouver la longueur de nch et de ncch
+l1 = 5
+l2 = 10
 
-# Todo 6 : utiliser l pour retrouver les l derniers caractères de ncch
-dcar = "76"
+# Todo 6 : utiliser l1 et l2 pour retrouver les l1 derniers caractères de ncch
+dcar = "90625"
 
 # Todo 7 : déterminer si n est automorphe
 automorphe = True
@@ -117,15 +118,47 @@ print(n, "est automorphe ?", automorphe)</code></pre>
 
         <p>On demande de :</p>
         <ol>
-          <li>Calculer le carré de <code>n</code>, todo 3, puis afficher la valeur de <code>nc</code>.
+          <li>Déterminer, d'après <strong>la définition d'un nombre automorphe</strong>, quels sont les nombres
+            automorphes dans la liste suivante :
+            <ul>
+              <li>376</li>
+              <li>9376</li>
+              <li>17</li>
+              <li>125</li>
+            </ul>
+          </li>
+          <li>Calculer le carré de <code>n</code>, <strong>Todo 3</strong>, puis afficher la valeur de <code>nc</code>.
             <pre><code class="language-python">print(n, "^ 2 =", nc)</code></pre>
           </li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
+          <li>Convertir <code>n</code> et <code>nc</code> en chaînes, <strong>Todo 4</strong>, et afficher leurs types.
+            <pre><code class="language-python">print(nch, "est de type", type(nch))
+print(ncch, "est de type", type(ncch))</code></pre>
+          </li>
+          <li>Trouver les longueurs de <code>nch</code> et de <code>ncch</code>, <strong>Todo 5</strong>, puis afficher
+            le nombre de chiffres de <code>n</code> et de <code>nc</code>.
+            <pre><code class="language-python">print(n, "contient", l1, "chiffres")
+print(nc, "contient", l2, "chiffres")</code></pre>
+          </li>
+          <li>Afficher le dernier chiffre de <code>ncch</code>.
+            <pre><code class="language-python">print("Le dernier chiffre de", ncch, "est", "???") # remplacer "???" par le code adéquat</code></pre>
+          </li>
+          <li>Afficher les deux derniers chiffres de <code>ncch</code>.
+            <pre><code class="language-python">print("Les deux derniers chiffres de", ncch, "sont", "???") # remplacer "???" par le code adéquat</code></pre>
+          </li>
+          <li>Retrouver les <code>l1</code> derniers chiffres de <code>ncch</code>, <strong>Todo 6</strong>.
+            <pre><code class="language-python">print("Les", l1, "derniers chiffres de", ncch, "sont", "???") # remplacer "???" par le code adéquat</code></pre>
+          </li>
+          <li>Afficher le premier chiffre de <code>nch</code> ?
+            <pre><code class="language-python">print("Le premier chiffre de", ncch, "est", "???") # remplacer "???" par le code adéquat</code></pre>
+          </li>
+          <li>Afficher les deux premiers chiffres de <code>nch</code> ?
+            <pre><code class="language-python">print("Les deux premiers chiffres de", ncch, "est", "???") # remplacer "???" par le code adéquat</code></pre>
+          </li>
+          <li>Tester si le nombre <strong>7</strong> est automorphe ? Qu'affiche le programme ?</li>
+          <li>Tester si le nombre <strong>36</strong> est automorphe ? Qu'affiche le programme ? Quel est le problème ?
+          </li>
+          <li>Répondre à <strong>Todo 7</strong>.</li>
+          <li>Compléter le programme <strong>Todo 2</strong>, puis <strong>Todo 1</strong>.</li>
         </ol>
       </section>
 

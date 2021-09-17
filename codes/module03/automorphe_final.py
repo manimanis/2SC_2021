@@ -5,11 +5,16 @@ print(n, "^ 2 =", nc)
 
 nch = str(n)
 ncch = str(nc)
+print(nch, "est de type", type(nch))
+print(ncch, "est de type", type(ncch))
 
-l = len(nch)
+l1 = len(nch)
+l2 = len(ncch)
+print(n, "contient", l1, "chiffres")
+print(nc, "contient", l2, "chiffres")
 
-dcar = ncch[-l:]
+dcar = ncch[l2-l1:]
 
-automorphe = nch = dcar
+automorphe = nch == dcar
 
 print(n, "est automorphe ?", automorphe)
