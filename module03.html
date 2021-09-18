@@ -760,6 +760,248 @@ print("Nombre de bonbons mangés par la mère :", nbmm)</code></pre>
               1</strong>.</li>
         </ol>
       </section>
+
+      <section>
+        <h3>Résistance équivalente</h3>
+
+        <figure>
+          <img class="h2cm" src="resources/images/resistances-paralleles.png" alt="Résistances en parallèle">
+          <img class="h2cm" src="resources/images/resistance-equivalente.png" alt="Résistance équivalente">
+          <figcaption>Résistance équivalente de deux résistances montés en parallèle</figcaption>
+        </figure>
+
+        <p>Youssef est un électronicien amateur il prend des cours d'électronique en ligne. Aujourd'hui son cours porte
+          sur le montage de deux résistances en parallèle.</p>
+
+        <p class="p-break">Afin de simplifier le calcul de la résistance équivalente il a écrit le programme Python
+          suivant :</p>
+
+        <pre><code class="language-python"># Todo 1 : Saisir la valeur des résistances
+r1 = 100
+r2 = 100
+
+# Todo 2 : Calculer la résistance équivalente
+req = 50
+
+print("R1 =", r1, "Ω")
+print("R2 =", r2, "Ω")
+
+# Todo 3 : Afficher Req avec seulement 2 décimales
+print("Req =", req, "Ω")</code></pre>
+
+        <p>Bien que le programme précédent permet de calculer correctement la résistance équivalente de deux résistances
+          de 100Ω chacune, il reste inachecvé et on veut :</p>
+        <ol>
+          <li>Calculer la résistance équivalente de deux résistances dans les cas suivants :
+            <div class="row justify-content-center">
+              <table class="table table-sm table-striped table-hover w-50">
+                <thead>
+                  <tr>
+                    <th>r1 (Ω)</th>
+                    <th>r2 (Ω)</th>
+                    <th>R<sub>eq</sub> (Ω)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>0.1</td>
+                    <td>0.2</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>470</td>
+                    <td>220</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>1000</td>
+                    <td>22000</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>4700</td>
+                    <td>10000</td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </li>
+          <li>Dresser le <abbr title="tableau de déclaration des objets">TDO</abbr> du programme.
+            <div class="row justify-content-center">
+              <table class="table table-sm table-striped table-hover w-25">
+                <thead>
+                  <tr>
+                    <th>Objet</th>
+                    <th>Type</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>r1</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>r2</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>req</td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </li>
+          <li>Permettre à l'utilisateur de saisir les valeurs des résistances par lui même, Todo 1.</li>
+          <li>Calculer la résistance équivalente <code>req</code> en fonction de <code>r1</code> et de <code>r2</code>,
+            Todo 2.
+            <pre><code class="language-python">req = r1 * r2 / r1 + r2</code></pre>
+          </li>
+          <li>Tester le programme avec les valeurs du tableau précédent. Est-ce que le programme donne des valeurs
+            correctes ? Pourquoi ?</li>
+          <li>Tester le programme avec les valeurs <code>r1 = 100</code> et <code>r2 = 200</code>. Le programme doit
+            retourner la valeur <code>Req = 66.66666666666667 Ω</code>. Limiter le nombre de déciamles à 2, Todo 3.</li>
+        </ol>
+      </section>
+
+      <section class="p-break">
+        <h3>Logic gates</h3>
+
+        <figure>
+          <img src="resources/images/logic-gates.png" alt="Portes logiques">
+          <figcaption>Portes logiques</figcaption>
+        </figure>
+
+        <ol>
+          <li>Soit le circuit logique ci-dessus, on demande d'écrire l'équation logique de la lampe <code>L</code> en
+            fonction des entrées logiques <code>a</code>, <code>b</code> et <code>c</code>.</li>
+          <li>Dresser le tableau de vérité de ce circuit. Puis, remplir la colonne L.
+            <div class="row justify-content-center">
+              <table class="table table-sm table-striped table-hover w-50">
+                <thead>
+                  <tr>
+                    <th>a</th>
+                    <th>b</th>
+                    <th>c</th>
+                    <th>L</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="text-danger">False</span></td>
+                    <td><span class="text-danger">False</span></td>
+                    <td><span class="text-danger">False</span></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><span class="text-danger">False</span></td>
+                    <td><span class="text-danger">False</span></td>
+                    <td><span class="text-success">True</span></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><span class="text-danger">False</span></td>
+                    <td><span class="text-success">True</span></td>
+                    <td><span class="text-danger">False</span></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><span class="text-danger">False</span></td>
+                    <td><span class="text-success">True</span></td>
+                    <td><span class="text-success">True</span></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><span class="text-success">True</span></td>
+                    <td><span class="text-danger">False</span></td>
+                    <td><span class="text-danger">False</span></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><span class="text-success">True</span></td>
+                    <td><span class="text-danger">False</span></td>
+                    <td><span class="text-success">True</span></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><span class="text-success">True</span></td>
+                    <td><span class="text-success">True</span></td>
+                    <td><span class="text-danger">False</span></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><span class="text-success">True</span></td>
+                    <td><span class="text-success">True</span></td>
+                    <td><span class="text-success">True</span></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </li>
+          <li>On donne le programme incomplet suivant qui permet de simuler ce circuit :
+            <pre><code class="language-python"># Todo 1 : Accepter la saisie de l'utilisateur
+a = False
+b = False
+c = False
+
+# Todo 2 : Equation logique de L
+L = False
+
+# Résultat
+print(a, ",", b, ",", c, "=>", L)</code></pre>
+            Tester le programme.
+          </li>
+          <li class="p-break">Dresser le <abbr title="tableau de déclaration des objets">TDO</abbr> du programme.
+            <div class="row justify-content-center">
+              <table class="table table-sm table-striped table-hover w-25">
+                <thead>
+                  <tr>
+                    <th>Objet</th>
+                    <th>Type</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>a</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>b</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>c</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>L</td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </li>
+          <li>Quel est le résultat de l'expression suivante si l'utilisateur saisit :
+            <pre><code class="language-python">print(input("Êtes-vous d'accord O/N ? ") == "O")</code></pre>
+            <ul>
+              <li>"O"</li>
+              <li>"o"</li>
+              <li>"x"</li>
+            </ul>
+          </li>
+          <li>Changer l'expression précédent pour qu'elle retourne <code>True</code> dans le cas où l'utilisateur saisit
+            la lettre "O" indépendamment de sa casse (Majuscule ou minuscule).</li>
+          <li>On suppose que les lettres <strong>"t"</strong> ou <strong>"T"</strong> signifient la valeur
+            <strong>True</strong>, que les lettres <strong>"f"</strong> ou <strong>"F"</strong> signifient la valeur
+            <strong>False</strong>. Et, on demande de compléter <strong>Todo 1</strong>.
+          </li>
+          <li>Ecrire l'équation logique du circuit en utilisant les opérateurs logiques de Python, <strong>Todo
+              2</strong>.</li>
+          <li>Tester le bon fonctionnement du programme.</li>
+        </ol>
+      </section>
     </article>
 
     <article class="p-break">
@@ -771,7 +1013,7 @@ print("Nombre de bonbons mangés par la mère :", nbmm)</code></pre>
         <p>Un caractère peut-être :</p>
         <ul>
           <li>Une lettre alphabétique majuscule : "A", "B", ..., "Z"</li>
-          <li>Une lettre alphabétique miniscule : "a", "b", ..., "z"</li>
+          <li>Une lettre alphabétique minuscule : "a", "b", ..., "z"</li>
           <li>Un chiffre : "0", "1", ..., "9"</li>
           <li>Un symbole : " ", "!", "\"", "#", etc.</li>
         </ul>
@@ -896,8 +1138,8 @@ car = chr(num) # car = "@"</code></pre>
           <li><code>chaine.upper()</code> : <span style="text-transform: uppercase;">Convertit toute une chaine en
               majuscules</span>.</li>
           <li><code>chaine.lower()</code> : <span style="text-transform: lowercase;">Convertit toute une chaine en
-              miniscules</span>.</li>
-          <li><code>chaine.capitalize()</code> : Met la première lettre en majuscule et les toutes autres en miniscules.
+              minuscules</span>.</li>
+          <li><code>chaine.capitalize()</code> : Met la première lettre en majuscule et les toutes autres en minuscules.
           </li>
           <li><code>chaine.title()</code> : <span style="text-transform: capitalize;">Convertit la première lettre de
               chaque mot en majuscules</span>.</li>
