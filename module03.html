@@ -96,7 +96,7 @@ print("Code :", ord(car))</code></pre>
         <p>On demande d'écrire un programme qui teste si un nombre est automorphe. On donne, pour celà, le programme
           incomplet suivant :</p>
 
-        <pre><code class="language-python"># Todo 1 : Enlever le commentaire # de la ligne suivante
+        <pre class="d-print-none"><code class="language-python"># Todo 1 : Enlever le commentaire # de la ligne suivante
 # n = int(input("Donner un nombre > 0 ? "))
 
 # Todo 2 : à supprimer
@@ -119,6 +119,24 @@ dcar = "90625"
 # Todo 7 : déterminer si n est automorphe
 automorphe = True
 
+print(n, "est automorphe ?", automorphe)</code></pre>
+
+        <pre class="d-none d-print-block"><code class="language-python"># Todo 1 : Enlever le commentaire # de la ligne suivante
+# n = int(input("Donner un nombre > 0 ? "))
+# Todo 2 : à supprimer
+n = 90625
+# Todo 3 : calculer le carré de n
+nc = 8212890625
+# Todo 4 : convertir n et nc en chaînes de caractères
+nch = "90625"
+ncch = "8212890625"
+# Todo 5 : trouver la longueur de nch et de ncch
+l1 = 5
+l2 = 10
+# Todo 6 : utiliser l1 et l2 pour retrouver les l1 derniers caractères de ncch
+dcar = "90625"
+# Todo 7 : déterminer si n est automorphe
+automorphe = True
 print(n, "est automorphe ?", automorphe)</code></pre>
 
         <p>On demande de :</p>
@@ -167,7 +185,7 @@ print(nc, "contient", l2, "chiffres")</code></pre>
         </ol>
       </section>
 
-      <section>
+      <section class="p-break">
         <h3>Le plus âgé</h3>
 
         <figure class="d-print-none">
@@ -325,7 +343,7 @@ print("Âge de " + nom + " ? ")</code></pre>
         <p>Voulant montrer ses nouveaux acquis en programmation Python, Ahmed a écris le programme suivant. Dans ce qui
           suit on doit l'aider à corriger son paragrpahe sans modifier directement le texte qui est déjà rédigé.</p>
 
-        <pre><code class="language-python">titre = "Les bienfaits de la pomme de terre"
+        <pre class="d-print-none"><code class="language-python">titre = "Les bienfaits de la pomme de terre"
 par1 = """La pomme de terre est un fruit qui apporte une grande satiété, 
 se transporte facilement et peut se consommer partout."""
 par2 = """La pomme de terre est particulièrement intéressante : 
@@ -343,7 +361,7 @@ par2 = """La pomme de terre est particulièrement intéressante :
 
 # Todo 5 : Insérer le mot "succulent" dans par1
 
-# Todo 6 : Insérer l'expression "pour les sportifs"
+# Todo 6 : Insérer l'expression "pour les sportifs" dans par2
 
 print(titre)
 print()
@@ -351,11 +369,400 @@ print(par1)
 print()
 print(par2)
 </code></pre>
+
+        <pre class="d-none d-print-block"><code class="language-python">titre = "Les bienfaits de la pomme de terre"
+par1 = """La pomme de terre est un fruit qui apporte une grande satiété, 
+se transporte facilement et peut se consommer partout."""
+par2 = """La pomme de terre est particulièrement intéressante : 
+- avant l'effort elle apporte de l'énergie, 
+- pendant l'effort, elle apporte des minéraux des minéraux et des vitamines qui rechargent l'organisme 
+- et après l'effort, elle réhydrate !"""
+
+# Todo 1 : supprimer l'expression " de terre" du titre
+# Todo 2 : supprimer l'expression " de terre" du par1
+# Todo 3 : supprimer l'expression " de terre" du par2
+# Todo 4 : supprimer l'expression " des minéraux" du par2
+# Todo 5 : Insérer le mot "succulent" dans par1
+# Todo 6 : Insérer l'expression "pour les sportifs" dans par2
+
+print(titre)
+print()
+print(par1)
+print()
+print(par2)
+</code></pre>
+
+        <p>On demande de :</p>
+        <ol>
+          <li>Calculer et d'afficher la longueur des trois chaînes <code>titre</code>, <code>par1</code> et
+            <code>par2</code>.
+            <pre><code class="language-python">ltit = len(titre)
+print("Le titre contient " + ltit + " caractères") # Corriger l'erreur</code></pre>
+          </li>
+          <li>Afficher le premier caractère du premier mot de <code>titre</code>. Afficher le premier caractère du
+            troisième mot du <code>titre</code>.
+            <br>Utiliser l'indexation positive, puis l'indexation négative.
+            <pre class="p-break"><code class="language-python"># Utiliser l'indexation positive
+print("Le 1er caractère du titre est :")
+print("Le 1er caractère du 3ème mot du titre est :")
+
+# Utiliser l'indexation négative
+print("Le 1er caractère du titre est :")
+print("Le 1er caractère du 3ème mot du titre est :")</code></pre>
+          </li>
+          <li>Afficher le deuxième mot du <code>titre</code> en utilisant l'indexation positive et puis l'indexation
+            négative.
+            <pre><code class="language-python"># Utiliser l'indexation positive
+print("Le 2ème mot du titre est :")
+
+# Utiliser l'indexation négative
+print("Le 2ème mot du titre est :")</code></pre>
+          </li>
+          <li>Afficher si le <code>titre</code> contient le mot <strong>"apporte"</strong>, faire de même pour
+            <code>par1</code> et <code>par2</code>.
+            <pre><code class="language-python">mot = "apporte"
+ex_titre = True # à compléter
+ex_par1 = True # à compléter
+ex_par2 = False # à compléter
+print("Le mot", mot, "existe dans le titre :", ex_titre)
+print("Le mot", mot, "existe dans le 1er paragrpahe :", ex_par1)
+print("Le mot", mot, "existe dans le 2ème paragraphe :", ex_par2)</code></pre>
+          </li>
+          <li>Trouver et afficher la position du mot <strong>"pomme"</strong> dans chacune des variables
+            <code>titre</code>, <code>par1</code> et <code>par2</code>.
+            <pre><code class="language-python">mot = "pomme"
+p_tit = -1 # à compléter
+p_p1 = -1 # à compléter
+p_p2 = -1 # à compléter
+print("Le mot", mot, "est à la position", p_tit, "dans le titre")
+print("Le mot", mot, "est à la position", p_p1, "dans le 1er paragraphe")
+print("Le mot", mot, "est à la position", p_p2, "dans le 2nd paragraphe")</code></pre>
+          </li>
+          <li>Trouver la position du mot <strong>" de terre"</strong>, la longueur de ce mot et puis le supprimer des
+            trois variables : Todo 1, Todo 2, Todo 3 et Todo 4.
+            <pre><code class="language-python">mot = " de terre"
+l_mot = 0 # à compléter
+# Todo 1 : supprimer l'expression " de terre" du titre
+p_mot = -1 # à compléter
+titre = titre # à compléter</code></pre>
+          </li>
+          <li>Aider Ahmed à ajouter le mot <strong>"succulent"</strong> : Todo 5.
+            <ul>
+              <li>Quel est le mot qui le précède dans le titre ?</li>
+              <li>Chercher la position de ce mot (le mot qui vient tout juste avant le mot "succulent") dans le
+                <code>par1</code>.
+              </li>
+              <li>Ajouter ce mot dans <code>par1</code>.</li>
+            </ul>
+          </li>
+          <li>Répondre à Todo 6.</li>
+        </ol>
       </section>
 
+      <section class="p-break">
+        <h3>Le Halloween & les Bonbons</h3>
+
+        <figure class="d-print-none">
+          <img src="resources/images/halloween-deguisement.jpg" alt="Déguisement Halloween">
+          <img src="resources/images/halloween.jpg" alt="Halloween & Bonbons">
+          <figcaption>Déguisement et Bonbons pour Halloween</figcaption>
+        </figure>
+
+        <p>A l'occasion du Halloween, Samer et ses deux soeurs aînées Sarra at Samar se déguisent pour le Halloween. Le
+          soir, ils visitent les maisons du quartier tout en chantant. Les voisins, très reconnaissants pour le geste,
+          remplissent leur citrouille de bonbons et de friandises.</p>
+        <p>&Agrave; la fin du soirée, les trois enfants à la maison, partagent leur butin. Chaque enfant doit avoir le
+          même nombre de bonbons.</p>
+        <p>Le reste est partagé entre la mère et le père.</p>
+        <ul>
+          <li>S'il reste un bonbon, il sera mangé par le père.</li>
+          <li>S'il reste deux bonbons, l'un sera mangé par le père et l'autre par la mère.</li>
+          <li>S'il en reste trois, deux mangés par le père et un seul par la mère.</li>
+        </ul>
+        <p>Pour une distrubtion équitable des friandises leur père a écrit le programme suivant :</p>
+
+        <pre><code class="language-python">nb = 15 # Todo 1 : Nombre total de bonbons
+nbe = 3 # Todo 2 : Nombre d'enfants
+
+nbpe = 5 # Todo 2 : Nombre de bonbons par enfant
+nbr = 0 # Todo 3 : Nombre de bonbons restants
+
+pmb = False # Todo 4 : Le père mange un bonbon ?
+mmb = False # Todo 5 : La mère mange un bonbon ?
+
+nbmp = 0 # Todo 6 : Nombre de bonbons mangé par le père
+nbmm = 0 # Todo 7 : Nombre de bonbons mangé par la mère
+
+print("Nbre de bonbons par enfant :", nbpe)
+print("Nbre de bonbons restants :", nbr)
+print("Le père mange des bonbons ?", pmb)
+print("La mère mange des bonbons ?", mmb)
+print("Nombre de bonbons mangés par le père :", nbmp)
+print("Nombre de bonbons mangés par la mère :", nbmm)</code></pre>
+
+        <p>On demande de :</p>
+        <ol>
+          <li>Dresser le <abbr title="tableau de déclaration des objets">TDO</abbr> du programme.
+            <div class="row justify-content-center">
+              <table class="table table-sm table-striped table-hover w-25">
+                <thead>
+                  <tr>
+                    <th>Objet</th>
+                    <th>Type</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>nb</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>nbe</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>nbpe</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>nbr</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>pmb</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>mmb</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>nbmp</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>nbmm</td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </li>
+          <li class="p-break">Dresser le tableau suivant, remarquer que le nombre d'enfants est maintenant 4 au lieu de
+            3 :
+            <div class="row justify-content-center">
+              <table class="table table-sm table-striped table-hover">
+                <thead>
+                  <tr>
+                    <th style="vertical-align: top; width: 12.5%;">nb<br><small
+                        class="text-muted d-print-none"><i>Nombre de bonbons</i></small></th>
+                    <th style="vertical-align: top; width: 12.5%;">nbe<br><small
+                        class="text-muted d-print-none"><i>Nombre d'enfants</i></small></th>
+                    <th style="vertical-align: top; width: 12.5%;">nbpe<br><small
+                        class="text-muted d-print-none"><i>Nombre de bonbons par enfant</i></small></th>
+                    <th style="vertical-align: top; width: 12.5%;">nbr<br><small
+                        class="text-muted d-print-none"><i>Nombre de bonbons restants</i></small></th>
+                    <th style="vertical-align: top; width: 12.5%;">pmb<br><small class="text-muted d-print-none"><i>Père
+                          mange bonbons</i></small></th>
+                    <th style="vertical-align: top; width: 12.5%;">mmb<br><small class="text-muted d-print-none"><i>Mère
+                          mange bonbons</i></small></th>
+                    <th style="vertical-align: top; width: 12.5%;">nbmp<br><small
+                        class="text-muted d-print-none"><i>Bonbons pour le père</i></small></th>
+                    <th style="vertical-align: top; width: 12.5%;">nbmm<br><small
+                        class="text-muted d-print-none"><i>Bonbons pour la mère</i></small></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>20</td>
+                    <td>3</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>21</td>
+                    <td>3</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>22</td>
+                    <td>3</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>23</td>
+                    <td>3</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>24</td>
+                    <td>3</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>25</td>
+                    <td>3</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </li>
+          <li>Calculer, dans le tableau précédent, le nombre de bonbons par enfants <code>nbpe</code>, puis le nombre de
+            bonbons restants <code>nbr</code>. Quel est le nombre maximal de bonbons restants ?</li>
+          <li>Dresser le tableau suivant :
+            <div class="row justify-content-center">
+              <table class="table table-sm table-striped table-hover">
+                <thead>
+                  <tr>
+                    <th style="vertical-align: top; width: 12.5%;">nb<br><small
+                        class="text-muted d-print-none"><i>Nombre de
+                          bonbons</i></small></th>
+                    <th style="vertical-align: top; width: 12.5%;">nbe<br><small
+                        class="text-muted d-print-none"><i>Nombre
+                          d'enfants</i></small></th>
+                    <th style="vertical-align: top; width: 12.5%;">nbpe<br><small
+                        class="text-muted d-print-none"><i>Nombre de
+                          bonbons par enfant</i></small></th>
+                    <th style="vertical-align: top; width: 12.5%;">nbr<br><small
+                        class="text-muted d-print-none"><i>Nombre de bonbons
+                          restants</i></small></th>
+                    <th style="vertical-align: top; width: 12.5%;">pmb<br><small class="text-muted d-print-none"><i>Père
+                          mange
+                          bonbons</i></small></th>
+                    <th style="vertical-align: top; width: 12.5%;">mmb<br><small class="text-muted d-print-none"><i>Mère
+                          mange
+                          bonbons</i></small></th>
+                    <th style="vertical-align: top; width: 12.5%;">nbmp<br><small
+                        class="text-muted d-print-none"><i>Bonbons pour le
+                          père</i></small></th>
+                    <th style="vertical-align: top; width: 12.5%;">nbmm<br><small
+                        class="text-muted d-print-none"><i>Bonbons pour la
+                          mère</i></small></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>20</td>
+                    <td>4</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>21</td>
+                    <td>4</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>22</td>
+                    <td>4</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>23</td>
+                    <td>4</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>24</td>
+                    <td>4</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>25</td>
+                    <td>4</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </li>
+          <li>Refaire les calculs de la question n°3 pour les colonnes <code>nbpe</code> et <code>nbr</code>.</li>
+          <li>Trouver le nombre de bonbons <code>nb</code> qu'il faut collecter pour obtenir un reste égal à 5 lorsque
+            le nombre d'enfants <code>nbe</code> est égal à 2.</li>
+          <li>Remplir les colonnes <code>pmb</code> (Le père mange des bonbons) et <code>mmb</code> (La mère mange des
+            bonbons) du tableau en fonction de <code>nbr</code> (nombre de bonbons restants).</li>
+          <li>Remplir les colonnes <code>nbmp</code> (Bonbons pour père) et <code>nbmm</code> (Bonbons pour mère) du
+            tableau en fonction de <code>nbr</code> (nombre de bonbons restants).</li>
+          <li>Trouver l'expression en Python, <strong>Todo 2</strong>, qui permet de calculer le nombre de bonbons par
+            enfant.</li>
+          <li>Trouver l'expression en Python, <strong>Todo 3</strong>, qui permet de calculer le nombre de bonbons
+            restants.</li>
+          <li>Trouver l'expression en Python, <strong>Todo 4</strong>, qui permet de déterminer s'il reste des bonbons
+            pour le père ou
+            non.</li>
+          <li>Trouver l'expression en Python, <strong>Todo 5</strong>, qui permet de déterminer s'il reste des bonbons
+            pour le mère ou
+            non.</li>
+          <li>Trouver l'expression en Python, <strong>Todo 6</strong>, qui permet de calculer le nombre de bonbons pour
+            le père.</li>
+          <li>Trouver l'expression en Python, <strong>Todo 7</strong>, qui permet de calculer le nombre de bonbons pour
+            la mère.</li>
+          <li>Saisir le nombre total de bonbons <code>nb</code> et le nombre d'enfants <code>nbe</code>, <strong>Todo
+              1</strong>.</li>
+        </ol>
+      </section>
     </article>
 
-    <article>
+    <article class="p-break">
       <h2>Résumé</h2>
 
       <section>
@@ -409,7 +816,7 @@ car = chr(num) # car = "@"</code></pre>
         </table>
       </section>
 
-      <section>
+      <section class="p-break">
         <h3>Type chaîne de caractères</h3>
 
         <p>Une chaîne de caractères est formée par un ensemble de caractères.</p>
@@ -470,7 +877,7 @@ car = chr(num) # car = "@"</code></pre>
           <figcaption>Recherche dans une chaîne</figcaption>
         </figure>
 
-        <h4>Effacer une sous-chaîne</h4>
+        <h4 class="p-break">Effacer une sous-chaîne</h4>
         <p>Il n'existe pas une instruction Python pour <strong>effacer une partie d'une chaîne</strong>. Cependant, il
           est possible d'utiliser une concaténation de sous-chaines.</p>
 
@@ -520,7 +927,7 @@ car = chr(num) # car = "@"</code></pre>
         </p>
       </section>
 
-      <section>
+      <section class="p-break">
         <h3>Type entier</h3>
 
         <p>Le type entier couvre une partie de l'ensemble des entiers relatifs &Zopf;, c'est à dire l'ensembles des
@@ -577,78 +984,85 @@ car = chr(num) # car = "@"</code></pre>
         <p>On utilise les <strong>opérateurs de comparaison</strong> pour comparer des valeurs de mêmes types ou de
           types compatibles :</p>
 
-        <table class="table table-sm table-striped table-hover">
-          <thead>
-            <tr>
-              <th>Opérateur</th>
-              <th>Description</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>&lt;</td>
-              <td>Inférieur</td>
-            </tr>
-            <tr>
-              <td>&lt;=</td>
-              <td>Inférieur ou égal</td>
-            </tr>
-            <tr>
-              <td>&gt;</td>
-              <td>Supérieur</td>
-            </tr>
-            <tr>
-              <td>&gt;=</td>
-              <td>Supérieur ou égal</td>
-            </tr>
-            <tr>
-              <td>==</td>
-              <td>égal</td>
-            </tr>
-            <tr>
-              <td>!=</td>
-              <td>Différent</td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="row justify-content-center">
+          <table class="table table-sm table-striped table-hover w-50">
+            <thead>
+              <tr>
+                <th>Opérateur</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>&lt;</td>
+                <td>Inférieur</td>
+              </tr>
+              <tr>
+                <td>&lt;=</td>
+                <td>Inférieur ou égal</td>
+              </tr>
+              <tr>
+                <td>&gt;</td>
+                <td>Supérieur</td>
+              </tr>
+              <tr>
+                <td>&gt;=</td>
+                <td>Supérieur ou égal</td>
+              </tr>
+              <tr>
+                <td>==</td>
+                <td>égal</td>
+              </tr>
+              <tr>
+                <td>!=</td>
+                <td>Différent</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
         <p>On utilise les <strong>opérateurs logiques</strong> pour construire des expressions booléennes plus
           sophistiquées.</p>
 
-        <table class="table table-sm table-striped table-hover">
-          <thead>
-            <tr>
-              <th>Opérateur</th>
-              <th>Description</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>not a</td>
-              <td>Négation logique, si <code>a</code> est vraie <code>not a</code> est fausse, sinon <code>not a</code>
-                est vraie.</td>
-            </tr>
-            <tr>
-              <td>a and b</td>
-              <td>Et logique, <code>a and b</code> est vraie uniquement lorsque <code>a</code> est vraie et
-                <code>b</code> est vraie.
-              </td>
-            </tr>
-            <tr>
-              <td>a or b</td>
-              <td>Ou logique, <code>a or b</code> est fausse uniquement lorsque <code>a</code> est fausse et
-                <code>b</code> est fausse, elle est vraie lorsque l'un des <strong>opérandes</strong> <code>a</code> ou
-                <code>b</code> est vrai.
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="row justify-content-center">
+          <table class="table table-sm table-striped table-hover w-75">
+            <thead>
+              <tr>
+                <th>Opérateur</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>not a</td>
+                <td>Négation logique, si <code>a</code> est vraie <code>not a</code> est fausse, sinon
+                  <code>not a</code>
+                  est vraie.
+                </td>
+              </tr>
+              <tr>
+                <td>a and b</td>
+                <td>Et logique, <code>a and b</code> est vraie uniquement lorsque <code>a</code> est vraie et
+                  <code>b</code> est vraie.
+                </td>
+              </tr>
+              <tr>
+                <td>a or b</td>
+                <td>Ou logique, <code>a or b</code> est fausse uniquement lorsque <code>a</code> est fausse et
+                  <code>b</code> est fausse, elle est vraie lorsque l'un des <strong>opérandes</strong> <code>a</code>
+                  ou
+                  <code>b</code> est vrai.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
         <h4>Tables de vérité</h4>
         <div class="row">
           <div class="col-sm-6">
             <h5>Opérateur unaire</h5>
-            <table class="table table-sm table-striped table-hover">
+            <table class="table table-sm table-striped table-hover w-75">
               <thead>
                 <tr>
                   <th>a</th>
@@ -669,7 +1083,7 @@ car = chr(num) # car = "@"</code></pre>
           </div>
           <div class="col-sm-6">
             <h5>Opérateurs binaires</h5>
-            <table class="table table-sm table-striped table-hover">
+            <table class="table table-sm table-striped table-hover w-75">
               <thead>
                 <tr>
                   <th>a</th>
@@ -718,93 +1132,95 @@ car = chr(num) # car = "@"</code></pre>
           Si on veut écrire <code>not ((a or b) and c)</code> ou <code>(not (a or b)) and c</code> , il faudra utiliser
           impérativement les parenthèses.</p>
 
-        <table class="table table-sm table-striped table-hover">
-          <thead>
-            <tr>
-              <th>a</th>
-              <th>b</th>
-              <th>c</th>
-              <th>not a or b and c</th>
-              <th>(not a) or (b and c)</th>
-              <th>not ((a or b) and c)</th>
-              <th>(not (a or b)) and c</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><span class="text-danger">False</span></td>
-              <td><span class="text-danger">False</span></td>
-              <td><span class="text-danger">False</span></td>
-              <td><span class="text-success">True</span></td>
-              <td><span class="text-success">True</span></td>
-              <td><span class="text-success">True</span></td>
-              <td><span class="text-danger">False</span></td>
-            </tr>
-            <tr>
-              <td><span class="text-danger">False</span></td>
-              <td><span class="text-danger">False</span></td>
-              <td><span class="text-success">True</span></td>
-              <td><span class="text-success">True</span></td>
-              <td><span class="text-success">True</span></td>
-              <td><span class="text-success">True</span></td>
-              <td><span class="text-success">True</span></td>
-            </tr>
-            <tr>
-              <td><span class="text-danger">False</span></td>
-              <td><span class="text-success">True</span></td>
-              <td><span class="text-danger">False</span></td>
-              <td><span class="text-success">True</span></td>
-              <td><span class="text-success">True</span></td>
-              <td><span class="text-success">True</span></td>
-              <td><span class="text-danger">False</span></td>
-            </tr>
-            <tr>
-              <td><span class="text-danger">False</span></td>
-              <td><span class="text-success">True</span></td>
-              <td><span class="text-success">True</span></td>
-              <td><span class="text-success">True</span></td>
-              <td><span class="text-success">True</span></td>
-              <td><span class="text-danger">False</span></td>
-              <td><span class="text-danger">False</span></td>
-            </tr>
-            <tr>
-              <td><span class="text-success">True</span></td>
-              <td><span class="text-danger">False</span></td>
-              <td><span class="text-danger">False</span></td>
-              <td><span class="text-danger">False</span></td>
-              <td><span class="text-danger">False</span></td>
-              <td><span class="text-success">True</span></td>
-              <td><span class="text-danger">False</span></td>
-            </tr>
-            <tr>
-              <td><span class="text-success">True</span></td>
-              <td><span class="text-danger">False</span></td>
-              <td><span class="text-success">True</span></td>
-              <td><span class="text-danger">False</span></td>
-              <td><span class="text-danger">False</span></td>
-              <td><span class="text-danger">False</span></td>
-              <td><span class="text-danger">False</span></td>
-            </tr>
-            <tr>
-              <td><span class="text-success">True</span></td>
-              <td><span class="text-success">True</span></td>
-              <td><span class="text-danger">False</span></td>
-              <td><span class="text-danger">False</span></td>
-              <td><span class="text-danger">False</span></td>
-              <td><span class="text-success">True</span></td>
-              <td><span class="text-danger">False</span></td>
-            </tr>
-            <tr>
-              <td><span class="text-success">True</span></td>
-              <td><span class="text-success">True</span></td>
-              <td><span class="text-success">True</span></td>
-              <td><span class="text-success">True</span></td>
-              <td><span class="text-success">True</span></td>
-              <td><span class="text-danger">False</span></td>
-              <td><span class="text-danger">False</span></td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="row justify-content-center">
+          <table class="table table-sm table-striped table-hover" style="width: 90%;">
+            <thead>
+              <tr>
+                <th>a</th>
+                <th>b</th>
+                <th>c</th>
+                <th>not a or b and c</th>
+                <th>(not a) or (b and c)</th>
+                <th>not ((a or b) and c)</th>
+                <th>(not (a or b)) and c</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="text-danger">False</span></td>
+                <td><span class="text-danger">False</span></td>
+                <td><span class="text-danger">False</span></td>
+                <td><span class="text-success">True</span></td>
+                <td><span class="text-success">True</span></td>
+                <td><span class="text-success">True</span></td>
+                <td><span class="text-danger">False</span></td>
+              </tr>
+              <tr>
+                <td><span class="text-danger">False</span></td>
+                <td><span class="text-danger">False</span></td>
+                <td><span class="text-success">True</span></td>
+                <td><span class="text-success">True</span></td>
+                <td><span class="text-success">True</span></td>
+                <td><span class="text-success">True</span></td>
+                <td><span class="text-success">True</span></td>
+              </tr>
+              <tr>
+                <td><span class="text-danger">False</span></td>
+                <td><span class="text-success">True</span></td>
+                <td><span class="text-danger">False</span></td>
+                <td><span class="text-success">True</span></td>
+                <td><span class="text-success">True</span></td>
+                <td><span class="text-success">True</span></td>
+                <td><span class="text-danger">False</span></td>
+              </tr>
+              <tr>
+                <td><span class="text-danger">False</span></td>
+                <td><span class="text-success">True</span></td>
+                <td><span class="text-success">True</span></td>
+                <td><span class="text-success">True</span></td>
+                <td><span class="text-success">True</span></td>
+                <td><span class="text-danger">False</span></td>
+                <td><span class="text-danger">False</span></td>
+              </tr>
+              <tr>
+                <td><span class="text-success">True</span></td>
+                <td><span class="text-danger">False</span></td>
+                <td><span class="text-danger">False</span></td>
+                <td><span class="text-danger">False</span></td>
+                <td><span class="text-danger">False</span></td>
+                <td><span class="text-success">True</span></td>
+                <td><span class="text-danger">False</span></td>
+              </tr>
+              <tr>
+                <td><span class="text-success">True</span></td>
+                <td><span class="text-danger">False</span></td>
+                <td><span class="text-success">True</span></td>
+                <td><span class="text-danger">False</span></td>
+                <td><span class="text-danger">False</span></td>
+                <td><span class="text-danger">False</span></td>
+                <td><span class="text-danger">False</span></td>
+              </tr>
+              <tr>
+                <td><span class="text-success">True</span></td>
+                <td><span class="text-success">True</span></td>
+                <td><span class="text-danger">False</span></td>
+                <td><span class="text-danger">False</span></td>
+                <td><span class="text-danger">False</span></td>
+                <td><span class="text-success">True</span></td>
+                <td><span class="text-danger">False</span></td>
+              </tr>
+              <tr>
+                <td><span class="text-success">True</span></td>
+                <td><span class="text-success">True</span></td>
+                <td><span class="text-success">True</span></td>
+                <td><span class="text-success">True</span></td>
+                <td><span class="text-success">True</span></td>
+                <td><span class="text-danger">False</span></td>
+                <td><span class="text-danger">False</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
         <h4>Comparaison des variables de type de numérique</h4>
 
