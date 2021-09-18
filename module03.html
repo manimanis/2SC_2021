@@ -31,6 +31,11 @@
       <section>
         <h3>Caractères & Codes</h3>
 
+        <figure class="d-print-none">
+          <img src="resources/images/ascii-art.jpg" alt="ASCII Art">
+          <figcaption>ASCII Art</figcaption>
+        </figure>
+
         <p>On donne le programme suivant :</p>
 
         <pre><code class="language-python">num = 69
@@ -81,12 +86,12 @@ print("Code :", ord(car))</code></pre>
         <h3>Nombre automorphe</h3>
 
         <p>Un <strong>nombre automorphe</strong> est un entier naturel dont la suite des chiffres du carré se termine
-          par celle du nombre
-          lui-même. Par exemple, <span class="text-danger">5</span>² = 2<span class="text-danger">5</span>, <span
+          par celle du nombre lui-même. Par exemple, </p>
+        <p class="fs-1 text-center"><span class="text-danger">5</span>² = 2<span class="text-danger">5</span>, <span
             class="text-danger">6</span>² = 3<span class="text-danger">6</span>, <span class="text-danger">25</span>² =
-          6<span class="text-danger">25</span>, <span class="text-danger">76</span>² = 57<span
-            class="text-danger">76</span>, et <span class="text-danger">890625</span>² = 793212<span
-            class="text-danger">890625</span>.</p>
+          6<span class="text-danger">25</span>, <br><span class="text-danger">76</span>² = 57<span
+            class="text-danger">76</span>, <span class="text-danger">890625</span>² = 793212<span
+            class="text-danger">890625</span></p>
 
         <p>On demande d'écrire un programme qui teste si un nombre est automorphe. On donne, pour celà, le programme
           incomplet suivant :</p>
@@ -160,6 +165,192 @@ print(nc, "contient", l2, "chiffres")</code></pre>
           <li>Répondre à <strong>Todo 7</strong>.</li>
           <li>Compléter le programme <strong>Todo 2</strong>, puis <strong>Todo 1</strong>.</li>
         </ol>
+      </section>
+
+      <section>
+        <h3>Le plus âgé</h3>
+
+        <figure class="d-print-none">
+          <img src="resources/images/ages.webp" alt="Le plus âgé">
+          <figcaption>Le plus âgé</figcaption>
+        </figure>
+
+        <p>On veut faire un programme qui détermine si une personne est plus âgée qu'une autre. Pour cela on donne le
+          programme ci-dessous :</p>
+
+        <pre><code class="language-python">nom1 = input("Nom de la 1ère personne ? ")
+age1 = input("Âge de " + nom1 + " ? ")
+
+nom2 = input("Nom de la 2ème personne ? ")
+age2 = input("Âge de " + nom2 + " ? ")
+
+c1 = age1 > age2
+
+print(nom1, "est plus âgé que", nom2, "?", c1)</code></pre>
+
+        <p>On demande de :</p>
+        <ol>
+          <li>Dresser <strong>le tableau de déclaration des objets (TDO)</strong> du programme.
+            <div class="row justify-content-center">
+              <table class="table table-sm table-striped table-hover w-25">
+                <thead>
+                  <tr>
+                    <th>Objet</th>
+                    <th>Type</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>nom1</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>nom2</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>age1</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>age2</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>c1</td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </li>
+          <li>Evaluer l'expression <code>"180" + "10"</code>.
+            <pre><code class="language-python">print("180" + "10")</code></pre>
+          </li>
+          <li>Evaluer l'expression <code>"Âge de " + nom + " ? "</code> pour <code>nom = "Faten"</code>.
+            <pre><code class="language-python">nom = "Faten"
+age = 16
+print("Âge de " + nom + " ? ")</code></pre>
+          </li>
+          <li>Déduire le rôle de l'opérateur <code>+</code>.</li>
+          <li>Ajouter l'instruction suivante :
+            <pre><code class="language-python">print(nom + " a " + age + " ans")</code></pre>
+            Que remarquez-vous ? Quelle est la raison de cette erreur ? Comment la corriger ?
+          </li>
+          <li>Tester le programme avec les valeurs suivantes, puis remplir la colonne <code>c1</code> :
+            <div class="row justify-content-center">
+              <table class="table table-sm table-striped table-hover w-50">
+                <thead>
+                  <tr>
+                    <th>nom1</th>
+                    <th>age1</th>
+                    <th>nom2</th>
+                    <th>age2</th>
+                    <th>c1</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Sami</td>
+                    <td>28</td>
+                    <td>Safouene</td>
+                    <td>20</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Abderrazek</td>
+                    <td>9</td>
+                    <td>Hala</td>
+                    <td>3</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Emna</td>
+                    <td>73</td>
+                    <td>Abderrazek</td>
+                    <td>9</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Tortue</td>
+                    <td>150</td>
+                    <td>Salim</td>
+                    <td>45</td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </li>
+          <li>Déduire si le programme est correct ? Quel est le problème ? Comment le corriger ?</li>
+        </ol>
+      </section>
+
+      <section>
+        <h3>Pomme ou pomme de terre ?</h3>
+
+        <figure class="d-print-none">
+          <img src="resources/images/pomme.jpg" alt="Pomme">
+          <img src="resources/images/pomme-de-terre.jpg" alt="Pomme de terre">
+          <figcaption>Pomme ou pomme de terre ?</figcaption>
+        </figure>
+
+        <p>Pour son cours de français, Ahmed a rédigé le paragraphe suivant, un peu distrait par son petit frère il a
+          commis deux types d'erreurs :</p>
+        <ul>
+          <li>Il a ajouté des mots qui devront être <span
+              class="text-danger text-decoration-line-through">supprimés</span> pour rectifier son texte.</li>
+          <li>Il a oublié des mots qui devront être <span class="text-success">ajoutés</span> pour enrichir son texte.
+          </li>
+        </ul>
+
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Les bienfaits de la pomme<span class="text-danger text-decoration-line-through"> de
+                terre</span></h5>
+            <div class="card-text">
+              <p>La pomme<span class="text-danger text-decoration-line-through"> de terre</span> est un fruit <span
+                  class="text-success">succulent</span> qui apporte une grande satiété, se transporte facilement et
+                peut se consommer partout.</p>
+              <p>La pomme<span class="text-danger text-decoration-line-through"> de terre</span> est particulièrement
+                intéressante<span class="text-success"> pour les sportifs</span> : avant l'effort elle apporte de
+                l'énergie, pendant l'effort, elle apporte des minéraux<span
+                  class="text-danger text-decoration-line-through"> des minéraux</span> et des vitamines qui rechargent
+                l'organisme et
+                après l'effort, elle réhydrate !</p>
+            </div>
+          </div>
+        </div>
+
+        <p>Voulant montrer ses nouveaux acquis en programmation Python, Ahmed a écris le programme suivant. Dans ce qui
+          suit on doit l'aider à corriger son paragrpahe sans modifier directement le texte qui est déjà rédigé.</p>
+
+        <pre><code class="language-python">titre = "Les bienfaits de la pomme de terre"
+par1 = """La pomme de terre est un fruit qui apporte une grande satiété, 
+se transporte facilement et peut se consommer partout."""
+par2 = """La pomme de terre est particulièrement intéressante : 
+- avant l'effort elle apporte de l'énergie, 
+- pendant l'effort, elle apporte des minéraux des minéraux et des vitamines qui rechargent l'organisme 
+- et après l'effort, elle réhydrate !"""
+
+# Todo 1 : supprimer l'expression " de terre" du titre
+
+# Todo 2 : supprimer l'expression " de terre" du par1
+
+# Todo 3 : supprimer l'expression " de terre" du par2
+
+# Todo 4 : supprimer l'expression " des minéraux" du par2
+
+# Todo 5 : Insérer le mot "succulent" dans par1
+
+# Todo 6 : Insérer l'expression "pour les sportifs"
+
+print(titre)
+print()
+print(par1)
+print()
+print(par2)
+</code></pre>
       </section>
 
     </article>
