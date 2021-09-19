@@ -363,4 +363,11 @@ table.col-20 td {
   table th, table td {
     border: thin solid #000;
   }
+  .list-group-item {
+    padding: initial;
+    border: initial;
+  }
+  .list-group-item label.p-2 {
+    padding: 0 0.5em !important;
+  }
 }
