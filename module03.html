@@ -1500,9 +1500,222 @@ car = chr(num) # car = "@"</code></pre>
           <li><a href="qcm03-02.html" target="_blank" rel="noopener noreferrer">Type chaîne</a>.</li>
           <li><a href="qcm03-03.html" target="_blank" rel="noopener noreferrer">Types numérique</a>.</li>
         </ul>
-        
       </section>
 
+      <section>
+        <h3>Clôture</h3>
+
+        <p>Un fermier décide d'entourer sa ferme d'une clôture grillagée comme indiqué dans le plan suivant :</p>
+
+        <figure>
+          <img class="h4cm" src="resources/images/grillage.png" alt="Plan de la ferme">
+          <figcaption>Plan de la ferme</figcaption>
+        </figure>
+
+        <p>Le grillage barbelé doit être déposé sur des piliers verticaux de 2m de haut sur plusieurs lignes comme le
+          montre l'image suivante.</p>
+
+        <figure class="d-print-none">
+          <img src="resources/images/grillage-barbele.jpg" alt="Grillage barbelé">
+          <figcaption>Grillage barbelé déposé sur 4 lignes</figcaption>
+        </figure>
+
+        <p>Il faut prévoir 5m au maximum entre deux piliers et 30cm entre deux lignes de grillage.</p>
+
+        <p>Sachant qu'un kilogramme de barbelé possède une longueur moyenne de 2m, aider le fermer à calculer la
+          quantité en kilogramme du barbelé nécessaire.</p>
+
+        <p>On ne demande pas d'écrire un programme, mais d'énoncer les étapes à suivre pour effectuer le calcul.</p>
+      </section>
+
+      <section>
+        <h3>Consommation de carburant</h3>
+
+        <figure class="d-print-none">
+          <img src="resources/images/indicateur-carburant.jpg" alt="Indicateur de niveau du carburant">
+          <img src="resources/images/indicateur-kilometrage.jpg" alt="Indicateur de kilométrage">
+          <figcaption>Indicateur de niveau du carburant et Indicateur de kilométrage</figcaption>
+        </figure>
+
+        <p>Un automobiliste surveille la consommation en carburant de sa voiture pour faire une maintenance préventive
+          en cas de besoin.</p>
+        <p>Le matin, son réservoir initialement vide, il fait le plein de <code>nd</code> litres de carburant. A cet
+          instant, il a parcouru <code>dd</code> kilomètres.</p>
+        <p>Le soir, l'indicateur de niveau de carburant indique <code>nf</code> litres et l'indicateur de kilométrage
+          indique <code>df</code> kilomètres.</p>
+        <p>On demande d'écrire un programme qui saisit les données puis calcule le taux de consommation de la voiture en
+          litres/100km.</p>
+
+        <p class="text-center"><b>taux = consommation / distance</b></p>
+
+        <div class="row">
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple de résultat n°1">Le matin
+Niveau de carburant ? 30
+Nombre de km parcourus ? 3000
+Le soir
+Niveau de carburant ? 10
+Nombre de km parcourus ? 3200
+La voiture a consommé 20 litres pour 200 km
+La voiture a consommé 10.0 l/100km</code></pre>
+          </div>
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple de résultat n°2">Le matin
+Niveau de carburant ? 10
+Nombre de km parcourus ? 100
+Le soir
+Niveau de carburant ? 8
+Nombre de km parcourus ? 127
+La voiture a consommé 2 litres pour 27 km
+La voiture a consommé 7.4 l/100km</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>Permutation de chiffres</h3>
+
+        <p>Ecrire un programme qui saisit un nombre de 4 chiffres, puis permute le chiffre des centaines avec celui des
+          milliers et le chiffre des dizaines avec celui des unités.</p>
+        <p class="text-center fs-1"><span class="text-success">1</span><span class="text-danger">3</span><span
+            class="text-success">7</span><span class="text-danger">4</span> &rarr; <span
+            class="text-danger">3</span><span class="text-success">1</span><span class="text-danger">4</span><span
+            class="text-success">7</span>
+          -
+          <span class="text-success">1</span><span class="text-danger">0</span><span class="text-success">0</span><span
+            class="text-danger">5</span> &rarr; <span class="text-danger">0</span><span
+            class="text-success">1</span><span class="text-danger">5</span><span class="text-success">0</span>
+        </p>
+        <p>Proposer <strong>deux méthodes de résolution</strong> :</p>
+        <ul>
+          <li>Une solution arithmétique.</li>
+          <li>Une solution en utilisant les fonctions de manipulation des chaînes.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Conjugaison au présent</h3>
+
+        <p>Ecrire un programme qui conjuge un verbe de 1<sup>er</sup> groupe au présent.</p>
+
+        <pre><code class="nohighlight shell python" data-text="Exemple de résultat">Donner un verbe de 1er groupe ? manger
+Je mange
+Tu manges
+Il/Elle mange
+Nous mangons
+Vous mangez
+Ils/Elles mangent</code></pre>
+      </section>
+
+      <section>
+        <h3>Division Euclidienne</h3>
+
+        <p>Tout nombre entier positif n &in; &Nopf; peut être exprimé sous la forme :</p>
+        <p class="text-center fs-2">n = p.q + r</p>
+        <p>Avec p > 0, q &ge; 0 et 0 &le; r &lt; p</p>
+
+        <p>On veut écrire un programme qui, pour deux entiers <code>n</code> et <code>p</code> donnés, calcule et
+          affiche la valeur de <code>q</code> et <code>r</code>.</p>
+
+        <div class="d-print-none row">
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple de résultat n°1">Donner n ? 25
+Donner p ? 11
+25 = 11 . 2 + 3</code></pre>
+          </div>
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple de résultat n°2">Donner n ? 18
+Donner p ? 7
+18 = 7 . 2 + 4</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>Plein de zéros</h3>
+
+        <p>Ecrire un programme qui saisit un nombre de 2 chiffres, puis insère autant de zéros que la différence entre
+          ses chiffres de dizaines et d'unités.</p>
+
+        <p class="text-center fs-1">
+          <span class="text-success">1</span><span class="text-danger">3</span> &rarr; <span
+            class="text-success">1</span>00<span class="text-danger">3</span> /
+          <span class="text-success">2</span><span class="text-danger">2</span> &rarr; <span
+            class="text-success">2</span><span class="text-danger">2</span> /
+          <span class="text-success">7</span><span class="text-danger">1</span> &rarr; <span
+            class="text-success">7</span>000000<span class="text-danger">1</span>
+        </p>
+
+        <p>Prévoir deux méthodes de résoluion différentes.</p>
+      </section>
+
+      <section>
+        <h3>Nombres voisins</h3>
+
+        <p>Deux nombres sont dits voisins si le dernier chiffre du premier nombre est égal au premier chiffre du second
+          nombre.</p>
+
+        <p class="text-center fs-1">
+          123<span class="text-success">4</span> et <span class="text-success">4</span>200 /
+          6<span class="text-success">7</span> et <span class="text-success">7</span>30 /
+          73<span class="text-danger">0</span> et <span class="text-danger">6</span>7
+        </p>
+
+        <p>Les deux premiers exemples présentent deux nombres voisins, le troisième d'un exemple de nombre non voisins.
+        </p>
+
+        <div class="d-print-none row">
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple de résultat n°1">Donner a ? 67
+Donner b ? 730
+67 et 730 sont voisins ? True</code></pre>
+          </div>
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple de résultat n°2">Donner a ? 730
+Donner b ? 67
+730 et 67 sont voisins ? False</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>Chronomètre</h3>
+
+        <figure class="d-print-none">
+          <img src="resources/images/chronometre.webp" alt="Chronomètre">
+          <figcaption>Chronomètre</figcaption>
+        </figure>
+
+        <p>Un chronomètre présente une durée au format "h:mm:ss", voir figure. On veut retrouver ce que cette valeur
+          représente en secondes.</p>
+
+        <p>Ecrire un programme pour réaliser cette tâche.</p>
+
+        <div class="row">
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple de résultat n°1">Affichage du chronomètre ? 1:10:50
+1:10:50 vaut 4250 secondes</code></pre>
+          </div>
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple de résultat n°2">Affichage du chronomètre ? 02:34:20
+02:34:20 vaut 9260 secondes</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>English calendar</h3>
+
+        <p>Les français expriment les dates de la façon suivante : <span class="text-danger">jj</span>/<span
+            class="text-success">mm</span>/aaaa, alors que les anglais l'expriment d'une autre façon : <span
+            class="text-success">mm</span>/<span class="text-danger">jj</span>/aaaa.</p>
+
+        <p>Ecrire un programme qui convertit les dates du calendrier français au calendrier anglais.</p>
+
+        <pre><code class="nohighlight shell python" data-text="Exemple de résultat">Date au format jj/mm/aaaa ? 24/08/1983
+24/08/1983 is 08/24/1983 in english calendar.</code></pre>
+      </section>
     </article>
   </main>
   <footer class="d-print-none bg-dark text-white p-2">
