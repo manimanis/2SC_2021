@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QCM 4SC</title>
+  <link rel="stylesheet" href="resources/css/bootstrap.min.css">
+  <link rel="stylesheet" href="resources/css/default.css">
+  <link rel="stylesheet" href="resources/css/style.css">
+</head>
+
+<body>
+  <aside>
+    <nav class="navbar navbar-expand-xl navbar-dark bg-dark">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#aside_navbar"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span> Menu
+      </button>
+      <div class="collapse navbar-collapse" id="aside_navbar"></div>
+    </nav>
+  </aside>
+  <main class="container my-4">
+    <h1>QCM Rappel 4<sup>ème</sup> Scientifiques</h1>
+
+    <p>Préparé en collaboration avec Mme Chiboub - Carthage Byrsa</p>
+
+    <article>
+      <h2>QCM</h2>
+
+      <section>
+        <h3 class="d-none">QCM</h3>
+
+        <p class="badge bg-danger">Attention : Deux essais, seulement, par question sont permis.</p>
+
+        <h4>Structures simples</h4>
+
+        <div class="my-3">
+          <div class="qcm-exercise no-page-break-inside" data-correct="2" data-scrambled="false" data-tries="2">
+            <h5 class="question-title">Question 1</h5>
+            <div class="question">
+              <p><b>Quel est le symbole utilisé dans le langage Python pour désigner « est égale à » ?</b></p>
+            </div>
+            <ul class="propositions">
+              <li>=</li>
+              <li>==</li>
+              <li>!=</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="my-3">
+          <div class="qcm-exercise no-page-break-inside" data-correct="1" data-scrambled="false" data-tries="2">
+            <h5 class="question-title">Question 2</h5>
+            <div class="question">
+              <p><b>Quel est le symbole utilisé en algorithme pour désigner une affectation ?</b></p>
+            </div>
+            <ul class="propositions">
+              <li>&larr;</li>
+              <li>&rarr;</li>
+              <li>=</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="my-3">
+          <div class="qcm-exercise no-page-break-inside" data-correct="3" data-scrambled="false" data-tries="2">
+            <h5 class="question-title">Question 3</h5>
+            <div class="question">
+              <p><b>Quel est le symbole utilisé dans le langage Python pour désigner « est différent de » ?</b></p>
+            </div>
+            <ul class="propositions">
+              <li>=!</li>
+              <li>&lt;&gt;</li>
+              <li>!=</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="my-3">
+          <div class="qcm-exercise no-page-break-inside" data-correct="1" data-scrambled="false" data-tries="2">
+            <h5 class="question-title">Question 4</h5>
+            <div class="question">
+              <p><b>Quel est le résultat de l'expression suivante ?</b></p>
+              <pre><code class="language-algorithm">x &larr; Alea(2, 9)</code></pre>
+            </div>
+            <ul class="propositions">
+              <li>Une valeur aléatoire entre 2 et 9</li>
+              <li>Une valeur aléatoire qui peut être soit 2 ou bien 9</li>
+              <li>Une valeur aléatoire entre 2 et 8</li>
+            </ul>
+          </div>
+        </div>
+
+        <h4>Structures Conditionnelles</h4>
+
+        <div class="my-3">
+          <div class="qcm-exercise no-page-break-inside" data-correct="2" data-scrambled="false" data-tries="2">
+            <h5 class="question-title">Question 5</h5>
+            <div class="question">
+              <p><b>Quelle est la valeur de b ?</b></p>
+              <pre><code class="language-python">mot = "Bac2022"
+if mot.isdigit():
+    b = 1
+else:
+    b = 2
+print(b)</code></pre>
+            </div>
+            <ul class="propositions">
+              <li>1</li>
+              <li>2</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="p-break my-3">
+          <div class="qcm-exercise no-page-break-inside" data-correct="3" data-scrambled="false" data-tries="2">
+            <h5 class="question-title">Question 6</h5>
+            <div class="question">
+              <p><b>Quelle est la valeur de b ?</b></p>
+              <pre><code class="language-python">from math import sqrt
+mot = "LyceeHammamSousse"
+if mot.isalpha():
+    b = 2**3+10//4
+else:
+    b = sqrt(9)+10%3
+print(b)</code></pre>
+            </div>
+            <ul class="propositions">
+              <li>4.0</li>
+              <li>6.0</li>
+              <li>10</li>
+              <li>10.5</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="my-3">
+          <div class="qcm-exercise no-page-break-inside" data-correct="3" data-scrambled="false" data-tries="2">
+            <h5 class="question-title">Question 7</h5>
+            <div class="question">
+              <p><b>Quelle est la valeur de b ?</b></p>
+              <pre><code class="language-python">mot = "HammamSousse2022"
+if mot.isalpha():
+    b = mot[0].lower()
+elif mot.isdigit():
+    b = mot[len(mot) - 1]
+else:
+    b = str(len(mot))
+print(b)</code></pre>
+            </div>
+            <ul class="propositions">
+              <li>"2"</li>
+              <li>"h"</li>
+              <li>"16"</li>
+            </ul>
+          </div>
+        </div>
+
+        <h4>Structures itératives</h4>
+
+        <div class="my-3">
+          <div class="qcm-exercise no-page-break-inside" data-correct="1" data-scrambled="false" data-tries="2">
+            <h5 class="question-title">Question 8</h5>
+            <div class="question">
+              <p><b>Quel est l'affichage de ces instructions ?</b></p>
+              <pre><code class="language-python">for x in range(4):
+    print(x)
+print("fin")</code></pre>
+            </div>
+            <ul class="propositions">
+              <li>Les nombres de 0 à 3, suivis par le mot <strong>fin</strong>, chacune dans une ligne</li>
+              <li>Le nombre 4 quatre fois suivi par le mot <strong>fin</strong></li>
+              <li>Les nombres de 0 à 3, suivis par le mot <strong>fin</strong>, sur la même ligne</li>
+              <li>Les nombres de 0 à 4, suivis par le mot <strong>fin</strong>, chacune dans une ligne</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="p-break my-3">
+          <div class="qcm-exercise no-page-break-inside" data-correct="4" data-scrambled="false" data-tries="2">
+            <h5 class="question-title">Question 9</h5>
+            <div class="question">
+              <p><b>Quel est l'affichage de ces instructions ?</b></p>
+              <pre><code class="language-python">for x in range(2, 5):
+    print(x, end=" ")
+print("fin")</code></pre>
+            </div>
+            <ul class="propositions">
+              <li>Les nombres de 2 à 5, suivis par le mot <strong>fin</strong>, chacune dans une ligne</li>
+              <li>Les nombres de 2 à 4, suivis par le mot <strong>fin</strong>, chacune dans une ligne</pre>
+              </li>
+              <li>Les nombres de 2 à 5, suivis par le mot <strong>fin</strong>, tous sur une même ligne</li>
+              <li>Les nombres de 2 à 4, suivis par le mot <strong>fin</strong>, tous sur une même ligne</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="my-3">
+          <div class="qcm-exercise no-page-break-inside" data-correct="2" data-scrambled="false" data-tries="2">
+            <h5 class="question-title">Question 10</h5>
+            <div class="question">
+              <p><b>Quel est l'affichage de ces instructions ?</b></p>
+              <pre><code class="language-python">for x in range(3):
+    print(x,"*3=",x*3)</code></pre>
+            </div>
+            <ul class="propositions">
+              <li>
+                <pre>0
+1
+2</pre>
+              </li>
+              <li>
+                <pre>0 *3= 0
+1 *3= 3
+2 *3= 6</pre>
+              </li>
+              <li>
+                <pre>0*3=0
+1*3=3
+2*3=6</pre>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="my-3">
+          <div class="qcm-exercise no-page-break-inside" data-correct="3" data-scrambled="false" data-tries="2">
+            <h5 class="question-title">Question 11</h5>
+            <div class="question">
+              <p><b>Quel est l'affichage de ces instructions ?</b></p>
+              <pre><code class="language-python">for x in "LHS":
+    print(x)</code></pre>
+            </div>
+            <ul class="propositions">
+              <li>Le mot <strong>LHS</strong> affiché une seule fois</li>
+              <li>Le mot <strong>LHS</strong> affiché trois fois</li>
+              <li>Les lettres du mot <strong>LHS</strong> affichée chacune sur une ligne séparée</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="my-3">
+          <div class="qcm-exercise no-page-break-inside" data-correct="2" data-scrambled="false" data-tries="2">
+            <h5 class="question-title">Question 12</h5>
+            <div class="question">
+              <p><b>Quel est l'affichage de ces instructions ?</b></p>
+              <pre><code class="language-python">for x in "75":
+    print(x*3)</code></pre>
+            </div>
+            <ul class="propositions">
+              <li>
+                <pre>21
+15</pre>
+              </li>
+              <li>
+                <pre>777
+555</pre>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="my-3">
+          <div class="qcm-exercise no-page-break-inside" data-correct="1" data-scrambled="false" data-tries="2">
+            <h5 class="question-title">Question 13</h5>
+            <div class="question">
+              <p><b>Quel est l'affichage de ces instructions ?</b></p>
+              <pre><code class="language-python">for x in "75":
+    print(int(x)*3)</code></pre>
+            </div>
+            <ul class="propositions">
+              <li>
+                <pre>21
+15</pre>
+              </li>
+              <li>
+                <pre>777
+555</pre>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="my-3">
+          <div class="qcm-exercise no-page-break-inside" data-correct="3" data-scrambled="false" data-tries="2">
+            <h5 class="question-title">Question 14</h5>
+            <div class="question">
+              <p><b>On désire afficher le triangle suivant :</b></p>
+              <pre>1
+22
+333
+4444
+55555</pre>
+              <pre><code class="language-python">for i in range(1, 6):
+    print(?)</code></pre>
+              <p><b>Quelle est la bonne expression qui permet de réaliser la tâche ?</b></p>
+            </div>
+            <ul class="propositions">
+              <li>str(i)*5</li>
+              <li>"i" * i</li>
+              <li>str(i) * i</li>
+              <li>i * i</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="my-3">
+          <div class="qcm-exercise no-page-break-inside" data-correct="3" data-scrambled="false" data-tries="2">
+            <h5 class="question-title">Question 15</h5>
+            <div class="question">
+              <p><b>Quel est le résultat des instructions suivantes :</b></p>
+              <pre><code class="language-python">while True:
+    print("Welcome to Hammam Sousse")</code></pre>
+            </div>
+            <ul class="propositions">
+              <li>Aucun affichage</li>
+              <li>Afficher <strong>Welcome to Hammam Sousse</strong> une seule fois</li>
+              <li>Afficher <strong>Welcome to Hammam Sousse</strong> une infinité de fois</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="my-3">
+          <div class="qcm-exercise no-page-break-inside" data-correct="1" data-scrambled="false" data-tries="2">
+            <h5 class="question-title">Question 16</h5>
+            <div class="question">
+              <p><b>Quel est le résultat des instructions suivantes :</b></p>
+              <pre><code class="language-python">while True:
+    break
+    print("Welcome to Hammam Sousse")</code></pre>
+            </div>
+            <ul class="propositions">
+              <li>Aucun affichage</li>
+              <li>Afficher <strong>Welcome to Hammam Sousse</strong> une seule fois</li>
+              <li>Afficher <strong>Welcome to Hammam Sousse</strong> une infinité de fois</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="my-3">
+          <div class="qcm-exercise no-page-break-inside" data-correct="2" data-scrambled="false" data-tries="2">
+            <h5 class="question-title">Question 17</h5>
+            <div class="question">
+              <p><b>Quel est le résultat des instructions suivantes :</b></p>
+              <pre><code class="language-python">while True:
+    print("Welcome to Hammam Sousse")
+    break</code></pre>
+            </div>
+            <ul class="propositions">
+              <li>Aucun affichage</li>
+              <li>Afficher <strong>Welcome to Hammam Sousse</strong> une seule fois</li>
+              <li>Afficher <strong>Welcome to Hammam Sousse</strong> une infinité de fois</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="my-3">
+          <div class="qcm-exercise no-page-break-inside" data-correct="1" data-scrambled="false" data-tries="2">
+            <h5 class="question-title">Question 18</h5>
+            <div class="question">
+              <p><b>Quel est le résultat des instructions suivantes :</b></p>
+              <pre><code class="language-python">more = False
+while more:
+    print("Welcome to Hammam Sousse")
+    more = True</code></pre>
+            </div>
+            <ul class="propositions">
+              <li>Aucun affichage</li>
+              <li>Afficher <strong>Welcome to Hammam Sousse</strong> une seule fois</li>
+              <li>Afficher <strong>Welcome to Hammam Sousse</strong> une infinité de fois</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="my-3">
+          <div class="qcm-exercise no-page-break-inside" data-correct="3" data-scrambled="false" data-tries="2">
+            <h5 class="question-title">Question 19</h5>
+            <div class="question">
+              <p><b>Quel est le résultat des instructions suivantes :</b></p>
+              <pre><code class="language-python">nombre = 3
+while nombre > 0:
+    nombre = nombre - 1
+    print(nombre)</code></pre>
+            </div>
+            <ul class="propositions">
+              <li>Afficher les nombres 3, 2, 1, et 0</li>
+              <li>Afficher les nombres 3, 2, et 1</li>
+              <li>Afficher les nombres 2, 1, et 0</li>
+              <li>Afficher les nombres 2 et 1</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="my-3">
+          <div class="qcm-exercise no-page-break-inside" data-correct="2" data-scrambled="false" data-tries="2">
+            <h5 class="question-title">Question 20</h5>
+            <div class="question">
+              <p><b>Quel est le résultat des instructions suivantes :</b></p>
+              <pre><code class="language-python">nombre = 3
+while nombre > 0:
+    print(nombre)
+    nombre = nombre - 1</code></pre>
+            </div>
+            <ul class="propositions">
+              <li>Afficher les nombres 3, 2, 1, et 0</li>
+              <li>Afficher les nombres 3, 2, et 1</li>
+              <li>Afficher les nombres 2, 1, et 0</li>
+              <li>Afficher les nombres 2 et 1</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="p-break my-3">
+          <div class="qcm-exercise no-page-break-inside" data-correct="4" data-scrambled="false" data-tries="2">
+            <h5 class="question-title">Question 21</h5>
+            <div class="question">
+              <p><b>Quel est le résultat des instructions suivantes :</b></p>
+              <pre><code class="language-python">nombre = 2
+while nombre &lt; 12:
+    print(nombre)
+    nombre = nombre + 5</code></pre>
+            </div>
+            <ul class="propositions">
+              <li>Afficher tous les nombres de 2 à 11</li>
+              <li>Afficher tous les nombres de 2 à 12</li>
+              <li>Afficher les nombres 2, 7, 12</li>
+              <li>Afficher les nombres 2, 7</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="my-3">
+          <div class="qcm-exercise no-page-break-inside" data-correct="3" data-scrambled="false" data-tries="2">
+            <h5 class="question-title">Question 22</h5>
+            <div class="question">
+              <p><b>Quel est le rôle des instructions suivantes :</b></p>
+              <pre><code class="language-python">while True:
+    n = int(input("Donner n ? "))
+    if 10 &lt;= n &lt;= 999:
+        break</code></pre>
+            </div>
+            <ul class="propositions">
+              <li>Saisir un entier <code>n</code> de 2 chiffres</li>
+              <li>Saisir un entier <code>n</code> de 3 chiffres</li>
+              <li>Saisir un entier <code>n</code> de 2 chiffres ou de 3 chiffres</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="my-3">
+          <div class="qcm-exercise no-page-break-inside" data-correct="4" data-scrambled="false" data-tries="2">
+            <h5 class="question-title">Question 23</h5>
+            <div class="question">
+              <p><b>Quel est le rôle des instructions suivantes :</b></p>
+              <pre><code class="language-python">n = 1000
+while n > 999 and n &lt; 10:
+    n = int(input("Donner n ? "))</code></pre>
+            </div>
+            <ul class="propositions">
+              <li>Saisir un entier <code>n</code> de 2 chiffres</li>
+              <li>Saisir un entier <code>n</code> de 3 chiffres</li>
+              <li>Saisir un entier <code>n</code> de 2 chiffres ou de 3 chiffres</li>
+              <li>Rien, la boucle n'est pas exécutée</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="my-3">
+          <div class="qcm-exercise no-page-break-inside" data-correct="3" data-scrambled="false" data-tries="2">
+            <h5 class="question-title">Question 24</h5>
+            <div class="question">
+              <p><b>Soient les instructions suivantes, quel est le résultat si l'utilisateur tape son nom au lieu de
+                  taper un nombre ?</b></p>
+              <pre><code class="language-python">while True:
+    n = int(input("Donner n ? "))
+    if 10 &lt;= n &lt;= 999:
+        break</code></pre>
+            </div>
+            <ul class="propositions">
+              <li>La variable <code>n</code> prend la valeur 0 et le programme continue son exécution normale</li>
+              <li>La variable <code>n</code> reste inchangée et le programme continue son exécution normale</li>
+              <li>La variable <code>n</code> prend la valeur 0 et le programme est interrompu par une erreur d'exécution
+              </li>
+              <li>La variable <code>n</code> reste inchangée et le programme est interrompu par une erreur d'exécution
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="my-3">
+          <div class="qcm-exercise no-page-break-inside" data-correct="4" data-scrambled="false" data-tries="2">
+            <h5 class="question-title">Question 25</h5>
+            <div class="question">
+              <p><b>Soient les instructions suivantes, quel est le résultat si l'utilisateur saisit "lHs" ?</b></p>
+              <pre><code class="language-python">passwd = "lHS"
+userpasswd = input("Mot de passe ? ")
+while userpasswd != passwd:
+    print("Mot de passe incorrect!")
+userpasswd = input("Mot de passe ? ")
+print("Vous êtes connecté")</code></pre>
+            </div>
+            <ul class="propositions">
+              <li>Il affiche : <strong>Vous êtes connecté</strong></li>
+              <li>Il affiche : <strong>Mot de passe incorrect</strong> puis <strong>Vous êtes connecté</strong></li>
+              <li>Il affiche : <strong>Mot de passe incorrect</strong> puis il affiche de nouveau <strong>Mot de passe
+                  ?</strong></li>
+              <li>Il affiche : <strong>Mot de passe incorrect</strong> puis il se bloque</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </article>
+
+  </main>
+  </main>
+  <footer class="d-print-none bg-dark text-white p-2">
+    <div class="text-center">Page créée avec ♥ par Mohamed Anis MANI</div>
+    <div class="text-center small">Année scolaire : 2021/2022</div>
+  </footer>
+  <script src="resources/js/jquery.min.js"></script>
+  <script src="resources/js/bootstrap.min.js"></script>
+  <script src="resources/js/highlight.pack.js"></script>
+  <script src="resources/js/hljs.algorithm.js"></script>
+  <script src="resources/js/draggable.js"></script>
+  <script src="resources/js/clipboard.min.js"></script>
+  <script src="resources/js/pages.js"></script>
+  <script src="resources/js/savecontent.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+    document.querySelectorAll('.language-algorithm,.language-python')
+      .forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'bd-clipboard d-print-none';
+        const btn = document.createElement('button');
+        btn.className = 'btn-clipboard';
+        btn.textContent = "📋";
+        btn.title = "Copier";
+        div.appendChild(btn);
+        item.parentElement.insertBefore(div, item);
+      });
+    new ClipboardJS('.btn-clipboard', {
+      target: (trigger) => {
+        return trigger.parentElement.nextElementSibling;
+      }
+    });
+    $(() => {
+      const localStore = new PagePersistance();
+      const serverStore = new ServerSaves('QCM-Module1');
+      const userInputSaver = new UserInputSaver(
+        document.querySelector('.user-input-saver'),
+        localStore,
+        serverStore);
+    });
+  </script>
+</body>
+
+</html>
