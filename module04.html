@@ -286,6 +286,38 @@ Ecrire(a, eq, b)</code></pre>
           </div>
         </div>
       </section>
+
+      <section>
+        <h3>Générateur de nombres aléatoires</h3>
+
+        <p>Comme tous les autres langages, Python offre des fonctions pour générer des nombres aléatoires.</p>
+        <p>La fonction <code>randint(a, b)</code> retourne un nombre aléatoire dans l'intervalle [a, b].</p>
+
+        <div class="row">
+          <div class="col-sm-6">
+            <pre><code class="language-python">from random import randint
+variable = randint(a, b)</code></pre>
+          </div>
+          <div class="col-sm-6">
+            <pre><code class="language-algorithm">// Aucun module ne doit être importé
+variable &larr; aléa(a, b)</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <h4>Exemple</h4>
+      <div class="row">
+        <div class="col-sm-6">
+          <pre><code class="language-python">from random import randint
+# Simuler un lancement de dé
+de = randint(1, 6)</code></pre>
+        </div>
+        <div class="col-sm-6">
+          <pre><code class="language-algorithm">// Aucune importation
+// Simuler un lancement de dé
+de &larr; aléa(1, 6)</code></pre>
+        </div>
+      </div>
     </article>
 
     <article class="p-break">
@@ -303,6 +335,46 @@ Ecrire(a, eq, b)</code></pre>
       </section>
 
       <section>
+        <h3>L'aide fermier</h3>
+
+        <p>Yamen travaille comme aide fermier dans la ferme de M Tarek. Aujourd'hui, il a trois tâches à faire :</p>
+        <ul>
+          <li>Nettoyer l'étable</li>
+          <li>Remplir l'abreuvoir des vaches s'il est vide</li>
+          <li>Traire les vaches</li>
+        </ul>
+
+        <figure class="d-print-none">
+          <img src="resources/images/abreuvoir.jpg" alt="Abreuvoir">
+          <figcaption>Abreuvoir</figcaption>
+        </figure>
+
+        <p>Ecrire un programme pour simuler cette situation, l'utilisateur entre l'état de l'abreuvoir</p>
+        <ul>
+          <li>V : s'il est vide</li>
+          <li>R : s'il est remplit</li>
+        </ul>
+
+        <div class="row">
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple 1">Etat de l'abreuvoir (V : vide / R : Rempli) ? V
+Tâches à réaliser :
+ - Nettoyer l'étable
+ - Remplir l'abreuvoir
+ - Traire les vaches</code></pre>
+          </div>
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple 2">Etat de l'abreuvoir (V : vide / R : Rempli) ? R
+Tâches à réaliser :
+ - Nettoyer l'étable
+ - Traire les vaches
+ </code></pre>
+          </div>
+        </div>
+
+      </section>
+
+      <section>
         <h3>Personne majeure ou mineure</h3>
 
         <figure class="d-print-none">
@@ -314,7 +386,7 @@ Ecrire(a, eq, b)</code></pre>
           est dite <b>mineure</b>.</p>
         <p>Écrire un programme qui affiche si une personne est majeure ou mineure selon son âge.</p>
 
-        <div class="row">
+        <div class="d-print-none row">
           <div class="col-sm-6">
             <pre><code class="nohighlight shell python" data-text="Exemple 1">Votre âge ? 25
 Vous êtes majeur</code></pre>
@@ -322,6 +394,70 @@ Vous êtes majeur</code></pre>
           <div class="col-sm-6">
             <pre><code class="nohighlight shell python" data-text="Exemple 2">Votre âge ? 25
 Vous êtes majeur</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>Signe d'un nombre</h3>
+
+        <figure class="d-print-none">
+          <img src="resources/images/signe_nombre.png" alt="Signe d'un nombre">
+          <figcaption>Signe d'un nombre</figcaption>
+        </figure>
+
+        <p>Écrire un programme qui affiche si un nombre <code>x</code> donné est :</p>
+        <ul>
+          <li>positif, x &gt; 0</li>
+          <li>négatif, x &lt; 0</li>
+          <li>null, x = 0</li>
+        </ul>
+
+        <div class="d-print-none row">
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple 1">Donner un nombre ? 27
+27 est positif</code></pre>
+          </div>
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple 2">Donner un nombre ? -6
+-6 est négatif</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>Intersection entre deux cercles</h3>
+
+        <p>Soient deux cercles du plan <strong>C1</strong> et <strong>C2</strong> de rayons respectifs <code>r1</code>
+          et <code>r2</code>, les centres des deux cercles sont à une distance <code>d</code> donnée.</p>
+
+        <p>Ces deux cercles :</p>
+        <ul>
+          <li><strong>se coupent en deux points</strong>, si <code>r1 + r2 &gt; d</code></li>
+          <li><strong>sont tangentes</strong>, si <code>r1 + r2 = d</code></li>
+          <li><strong>ne se coupent pas</strong>, si <code>r1 + r2 &lt; d</code></li>
+        </ul>
+
+        <figure>
+          <img src="resources/images/inter-cercles.png" alt="Intersection de deux cercles">
+          <figcaption>Intersection de deux cercles</figcaption>
+        </figure>
+
+        <p>On demande d'écrire un programme qui saisit les données mentionnés puis affiche si les deux cercles se
+          coupent.</p>
+
+        <div class="d-print-none row">
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple 1">Rayon de C1 ? 6
+Rayon de C2 ? 3
+Distance entre les centres ? 9
+Les deux cercles sont tangentes</code></pre>
+          </div>
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple 2">DRayon de C1 ? 10
+Rayon de C2 ? 10
+Distance entre les centres ? 10
+Les cercles se coupent en deux points</code></pre>
           </div>
         </div>
       </section>
@@ -445,7 +581,6 @@ Gain : 25 %
 Prix de vente : 25.0 DT</code></pre>
           </div>
         </div>
-
       </section>
 
       <section>
@@ -484,7 +619,7 @@ Prix de vente : 25.0 DT</code></pre>
         </ul>
         <div class="row">
           <div class="col-sm-6">
-            <pre><code class="nohighlight shell python" data-text="Exemple 1">VVendeur ambulant
+            <pre><code class="nohighlight shell python" data-text="Exemple 1">Vendeur ambulant
 ==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-
 Indiquer le nombre d'articles de chaque catégorie :
 Catégorie A ? 20
@@ -506,8 +641,72 @@ Le chiffre d'affaire est Bon</code></pre>
         </div>
       </section>
 
-      
+      <section>
+        <h3>Garde enfant</h3>
 
+        <figure class="d-print-none">
+          <img src="resources/images/garde-enfants.jpeg" alt="Garde enfant">
+          <figcaption>Garde enfant</figcaption>
+        </figure>
+
+        <p>Pour les parents qui sortent le soir, une garde offre pour eux ses services pour les prix suivants :</p>
+        <ul>
+          <li>10DT par heure entre 18h et 20h</li>
+          <li>15DT par heure entre 20h et 23h</li>
+          <li>20DT par heure entre 23h et 03h</li>
+        </ul>
+
+        <p>On veut écrire un programme qui saisit l'heure d'arrivée d'un enfant dans la garde, puis l'heure de l'arrivée
+          de ses parents pour le récupérer afin d'afficher le montant à payer.</p>
+      </section>
+
+      <section>
+        <h3>Date du lendemain</h3>
+
+        <p>On veut écrire un programme qui saisit une date sous forme jj/mm/aaaa, calcule et affiche la date du
+          lendemain.</p>
+
+        <figure class="d-print-none">
+          <img src="resources/images/date-lendemain.png" alt="Date du lendemain">
+          <figcaption>Date du lendemain</figcaption>
+        </figure>
+
+        <p>On rappelle le nombre de jours des mois :</p>
+        <table class="table table-sm table-striped table-hover col-12">
+          <thead>
+            <tr>
+              <th>Janvier</th>
+              <th>Février</th>
+              <th>Mars</th>
+              <th>Avril</th>
+              <th>Mai</th>
+              <th>Juin</th>
+              <th>Juillet</th>
+              <th>Août</th>
+              <th>Septembre</th>
+              <th>Octobre</th>
+              <th>Novembre</th>
+              <th>Décembre</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>31</td>
+              <td>28</td>
+              <td>31</td>
+              <td>30</td>
+              <td>31</td>
+              <td>30</td>
+              <td>31</td>
+              <td>31</td>
+              <td>30</td>
+              <td>31</td>
+              <td>30</td>
+              <td>31</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
 
     </article>
   </main>
