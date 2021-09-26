@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="resources/css/bootstrap.min.css">
+  <link rel="stylesheet" href="resources/css/default.css">
+  <link rel="stylesheet" href="resources/css/style.css">
+  <title>Structures conditionnelles</title>
+</head>
+
+<body>
+  <aside>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#aside_navbar"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span> Menu
+      </button>
+      <div class="collapse navbar-collapse" id="aside_navbar"></div>
+    </nav>
+  </aside>
+
+  <main class="container my-3">
+    <h1>Module 3 : Structures conditionnelles</h1>
+
+    <article>
+      <h2>Situations</h2>
+
+      <section>
+        <h3>Barrière automatique</h3>
+
+        <figure class="d-print-none">
+          <img src="resources/images/barriere_automatique.jpg" alt="Barrière automatique">
+          <figcaption>Barrière automatique</figcaption>
+        </figure>
+
+        <p>La barrière automatique est installée dans les villes sur les intersections entre la voie ferrée et la route.
+        </p>
+        <p>En temps normal, la barrière est toujours levée et les voitures circulent.</p>
+        <p>Lors de l'arrivée d'un train, la barrière descend et une sirène se fait entendre pour alerter les
+          automobilistes du danger et les insiter à s'arrêter.</p>
+        <p>La situation est schématisée comme suit :</p>
+
+        <figure>
+          <img src="resources/images/forme_simple.png" alt="Algorigramme barrière automatique">
+          <figcaption>Algorigramme barrière automatique</figcaption>
+        </figure>
+
+        <p>On demande d'écrire un programme pour simuler cette situation :</p>
+        <ol>
+          <li>Quelles sont les entrées du programme ?</li>
+          <li>Combien y-a-t'il de résultats possibles pour le programme ?</li>
+          <li>Utiliser une structure conditionnelle à forme réduite pour implémenter le programme.</li>
+        </ol>
+      </section>
+
+      <section>
+        <h3>Jeu Pile/Face</h3>
+
+        <figure class="d-print-none">
+          <img src="resources/images/pile_face.jpeg" alt="Jeu Pile/Face">
+          <figcaption>Jeu Pile/Face</figcaption>
+        </figure>
+
+        <p>Pour choisir le possesseur du ballon au début d'un match de football on procède au jeu Pile/Face.</p>
+        <p>Ce jeu est joué contre l'ordinateur de la façon suivante :</p>
+        <ul>
+          <li>L'utilisateur fait son choix (0 : Pile et 1 : Face) <code>ch1</code></li>
+          <li>L'ordinateur fait le tirage au sort, choix d'un nombre au hasard 0 ou 1 <code>ch2</code></li>
+          <li>On affiche le gagnant :
+            <ul>
+              <li>Si <u>ch1 est égal à ch2</u> l'<strong>Utilisateur gagne</strong>,</li>
+              <li>Si <u>ch1 est différent de ch2</u> l'<strong>Utilisateur perd</strong>.</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p>On demande d'écrire un programme pour simuler cette situation :</p>
+        <ol>
+          <li>Quelles sont les entrées du programme ?</li>
+          <li>Combien y-a-t'il de résultats possibles pour le programme ?</li>
+          <li>Comment l'ordinateur peut-il choisir une valeur aléatoire ?</li>
+          <li>Peut-on utiliser une structure conditionnelle à forme réduite pour implémenter ce programme ? Pourquoi ?
+          </li>
+          <li>Utiliser une structure conditionnelle à forme alternative pour implémenter le programme.</li>
+        </ol>
+      </section>
+
+      <section>
+        <h3>Subway Surf</h3>
+
+        <figure class="d-print-none">
+          <img src="resources/images/subway_img1.jpg" alt="Bonus">
+          <img src="resources/images/subway_img3.jpg" alt="Prix possibles"><br>
+          <img src="resources/images/subway_img2.jpg" alt="Boîte bonus">
+          <img src="resources/images/subway_img4.jpg" alt="Exemple de prix">
+          <figcaption>Bonus Subway Surf</figcaption>
+        </figure>
+
+        <p>Dans le jeu <b>Subway Surf</b> on peut gagner des boîtes mystères gratuites. Lorsqu'on clique sur le bouton
+          gratuit, l'ordinateur choisit une valeur aléatoire de 0 à 7 qui correspond à l'un des bonus suivants :</p>
+        <ul>
+          <li>Si <b>choix est égal à 0</b> on gagne <u>3 Insignes</u></li>
+          <li>Si <b>choix est égal à 1</b> on gagne <u>800 pièces</u></li>
+          <li>Si <b>choix est égal à 2</b> on gagne <u>3 Hoverboards</u></li>
+          <li>Si <b>choix est égal à 3</b> on gagne <u>2000 pièces</u></li>
+          <li>Si <b>choix est égal à 4</b> on gagne <u>une clé</u></li>
+          <li>Si <b>choix est égal à 5</b> on gagne <u>un avanrage de départ</u></li>
+          <li>Si <b>choix est égal à 6</b> on gagne <u>un booster de score</u></li>
+          <li>Si <b>choix est égal à 7</b> on gagne <u>2 clés</u></li>
+        </ul>
+
+        <p>On demande d'écrire un programme pour simuler cette situation :</p>
+        <ol>
+          <li>Quelles sont les entrées du programme ?</li>
+          <li>Combien y-a-t'il de résultats possibles pour le programme ?</li>
+          <li>Comment l'ordinateur peut-il choisir une valeur aléatoire ?</li>
+          <li>Peut-on utiliser une structure conditionnelle à forme alternative pour implémenter ce programme ? Quel est son inconvénient ?
+          </li>
+          <li>Utiliser une structure conditionnelle à forme généralisée pour implémenter le programme.</li>
+        </ol>
+      </section>
+
+    </article>
+
+    <article class="p-break">
+      <h2>Résumé</h2>
+
+      <section>
+        <h3>Structure conditionnelle à forme réduite</h3>
+
+        <p>Une structure conditionnelle simple à forme réduite admet <u>un seul traitement</u> qui sera exécuté
+          uniquement <b>si la condition est vraie</b>.</p>
+
+        <figure>
+          <img src="resources/images/forme-simple-reduite.png" alt="Forme simple réduite">
+          <figcaption>Forme simple réduite</figcaption>
+        </figure>
+
+        <div class="row">
+          <div class="col-sm-6">
+            <pre><code class="language-python">if condition:
+    traitements
+  </code></pre>
+          </div>
+          <div class="col-sm-6">
+            <pre><code class="language-algorithm">Si condition Alors
+    traitements
+Fin Si</code></pre>
+          </div>
+        </div>
+
+        <h4>Exemple</h4>
+        <div class="row">
+          <div class="col-sm-6">
+            <pre><code class="language-python"># Valeur absolue d'un nombre x
+absx = x
+if x &lt; 0:
+    absx = -x
+
+print("abs(", x, ")=", absx)</code></pre>
+          </div>
+          <div class="col-sm-6">
+            <pre><code class="language-algorithm">// Valeur absolue d'un nombre x
+absx &larr; x
+Si x &lt; 0 Alors
+    absx &larr; -x
+Fin Si
+Ecrire("abs(", x, ")=", absx)</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>Structure conditionnelle à forme alternative</h3>
+
+        <p>Une structure conditionnelle à forme alternative admet <u>deux traitements différents</u> :</p>
+        <ul>
+          <li>Le <u>premier traitement</u> est exécuté uniquement <b>si la condition est vraie</b>,</li>
+          <li>Le <u>second traitement</u> est exécuté uniquement <b>si la condition est fausse</b>.</li>
+        </ul>
+
+        <figure>
+          <img src="resources/images/forme-simple-alternative.png" alt="Forme simple alternative">
+          <figcaption>Forme simple alternative</figcaption>
+        </figure>
+
+        <div class="row">
+          <div class="col-sm-6">
+            <pre><code class="language-python">if condition:
+    traitement1
+else:
+    traitement2
+  </code></pre>
+          </div>
+          <div class="col-sm-6">
+            <pre><code class="language-algorithm">Si condition Alors
+    traitement1
+Sinon
+    traitement2
+Fin Si</code></pre>
+          </div>
+        </div>
+
+        <h4>Exemple</h4>
+        <div class="row">
+          <div class="col-sm-6">
+            <pre><code class="language-python"># Maximum de deux nombres
+if a > b:
+    max = a
+else:
+    max = b
+
+print("max=", max)</code></pre>
+          </div>
+          <div class="col-sm-6">
+            <pre><code class="language-algorithm">// Maximum de deux nombres
+Si a > b Alors
+    max = a
+Sinon
+    max = b
+Fin Si
+Ecrire("max=", max)</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>Structure conditionnelle à forme généralisée</h3>
+
+        <p>Une <b>structure conditionnelle</b> simple à forme <b>généralisée</b> admet <u>trois traitements différents
+            ou plus</u> qui seront exécutés en fonction de <u>plusieurs conditions</u>.</p>
+
+        <figure>
+          <img src="resources/images/forme-simple-generalisee.png" alt="Forme simple généralisée">
+          <figcaption>Forme simple généralisée</figcaption>
+        </figure>
+
+        <div class="row">
+          <div class="col-sm-6">
+            <pre><code class="language-python">if condition:
+    traitement1
+elif condition2:
+    traitement2
+else:
+    traitement3
+  </code></pre>
+          </div>
+          <div class="col-sm-6">
+            <pre><code class="language-algorithm">Si condition1 Alors
+    traitement1
+Sinon Si condition2 Alors
+    traitement2
+Sinon
+    traitement3
+Fin Si</code></pre>
+          </div>
+        </div>
+
+        <h4>Exemple</h4>
+        <div class="row">
+          <div class="col-sm-6">
+            <pre><code class="language-python"># Comparaison entre deux nombres
+if a > b:
+    eq = ">"
+elif a &lt; b:
+    eq = "&lt;"
+else:
+    eq = "="
+
+print(a, eq, b)</code></pre>
+          </div>
+          <div class="col-sm-6">
+            <pre><code class="language-algorithm">// Comparaison entre deux nombres
+Si a > b Alors
+    eq &larr; ">"
+Sinon Si a &lt; b Alors
+    eq &larr; "&lt;"
+Sinon
+    eq &larr; "="
+Fin Si
+Ecrire(a, eq, b)</code></pre>
+          </div>
+        </div>
+      </section>
+    </article>
+
+    <article class="p-break">
+      <h2>Renforcement</h2>
+
+      <section class="d-print-none">
+        <h3>QCM</h3>
+
+        Les QCMs sont accessibles dans ces pages :
+        <ul>
+          <li><a href="qcm03-01.html" target="_blank" rel="noopener noreferrer">Type caractère</a>.</li>
+          <li><a href="qcm03-02.html" target="_blank" rel="noopener noreferrer">Type chaîne</a>.</li>
+          <li><a href="qcm03-03.html" target="_blank" rel="noopener noreferrer">Types numérique</a>.</li>
+        </ul>
+      </section>
+
+    </article>
+  </main>
+  <footer class="d-print-none bg-dark text-white p-2">
+    <div class="text-center">Page créée avec ♥ par Mohamed Anis MANI</div>
+    <div class="text-center small">Année scolaire : 2021/2022</div>
+  </footer>
+
+  <script src="resources/js/jquery.min.js"></script>
+  <script src="resources/js/bootstrap.bundle.min.js"></script>
+  <script src="resources/js/highlight.pack.js"></script>
+  <script src="resources/js/hljs.algorithm.js"></script>
+  <script src="resources/js/clipboard.min.js"></script>
+  <script src="resources/js/pages.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+
+    document.querySelectorAll('.language-algorithm,.language-python')
+      .forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'bd-clipboard d-print-none';
+        const btn = document.createElement('button');
+        btn.className = 'btn-clipboard';
+        btn.textContent = "📋";
+        btn.title = "Copier";
+        div.appendChild(btn);
+        item.parentElement.insertBefore(div, item);
+      });
+    new ClipboardJS('.btn-clipboard', {
+      target: (trigger) => {
+        return trigger.parentElement.nextElementSibling;
+      }
+    });
+  </script>
+</body>
+
+</html>
