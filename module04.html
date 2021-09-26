@@ -117,7 +117,8 @@
           <li>Quelles sont les entrées du programme ?</li>
           <li>Combien y-a-t'il de résultats possibles pour le programme ?</li>
           <li>Comment l'ordinateur peut-il choisir une valeur aléatoire ?</li>
-          <li>Peut-on utiliser une structure conditionnelle à forme alternative pour implémenter ce programme ? Quel est son inconvénient ?
+          <li>Peut-on utiliser une structure conditionnelle à forme alternative pour implémenter ce programme ? Quel est
+            son inconvénient ?
           </li>
           <li>Utiliser une structure conditionnelle à forme généralisée pour implémenter le programme.</li>
         </ol>
@@ -300,6 +301,213 @@ Ecrire(a, eq, b)</code></pre>
           <li><a href="qcm03-03.html" target="_blank" rel="noopener noreferrer">Types numérique</a>.</li>
         </ul>
       </section>
+
+      <section>
+        <h3>Personne majeure ou mineure</h3>
+
+        <figure class="d-print-none">
+          <img src="resources/images/majeur_mineur.jpg" alt="Personne majeure ou mineure">
+          <figcaption>Personne majeure ou mineure</figcaption>
+        </figure>
+
+        <p>Une personne est considérée <b>majeure</b>, devant la loi, si son âge a dépassé 18 ans, sinon cette personne
+          est dite <b>mineure</b>.</p>
+        <p>Écrire un programme qui affiche si une personne est majeure ou mineure selon son âge.</p>
+
+        <div class="row">
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple 1">Votre âge ? 25
+Vous êtes majeur</code></pre>
+          </div>
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple 2">Votre âge ? 25
+Vous êtes majeur</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>Jeu de dés</h3>
+
+        <figure class="d-print-none">
+          <img src="resources/images/jeu_3des.jpeg" alt="Jeu de trois dés">
+          <figcaption>Jeu de trois dés</figcaption>
+        </figure>
+
+        <p>Les combinaisons gagnantes dans un jeu de trois dés sont les suivantes :</p>
+        <ul>
+          <li>Trois nombres identiques, on gagne 300pts</li>
+          <li>Deux nombres identiques ou la somme des trois dés est égale à six, on gagne 200pts</li>
+          <li>Un six, on gagne 50 pts</li>
+          <li>Dans les autres cas, on gagne la somme des trois dés</li>
+        </ul>
+
+        <p>On demande d'écrire un programme qui :</p>
+        <ul>
+          <li>Simule le lancement de trois dés</li>
+          <li>Affiche la valeur de chaque dés, ainsi que la somme des trois dés</li>
+          <li>Calcule et affiche le nombre de points gagnés</li>
+        </ul>
+
+        <div class="row">
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple 1">Dé1 : 6 - Dé2 : 3 - Dé3 : 4
+Somme : 13
+Vous gagnez 50 pts</code></pre>
+          </div>
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple 2">Dé1 : 4 - Dé2 : 1 - Dé3 : 2
+Somme : 7
+Vous gagnez 7 pts</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>Convertisseur de devise</h3>
+
+        <figure class="d-print-none">
+          <img src="resources/images/devises.webp" alt="Conversion de devise">
+          <figcaption>Conversion de devise</figcaption>
+        </figure>
+
+        <p>Le 26 Septembre 2021, vers 9h du matin, le taux de change est comme suit : 1€ = 1.17$ = 3.28 D.</p>
+        <p>Écrire un programme qui :</p>
+        <ul>
+          <li>Saisit le montant à convertir <code>mac</code>.</li>
+          <li>Saisit la devise initiale, <code>di</code> représentée par l'un des trois symboles :
+            <ul>
+              <li>$ : Pour le Dollar américain</li>
+              <li>€ : Pour l'Euro</li>
+              <li>D : Pour le Dinar Tunisien</li>
+            </ul>
+          </li>
+          <li>Saisit la devise requises, <code>dr</code> représentée par l'un des symboles cités.</li>
+          <li>Calcule la valeur de <code>mac</code> de la devise <code>di</code> dans la devise <code>dr</code></li>
+          <li>Affiche le change</li>
+        </ul>
+
+        <div class="row">
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple 1">Montant ? 100
+Devise initiale ($/€/D) ? D
+Devise requise ($/€/D) ? $
+100 D = 35.67 $</code></pre>
+          </div>
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple 2">VMontant ? 100
+Devise initiale ($/€/D) ? €
+Devise requise ($/€/D) ? $
+100 € = 117.0 $</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>Vendeur de poissons</h3>
+
+        <figure class="d-print-none">
+          <img src="resources/images/vendeur-poissons.jpg" alt="Vendeur de poissons">
+          <figcaption>Vendeur de poissons</figcaption>
+        </figure>
+
+        <p>Un vendeur de poissons veut calculer le prix de vente de ses marchandises en fonction du prix d'achat.</p>
+        <p class="text-center"><code>Prix vente = Prix achat × (1 + gain / 100)</code></p>
+        <p>Sachant que :</p>
+        <ul>
+          <li>gain = 20%, si 0 ≤ Prix achat &lt; 15</li>
+          <li>gain = 25%, si 15 ≤ Prix achat &lt; 30</li>
+          <li>gain = 35%, si 30 ≤ Prix achat</li>
+        </ul>
+        <p>Ecrire l'algorithme d'un programme qui :</p>
+        <ul>
+          <li>Saisit le nom du produit, variable <code>np</code></li>
+          <li>Saisit le prix d'achat, variable <code>pa</code></li>
+          <li>Calcule le <strong>gain</strong> en fonction du prix d'achat, variable <code>g</code></li>
+          <li>Calcule le <strong>prix de vente</strong> en utilisant la formule ci-dessus, variable <code>pv</code></li>
+          <li>Affiche le prix de vente</li>
+        </ul>
+        <div class="row">
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple 1">Calcul du prix de vente
+==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-
+Quel est le nom du produit ? Sardines
+Quel est le prix d'achat (DT) ? 5
+Gain : 20 %
+Prix de vente : 6.0 DT</code></pre>
+          </div>
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple 2">Calcul du prix de vente
+==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-
+Quel est le nom du produit ? Trilia
+Quel est le prix d'achat (DT) ? 20
+Gain : 25 %
+Prix de vente : 25.0 DT</code></pre>
+          </div>
+        </div>
+
+      </section>
+
+      <section>
+        <h3>Vendeur ambulant</h3>
+
+        <figure class="d-print-none">
+          <img src="resources/images/vendeur_ambulant.jpeg" alt="Vendeur ambulant">
+          <figcaption>Vendeur ambulant</figcaption>
+        </figure>
+
+        <p>Un vendeur ambulant vend trois catégories d'articles dans un marché de la région.</p>
+        <p>Les prix respectifs de ces articles sont :</p>
+        <ul>
+          <li>Catégorie A : 1DT/pièce</li>
+          <li>Catégorie B : 3DT/pièce</li>
+          <li>Catégorie C : 5DT/pièce</li>
+        </ul>
+        <p>En fin de journée, ce vendeur veut savoir si ses ventes, de la journée, sont satisfaisantes ou non.</p>
+        <p>Le chiffre d'affaire des ventes <code>ca</code> est calculé de la façon suivante :</p>
+        <p class="text-center"><code>ca = na + nb × 3 + nc × 5</code></p>
+        <p class="text-center small"><code>na</code>, <code>nb</code> et <code>nc</code> étant le nombre d'articles
+          vendus
+          de chacune des catégories.</p>
+        <p>Le chiffre d'affaire est :</p>
+        <ul>
+          <li><strong>Satisfaisant</strong>, si <code>ca ≥ 100</code></li>
+          <li><strong>Bon</strong>, si <code>50 &gt; ca ≥ 150</code></li>
+          <li><strong>Mauvais</strong>, si <code>ca &lt; 100</code></li>
+        </ul>
+        <p>Ecrire l'algorithme d'un programme qui :</p>
+        <ul>
+          <li>Saisit le nombre d'articles de chaque catégorie <code>na</code>, <code>nb</code>, et <code>nc</code>.</li>
+          <li>Calcule le chiffre d'affaire <code>ca</code> en utilisant la formule ci-dessus.</li>
+          <li>Affiche le chiffre d'affaire de la journée.</li>
+          <li>Affiche s'il est satisfaisant, bon, ou mauvais.</li>
+        </ul>
+        <div class="row">
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple 1">VVendeur ambulant
+==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-
+Indiquer le nombre d'articles de chaque catégorie :
+Catégorie A ? 20
+Catégorie B ? 12
+Catégorie C ? 13
+Le chiffre d'affaires de la journée : 121 DT
+Le chiffre d'affaire est Satisfaisant</code></pre>
+          </div>
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple 2">Vendeur ambulant
+==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-
+Indiquer le nombre d'articles de chaque catégorie :
+Catégorie A ? 35
+Catégorie B ? 20
+Catégorie C ? 20
+Le chiffre d'affaires de la journée : 195 DT
+Le chiffre d'affaire est Bon</code></pre>
+          </div>
+        </div>
+      </section>
+
+      
+
 
     </article>
   </main>
