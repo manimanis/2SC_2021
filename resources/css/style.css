@@ -321,22 +321,22 @@ table.col-20 td {
     max-height: 3cm !important;
   }
   figure img.h4cm {
-    max-height: 3cm !important;
+    max-height: 4cm !important;
   }
   figure img.h5cm {
     max-height: 5cm !important;
   }
   figure img.h6cm {
-    max-height: 5cm !important;
+    max-height: 6cm !important;
   }
   figure img.h7cm {
-    max-height: 5cm !important;
-  }
-  figure img.h8cm {
     max-height: 7cm !important;
   }
+  figure img.h8cm {
+    max-height: 8cm !important;
+  }
   figure img.h9cm {
-    max-height: 5cm !important;
+    max-height: 9cm !important;
   }
   figure img.h10cm {
     max-height: 10cm !important;
