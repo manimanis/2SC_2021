@@ -28,3 +28,32 @@ const app = new Vue({
     }
   }
 });
+
+const app1 = new Vue({
+  el: "#simulation-2",
+  data: {
+    step: -1,
+    qte: 5,
+    argent: 5000,
+    message: ''
+  },
+  methods: {
+    simuler: function (step) {
+      this.step = step;
+      if (step == 0) {  
+        Vue.nextTick(() => this.$refs.qte.focus());
+      } else if (step == 1) {        
+        Vue.nextTick(() => this.$refs.argent.focus());
+      } else if (step == 2) {
+        const total = this.qte * 800;
+        if (this.argent > total) {
+          this.message = "Monnaie = " + (this.argent - total);
+        } else if (this.argent < total) {
+          this.message = "Manquant = " + (total - this.argent);
+        } else {
+          this.message = "A bientôt";
+        }
+      }
+    }
+  }
+});
