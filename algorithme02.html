@@ -39,6 +39,39 @@
         <p>Une personne est dite majeure si son âge dépasse 18 ans.</p>
         <p><strong>Ecrire un algorithme pour déterminer si une personne est majeure ou mineure.</strong></p>
 
+        <div class="row">
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple 1">Votre nom ? Raed
+Votre âge ? 16
+Raed vous êtes mineur.
+Vous serez majeur dans 2 ans.</code></pre>
+          </div>
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple 2">Votre nom ? Loauy
+Votre âge ? 19
+Louay vous êtes majeur.
+Vous êtes majeur depuis 1 ans.</code></pre>
+          </div>
+        </div>
+
+        <div id="simulation-1" class="d-print-none my-3 border border-dark bg-light p-3">
+          <div class="my-2">Cliquer sur le bouton suivant pour faire la simulation.</div>
+          <button class="btn btn-primary" v-if="step == -1" v-on:click="simuler(0)">Simuler</button>
+          <div class="my-2" v-if="step >= 0">
+            Votre nom ? <input ref="nom" name="nom" type="text" v-model="nom" v-on:keydown.enter="simuler(1)">
+          </div>
+          <div class="my-2" v-if="step >= 1">
+            Votre âge ? <input ref="age" name="age" type="text" v-model="age" v-on:keydown.enter="simuler(2)">
+          </div>
+          <div class="my-2" v-if="step >= 2">
+            {{nom}} vous êtes {{age >= 18 ? 'majeur' : 'mineur'}}.<br>
+            {{message}}.
+          </div>
+          <div class="my-2" v-if="step >= 2">
+            <button class="btn btn-secondary" ref="restart" v-on:click="simuler(-1)">Reset</button>
+          </div>
+        </div>
+
         <h4>Travail demandé</h4>
         <ol>
           <li>Déterminer les données de ce problème.</li>
@@ -84,6 +117,33 @@ Fin Si</code></pre>
 
         <p><strong>Ecrire un algorithme pour simuler cette situation.</strong></p>
 
+        <div class="row">
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple 1">Nbre de croissants ? 5
+Total = 800 &times; 5 = 4000
+Votre argent ? 5000
+Monnaie = 1000</code></pre>
+          </div>
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple 2">Nbre de croissants ? 10
+Total = 800 &times; 10 = 8000
+Votre argent ? 5000
+Manquant = 3000</code></pre>
+          </div>
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple 3">Nbre de croissants ? 7
+Total = 800 &times; 7 = 5600
+Votre argent ? 6000
+Monnaie = 400</code></pre>
+          </div>
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple 2">Nbre de croissants ? 10
+Total = 800 &times; 10 = 8000
+Votre argent ? 8000
+A bientôt</code></pre>
+          </div>
+        </div>
+
         <h4>Travail demandé</h4>
         <ol>
           <li>Déterminer les données de ce problème.</li>
@@ -126,6 +186,25 @@ Fin Si</code></pre>
 
         <p><strong>Ecrire un algorithme pour simuler cette situation.</strong></p>
 
+        <div class="row">
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple 1">Votre commande ? Café
+Commande de votre ami ? Boisson gazeuse
+Erreur serveur ? oui
+Le serveur apporte
+Boisson gazeuse pour vous
+Café pour votre ami</code></pre>
+          </div>
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple 2">Votre commande ? Café
+Commande de votre ami ? Boisson gazeuse
+Erreur serveur ? non
+Le serveur apporte
+Café pour vous
+Boisson gazeuse pour votre ami</code></pre>
+          </div>
+        </div>
+
         <h4>Travail demandé</h4>
         <ol>
           <li>Déterminer les données de ce problème.</li>
@@ -156,6 +235,17 @@ Fin Si</code></pre>
         </ul>
 
         <p><strong>Ecrire un algorithme pour simuler cette situation.</strong></p>
+
+        <div class="row">
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple 1">Numéro de votre ticket ? 5244224
+Vous êtes le gagnant du jour</code></pre>
+          </div>
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple 2">Numéro de votre ticket ? 5244225
+Merci pour votre visite</code></pre>
+          </div>
+        </div>
 
         <h4>Travail demandé</h4>
         <ol>
@@ -200,6 +290,37 @@ Fin Si</code></pre>
 
         <p><strong>Ecrire un algorithme pour simuler cette situation.</strong></p>
 
+        <div class="row">
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple 1">Nom de l'élève ? Fakher
+Moyenne annuelle ? 13.0
+Moyenne mathématiques ? 15.0
+Moyenne informatique ? 17.0
+Fakher réussit</code></pre>
+          </div>
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple 2">Nom de l'élève ? Fathi
+Moyenne annuelle ? 9.23
+Moyenne mathématiques ? 5.5
+Moyenne informatique ? 17.0
+Fathi réussit</code></pre>
+          </div>
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple 3">Nom de l'élève ? Farida
+Moyenne annuelle ? 8.95
+Moyenne mathématiques ? 9.0
+Moyenne informatique ? 9.0
+Farida redouble</code></pre>
+          </div>
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple 4">Nom de l'élève ? Fahima
+Moyenne annuelle ? 9.23
+Moyenne mathématiques ? 5.5
+Moyenne informatique ? 8.0
+Fakher redouble</code></pre>
+          </div>
+        </div>
+
         <h4>Travail demandé</h4>
         <ol>
           <li>Déterminer les données de ce problème.</li>
@@ -221,6 +342,8 @@ Fin Si</code></pre>
   <script src="resources/js/hljs.algorithm.js"></script>
   <script src="resources/js/clipboard.min.js"></script>
   <script src="resources/js/pages.js"></script>
+  <script src="resources/js/vue.min.js"></script>
+  <script src="resources/apps/algorithme02.js"></script>
   <script>
     hljs.initHighlightingOnLoad();
 
