@@ -55,17 +55,23 @@ Vous êtes majeur depuis 1 ans.</code></pre>
         </div>
 
         <div id="simulation-1" class="d-print-none my-3 border border-dark bg-light p-3">
-          <div class="my-2">Cliquer sur le bouton suivant pour faire la simulation.</div>
-          <button class="btn btn-primary" v-if="step == -1" v-on:click="simuler(0)">Simuler</button>
+          <div v-if="step == -1">
+            <div class="my-2">Cliquer sur le bouton suivant pour faire la simulation.</div>
+            <button class="btn btn-primary" v-on:click="simuler(0)">Simuler</button>
+          </div>
           <div class="my-2" v-if="step >= 0">
-            Votre nom ? <input ref="nom" name="nom" type="text" v-model="nom" v-on:keydown.enter="simuler(1)">
+            Votre nom ? <input v-if="step == 0" ref="nom" name="nom" type="text" v-model="nom"
+              v-on:keydown.enter="simuler(1)">
+            <span v-else>{{nom}}</span>
           </div>
           <div class="my-2" v-if="step >= 1">
-            Votre âge ? <input ref="age" name="age" type="text" v-model="age" v-on:keydown.enter="simuler(2)">
+            Votre âge ? <input v-if="step == 1" ref="age" name="age" type="text" v-model="age"
+              v-on:keydown.enter="simuler(2)">
+            <span v-else>{{age}}</span>
           </div>
-          <div class="my-2" v-if="step >= 2">
-            {{nom}} vous êtes {{age >= 18 ? 'majeur' : 'mineur'}}.<br>
-            {{message}}.
+          <div v-if="step >= 2">
+            <div class="my-2">{{nom}} vous êtes {{age >= 18 ? 'majeur' : 'mineur'}}.</div>
+            <div class="my-2">{{message}}.</div>
           </div>
           <div class="my-2" v-if="step >= 2">
             <button class="btn btn-secondary" ref="restart" v-on:click="simuler(-1)">Reset</button>
@@ -145,14 +151,22 @@ A bientôt</code></pre>
         </div>
 
         <div id="simulation-2" class="d-print-none my-3 border border-dark bg-light p-3">
-          <div class="my-2">Cliquer sur le bouton suivant pour faire la simulation.</div>
-          <button class="btn btn-primary" v-if="step == -1" v-on:click="simuler(0)">Simuler</button>
-          <div class="my-2" v-if="step >= 0">
-            Nbre de croissants ? <input ref="qte" name="qte" type="text" v-model="qte" v-on:keydown.enter="simuler(1)">
+          <div v-if="step == -1">
+            <div class="my-2">Cliquer sur le bouton suivant pour faire la simulation.</div>
+            <button class="btn btn-primary" v-on:click="simuler(0)">Simuler</button>
           </div>
-          <div class="my-2" v-if="step >= 1">
-            Total = 800 &times; {{qte}} = {{800*qte}}
-            Votre argent ? <input ref="argent" name="argent" type="text" v-model="argent" v-on:keydown.enter="simuler(2)">
+          <div class="my-2" v-if="step >= 0">
+            Nbre de croissants ? <input v-if="step == 0" ref="qte" name="qte" type="text" v-model="qte"
+              v-on:keydown.enter="simuler(1)">
+            <span v-else>{{qte}}</span>
+          </div>
+          <div v-if="step >= 1">
+            <div class="my-2">Total = 800 &times; {{qte}} = {{800*qte}}<br></div>
+            <div class="my-2">
+              Votre argent ? <input v-if="step == 1" ref="argent" name="argent" type="text" v-model="argent"
+                v-on:keydown.enter="simuler(2)">
+              <span v-else>{{argent}}</span>
+            </div>
           </div>
           <div class="my-2" v-if="step >= 2">
             {{message}}.
@@ -223,6 +237,36 @@ Boisson gazeuse pour votre ami</code></pre>
           </div>
         </div>
 
+        <div id="simulation-3" class="d-print-none my-3 border border-dark bg-light p-3">
+          <div v-if="step == -1">
+            <div class="my-2">Cliquer sur le bouton suivant pour faire la simulation.</div>
+            <button class="btn btn-primary" v-on:click="simuler(0)">Simuler</button>
+          </div>
+          <div class="my-2" v-if="step >= 0">
+            Votre commande ? <input v-if="step == 0" ref="cmd1" name="cmd1" type="text" v-model="cmd1"
+              v-on:keydown.enter="simuler(1)">
+            <span v-else>{{cmd1}}</span>
+          </div>
+          <div class="my-2" v-if="step >= 1">
+            Commande de votre ami ? <input v-if="step == 1" ref="cmd2" name="cmd2" type="text" v-model="cmd2"
+              v-on:keydown.enter="simuler(2)">
+            <span v-else>{{cmd2}}</span>
+          </div>
+          <div class="my-2" v-if="step >= 2">
+            Erreur serveur ? <input v-if="step == 2" ref="err" name="err" type="text" v-model="err"
+              v-on:keydown.enter="simuler(3)">
+            <span v-else>{{err}}</span>
+          </div>
+          <div v-if="step >= 3">
+            <div class="my-2">Le serveur apporte</div>
+            <div class="my-2">{{cmd11}} pour vous</div>
+            <div class="my-2">{{cmd12}} pour votre ami</div>
+          </div>
+          <div class="my-2" v-if="step >= 3">
+            <button class="btn btn-secondary" ref="restart" v-on:click="simuler(-1)">Reset</button>
+          </div>
+        </div>
+
         <h4>Travail demandé</h4>
         <ol>
           <li>Déterminer les données de ce problème.</li>
@@ -256,12 +300,29 @@ Boisson gazeuse pour votre ami</code></pre>
 
         <div class="row">
           <div class="col-sm-6">
-            <pre><code class="nohighlight shell python" data-text="Exemple 1">Numéro de votre ticket ? 5244224
+            <pre><code class="nohighlight shell python" data-text="Exemple 1">Numéro de votre ticket ? 5242442
 Vous êtes le gagnant du jour</code></pre>
           </div>
           <div class="col-sm-6">
             <pre><code class="nohighlight shell python" data-text="Exemple 2">Numéro de votre ticket ? 5244225
 Merci pour votre visite</code></pre>
+          </div>
+        </div>
+
+        <div id="simulation-4" class="d-print-none my-3 border border-dark bg-light p-3">
+          <div v-if="step == -1">
+            <div class="my-2">Cliquer sur le bouton suivant pour faire la simulation.</div>
+            <button class="btn btn-primary" v-on:click="simuler(0)">Simuler</button>
+          </div>
+          <div class="my-2" v-if="step >= 0">
+            Numéro de votre ticket ? <input v-if="step == 0" ref="num" name="num" type="text" v-model="num"
+              v-on:keydown.enter="simuler(1)"><span v-else>{{num}}</span>
+          </div>
+          <div v-if="step >= 1">
+            <div class="my-2">{{message}}</div>
+          </div>
+          <div class="my-2" v-if="step >= 1">
+            <button class="btn btn-secondary" ref="restart" v-on:click="simuler(-1)">Reset</button>
           </div>
         </div>
 
@@ -312,23 +373,19 @@ Fin Si</code></pre>
           <div class="col-sm-6">
             <pre><code class="nohighlight shell python" data-text="Exemple 1">Nom de l'élève ? Fakher
 Moyenne annuelle ? 13.0
-Moyenne mathématiques ? 15.0
-Moyenne informatique ? 17.0
 Fakher réussit</code></pre>
           </div>
           <div class="col-sm-6">
-            <pre><code class="nohighlight shell python" data-text="Exemple 2">Nom de l'élève ? Fathi
+            <pre><code class="nohighlight shell python" data-text="Exemple 2">Nom de l'élève ? Farida
+Moyenne annuelle ? 8.95
+Farida redouble</code></pre>
+          </div>
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple 3">Nom de l'élève ? Fathi
 Moyenne annuelle ? 9.23
 Moyenne mathématiques ? 5.5
 Moyenne informatique ? 17.0
 Fathi réussit</code></pre>
-          </div>
-          <div class="col-sm-6">
-            <pre><code class="nohighlight shell python" data-text="Exemple 3">Nom de l'élève ? Farida
-Moyenne annuelle ? 8.95
-Moyenne mathématiques ? 9.0
-Moyenne informatique ? 9.0
-Farida redouble</code></pre>
           </div>
           <div class="col-sm-6">
             <pre><code class="nohighlight shell python" data-text="Exemple 4">Nom de l'élève ? Fahima
@@ -336,6 +393,35 @@ Moyenne annuelle ? 9.23
 Moyenne mathématiques ? 5.5
 Moyenne informatique ? 8.0
 Fakher redouble</code></pre>
+          </div>
+        </div>
+
+        <div id="simulation-5" class="d-print-none my-3 border border-dark bg-light p-3">
+          <div v-if="step == -1">
+            <div class="my-2">Cliquer sur le bouton suivant pour faire la simulation.</div>
+            <button class="btn btn-primary" v-on:click="simuler(0)">Simuler</button>
+          </div>
+          <div class="my-2" v-if="step >= 0">
+            Nom de l'élève ? <input v-if="step == 0" ref="nom" name="nom" type="text" v-model="nom"
+              v-on:keydown.enter="simuler(1)"><span v-else>{{nom}}</span>
+          </div>
+          <div class="my-2" v-if="step >= 1">
+            Moyenne annuelle ? <input v-if="step == 1" ref="moy" name="moy" type="text" v-model="moy"
+              v-on:keydown.enter="simuler(2)"><span v-else>{{moy}}</span>
+          </div>
+          <div class="my-2" v-if="step >= 2 && disp_math">
+            Moyenne mathématiques ? <input v-if="step == 2" ref="math" name="math" type="text" v-model="math"
+              v-on:keydown.enter="simuler(3)"><span v-else>{{math}}</span>
+          </div>
+          <div class="my-2" v-if="step >= 3 && disp_info">
+            Moyenne informatique ? <input v-if="step == 3" ref="info" name="info" type="text" v-model="info"
+              v-on:keydown.enter="simuler(4)"><span v-else>{{info}}</span>
+          </div>
+          <div v-if="step >= 4">
+            <div class="my-2">{{message}}</div>
+          </div>
+          <div class="my-2" v-if="step >= 4">
+            <button class="btn btn-secondary" ref="restart" v-on:click="simuler(-1)">Reset</button>
           </div>
         </div>
 
