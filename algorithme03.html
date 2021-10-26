@@ -69,6 +69,52 @@ Vous gagnez!</code></pre>
       </section>
 
       <section>
+        <h3>Jeu des cinquante points</h3>
+
+        <figure>
+          <img class="h4cm" src="algo/images/deux-des.webp" alt="Deux dés à six faces">
+          <figcaption>Deux dés à six faces</figcaption>
+        </figure>
+
+        <h4>Déroulement du jeu</h4>
+        <p>À tour de rôle, les joueurs lancent deux dés.</p>
+
+        <p>S’ils n’obtiennent <strong>aucun double</strong>, ils <strong>ne marquent pas de points</strong>.</p>
+
+        <p>En revanche, si leurs dés affichent des doubles, voici comment calculer leur score :</p>
+        <ul>
+          <li>Un double 6 = 25 points</li>
+          <li>Un double 1, 2, 4, 5 = 5 points</li>
+          <li>Un double 3 = 0 points.</li>
+        </ul>
+
+        <p><b>On veut écrire un programme qui calcule le nombre de points obtenu après un lancer de dés selon les règles
+            énoncées.</b></p>
+
+        <div class="row">
+          <div class="col-sm-4">
+            <pre><code class="nohighlight shell python" data-text="Exemple 1">Vous avez obtenu 2 et 5
+Votre score est : 0</code></pre>
+          </div>
+          <div class="col-sm-4">
+            <pre><code class="nohighlight shell python" data-text="Exemple 2">Vous avez obtenu 1 et 1
+Votre score est : 5</code></pre>
+          </div>
+          <div class="col-sm-4">
+            <pre><code class="nohighlight shell python" data-text="Exemple 3">Vous avez obtenu 6 et 6
+Votre score est : 25</code></pre>
+          </div>
+        </div>
+
+        <h4>Travail demandé</h4>
+        <ol>
+          <li>Déterminer les données de ce problème.</li>
+          <li>Déterminer les résultats de ce problème.</li>
+          <li>Ecrire l'algorithme.</li>
+        </ol>
+      </section>
+
+      <section>
         <h3>Pierre / Feuille / Ciseaux</h3>
 
         <figure>
