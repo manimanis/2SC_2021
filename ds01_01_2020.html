@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Devoir de synthèse 2ème Sciences</title>
+  <link rel="stylesheet" href="resources/css/bootstrap.min.css">
+  <link rel="stylesheet" href="resources/css/default.css">
+  <link rel="stylesheet" href="resources/css/style.css">
+  <link rel="stylesheet" href="resources/css/seance03.css">
+  <style>
+    .pointille {
+      line-height: 0.6cm;
+      border-bottom: #666 dotted 2px;
+    }
+
+    @media print {
+      h1 {
+        font-size: 1.6em;
+      }
+
+      h2 {
+        font-size: 1.4em;
+      }
+
+      h3 {
+        font-size: 1.2em;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <aside>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#aside_navbar"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span> Menu
+      </button>
+      <div class="collapse navbar-collapse" id="aside_navbar"></div>
+    </nav>
+  </aside>
+  <main class="container">
+    <h1>Devoir de synthèse n°1 - 2<sup>ème</sup>Sciences</h1>
+    <article>
+      <h2>Partie 1</h2>
+      <section>
+        <h3>Exercice 1 (3 pts)</h3>
+
+        <p>Sachant que a &le; aléa(a, b) &le; b génère un nombre aléatoire dans l'intervalle [a, b].</p>
+        <ol>
+          <li>Donner une instruction qui renvoie un nombre aléatoire de 3 chiffres multiple de 5 dans la
+            variable
+            <code>a</code>
+            <p class="pointille">&nbsp;</p>
+          </li>
+          <li>On donne les instructions suivantes:
+            <pre><code class="hljs nohighlight">a &larr; aléa(1, 4)
+b &larr; aléa(1, 4)
+c &larr; 5*a + b</code></pre>
+            <p>Calculer les valeurs minimale et maximale de <code>c</code>.</p>
+            <p class="pointille">&nbsp;</p>
+          </li>
+          <li>Quelle est l'instruction à écrire pour générer une valeur aléatoire paire dans l'intervalle [10,
+            20].
+            <p class="pointille">&nbsp;</p>
+          </li>
+          <li>Soient les instructions suivantes:
+            <pre><code class="hljs nohighlight">a &larr; aléa(4, 8)
+b &larr; aléa(mn, mx)
+c &larr; a * b</code></pre>
+            <p>Calculer les valeurs de <code>mn</code> et <code>mx</code> pour que <code>c</code> soit une
+              valeur dans l'intervalle [20, 48].</p>
+            <p class="pointille">&nbsp;</p>
+          </li>
+        </ol>
+      </section>
+
+      <section>
+        <h3>Exercice 2 (4 pts)</h3>
+
+        <p>Remplir le tableau suivant :</p>
+        <table class="table table-sm table-bordered border-dark">
+          <thead>
+            <tr>
+              <th width="50%">Algorithme</th>
+              <th width="50%">Python</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <pre><code class="hljs nohighlight">a &larr; aléa(10, 50)
+b &larr; aléa(1, a)</code></pre>
+              </td>
+              <td>
+                <p class="pointille">&nbsp;</p>
+                <p class="pointille">&nbsp;</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p class="pointille">&nbsp;</p>
+                <p class="pointille">&nbsp;</p>
+              </td>
+              <td>
+                <pre><code class="hljs nohighlight">print(a, "-", b, "= ?")
+rep = int(input())</code></pre>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <pre><code class="hljs nohighlight">Si a - b = rep Alors
+  Ecrire("Bravo! Vous avez deviné!")
+Sinon
+  s &larr; a - b
+  Ecrire("Non, ", a, "-", b, "=", s)
+Fin Si</code></pre>
+              </td>
+              <td>
+                <p class="pointille">&nbsp;</p>
+                <p class="pointille">&nbsp;</p>
+                <p class="pointille">&nbsp;</p>
+                <p class="pointille">&nbsp;</p>
+                <p class="pointille">&nbsp;</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h3>Exercice 3 (3 pts)</h3>
+
+        <p>On donne l'algorithme suivant qui analyse le résultat d'un élève en fonction de sa moyenne et de son
+          range.
+        </p>
+
+        <div>
+          <pre><code class="language-algorithm">Algorithme eleve
+Début
+  Ecrire("Donner votre nom ?") ; Lire(nom)
+  Ecrire("Donner votre moyenne [0, 20] ?") ; Lire(moy)
+  Ecrire("Donner votre rang >= 1 ?") ; Lire(rang)
+  premiers &larr;  1 &le; rang &le; 3
+  mbien &larr; moy &ge; 15
+  si mbien alors
+    Ecrire(moy, "est une bonne moyenne")
+  fin si
+  si premiers alors
+    Ecrire(nom, "félicitations, vous êtes", rang, "ème")
+  Sinon
+    Ecrire(nom, "travaillez pour être parmi les premiers")
+  fin si
+Fin</code></pre>
+        </div>
+
+        <ol>
+          <li>Déterminer les variables utilisées ainsi que leurs types.
+            <table class="table table-sm table-bordered border-dark">
+              <thead>
+                <tr>
+                  <th>Objets</th>
+                  <th>Types</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td></td>
+                  <td>chaine</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>réel</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>entier</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>booléen</td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+          <li>Remplir le tableau:
+            <table class="table table-sm table-bordered border-dark">
+              <thead>
+                <tr>
+                  <th width="9%">nom</th>
+                  <th width="9%">moy</th>
+                  <th width="9%">rang</th>
+                  <th width="9%">premiers</th>
+                  <th width="9%">mbien</th>
+                  <th>message affiché</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>"Feirouz"</td>
+                  <td>13.25</td>
+                  <td>4</td>
+                  <td>Faux</td>
+                  <td>Faux</td>
+                  <td>Feirouz travaillez pour être parmi les premiers</td>
+                </tr>
+                <tr>
+                  <td>"Samia"</td>
+                  <td>16</td>
+                  <td>5</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>"Imen"</td>
+                  <td>14.5</td>
+                  <td>2</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        </ol>
+      </section>
+    </article>
+
+    <article>
+      <h2>Partie 2</h2>
+
+      <section>
+        <h3>Problème (10 pts)</h3>
+
+        <div class="row">
+          <div class="col-sm-7">
+            <h4>Vendeur de carrelage</h4>
+            <p>Un vendeur de carrelage vend trois catégories de carrelage : A, B et C. Pour écouler ses
+              stocks le vendeur fait des remises sur ses articles :</p>
+            <ul>
+              <li>Remise de 20% sur la catégorie A</li>
+              <li>Remise de 30% sur la catégorie B</li>
+              <li>Remise de 50% sur la catégorie C</li>
+            </ul>
+            <p>En plus de ces promotions, les 50 premiers clients gagnent un bon d'achat de 100DT.</p>
+
+            <h5>Travail demandé</h5>
+            <p>Ecrire un algorithme nommé <code>carrelage</code> qui :</p>
+            <ul>
+              <li>Saisit le numéro d'arrivée du client <code>nav</code></li>
+              <li>Saisit le prix de vente d'un article <code>pv</code></li>
+              <li>Saisit la catégorie de l'article vendu <code>cat</code> : A, B ou C</li>
+              <li>Calcule la remise <code>remise</code> en %</li>
+              <li>Calcule le montant de remise : <code>mr = pv * remise / 100</code></li>
+              <li>Calcule et affiche le montant à payer <code>mp = pv - mr</code></li>
+              <li>Affiche si le client bénéficie d'un bon d'achat</li>
+            </ul>
+          </div>
+          <div class="col-sm-5">
+            <figure>
+              <img src="images/DS01/ceramique.jpg" alt="Carrelage">
+              <figcaption>Carrelage</figcaption>
+            </figure>
+            <p>
+            <pre><code class="nohighlight shell python" data-text="Exemple">Numéro du client ? 15
+Prix de vente de l'article ? 3000
+Catégorie de l'article (A,B,C) ? B
+Remise de 30% = 900.000DT
+Montant à payer = 2100.000DT
+Le client n° 15 gagne un bon d'achat de 100DT</code></pre>
+            </p>
+          </div>
+        </div>
+
+        <h5>L'algorithme</h5>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+      </section>
+    </article>
+  </main>
+  <script src="resources/js/jquery.min.js"></script>
+  <script src="resources/js/bootstrap.min.js"></script>
+  <script src="resources/js/highlight.pack.js"></script>
+  <script src="resources/js/hljs.algorithm.js"></script>
+  <script src="resources/js/draggable.js"></script>
+  <script src="resources/js/clipboard.min.js"></script>
+  <script src="resources/js/pages.js"></script>
+  <script src="resources/js/savecontent.js"></script>
+  <script src="resources/js/vue.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+    document.querySelectorAll('.language-algorithm,.language-python')
+      .forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'bd-clipboard d-print-none';
+        const btn = document.createElement('button');
+        btn.className = 'btn-clipboard';
+        btn.textContent = "📋";
+        btn.title = "Copier";
+        div.appendChild(btn);
+        item.parentElement.insertBefore(div, item);
+      });
+    new ClipboardJS('.btn-clipboard', {
+      target: (trigger) => {
+        return trigger.parentElement.nextElementSibling;
+      }
+    });
+    $(() => {
+      const localStore = new PagePersistance();
+      const serverStore = new ServerSaves('DS_3T');
+      const userInputSaver = new UserInputSaver(
+        document.querySelector('.user-input-saver'),
+        localStore,
+        serverStore);
+    });
+  </script>
+</body>
+
+</html>

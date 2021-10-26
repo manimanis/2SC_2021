@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Devoir de synthèse 2ème Sciences</title>
+  <link rel="stylesheet" href="resources/css/bootstrap.min.css">
+  <link rel="stylesheet" href="resources/css/default.css">
+  <link rel="stylesheet" href="resources/css/style.css">
+  <link rel="stylesheet" href="resources/css/seance03.css">
+  <style>
+    .pointille {
+      line-height: 0.6cm;
+      border-bottom: #666 dotted 2px;
+    }
+
+    @media print {
+      h1 {
+        font-size: 1.6em;
+      }
+
+      h2 {
+        font-size: 1.4em;
+      }
+
+      h3 {
+        font-size: 1.2em;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <aside>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#aside_navbar"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span> Menu
+      </button>
+      <div class="collapse navbar-collapse" id="aside_navbar"></div>
+    </nav>
+  </aside>
+  <main class="container">
+    <h1>Devoir de synthèse n°1 - 2<sup>ème</sup>Sciences</h1>
+    <article>
+      <h2>Partie 1</h2>
+      <section>
+        <h3>Exercice 1 (3 pts)</h3>
+
+        <p>Sachant que a &le; aléa(a, b) &le; b génère un nombre aléatoire dans l'intervalle [a, b].</p>
+        <ol>
+          <li>Donner une instruction qui renvoie un nombre aléatoire de 3 chiffres dans la variable
+            <code>a</code>
+            <p class="pointille">&nbsp;</p>
+          </li>
+          <li>On donne les instructions suivantes:
+            <pre><code class="hljs nohighlight">a &larr; aléa(0, 1)
+b &larr; aléa(0, 1)
+c &larr; 2*a + b</code></pre>
+            <p>Calculer les valeurs minimale et maximale de <code>c</code>.</p>
+            <p class="pointille">&nbsp;</p>
+          </li>
+          <li>Quelle est l'instruction à écrire pour générer une valeur aléatoire impaire dans l'intervalle
+            [5, 11].
+            <p class="pointille">&nbsp;</p>
+          </li>
+          <li>Soient les instructions suivantes:
+            <pre><code class="hljs nohighlight">a &larr; aléa(10, 20)
+b &larr; aléa(mn, mx)
+c &larr; a div b</code></pre>
+            <p>Sachant que <code>div</code> renvoie le quotient entier d'une division (exemple 9 div 2
+              &rarr; 4),
+              calculer les valeurs de <code>mn</code> et <code>mx</code> pour que <code>c</code> soit une
+              valeur dans
+              l'intervalle [1, 5].</p>
+            <p class="pointille">&nbsp;</p>
+          </li>
+        </ol>
+      </section>
+
+      <section>
+        <h3>Exercice 2 (4 pts)</h3>
+
+        <p>Remplir le tableau suivant :</p>
+        <table class="table table-sm table-bordered border-dark">
+          <thead>
+            <tr>
+              <th width="50%">Algorithme</th>
+              <th width="50%">Python</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <p class="pointille">&nbsp;</p>
+              </td>
+              <td>
+                <pre><code class="hljs nohighlight">print("Calcul du prix de vente")</code></pre>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <pre><code class="hljs nohighlight">Ecrire("Donner le prix d'achat ?")
+Lire(pa)</code></pre>
+              </td>
+              <td>
+                <p class="pointille">&nbsp;</p>
+                <p class="pointille">&nbsp;</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p class="pointille">&nbsp;</p>
+                <p class="pointille">&nbsp;</p>
+                <p class="pointille">&nbsp;</p>
+                <p class="pointille">&nbsp;</p>
+                <p class="pointille">&nbsp;</p>
+              </td>
+              <td>
+                <pre><code class="hljs nohighlight">if pa >= 15:
+  g = 0.25
+else:
+  g = 0.15</code></pre>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <pre><code class="hljs nohighlight">pv &larr; pa * (1 + g)
+Ecrire("Le prix de vente est :",pv)</code></pre>
+              </td>
+              <td>
+                <p class="pointille">&nbsp;</p>
+                <p class="pointille">&nbsp;</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h3>Exercice 3 (3 pts)</h3>
+
+        <p>On donne l'algorithme suivant qui détermine la <strong>corpulence</strong> d'un individu en fonction
+          de son
+          poids (kg) et sa hauteur (m).</p>
+
+        <div>
+          <pre><code class="language-algorithm">Algorithme corpulence
+Début
+  Ecrire("Donner votre nom ?") ; Lire(nom)
+  Ecrire("Donner votre poids (en Kg) ?") ; Lire(p)
+  Ecrire("Donner votre hauteur (en m) ?") ; Lire(h)
+  imc &larr; p / (h * h)
+  mn &larr; 0 &le; imc &lt; 18.5
+  pi &larr; 18.5 &le; imc &lt; 25
+  sp &larr; 25 &le; imc
+  si mn alors
+    Ecrire(nom, "vous souffrez de malnutrition")
+  sinon si pi alors
+    Ecrire(nom, "votre poids est idéal")
+  sinon
+    Ecrire(nom, "vous souffrez de surpoids")
+  fin si
+  si mn ou sp alors
+    Ecrire("Mettez vous au régime nutritionnel")
+  fin si
+Fin</code></pre>
+        </div>
+
+        <ol>
+          <li>Déterminer les variables utilisées ainsi que leurs types.
+            <table class="table table-sm table-bordered border-dark">
+              <thead>
+                <tr>
+                  <th>Objets</th>
+                  <th>Types</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td></td>
+                  <td>chaine</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>réel</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>entier</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>booléen</td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+          <li>Remplir le tableau:
+            <table class="table table-sm table-bordered border-dark">
+              <thead>
+                <tr>
+                  <th width="9%">nom</th>
+                  <th width="9%">p</th>
+                  <th width="9%">h</th>
+                  <th width="9%">imc</th>
+                  <th width="9%">mn</th>
+                  <th width="9%">pi</th>
+                  <th width="9%">sp</th>
+                  <th>message affiché</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>"Bessma"</td>
+                  <td>55</td>
+                  <td>1.6</td>
+                  <td>21.5</td>
+                  <td>Faux</td>
+                  <td>Vrai</td>
+                  <td>Faux</td>
+                  <td>Bessma votre poids est idéal</td>
+                </tr>
+                <tr>
+                  <td>"Karima"</td>
+                  <td>80</td>
+                  <td>1.6</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        </ol>
+      </section>
+    </article>
+
+    <article>
+      <h2>Partie 2</h2>
+
+      <section>
+        <h3>Problème (10 pts)</h3>
+
+        <div class="row">
+          <div class="col-sm-7">
+            <h4>Compétition de pêche</h4>
+            <p>Lors d'une compétition de pêche 20 pêcheurs participent aux éliminatoires. Seulement deux
+              pêcheurs sont
+              finalistes.</p>
+            <p>Le vainqueur gagnera le <strong>titre du pêcheur de l'année</strong> ainsi que le
+              <strong>poisson
+                d'or</strong>. L'autre gagnera le <strong>poisson d'argent</strong>.
+            </p>
+            <p>Chacun des pêcheurs muni d'une canne à pêche, d'hameçons et des appâts, devra pêcher une
+              quantité
+              maximale de poissons pendant huit heures pour accéder au titre.</p>
+            <p>Après les 8 heures de pêche, le vainqueur du titre est celui qui obtiendra la quantité
+              maximale de
+              poissons.
+              En cas de ex aequo (même quantité de poisson) le plus agé est le vainqueur.</p>
+
+            <h5>Travail demandé</h5>
+            <p>Ecrire un algorithme nommé <code>pêche</code> qui :</p>
+            <ul>
+              <li>Saisit les noms des deux pêcheurs</li>
+              <li>Saisit leurs ages</li>
+              <li>Saisit la quantité de poissons qu'ils ont pêché</li>
+              <li>Détermine les noms des gagnants</li>
+              <li>Affiche le nom des gagnants</li>
+            </ul>
+          </div>
+          <div class="col-sm-5">
+            <figure>
+              <img src="images/DS01/peche.jpg" alt="Compétition de pêche">
+              <figcaption>Compétition de pêche</figcaption>
+            </figure>
+            <p>
+            <pre><code class="nohighlight shell python" data-text="Exemple">Nom du 1er pêcheur ? Rami
+Nom du 2ème pêcheur ? Sami
+Age de Rami ? 30
+Age de Sami ? 31
+Quantité pêchée par Rami ? 10.0
+Quantité pêchée par Sami ? 10.5
+Sami gagne le titre du pêcheur de l'année et le poisson d'or
+Rami gagne le poisson d'argent</code></pre>
+            </p>
+          </div>
+        </div>
+
+        <h5>L'algorithme</h5>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+      </section>
+    </article>
+  </main>
+  <script src="resources/js/jquery.min.js"></script>
+  <script src="resources/js/bootstrap.min.js"></script>
+  <script src="resources/js/highlight.pack.js"></script>
+  <script src="resources/js/hljs.algorithm.js"></script>
+  <script src="resources/js/draggable.js"></script>
+  <script src="resources/js/clipboard.min.js"></script>
+  <script src="resources/js/pages.js"></script>
+  <script src="resources/js/savecontent.js"></script>
+  <script src="resources/js/vue.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+    document.querySelectorAll('.language-algorithm,.language-python')
+      .forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'bd-clipboard d-print-none';
+        const btn = document.createElement('button');
+        btn.className = 'btn-clipboard';
+        btn.textContent = "📋";
+        btn.title = "Copier";
+        div.appendChild(btn);
+        item.parentElement.insertBefore(div, item);
+      });
+    new ClipboardJS('.btn-clipboard', {
+      target: (trigger) => {
+        return trigger.parentElement.nextElementSibling;
+      }
+    });
+    $(() => {
+      const localStore = new PagePersistance();
+      const serverStore = new ServerSaves('DS_3T');
+      const userInputSaver = new UserInputSaver(
+        document.querySelector('.user-input-saver'),
+        localStore,
+        serverStore);
+    });
+  </script>
+</body>
+
+</html>
