@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="resources/css/bootstrap.min.css">
+  <link rel="stylesheet" href="resources/css/default.css">
+  <link rel="stylesheet" href="resources/css/style.css">
+  <title>Algorithmes Séance 3</title>
+</head>
+
+<body>
+  <aside>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#aside_navbar"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span> Menu
+      </button>
+      <div class="collapse navbar-collapse" id="aside_navbar"></div>
+    </nav>
+  </aside>
+
+  <main class="container my-3">
+    <h1>Algorithmes Séance 3</h1>
+
+    <article>
+      <h2>Problèmes</h2>
+
+      <section>
+        <h3>Pile / Face</h3>
+
+        <p>Les enfants font toujours un tirage au sort, <strong>Pile ou Face</strong> à l'aide d'une pièce de monnaie,
+          pour sélectionner le gagnant d'un défi : avec quelle équipe joue le meilleur joueur, qui possède le ballon au
+          début du match, etc.</p>
+
+        <figure>
+          <img class="h4cm" src="algo/images/enfants-ballon.jpg" alt="Enfants jouent au ballon">
+          <img class="h4cm" src="algo/images/pile-face.jpg" alt="Pile ou Face">
+          <figcaption>Pile ou Face</figcaption>
+        </figure>
+
+        <p>On veut faire un programme qui affiche le gagnant dans Pile/Face.</p>
+
+        <div class="row">
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple 1">Votre choix (0: Pile/ 1: Face) ? 1
+Vous perdez!</code></pre>
+          </div>
+          <div class="col-sm-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple 2">Votre choix (0: Pile/ 1: Face) ? 1
+Vous gagnez!</code></pre>
+          </div>
+        </div>
+
+        <p>Pour faire le tirage au sort on peut utiliser la fonction <code>aléa(a, b)</code> qui choisit un nombre au
+          hasard dans l'intervalle [a, b]</p>
+
+        <h4>Exemple</h4>
+        <pre><code class="language-algorithm">x &larr; aléa(1, 6) // retourne une valeur entre 1 et 6 inclus</code></pre>
+
+        <h4>Travail demandé</h4>
+        <ol>
+          <li>Déterminer les données de ce problème.</li>
+          <li>Déterminer les résultats de ce problème.</li>
+          <li>Ecrire l'algorithme.</li>
+        </ol>
+      </section>
+
+      <section>
+        <h3>Pierre / Feuille / Ciseaux</h3>
+
+        <figure>
+          <img class="h4cm" src="algo/images/pfc.jpg" alt="Pierre / Feuille / Ciseaux">
+          <figcaption>Personne majeure ou mineure</figcaption>
+        </figure>
+
+        <p>Le jeu pierre / feuille / ciseaux est un jeu qui se joue à deux joueurs. Les deux joueurs doivent choisir en
+          même temps l'un des trois objets : <strong>Pierre</strong>, <strong>Feuille</strong> ou
+          <strong>Ciseaux</strong>.
+        </p>
+        <ul>
+          <li>La <strong>Pierre</strong> bat les <strong>Ciseaux</strong></li>
+          <li>Les <strong>Ciseaux</strong> battent la <strong>Feuille</strong></li>
+          <li>La <strong>Feuille</strong> bat la <strong>Pierre</strong></li>
+        </ul>
+
+        <p>On désire implémenter une version simplifiée de ce jeu où l'utilisateur joue contre l'ordinateur.</p>
+
+        <p>L'utilisateur :</p>
+        <ul>
+          <li>choisit le nombre <strong>0</strong> pour l'objet <strong>Pierre</strong>.</li>
+          <li>choisit le nombre <strong>1</strong> pour l'objet <strong>Feuille</strong>.</li>
+          <li>choisit le nombre <strong>2</strong> pour l'objet <strong>Ciseaux</strong>.</li>
+        </ul>
+        <p>L'ordinateur fait de même. La partie peut être <strong>nulle</strong> si les deux choisissent le même objet,
+          sinon l'<strong>un d'eux gagne</strong> selon les règles du jeu.</p>
+
+        <p><strong>Ecrire un algorithme du jeu.</strong></p>
+
+        <div class="row">
+          <div class="col-sm-4">
+            <pre><code class="nohighlight shell python" data-text="Exemple 1">Jeu Pierre - Feuille - Ciseaux
+
+Votre choix
+0: Pierre/1: Feuille/2: Ciseaux ? 1
+Feuille contre Pierre
+Bravo, vous gagnez!</code></pre>
+          </div>
+          <div class="col-sm-4">
+            <pre><code class="nohighlight shell python" data-text="Exemple 2">Jeu Pierre - Feuille - Ciseaux
+
+Votre choix
+0: Pierre/1: Feuille/2: Ciseaux ? 2
+Ciseaux contre Pierre
+Désolé, vous perdez!</code></pre>
+          </div>
+          <div class="col-sm-4">
+            <pre><code class="nohighlight shell python" data-text="Exemple 3">Jeu Pierre - Feuille - Ciseaux
+
+Votre choix
+0: Pierre/1: Feuille/2: Ciseaux ? 1
+Feuille contre Feuille
+Match nul</code></pre>
+          </div>
+        </div>
+
+        <div id="simulation-1" class="d-print-none my-3 border border-dark bg-light p-3">
+          <div v-if="step == -1">
+            <div class="my-2">Cliquer sur le bouton suivant pour faire la simulation.</div>
+            <button class="btn btn-primary" v-on:click="simuler(0)">Simuler</button>
+          </div>
+          <div v-if="step >= 0">
+            <div class="my-2">Jeu Pierre - Feuille - Ciseaux</div>
+            <div class="my-2">
+              Votre choix<br>
+              0: Pierre/1: Feuille/2: Ciseaux ? <input v-if="step == 0" ref="j1" name="j1" type="number" min="0" max="2"
+                v-model="j1" v-on:keydown.enter="simuler(1)">
+              <span v-else>{{j1}}</span>
+            </div>
+          </div>
+          <div v-if="step >= 1">
+            <div class="my-2">{{objets[j1]}} contre {{objets[j2]}}.</div>
+            <div class="my-2">{{message}}.</div>
+          </div>
+          <div class="my-2" v-if="step >= 1">
+            <button class="btn btn-secondary" ref="restart" v-on:click="simuler(-1)">Reset</button>
+          </div>
+        </div>
+
+        <h4>Travail demandé</h4>
+        <ol>
+          <li>Déterminer les données de ce problème.</li>
+          <li>Déterminer les résultats de ce problème.</li>
+          <li>Remplir le tableau suivant :
+            <div class="row">
+              <div class="col-6">
+                <ul>
+                  <li>j1 = 0 pour Pierre</li>
+                  <li>j1 = 1 pour Feuille</li>
+                  <li>j1 = 2 pour Ciseaux</li>
+                </ul>
+              </div>
+              <div class="col-6">
+                <ul>
+                  <li>j2 = 0 pour Pierre</li>
+                  <li>j2 = 1 pour Feuille</li>
+                  <li>j2 = 2 pour Ciseaux</li>
+                </ul>
+              </div>
+            </div>
+
+            <table class="table table-sm table-hover table-bordered table-striped border-dark">
+              <thead>
+                <tr>
+                  <th width="16.66%">Objet joueur 1</th>
+                  <th width="16.66%">Objet joueur 2</th>
+                  <th width="16.66%">j1</th>
+                  <th width="16.66%">j2</th>
+                  <th width="16.66%">j1 - j2</th>
+                  <th>Gagnant</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Pierre</td>
+                  <td>Pierre</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Pierre</td>
+                  <td>Feuille</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Pierre</td>
+                  <td>Ciseaux</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Feuille</td>
+                  <td>Pierre</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Feuille</td>
+                  <td>Feuille</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Feuille</td>
+                  <td>Ciseaux</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Ciseaux</td>
+                  <td>Pierre</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Ciseaux</td>
+                  <td>Feuille</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Ciseaux</td>
+                  <td>Ciseaux</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+          <li>Ecrire l'algorithme.</li>
+        </ol>
+      </section>
+    </article>
+  </main>
+  <footer class="d-print-none bg-dark text-white p-2">
+    <div class="text-center">Page créée avec ♥ par Mohamed Anis MANI</div>
+    <div class="text-center small">Année scolaire : 2021/2022</div>
+  </footer>
+
+  <script src="resources/js/jquery.min.js"></script>
+  <script src="resources/js/bootstrap.bundle.min.js"></script>
+  <script src="resources/js/highlight.pack.js"></script>
+  <script src="resources/js/hljs.algorithm.js"></script>
+  <script src="resources/js/clipboard.min.js"></script>
+  <script src="resources/js/pages.js"></script>
+  <script src="resources/js/vue.min.js"></script>
+  <script src="resources/apps/algorithme03.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+
+    document.querySelectorAll('.language-algorithm,.language-python')
+      .forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'bd-clipboard d-print-none';
+        const btn = document.createElement('button');
+        btn.className = 'btn-clipboard';
+        btn.textContent = "📋";
+        btn.title = "Copier";
+        div.appendChild(btn);
+        item.parentElement.insertBefore(div, item);
+      });
+    new ClipboardJS('.btn-clipboard', {
+      target: (trigger) => {
+        return trigger.parentElement.nextElementSibling;
+      }
+    });
+  </script>
+</body>
+
+</html>
