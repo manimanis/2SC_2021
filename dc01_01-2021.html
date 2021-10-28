@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evaluation n°1 en Programmation - 2TI</title>
+  <link rel="stylesheet" href="resources/css/bootstrap.min.css">
+  <link rel="stylesheet" href="resources/css/default.css">
+  <link rel="stylesheet" href="resources/css/style.css">
+  <link rel="stylesheet" href="resources/css/seance03.css">
+  <style>
+    .pointille {
+      line-height: 0.6cm;
+      border-bottom: #666 dotted 2px;
+    }
+
+    @media print {
+      h1 {
+        font-size: 1.6em;
+      }
+
+      h2 {
+        font-size: 1.4em;
+      }
+
+      h3 {
+        font-size: 1.2em;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <aside>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#aside_navbar"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span> Menu
+      </button>
+      <div class="collapse navbar-collapse" id="aside_navbar"></div>
+    </nav>
+  </aside>
+  <main class="container">
+    <table class="table table-sm table-bordered border-dark align-middle my-2">
+      <tr>
+        <td width="33.3%" class="text-center fs-6">Lycée secondaire Hammam-Sousse<br><em><small>Année scolaire
+              2021/2022</small></em></td>
+        <td width="33.3%" class="text-center fs-3"><strong>Evaluation n°1</strong><br>Programmation</td>
+        <td><strong>Classe :</strong> 2TI<br><strong>Durée :</strong> 1 heure<br><strong>Enseignant :</strong> Mohamed
+          Anis MANI</td>
+      </tr>
+    </table>
+
+    <div class="row my-2">
+      <div class="col-6"><label for="nom-prenom">Nom & Prénom</label><input type="text" id="nom-prenom"
+          class="form-control"></div>
+      <div class="col-6"><label for="classe">Classe</label><input type="text" id="classe" class="form-control"></div>
+    </div>
+
+    <h1>Evaluation n°1 - 2<sup>ème</sup>TI</h1>
+    <article>
+      <h2>Exercice</h2>
+      <section>
+        <h3>Question 1 - (4 points)</h3>
+        <p>Amine a le droit de jouer cinq minutes de plus que son jumeau Nour, s'il résout un exercice de plus que lui.
+        </p>
+        <p>La récompense est de dix minutes de plus s'il en résout deux, et ainsi de suite.</p>
+        <p>Par exemple, si <strong>Amine</strong> résout <ins>7 exercices</ins> et que <strong>Nour</strong> en résout
+          uniquement <ins>4 exercices</ins>, <strong>Amine</strong> jouera <ins>20 minutes de plus</ins> que son jumeau.
+        </p>
+
+        <p><strong>Combien jouera Amine de plus que son jumeau dans les cas suivants ? Compléter le tableau.</strong>
+        </p>
+
+        <div class="row">
+          <div class="col-6">
+            <table class="table table-sm table-bordered table-striped border-dark align-middle text-center">
+              <thead>
+                <tr>
+                  <td width="33.3%">Nour<br><strong>ex1</strong></td>
+                  <td width="33.3%">Amine<br><strong>ex2</strong></td>
+                  <td>Récompense<br><strong>rec</strong></td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>4</td>
+                  <td>5</td>
+                  <td>5</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>5</td>
+                  <td>
+                    <div class="pointille">&nbsp;</div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>10</td>
+                  <td>9</td>
+                  <td>
+                    <div class="pointille">&nbsp;</div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td>9</td>
+                  <td>
+                    <div class="pointille">&nbsp;</div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>5</td>
+                  <td>
+                    <div class="pointille">&nbsp;</div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="col-6">
+            <p>Signification des variables</p>
+            <ul>
+              <li><strong>ex1</strong> : indique le nombre d'exercices résolus par Nour</li>
+              <li><strong>ex2</strong> : indique le nombre d'exercices résolus par Amine</li>
+              <li><strong>rec</strong> : indique le nombre minutes de plus, de récompense, jouées par Amine</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>Question 2 - (12 points)</h3>
+        <p>On demande d'écrire un programme en Python pour calculer le nombre de minutes de plus jouées par Amine. On
+          donne le programme suivant, à corriger:</p>
+
+        <pre><code class="language-python"># Saisie du nombre d'exercices
+ex1 = input int Nombre d exercices Nour ? 
+ex2 = input "Nombre d'exercices Amine ? "
+# Calcul de la récompense
+rec &larr; ex1 - ex2 * 5
+# Afficher le résultat
+print Amine va jouer rec minutes de plus que Nour</code></pre>
+
+        <h4>Programme corrigé</h4>
+
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+      </section>
+
+      <section>
+        <h3 class="p-break">Question 3 - (4 points)</h3>
+        <p>En supposant que le temps <strong>tj</strong> réservé au jeu, par les parents, est de 30 minutes, pour cette
+          semaine, combien de temps jouera chacun des jumeaux ?</p>
+        <p>Le temps de jeu <strong>tj</strong> est variable selon les semaines.</p>
+        <p><strong>Compléter le tableau suivant par le temps de jeu de chacun des deux jumeaux.</strong></p>
+
+        <div class="row">
+          <div class="col-8">
+            <table class="table table-sm table-bordered table-striped border-dark align-middle text-center">
+              <thead class="align-middle">
+                <tr>
+                  <td width="20%" rowspan="2">Nour<br><strong>ex1</strong></td>
+                  <td width="20%" rowspan="2">Amine<br><strong>ex2</strong></td>
+                  <td width="20%" rowspan="2">Récompense<br><strong>rec</strong></td>
+                  <td width="40%" colspan="2">Temps de jeu</td>
+                </tr>
+                <tr>
+                  <td width="20%">Nour<br><strong>tj1</strong></td>
+                  <td>Amine<br><strong>tj2</strong></td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>3</td>
+                  <td>10</td>
+                  <td>30</td>
+                  <td>40</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>1</td>
+                  <td>-10</td>
+                  <td>
+                    <div class="pointille">&nbsp;</div>
+                  </td>
+                  <td>30</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>4</td>
+                  <td>5</td>
+                  <td>
+                    <div class="pointille">&nbsp;</div>
+                  </td>
+                  <td>35</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>1</td>
+                  <td>0</td>
+                  <td>30</td>
+                  <td>
+                    <div class="pointille">&nbsp;</div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>5</td>
+                  <td>
+                    <div class="pointille">&nbsp;</div>
+                  </td>
+                  <td>30</td>
+                  <td>50</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="col-4">
+            <p>Signification des variables</p>
+            <ul>
+              <li><strong>ex1</strong> : nombre d'exercices résolus par Nour</li>
+              <li><strong>ex2</strong> : nombre d'exercices résolus par Amine</li>
+              <li><strong>rec</strong> : nombre de minutes de plus, de récompense, jouées par Amine</li>
+              <li><strong>tj1</strong> : le temps joué par Nour en minutes</li>
+              <li><strong>tj2</strong> : le temps joué par Amine en minutes</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>Question 4 - (7 points)</h3>
+
+        <p>Améliorer votre programme en affichant le temps joué par Nour et Amine en fonction du temps réservé au jeu
+          <strong>tj</strong>.
+        </p>
+
+        <pre><code class="language-python"># 1ère partie - réponse à la question 2
+# ...
+# 2ème partie
+# Saisie du temps réservé au jeu tj
+<p class="pointille my-1">&nbsp;</p>
+# Calcul du temps de jeu de chacun des deux
+if rec >= 0: # Amine joue plus que Nour
+<p class="pointille my-1">&nbsp;</p>
+<p class="pointille my-1">&nbsp;</p>
+else: # Nour joue plus que Amine
+<p class="pointille my-1">&nbsp;</p>
+<p class="pointille">&nbsp;</p>
+# Afficher le temps du jeu
+<p class="pointille my-1">&nbsp;</p>
+<p class="pointille my-1">&nbsp;</p></code></pre>
+      </section>
+
+      <section>
+        <h3 class="p-break">Question 5 - (6 points)</h3>
+        <p>Si l'un des enfants triche au jeu il sera pénalisé de 2 minutes à chaque fois qu'il reprend. En supposant
+          Nour a triché n1 fois et que Amine a triché n2 fois. Quel est le temps de pénalité de chaque joueur?</p>
+        <p><strong>Compléter la 3<sup>ème partie du programme</sup></strong></p>
+        <pre><code class="language-python"># 1ère partie - réponse à la question 2
+# ...
+# 2ème partie
+# ...
+# 3ème partie
+# Saisie du nombre de triche de chacun des jumeaux : n1 et n2
+<p class="pointille my-1">&nbsp;</p>
+<p class="pointille my-1">&nbsp;</p>
+# Calcul de temps de pénalité
+<p class="pointille my-1">&nbsp;</p>
+<p class="pointille my-1">&nbsp;</p>
+# Afficher le temps de pénalité
+<p class="pointille my-1">&nbsp;</p>
+<p class="pointille my-1">&nbsp;</p></code></pre>
+      </section>
+
+      <section>
+        <h3>Question 6 - (7 points)</h3>
+        <p>Implémentation des solutions sur machine et envoi de la solution finale.</p>
+      </section>
+    </article>
+  </main>
+  <script src="resources/js/jquery.min.js"></script>
+  <script src="resources/js/bootstrap.min.js"></script>
+  <script src="resources/js/highlight.pack.js"></script>
+  <script src="resources/js/hljs.algorithm.js"></script>
+  <script src="resources/js/draggable.js"></script>
+  <script src="resources/js/clipboard.min.js"></script>
+  <script src="resources/js/pages.js"></script>
+  <script src="resources/js/savecontent.js"></script>
+  <script src="resources/js/vue.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+    document.querySelectorAll('.language-algorithm,.language-python')
+      .forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'bd-clipboard d-print-none';
+        const btn = document.createElement('button');
+        btn.className = 'btn-clipboard';
+        btn.textContent = "📋";
+        btn.title = "Copier";
+        div.appendChild(btn);
+        item.parentElement.insertBefore(div, item);
+      });
+    new ClipboardJS('.btn-clipboard', {
+      target: (trigger) => {
+        return trigger.parentElement.nextElementSibling;
+      }
+    });
+    $(() => {
+      const localStore = new PagePersistance();
+      const serverStore = new ServerSaves('DS_3T');
+      const userInputSaver = new UserInputSaver(
+        document.querySelector('.user-input-saver'),
+        localStore,
+        serverStore);
+    });
+  </script>
+</body>
+
+</html>
