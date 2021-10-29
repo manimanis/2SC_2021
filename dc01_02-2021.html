@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evaluation n°1 en Programmation - 2TI</title>
+  <link rel="stylesheet" href="resources/css/bootstrap.min.css">
+  <link rel="stylesheet" href="resources/css/default.css">
+  <link rel="stylesheet" href="resources/css/style.css">
+  <link rel="stylesheet" href="resources/css/seance03.css">
+  <style>
+    .pointille {
+      line-height: 0.6cm;
+      border-bottom: #666 dotted 2px;
+    }
+
+    @media print {
+      h1 {
+        font-size: 1.6em;
+      }
+
+      h2 {
+        font-size: 1.4em;
+      }
+
+      h3 {
+        font-size: 1.2em;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <aside>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#aside_navbar"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span> Menu
+      </button>
+      <div class="collapse navbar-collapse" id="aside_navbar"></div>
+    </nav>
+  </aside>
+  <main class="container">
+    <table class="table table-sm table-bordered border-dark align-middle my-2">
+      <tr>
+        <td width="33.3%" class="text-center fs-6">Lycée secondaire Hammam-Sousse<br><em><small>Année scolaire
+              2021/2022</small></em></td>
+        <td width="33.3%" class="text-center fs-3"><strong>Evaluation n°1</strong><br>Programmation</td>
+        <td><strong>Classe :</strong> 2TI<br><strong>Durée :</strong> 1 heure<br><strong>Enseignant :</strong> Mohamed
+          Anis MANI</td>
+      </tr>
+    </table>
+
+    <div class="row my-2">
+      <div class="col-6"><label for="nom-prenom">Nom & Prénom</label><input type="text" id="nom-prenom"
+          class="form-control"></div>
+      <div class="col-6"><label for="classe">Classe</label><input type="text" id="classe" class="form-control"></div>
+    </div>
+
+    <h1>Evaluation n°1 - 2<sup>ème</sup>TI</h1>
+    <article>
+      <h2>Exercice</h2>
+      <section>
+        <h3>Question 1 - (4 points)</h3>
+        <p>Abrar et Safa prticipent aux compétitions du meilleur chef. Durant ce défi, trois membres du jury goûtent aux
+          plats des participants, tout en leur donnant trois notes sur 10, la note finale étant la moyenne (<strong>un
+            entier</strong>) des trois notes.</p>
+
+        <p><strong>Trouver la moyenne, ou la note minimale dans chacun des cas suivants ? Compléter le tableau.</strong>
+        </p>
+
+        <div class="row">
+          <div class="col-6">
+            <table class="table table-sm table-bordered table-striped border-dark align-middle text-center">
+              <thead>
+                <tr>
+                  <td width="25%">Jury 1<br><strong>nj1</strong></td>
+                  <td width="25%">Jury 2<br><strong>nj2</strong></td>
+                  <td width="25%">Jury 3<br><strong>nj3</strong></td>
+                  <td>Moyenne<br><strong>m</strong></td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>3</td>
+                  <td>5</td>
+                  <td>8</td>
+                  <td>5</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>7</td>
+                  <td>2</td>
+                  <td>
+                    <div class="pointille">&nbsp;</div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>8</td>
+                  <td>3</td>
+                  <td>7</td>
+                  <td>
+                    <div class="pointille">&nbsp;</div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td>7</td>
+                  <td>9</td>
+                  <td>
+                    <div class="pointille">&nbsp;</div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>9</td>
+                  <td>9</td>
+                  <td>
+                    <div class="pointille">&nbsp;</div>
+                  </td>
+                  <td>8</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="col-6">
+            <p>Signification des variables</p>
+            <ul>
+              <li><strong>nj1</strong> : note du jury 1</li>
+              <li><strong>nj2</strong> : note du jury 2</li>
+              <li><strong>nj3</strong> : note du jury 3</li>
+              <li><strong>m</strong> : moyenne des trois notes du jury</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>Question 2 - (12 points)</h3>
+        <p>On demande d'écrire un programme en Python pour calculer le nombre de points obtenus par Safa et Abrar. On
+          donne le programme suivant, à corriger:</p>
+
+        <pre><code class="language-python"># Saisie des trois notes du jury
+nj1 = input int Note du 1er jury ? 
+nj2 = Note du 2ème jury ? input int
+nj3 = "Note du 3ème jury"
+# Calcul de la moyenne
+m &larr; nj1 - nj2 * nj3 * 3
+# Afficher la moyenne
+print Abrar et Safa ont obtenu m points</code></pre>
+
+        <h4>Programme corrigé</h4>
+
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+      </section>
+
+      <section>
+        <h3 class="p-break">Question 3 - (4 points)</h3>
+        <p>Durant la compétition les spectateurs peuvent voter pour la meilleure équipe, ou l'équipe qui leut plaît le
+          plus. Cette équipe obtient un point bonus si le nombre de votes dépasse 1000 voix.</p>
+        <p><strong>Compléter le tableau suivant en prenant en compte le nombre de vote pour Safa et Abrar.</strong> Le
+          <strong>score</strong> est égal à la somme de <strong>m</strong> et <strong>b</strong>.
+        </p>
+
+        <div class="row">
+          <div class="col-6">
+            <table class="table table-sm table-bordered table-striped border-dark align-middle text-center">
+              <thead class="align-middle">
+                <tr>
+                  <td width="25%">Moyenne<br><strong>m</strong></td>
+                  <td width="25%">Nbre de votes<br><strong>nbv</strong></td>
+                  <td width="25%">bonus<br><strong>b</strong></td>
+                  <td width="25%"><strong>score</strong></td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>5</td>
+                  <td>706</td>
+                  <td>0</td>
+                  <td>5</td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>1268</td>
+                  <td>1</td>
+                  <td>7</td>
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td>142</td>
+                  <td>
+                    <div class="pointille">&nbsp;</div>
+                  </td>
+                  <td>
+                    <div class="pointille">&nbsp;</div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>1126</td>
+                  <td>
+                    <div class="pointille">&nbsp;</div>
+                  </td>
+                  <td>
+                    <div class="pointille">&nbsp;</div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="col-6">
+            <p>Signification des variables</p>
+            <ul>
+              <li><strong>m</strong> : moyenne obtenu lors des éliminatoires</li>
+              <li><strong>nbv</strong> : nombre de voix obtenus dans le vote</li>
+              <li><strong>b</strong> : bonus obtenu si le nombre de voix dépasse 1000</li>
+              <li><strong>score</strong> : le score final</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>Question 4 - (7 points)</h3>
+
+        <p>Améliorer votre programme en affichant le score final des deux participantes <strong>score</strong>.
+          Le <strong>score</strong> est égal à la somme de <strong>m</strong> et <strong>b</strong>.</p>
+
+        <pre><code class="language-python"># 1ère partie - réponse à la question 2
+# ...
+# 2ème partie
+# Saisie du nombre de votes nbv
+<p class="pointille my-1">&nbsp;</p>
+# Calcul du bonus
+if nbv >= 1000: # un point de bonus
+<p class="pointille my-1">&nbsp;</p>
+else: # aucun point de bonus
+<p class="pointille">&nbsp;</p>
+# calculer le score final
+<p class="pointille my-1">&nbsp;</p>
+# afficher le score final de Safa et Abrar
+<p class="pointille my-1">&nbsp;</p></code></pre>
+      </section>
+
+      <section>
+        <h3 class="p-break">Question 5 - (6 points)</h3>
+        <p>La dernière épreuve évalue la rapidité des participantes. Le temps réservé à cette épreuve est fixé à 20
+          minutes.</p>
+        <p>Les participantes sont sanctionnées d'un point dans leur score pour chaque 3 minutes de retard après
+          l'écoulement des 20 minutes.</p>
+        <p><strong>Exemple 1 :</strong> Si Abrar et Safa terminent l'épreuve dans 26 minutes, elles ont fait 6 minutes
+          de retard. Elles sont sanctionnées de 2 points, car 6 / 3 = 2.</p>
+        <p><strong>Exemple 2 :</strong> Si Abrar et Safa terminent l'épreuve dans 22 minutes, elles ont fait 2 minutes
+          de retard. Elles ne sont pas sanctionnées, car 2 / 3 = 0.xxxxx.</p>
+        <p><strong>Compléter la 3<sup>ème</sup> partie du programme.</strong></p>
+        <pre><code class="language-python"># 1ère partie - réponse à la question 2
+# ...
+# 2ème partie
+# ...
+# 3ème partie
+# Saisie du temps de l'épreuve
+<p class="pointille my-1">&nbsp;</p>
+# supposer que le temps de retard est nul
+tr = 0
+if te > 20: # calculer le temps de retard
+<p class="pointille my-1">&nbsp;</p>
+# Calculer le nombre de points à sanctionner (un point pour 3 mn de retard)
+<p class="pointille my-1">&nbsp;</p>
+# Calculer le score final
+<p class="pointille my-1">&nbsp;</p>
+# Afficher le score final
+<p class="pointille my-1">&nbsp;</p></code></pre>
+      </section>
+
+      <section>
+        <h3>Question 6 - (7 points)</h3>
+        <p>Implémentation des solutions sur machine et envoi de la solution finale.</p>
+      </section>
+    </article>
+  </main>
+  <script src="resources/js/jquery.min.js"></script>
+  <script src="resources/js/bootstrap.min.js"></script>
+  <script src="resources/js/highlight.pack.js"></script>
+  <script src="resources/js/hljs.algorithm.js"></script>
+  <script src="resources/js/draggable.js"></script>
+  <script src="resources/js/clipboard.min.js"></script>
+  <script src="resources/js/pages.js"></script>
+  <script src="resources/js/savecontent.js"></script>
+  <script src="resources/js/vue.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+    document.querySelectorAll('.language-algorithm,.language-python')
+      .forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'bd-clipboard d-print-none';
+        const btn = document.createElement('button');
+        btn.className = 'btn-clipboard';
+        btn.textContent = "📋";
+        btn.title = "Copier";
+        div.appendChild(btn);
+        item.parentElement.insertBefore(div, item);
+      });
+    new ClipboardJS('.btn-clipboard', {
+      target: (trigger) => {
+        return trigger.parentElement.nextElementSibling;
+      }
+    });
+    $(() => {
+      const localStore = new PagePersistance();
+      const serverStore = new ServerSaves('DS_3T');
+      const userInputSaver = new UserInputSaver(
+        document.querySelector('.user-input-saver'),
+        localStore,
+        serverStore);
+    });
+  </script>
+</body>
+
+</html>
