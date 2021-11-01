@@ -142,7 +142,9 @@
           <strong>m</strong>. On donne le programme suivant, à corriger:
         </p>
 
-        <pre><code class="language-python"># Saisie des trois notes du jury
+        <div class="row">
+          <div class="col-sm-7">
+            <pre><code class="language-python"># Saisie des trois notes du jury
 nj1 = input int Note du 1er jury ? 
 nj2 = Note du 2ème jury ? input int
 nj3 = "Note du 3ème jury"
@@ -150,6 +152,15 @@ nj3 = "Note du 3ème jury"
 m &larr; nj1 - nj2 * nj3 * 3
 # Afficher la moyenne
 print Abrar et Safa ont obtenu m points</code></pre>
+          </div>
+          <div class="col-sm-5">
+            <pre><code class="nohighlight shell python" data-text="Exemple de sortie">Note du 1er Jury ? 7
+Note du 2ème Jury ? 7
+Note du 3ème Jury ? 9
+Abrar et Safa ont obtenu 7 points</code></pre>
+          </div>
+        </div>
+
 
         <h4>Programme corrigé</h4>
 
@@ -231,12 +242,14 @@ print Abrar et Safa ont obtenu m points</code></pre>
       </section>
 
       <section>
-        <h3>Question 4 - (7 points)</h3>
+        <h3>Question 4 - (13 points)</h3>
 
         <p>Améliorer votre programme en affichant le score final des deux participantes <strong>score</strong>.
           Le <strong>score</strong> est égal à la somme de <strong>m</strong> et <strong>b</strong>.</p>
 
-        <pre><code class="language-python"># 1ère partie - réponse à la question 2
+        <div class="row">
+          <div class="col-sm-7">
+            <pre><code class="language-python"># 1ère partie - réponse à la question 2
 # ...
 # 2ème partie
 # Saisie du nombre de votes nbv
@@ -250,6 +263,17 @@ else: # aucun point de bonus
 <p class="pointille my-1">&nbsp;</p>
 # afficher le score final de Safa et Abrar
 <p class="pointille my-1">&nbsp;</p></code></pre>
+          </div>
+          <div class="col-sm-5">
+            <pre><code class="nohighlight shell python" data-text="Exemple de sortie">Note du 1er Jury ? 5
+Note du 2ème Jury ? 6
+Note du 3ème Jury ? 7
+Abrar et Safa ont obtenu 6 points
+Nombre de votes ? 1268
+Le score de Safa et Abrar est de 7 points</code></pre>
+          </div>
+        </div>
+
       </section>
 
       <section>
@@ -263,7 +287,10 @@ else: # aucun point de bonus
         <p><strong>Exemple 2 :</strong> Si Abrar et Safa terminent l'épreuve dans 22 minutes, elles ont fait 2 minutes
           de retard. Elles ne sont pas sanctionnées, car 2 / 3 = 0.xxxxx.</p>
         <p><strong>Compléter la 3<sup>ème</sup> partie du programme.</strong></p>
-        <pre><code class="language-python"># 1ère partie - réponse à la question 2
+
+        <div class="row">
+          <div class="col-sm-7">
+            <pre><code class="language-python"># 1ère partie - réponse à la question 2
 # ...
 # 2ème partie
 # ...
@@ -274,16 +301,35 @@ else: # aucun point de bonus
 tr = 0
 if te > 20: # calculer le temps de retard
 <p class="pointille my-1">&nbsp;</p>
-# Calculer le nombre de points à sanctionner (un point pour 3 mn de retard)
+# Calculer du nombre de points à sanctionner 
+# un point pour chaque 3 mn de retard
 <p class="pointille my-1">&nbsp;</p>
 # Calculer le score final
 <p class="pointille my-1">&nbsp;</p>
-# Afficher le score final
+# Afficher le temps de retard,
+# la pénalité de retard et le score final
+<p class="pointille my-1">&nbsp;</p>
+<p class="pointille my-1">&nbsp;</p>
 <p class="pointille my-1">&nbsp;</p></code></pre>
+          </div>
+          <div class="col-sm-5">
+            <pre><code class="nohighlight shell python" data-text="Exemple de sortie">Note du 1er Jury ? 8
+Note du 2ème Jury ? 7
+Note du 3ème Jury ? 3
+Abrar et Safa ont obtenu 6 points
+Nombre de votes ? 1268
+Le score de Safa et Abrar est de 7 points
+Temps de l'épreuve ? 26
+Temps de retard : 6 minutes
+Pénalité de retard : 2 points
+Score final des participantes : 5 points</code></pre>
+          </div>
+        </div>
+
       </section>
 
       <section>
-        <h3>Question 6 - (7 points)</h3>
+        <h3>Question 6 - (1 point)</h3>
         <p>Implémentation des solutions sur machine et envoi de la solution finale.</p>
       </section>
     </article>

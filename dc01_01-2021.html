@@ -136,13 +136,22 @@
         <p>On demande d'écrire un programme en Python pour calculer le nombre de minutes de plus jouées par Amine. On
           donne le programme suivant, à corriger:</p>
 
-        <pre><code class="language-python"># Saisie du nombre d'exercices
+        <div class="row">
+          <div class="col-sm-7">
+            <pre><code class="language-python"># Saisie du nombre d'exercices
 ex1 = input int Nombre d exercices Nour ? 
 ex2 = input "Nombre d'exercices Amine ? "
 # Calcul de la récompense
 rec &larr; ex1 - ex2 * 5
 # Afficher le résultat
 print Amine va jouer rec minutes de plus que Nour</code></pre>
+          </div>
+          <div class="col-sm-5">
+            <pre><code class="nohighlight shell python" data-text="Exemple de sortie">Nombre d'exercices Nour ? 4
+Nombre d'exercices Amine ? 5
+Amine va jouer 5 minutes plus que Nour</code></pre>
+          </div>
+        </div>
 
         <h4>Programme corrigé</h4>
 
@@ -245,7 +254,9 @@ print Amine va jouer rec minutes de plus que Nour</code></pre>
           <strong>tj</strong>.
         </p>
 
-        <pre><code class="language-python"># 1ère partie - réponse à la question 2
+        <div class="row">
+          <div class="col-sm-7">
+            <pre><code class="language-python"># 1ère partie - réponse à la question 2
 # ...
 # 2ème partie
 # Saisie du temps réservé au jeu tj
@@ -260,6 +271,23 @@ else: # Nour joue plus que Amine
 # Afficher le temps du jeu
 <p class="pointille my-1">&nbsp;</p>
 <p class="pointille my-1">&nbsp;</p></code></pre>
+          </div>
+          <div class="col-sm-5">
+            <pre><code class="nohighlight shell python" data-text="Exemple de sortie 1">Nombre d'exercices Nour ? 1
+Nombre d'exercices Amine ? 3
+Amine va jouer 10 minutes plus que Nour
+Temps réservé au jeu ? 30
+Nour joue 30 minutes
+Amine joue 40 minutes</code></pre>
+            <pre><code class="nohighlight shell python" data-text="Exemple de sortie 2">Nombre d'exercices Nour ? 1
+Nombre d'exercices Amine ? 5
+Amine va jouer 20 minutes plus que Nour
+Temps réservé au jeu ? 30
+Nour joue 30 minutes
+Amine joue 50 minutes</code></pre>
+          </div>
+        </div>
+
       </section>
 
       <section>
@@ -267,9 +295,12 @@ else: # Nour joue plus que Amine
         <p>Si l'un des enfants triche au jeu il sera pénalisé de 2 minutes à chaque fois qu'il reprend. En supposant que
           Nour a triché n1 fois et que Amine a triché n2 fois. Quel est le temps de pénalité de chaque joueur ?</p>
         <p><strong>Compléter la 3<sup>ème</sup> partie du programme</strong></p>
-        <pre><code class="language-python"># 1ère partie - réponse à la question 2
+
+        <div class="row">
+          <div class="col-sm-7">
+            <pre><code class="language-python"># 1ère partie - réponse à la question 2
 # ...
-# 2ème partie
+# 2ème partie - réponse à la question 4
 # ...
 # 3ème partie
 # Saisie du nombre de triche de chacun des jumeaux : n1 et n2
@@ -281,6 +312,21 @@ else: # Nour joue plus que Amine
 # Afficher le temps de pénalité
 <p class="pointille my-1">&nbsp;</p>
 <p class="pointille my-1">&nbsp;</p></code></pre>
+          </div>
+          <div class="col-sm-5">
+            <pre><code class="nohighlight shell python" data-text="Exemple de sortie">Nombre d'exercices Nour ? 3
+Nombre d'exercices Amine ? 1
+Amine va jouer -10 minutes plus que Nour
+Temps réservé au jeu ? 30
+Nour joue 40 minutes
+Amine joue 30 minutes
+Nombre de triches Nour ? 1
+Nombre de triches Amine ? 2
+Nour est pénalisé de 2 minutes
+Amine est pénalisé de 4 minutes</code></pre>
+          </div>
+        </div>
+
       </section>
 
       <section>
