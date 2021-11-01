@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evaluation n°1 en Programmation - 2TI</title>
+  <link rel="stylesheet" href="resources/css/bootstrap.min.css">
+  <link rel="stylesheet" href="resources/css/default.css">
+  <link rel="stylesheet" href="resources/css/style.css">
+  <link rel="stylesheet" href="resources/css/seance03.css">
+  <style>
+    .pointille {
+      line-height: 0.6cm;
+      border-bottom: #666 dotted 2px;
+    }
+
+    @media print {
+      h1 {
+        font-size: 1.6em;
+      }
+
+      h2 {
+        font-size: 1.4em;
+      }
+
+      h3 {
+        font-size: 1.2em;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <aside>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#aside_navbar"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span> Menu
+      </button>
+      <div class="collapse navbar-collapse" id="aside_navbar"></div>
+    </nav>
+  </aside>
+  <main class="container">
+    <table class="table table-sm table-bordered border-dark align-middle my-2">
+      <tr>
+        <td width="33.3%" class="text-center fs-6">Lycée secondaire Hammam-Sousse<br><em><small>Année scolaire
+              2021/2022</small></em></td>
+        <td width="33.3%" class="text-center fs-3"><strong>Evaluation n°1</strong><br>Programmation</td>
+        <td><strong>Classe :</strong> 2TI<br><strong>Durée :</strong> 1 heure<br><strong>Enseignant :</strong> Mohamed
+          Anis MANI</td>
+      </tr>
+    </table>
+
+    <div class="row my-2">
+      <div class="col-6"><label for="nom-prenom">Nom & Prénom</label><input type="text" id="nom-prenom"
+          class="form-control"></div>
+      <div class="col-6"><label for="classe">Classe</label><input type="text" id="classe" class="form-control"></div>
+    </div>
+
+    <h1>Evaluation n°1 - 2<sup>ème</sup>TI</h1>
+    <article>
+      <h2>Exercice</h2>
+      <section>
+        <h3>Question 1 - (4 points)</h3>
+        <p>Ayhem a montré à ses collègues de classe l'application <strong>http://10fastfingers.com</strong> qui permet
+          de mesurer la vitesse moyenne de saisie en nombre de mots par minutes.</p>
+        <p>Raed et Amir se lancent le défi du : <strong>Qui est le plus rapide au clavier ?</strong></p>
+        <p>Les deux joueurs jouent plusieurs parties, celui qui gagne une partie marque un point, en cas d'égalité aucun
+          point n'est marqué.</p>
+        <p><strong>Compléter le tableau suivant.</strong></p>
+
+        <div class="row">
+          <div class="col-6">
+            <table class="table table-sm table-bordered table-striped border-dark align-middle text-center">
+              <thead>
+                <tr>
+                  <td width="25%"><strong>npj</strong></td>
+                  <td width="25%"><strong>npn</strong></td>
+                  <td width="25%"><strong>npr</strong></td>
+                  <td><strong>npa</strong></td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>10</td>
+                  <td>3</td>
+                  <td>4</td>
+                  <td>3</td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>1</td>
+                  <td>3</td>
+                  <td>
+                    <div class="pointille">&nbsp;</div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>11</td>
+                  <td>4</td>
+                  <td>
+                    <div class="pointille">&nbsp;</div>
+                  </td>
+                  <td>7</td>
+                </tr>
+                <tr>
+                  <td>8</td>
+                  <td>
+                    <div class="pointille">&nbsp;</div>
+                  </td>
+                  <td>2</td>
+                  <td>4</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="pointille">&nbsp;</div>
+                  </td>
+                  <td>4</td>
+                  <td>5</td>
+                  <td>5</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="col-6">
+            <p>Signification des variables</p>
+            <ul>
+              <li><strong>npj</strong> : Nombre de parties jouées</li>
+              <li><strong>npn</strong> : Nombre de parties nulles</li>
+              <li><strong>npr</strong> : Nombre de parties gagnées par Raed</li>
+              <li><strong>npa</strong> : Nombre de parties gagnées par Amir</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>Question 2 - (13 points)</h3>
+        <p>On demande d'écrire un programme en Python pour calculer le nombre de parties jouées
+          <strong>npj</strong>. On donne le programme suivant, à corriger:
+        </p>
+
+        <div class="row">
+          <div class="col-sm-7">
+            <pre><code class="language-python"># Saisie du nombre de parties
+npr = input Nombre de parties gagnées par Raed ? 
+npa = int "Nombre de parties gagnées par Amir ? "
+npn = input int Nombre de parties nulles ?
+# Calcul du nombre de parties jouées
+npj &larr; 2 * npr + 3 * npa + 4 * npn / 3
+# Afficher le nombre de parties gagnées
+print Nombre de parties jouées npj
+print Raed a gagné npr / npj fois
+print Amir a gagné npr / npj fois</code></pre>
+          </div>
+          <div class="col-sm-5">
+            <pre><code class="nohighlight shell python" data-text="Exemple de sortie">Nombre de parties gagnées par Raed ? 4
+Nombre de parties gagnées par Amir ? 3
+Nombre de parties nulles ? 3
+Nombre de parties jouées 10
+Raed a gagné 4 / 10 fois
+Amir a gagné 3 / 10 fois</code></pre>
+          </div>
+        </div>
+
+        <h4>Programme corrigé</h4>
+
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+        <p class="pointille">&nbsp;</p>
+      </section>
+
+      <section>
+        <h3 class="p-break">Question 3 - (4 points)</h3>
+        <p>On veut dans la suite du problème, déterminer le gagnant du jeu en fonction du nombre de parties gagnées par
+          les deux joueurs : <strong>npr</strong> et <strong>npa</strong>.</p>
+        <p>Le match est nul dans le cas où les deux ont gagnés le même nombre de parties.</p>
+        <p><strong>Compléter le tableau suivant.</strong></p>
+
+        <div class="row">
+          <div class="col-6">
+            <table class="table table-sm table-bordered table-striped border-dark align-middle text-center">
+              <thead class="align-middle">
+                <tr>
+                  <td width="25%"><strong>nbr</strong></td>
+                  <td width="25%"><strong>nba</strong></td>
+                  <td width="25%"><strong>gagnant</strong></td>
+                  <td width="25%"><strong>perdant</strong></td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>2</td>
+                  <td>Amir</td>
+                  <td>Raed</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>3</td>
+                  <td>
+                    <div class="pointille">&nbsp;</div>
+                  </td>
+                  <td>
+                    <div class="pointille">&nbsp;</div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>5</td>
+                  <td>
+                    <div class="pointille">&nbsp;</div>
+                  </td>
+                  <td>
+                    <div class="pointille">&nbsp;</div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="col-6">
+            <p>Signification des variables</p>
+            <ul>
+              <li><strong>npr</strong> : Nombre de parties gagnées par Raed</li>
+              <li><strong>nba</strong> : Nombre de parties gagnées par Amir</li>
+              <li><strong>gagnant</strong> : Nom du gagnant</li>
+              <li><strong>perdant</strong> : Nom du perdant</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>Question 4 - (9 points)</h3>
+
+        <p>Améliorer votre programme en affichant le nom du gagnant ou match nul en cas d'égalité.</p>
+
+        <div class="row">
+          <div class="col-sm-7">
+            <pre><code class="language-python"># 1ère partie - réponse à la question 2
+# ...
+# 2ème partie
+# Affichage du gagnant
+if npa == npr: # match nul
+<p class="pointille my-1">&nbsp;</p>
+else: # il y a un gagnant
+    if npr > npa: # Raed est le gagnant
+<p class="pointille">&nbsp;</p>
+<p class="pointille">&nbsp;</p>
+    elif npr &lt; npa: # Amir est le gagnant
+<p class="pointille my-1">&nbsp;</p>
+<p class="pointille my-1">&nbsp;</p>
+    # afficher le nom du gagnant
+    print gagnant gagne contre perdant</code></pre>
+          </div>
+          <div class="col-sm-5">
+            <pre><code class="nohighlight shell python" data-text="Exemple de sortie">Nombre de parties gagnées par Raed ? 1
+Nombre de parties gagnées par Amir ? 2
+Nombre de parties nulles ? 0
+Nombre de parties jouées 3
+Raed a gagné 1 / 3 fois
+Amir a gagné 2 / 3 fois
+Amir gagne contre Raed</code></pre>
+          </div>
+        </div>
+
+      </section>
+
+      <section>
+        <h3 class="p-break">Question 5 - (9 points)</h3>
+        <p>Comme Amir et Raed semblent s'amuser à ce jeu, Saïd et Raslène se joignent à eux. Nous avons maintenant
+          quatre joueurs :</p>
+        <ul>
+          <li>Raed joue contre Amir</li>
+          <li>Saïd joue contre Raslène</li>
+        </ul>
+        <p>Le gagnant de la 1<sup>ère</sup> équipe jouera la finale contre le gagnant de la 2<sup>ème</sup> équipe.</p>
+        <p>On veut compléter le programme précédent pour afficher les deux finalistes. <strong>On suppose qu'il y a
+            toujours un gagnant des éliminatoires.</strong></p>
+
+        <div class="row">
+          <div class="col-sm-7">
+            <pre><code class="language-python"># 1ère partie - réponse à la question 2
+# ...
+# 2ème partie
+# ...
+# 3ème partie
+# Saisie des numéros des gagnants ng1 et ng2
+<p class="pointille my-1">&nbsp;</p>
+<p class="pointille my-1">&nbsp;</p>
+# Calcul des noms des gagnants
+if ng1 == 0: # Raed est gagnant
+<p class="pointille my-1">&nbsp;</p>
+else: # Amir est gagnant
+<p class="pointille my-1">&nbsp;</p>
+if ng2 == 0: # Saïd est gagnant
+<p class="pointille my-1">&nbsp;</p>
+else: # Raslène est gagnant
+<p class="pointille my-1">&nbsp;</p>
+# Afficher les noms des finalistes
+print La partie finale se joue entre g1 et g2</code></pre>
+          </div>
+          <div class="col-sm-5">
+            <pre><code class="nohighlight shell python" data-text="Exemple de sortie">Nombre de parties gagnées par Raed ? 10
+Nombre de parties gagnées par Amir ? 10
+Nombre de parties nulles ? 0
+Nombre de parties jouées 20
+Raed a gagné 10 / 20 fois
+Amir a gagné 10 / 20 fois
+Match null
+Qui le gagnant (0: Raed/ 1: Amir) ? 1
+Qui le gagnant (0: Saïd/ 1: Raslène) ? 0
+La partie finale se joue entre Amir et Saïd</code></pre>
+          </div>
+        </div>
+
+      </section>
+
+      <section>
+        <h3>Question 6 - (1 point)</h3>
+        <p>Implémentation des solutions sur machine et envoi de la solution finale.</p>
+      </section>
+    </article>
+  </main>
+  <script src="resources/js/jquery.min.js"></script>
+  <script src="resources/js/bootstrap.min.js"></script>
+  <script src="resources/js/highlight.pack.js"></script>
+  <script src="resources/js/hljs.algorithm.js"></script>
+  <script src="resources/js/draggable.js"></script>
+  <script src="resources/js/clipboard.min.js"></script>
+  <script src="resources/js/pages.js"></script>
+  <script src="resources/js/savecontent.js"></script>
+  <script src="resources/js/vue.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+    document.querySelectorAll('.language-algorithm,.language-python')
+      .forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'bd-clipboard d-print-none';
+        const btn = document.createElement('button');
+        btn.className = 'btn-clipboard';
+        btn.textContent = "📋";
+        btn.title = "Copier";
+        div.appendChild(btn);
+        item.parentElement.insertBefore(div, item);
+      });
+    new ClipboardJS('.btn-clipboard', {
+      target: (trigger) => {
+        return trigger.parentElement.nextElementSibling;
+      }
+    });
+    $(() => {
+      const localStore = new PagePersistance();
+      const serverStore = new ServerSaves('DS_3T');
+      const userInputSaver = new UserInputSaver(
+        document.querySelector('.user-input-saver'),
+        localStore,
+        serverStore);
+    });
+  </script>
+</body>
+
+</html>
