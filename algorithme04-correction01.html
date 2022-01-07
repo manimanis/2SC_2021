@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="resources/css/bootstrap.min.css">
+  <link rel="stylesheet" href="resources/css/default.css">
+  <link rel="stylesheet" href="resources/css/style.css">
+  <title>Algorithmes Séance 4</title>
+</head>
+
+<body>
+  <aside>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#aside_navbar"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span> Menu
+      </button>
+      <div class="collapse navbar-collapse" id="aside_navbar"></div>
+    </nav>
+  </aside>
+
+  <main class="container my-3">
+    <h1>Algorithmes Séance 4 - Correction</h1>
+
+    <article>
+      <h2>Problèmes</h2>
+
+      <section>
+        <h3>Compteur de 1 à 3</h3>
+
+        <p>Ecrire un programme qui compte de 1 à 3</p>
+
+        <pre><code class="algorithm">Algorithme Ex1
+Début
+  Ecrire(1)
+  Ecrire(2)
+  Ecrire(3)
+Fin</code></pre>
+      </section>
+
+      <section>
+        <h3>Compteur de 1 à n</h3>
+
+        <p>Ecrire un programme qui saisit un nombre n, puis compte de 1 à n.</p>
+
+        <pre><code class="algorithm">Algorithme Ex2
+Début
+  Ecrire("Donner un entier n ? "); Lire(n)
+  Pour i de 1 à n faire
+    Ecrire(i)
+  Fin Pour
+Fin</code></pre>
+      </section>
+
+      <section>
+        <h3>FizzBuzz</h3>
+
+        <p>Écrire l'algorithme d'un programme qui affiche les nombres de 1 à 100. Mais pour les multiples de trois,
+          afficher « Fizz » au lieu du nombre et pour les multiples de cinq, afficher « Buzz ». Pour les nombres qui
+          sont des multiples de trois et de cinq, afficher « FizzBuzz ». </p>
+        <div class="d-print-none">
+          <p class="explication">Exemple</p>
+          <pre><code class="hljs nohighlight">1, 2, Fizz, 4, Buzz, Fizz, 7, 8, Fizz, Buzz, ...</code></pre>
+        </div>
+
+        <h4>1<sup>ère</sup> Méthode</h4>
+        <pre><code class="algorithm">Algorithme Ex3
+  Début
+    Pour i de 1 à 100 faire
+      Si n mod 15 = 0 Alors Ecrire("FizzBuzz") Fin Si
+      Sinon Si n mod 3 = 0 Alors Ecrire("Fizz") Fin Si
+      Sinon Si n mod 5 = 0 Alors Ecrire("Buzz") Fin Si
+      Sinon Ecrire(i) 
+      Fin Si
+    Fin Pour
+  Fin</code></pre>
+
+        <h4>2<sup>ème</sup> Méthode</h4>
+        <pre><code class="algorithm">Algorithme Ex3
+  Début
+    Pour i de 1 à 100 faire
+      res &larr; ""
+      Si n mod 3 = 0 Alors res &larr; "Fizz" Fin Si
+      Si n mod 5 = 0 Alors res &larr; res + "Buzz" Fin Si
+      Si res = "" Alors res &larr; convch(i) Fin Si
+      Ecrire(res)
+    Fin Pour
+  Fin</code></pre>
+      </section>
+
+      <section>
+        <h3>Nombres Palintiples</h3>
+        <p>Un nombre <strong>palintiple</strong> est un nombre multiple de son retourné.</p>
+        <p class="explication">Exemples : Pour les nombres de quatre chiffres les palintiples sont : 1089 x 9 = 9801 et
+          2178 x 4 = 8712</p>
+        <p>Ecrire l'algorithme d'un programme qui cherche tous les nombres palintiples de 5 chiffres.</p>
+
+        <h4>1<sup>ère</sup> Méthode</h4>
+        <pre><code class="algorithm">Algorithme Ex4
+Début
+  Pour i de 10000 à 99999 faire
+    u &larr; i mod 10
+    d &larr; (i div 10) mod 10
+    c &larr; (i div 100) mod 10
+    m &larr; (i div 1000) mod 10
+    dm &larr; i div 10000
+    ii &larr; u * 10000 + d * 1000 + c * 100 + m * 10 + dm
+
+    Si (i &ne; ii) et (ii &ge; 10000) et (i mod ii = 0) Alors
+      Ecrire(i, "=", ii, "&times;", i div ii)
+    Fin Si
+  Fin Pour
+Fin</code></pre>
+
+        <h4>2<sup>ème</sup> Méthode</h4>
+        <pre><code class="algorithm">Algorithme Ex4
+Début
+  Pour i de 10000 à 99999 faire
+    chi &larr; convch(i)
+    ii &larr; valeur(chi[4]+chi[3]+chi[2]+chi[1]+chi[0])
+
+    Si (i &ne; ii) et (ii &ge; 10000) et (i mod ii = 0) Alors
+      Ecrire(i, "=", ii, "&times;", i div ii)
+    Fin Si
+  Fin Pour
+Fin</code></pre>
+
+        <h4>3<sup>ème</sup> Méthode</h4>
+        <pre><code class="algorithm">Algorithme Ex4
+Début
+  Pour dm de 1 à 9 faire
+    Pour m de 0 à 9 faire
+      Pour c de 0 à 9 faire
+        Pour d de 0 à 9 faire
+          Pour u de 0 à 9 faire
+            i &larr; dm * 10000 + m * 1000 + c * 100 + d * 10 + u
+            ii &larr; u * 10000 + d * 1000 + c * 100 + m * 10 + dm
+            Si (i &ne; ii) et (ii &ge; 10000) et (i mod ii = 0) Alors
+              Ecrire(i, "=", ii, "&times;", i div ii)
+            Fin Si
+          Fin Pour
+        Fin Pour
+      Fin Pour
+    Fin Pour
+  Fin Pour
+Fin</code></pre>
+      </section>
+
+      <section>
+        <h3>Nombre Parfait</h3>
+
+        <p>Les nombres parfaits sont des entiers égaux à la somme de leurs diviseurs. Ainsi, 6 se divise par 2, 3 et 1.
+          En additionnant 2, 3 et 1, on arrive à 6 ! Même chose pour 28, somme de 1 + 2 + 4 + 7 + 14.</p>
+
+        <p>Ecrire l'algorithme d'un programme qui saisit un nombre puis affiche s'il est parfait ou non.</p>
+        <p class="explication">Exemples</p>
+        <pre><code class="hljs nohighlight">Donner un entier ? 6
+Somme des diviseurs : 6</code></pre>
+        <p>6 est un nombre parfait!</p>
+        <pre><code class="algorithm">Algorithme Ex5
+Début
+  Ecrire("Donner un nombre ? "); Lire(n)
+  s &larr; 0
+  Pour i de 1 à n div 2 faire
+    Si n mod i = 0 Alors
+     s &larr; s + 1
+  Fin Pour
+  Si n = s Alors
+    Ecrire(n, "est un nombre parfait")
+  Sinon
+    Ecrire(n, "n'est pas un nombre parfait")
+  Fin Si
+Fin</code></pre>
+      </section>
+
+
+      <section>
+        <h3>Nombre de mots dans une phrase</h3>
+
+        <p>La phrase suivante :</p>
+        <p class="text-center">Ikram est allée au supermarché.</p>
+        <p>est composée de 5 mots.</p>
+
+        <p>Ecrire l'algorithme d'un programme qui calcule le nombre de mots dans une phrase saisie par l'utilisateur.
+        </p>
+
+        <pre><code class="algorithm">Algorithme Ex6
+Début
+  Ecrire("Donner une phrase ? "); Lire(ph)
+  nbm &larr; 1
+  Pour i de 0 à Long(ph)-1 faire
+    Si ph[i] = " " Alors
+     nbm &larr; nbm + 1
+  Fin Pour
+  Ecrire("La phrase contient", nbm, "mots")
+Fin</code></pre>
+      </section>
+    </article>
+  </main>
+  <footer class="d-print-none bg-dark text-white p-2">
+    <div class="text-center">Page créée avec ♥ par Mohamed Anis MANI</div>
+    <div class="text-center small">Année scolaire : 2021/2022</div>
+  </footer>
+
+  <script src="resources/js/jquery.min.js"></script>
+  <script src="resources/js/bootstrap.bundle.min.js"></script>
+  <script src="resources/js/highlight.pack.js"></script>
+  <script src="resources/js/hljs.algorithm.js"></script>
+  <script src="resources/js/clipboard.min.js"></script>
+  <script src="resources/js/pages.js"></script>
+  <script src="resources/js/vue.min.js"></script>
+  <script src="resources/apps/algorithme03.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+
+    document.querySelectorAll('.language-algorithm,.language-python')
+      .forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'bd-clipboard d-print-none';
+        const btn = document.createElement('button');
+        btn.className = 'btn-clipboard';
+        btn.textContent = "📋";
+        btn.title = "Copier";
+        div.appendChild(btn);
+        item.parentElement.insertBefore(div, item);
+      });
+    new ClipboardJS('.btn-clipboard', {
+      target: (trigger) => {
+        return trigger.parentElement.nextElementSibling;
+      }
+    });
+  </script>
+</body>
+
+</html>
