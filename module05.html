@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="resources/css/bootstrap.min.css">
+  <link rel="stylesheet" href="resources/css/default.css">
+  <link rel="stylesheet" href="resources/css/style.css">
+  <title>Structure Itérative Complète</title>
+</head>
+
+<body>
+  <aside>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#aside_navbar"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span> Menu
+      </button>
+      <div class="collapse navbar-collapse" id="aside_navbar"></div>
+    </nav>
+  </aside>
+
+  <main class="container my-3">
+    <h1>Module 4 : Structures itératives complètes</h1>
+
+    <article>
+      <h2>Situations</h2>
+
+      <section>
+        <h3>Les formes géométriques</h3>
+
+        <p>La bibliothèque Turtle est utilisée pour apprendre la logique de programmation aux enfants et aux débutants.
+        </p>
+        <p>Pour dessiner un triangle, un carré et un pentagone, Soulaymène a tapé les codes ci-dessous :</p>
+        <figure>
+          <img src="images/module05/formes.png" alt="Formes géométriques">
+          <figcaption>Formes géométriques</figcaption>
+        </figure>
+        <div class="row">
+          <div class="col">
+            <p><strong>Triangle</strong></p>
+            <pre><code class="python">from turtle import Turtle, mainloop
+tr = Turtle()
+tr.forward(100)
+tr.left(120)
+tr.forward(100)
+tr.left(120)
+tr.forward(100)
+tr.left(120)
+mainloop()</code></pre>
+          </div>
+          <div class="col">
+            <p><strong>Carré</strong></p>
+            <pre><code class="python">from turtle import Turtle, mainloop
+tr = Turtle()
+tr.forward(100)
+tr.left(90)
+tr.forward(100)
+tr.left(90)
+tr.forward(100)
+tr.left(90)
+tr.forward(100)
+tr.left(90)
+mainloop()</code></pre>
+          </div>
+          <div class="col">
+            <p><strong>Pentagone</strong></p>
+            <pre><code class="python">from turtle import Turtle, mainloop
+tr = Turtle()
+tr.forward(100)
+tr.left(72)
+tr.forward(100)
+tr.left(72)
+tr.forward(100)
+tr.left(72)
+tr.forward(100)
+tr.left(72)
+tr.forward(100)
+tr.left(72)
+mainloop()</code></pre>
+          </div>
+        </div>
+        <p>Comme ces codes contiennent beaucoup de répétitions Soulaymène se demande s'il est possible de dessiner ces
+          formes tout en écrivant moins de code.</p>
+        <p>Etant donné que vous êtes un élève de la section Informatique Soulaymène a demandé votre aide. Pensant un peu
+          vous vous rappelez que vous venez tout juste d'écrire un code de deux lignes qui affiche un
+          message 10 fois :</p>
+        <pre><code class="python">for i in range(10):
+    print("Bonjour Soulaymène")</code></pre>
+        <ol>
+          <li>Est-il possible d'utiliser cette structure et de l'adapater pour dessiner les trois formes précédentes ?
+            <strong>Réécrire les programmes précédents en utilisalt la boucle <em>for</em>.</strong>
+          </li>
+          <li>Toutes les formes possèdent des cotés de largeurs constantes : 100 pixels. <strong>Permettre à
+              l'utilisateur de choisir une longueur personnalisée.</strong></li>
+          <li>Est-il possible de combiner les trois programmes précédents en un seul programme qui :
+            <ul>
+              <li>Saisit le nombre de cotés <code>nc</code> de la forme à dessiner.</li>
+              <li>Saisit la largeur d'un coté <code>lc</code>.</li>
+              <li>Dessine une forme ayant <code>nc</code> cotés de largeur <code>lc</code> pixels.</li>
+            </ul>
+          </li>
+        </ol>
+      </section>
+
+      <section>
+        <h3>Carrés Imbriqués</h3>
+
+        <p>La figure suivante montre des carrés Imbriqués :</p>
+        <figure>
+          <img src="images/module05/carres-imbriques.png" alt="Carrés Imbriqués">
+          <figcaption>Carrés Imbriqués</figcaption>
+        </figure>
+
+        <ol>
+          <li>Dessiner un carré de coté 200.</li>
+          <li>Dessiner un deuxième carré de coté 180.</li>
+          <li>Dessiner un troisième carré de coté 160.</li>
+          <li>Est-il possible d'utiliser la boucle <em>for</em> pour dessiner cette forme ? Réécrire votre programme
+            pour dessiner la forme désirée.</li>
+          <li>Copier/Coller le code de la question 4. Enlever une seule ligne afin d'obtneir la forme suivante :
+            <figure>
+              <img src="images/module05/spirale.png" alt="Spirale Carrée">
+              <figcaption>Spirale Carrée</figcaption>
+            </figure>
+          </li>
+          <li>Ajuster le pas de la boucle pour obtenir la même forme.</li>
+        </ol>
+      </section>
+
+      <section>
+        <h3>Jeu de multiplication</h3>
+
+        <p>Molka est une élève en 3<sup>ème</sup> année de base. Aujourd'hui, elle veut s'entrainer sur la table de
+          multiplication des nombres de 1 à 9.</p>
+        <p>Le frère cadet de Molka est un élève en 2<sup>ème</sup> TI. Il en profite pour aider sa soeur et réviser un
+          peu.</p>
+        <p>Il commence par écrire le <strong>code incomplet</strong> suivant :</p>
+        <pre><code class="python">from random import randint
+v1 = 1 # Todo 1
+v2 = 2 # Todo 1
+res = v1 * v2
+print(v1, "×", v2, "= ?")
+rep = int(input())
+if True: # Todo 2
+    print("Correct!")
+else:
+    print("Faux!")</code></pre>
+        <p>On vous demande de l'aider sur les <code>Todo 1</code> et <code>Todo 2</code>.</p>
+        <ol>
+          <li><strong>Todo 1</strong> : Choisir deux nombres aléatoires entre 1 et 9.</li>
+          <li><strong>Todo 2</strong> : Remplacer la valeur <code>True</code> par une condition qui vérifie si la
+            réponse est correcte ou bien fausse.</li>
+        </ol>
+        <p><strong>Tester le code final. Est-il possible de l'améliorer ?</strong></p>
+        <h4>Travail demandé</h4>
+        <p>On demande d'améliorer le programme dévéloppé pour qu'il ressemble à l'exemple ci-dessous :</p>
+        <ul>
+          <li>Permettre à l'utilisateur de choisir le nombre de questions qui seront posées par le programme.</li>
+          <li>Afficher un score final à la fin du programme pour indiquer le nombre de bonnes réponses.</li>
+          <li>Afficher le numéro de la question.</li>
+        </ul>
+<pre><code class="nohighlight shell python" data-text="Exemple d'exécution">Nombre de questions ? 5
+Question 1 / 5 : 5 × 4 = ? 20
+Correct!
+Question 2 / 5 : 9 × 1 = ? 9
+Correct!
+Question 3 / 5 : 8 × 3 = ? 10
+Non, 8 × 3 = 24
+Question 4 / 5 : 6 × 7 = ? 42
+Correct!
+Question 5 / 5 : 9 × 5 = ? 45
+Correct!
+Score : 4 / 5</code></pre>        
+      </section>
+    </article>
+  </main>
+  <footer class="d-print-none bg-dark text-white p-2">
+    <div class="text-center">Page créée avec ♥ par Mohamed Anis MANI</div>
+    <div class="text-center small">Année scolaire : 2021/2022</div>
+  </footer>
+
+  <script src="resources/js/jquery.min.js"></script>
+  <script src="resources/js/bootstrap.bundle.min.js"></script>
+  <script src="resources/js/highlight.pack.js"></script>
+  <script src="resources/js/hljs.algorithm.js"></script>
+  <script src="resources/js/clipboard.min.js"></script>
+  <script src="resources/js/pages.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+
+    document.querySelectorAll('.language-algorithm,.language-python')
+      .forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'bd-clipboard d-print-none';
+        const btn = document.createElement('button');
+        btn.className = 'btn-clipboard';
+        btn.textContent = "📋";
+        btn.title = "Copier";
+        div.appendChild(btn);
+        item.parentElement.insertBefore(div, item);
+      });
+    new ClipboardJS('.btn-clipboard', {
+      target: (trigger) => {
+        return trigger.parentElement.nextElementSibling;
+      }
+    });
+  </script>
+</body>
+
+</html>
