@@ -23,7 +23,7 @@
   </aside>
 
   <main class="container my-3">
-    <h1>Module 4 : Structures itératives complètes</h1>
+    <h1>Module 5 : Structures itératives complètes</h1>
 
     <article>
       <h2>Situations</h2>
@@ -35,13 +35,13 @@
         </p>
         <p>Pour dessiner un triangle, un carré et un pentagone, Soulaymène a tapé les codes ci-dessous :</p>
         <figure>
-          <img src="images/module05/formes.png" alt="Formes géométriques">
+          <img src="images/module05/formes.png" alt="Formes géométriques" class="h3cm">
           <figcaption>Formes géométriques</figcaption>
         </figure>
         <div class="row">
-          <div class="col">
+          <div class="col-4">
             <p><strong>Triangle</strong></p>
-            <pre><code class="python">from turtle import Turtle, mainloop
+            <pre><code class="python">from turtle import Turtle,mainloop
 tr = Turtle()
 tr.forward(100)
 tr.left(120)
@@ -51,9 +51,9 @@ tr.forward(100)
 tr.left(120)
 mainloop()</code></pre>
           </div>
-          <div class="col">
+          <div class="col-4">
             <p><strong>Carré</strong></p>
-            <pre><code class="python">from turtle import Turtle, mainloop
+            <pre><code class="python">from turtle import Turtle,mainloop
 tr = Turtle()
 tr.forward(100)
 tr.left(90)
@@ -65,9 +65,9 @@ tr.forward(100)
 tr.left(90)
 mainloop()</code></pre>
           </div>
-          <div class="col">
+          <div class="col-4">
             <p><strong>Pentagone</strong></p>
-            <pre><code class="python">from turtle import Turtle, mainloop
+            <pre><code class="python">from turtle import Turtle,mainloop
 tr = Turtle()
 tr.forward(100)
 tr.left(72)
@@ -110,11 +110,11 @@ mainloop()</code></pre>
 
         <p>La figure suivante montre des carrés Imbriqués :</p>
         <figure>
-          <img src="images/module05/carres-imbriques.png" alt="Carrés Imbriqués">
+          <img src="images/module05/carres-imbriques.png" alt="Carrés Imbriqués" class="h3cm">
           <figcaption>Carrés Imbriqués</figcaption>
         </figure>
 
-        <ol>
+        <ol class="p-break">
           <li>Dessiner un carré de coté 200.</li>
           <li>Dessiner un deuxième carré de coté 180.</li>
           <li>Dessiner un troisième carré de coté 160.</li>
@@ -122,7 +122,7 @@ mainloop()</code></pre>
             pour dessiner la forme désirée.</li>
           <li>Copier/Coller le code de la question 4. Enlever une seule ligne afin d'obtneir la forme suivante :
             <figure>
-              <img src="images/module05/spirale.png" alt="Spirale Carrée">
+              <img src="images/module05/spirale.png" alt="Spirale Carrée" class="h3cm">
               <figcaption>Spirale Carrée</figcaption>
             </figure>
           </li>
@@ -178,7 +178,7 @@ Score : 4 / 5</code></pre>
     </article>
 
     <article>
-      <h2>Résumé</h2>
+      <h2 class="p-break">Résumé</h2>
 
       <section>
         <h3>Structure itérative complète</h3>
@@ -278,7 +278,7 @@ Fin Pour</code></pre>
     </article>
 
     <article>
-      <h2>Renforcement</h2>
+      <h2 class="p-break">Renforcement</h2>
 
       <section>
         <h3>Entiers suivants</h3>
@@ -308,27 +308,27 @@ Fin Pour</code></pre>
         <p>Ecrire un programme qui affiche le nombre d'apparition du chiffre 8 dans un intervalle [a, b] donné avec 1
           &le; a &lt; b &le; 9999.</p>
 
-          <div class="row">
-            <div class="col-3">
-              <pre><code class="nohighlight shell python" data-text="Exemple 1">a ? 19
+        <div class="row">
+          <div class="col-3">
+            <pre><code class="nohighlight shell python" data-text="Exemple 1">a ? 19
 b ? 95
 17</code></pre>
-            </div>
-            <div class="col-3">
-              <pre><code class="nohighlight shell python" data-text="Exemple 2">a ? 58
+          </div>
+          <div class="col-3">
+            <pre><code class="nohighlight shell python" data-text="Exemple 2">a ? 58
 b ? 88
 13</code></pre>
-            </div>
-            <div class="col-3">
-              <pre><code class="nohighlight shell python" data-text="Exemple 3">a ? 801
+          </div>
+          <div class="col-3">
+            <pre><code class="nohighlight shell python" data-text="Exemple 3">a ? 801
 b ? 809
 10</code></pre>
-            </div>
-            <div class="col-3">
-              <pre><code class="nohighlight shell python" data-text="Exemple 4">a ? 9090
+          </div>
+          <div class="col-3">
+            <pre><code class="nohighlight shell python" data-text="Exemple 4">a ? 9090
 b ? 9999
 281</code></pre>
-            </div>
+          </div>
       </section>
 
       <section>
@@ -383,8 +383,186 @@ b ? 9999
           <li>u+d+c+m &ge; 22, somme des chiffres supérieure ou égale à 22</li>
         </ul>
       </section>
+    </article>
+
+    <article>
+      <h2 class="p-break">Implémentation</h2>
+
+      <section>
+        <h3>FizzBuzz</h3>
+
+        <p>Écrire l'algorithme d'un programme qui affiche les nombres de 1 à 100. Mais pour les multiples de trois,
+          afficher « Fizz » au lieu du nombre et pour les multiples de cinq, afficher « Buzz ». Pour les nombres qui
+          sont des multiples de trois et de cinq, afficher « FizzBuzz ». </p>
+        <div class="d-print-none">
+          <p class="explication">Exemple</p>
+          <pre><code class="hljs nohighlight">1, 2, Fizz, 4, Buzz, Fizz, 7, 8, Fizz, Buzz, ...</code></pre>
+        </div>
+        <div class="row">
+          <div class="col">
+            <h4>1<sup>ère</sup> Méthode</h4>
+            <pre><code class="algorithm">Algorithme Ex3
+Début
+  Pour i de 1 à 100 faire
+    Si n mod 15 = 0 Alors Ecrire("FizzBuzz") Fin Si
+    Sinon Si n mod 3 = 0 Alors Ecrire("Fizz") Fin Si
+    Sinon Si n mod 5 = 0 Alors Ecrire("Buzz") Fin Si
+    Sinon Ecrire(i) 
+    Fin Si
+  Fin Pour
+Fin</code></pre>
+          </div>
+          <div class="col">
+            <h4>2<sup>ème</sup> Méthode</h4>
+            <pre><code class="algorithm">Algorithme Ex3
+Début
+Pour i de 1 à 100 faire
+  res &larr; ""
+  Si n mod 3 = 0 Alors res &larr; "Fizz" Fin Si
+  Si n mod 5 = 0 Alors res &larr; res + "Buzz" Fin Si
+  Si res = "" Alors res &larr; convch(i) Fin Si
+  Ecrire(res)
+Fin Pour
+Fin</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>Nombres Palintiples</h3>
+        <p>Un nombre <strong>palintiple</strong> est un nombre multiple de son retourné.</p>
+        <p class="explication">Exemples : Pour les nombres de quatre chiffres les palintiples sont : 1089 x 9 = 9801 et
+          2178 x 4 = 8712</p>
+        <p>Ecrire l'algorithme d'un programme qui cherche tous les nombres palintiples de 5 chiffres.</p>
+
+        <div class="row">
+          <div class="col">
+            <h4>1<sup>ère</sup> Méthode</h4>
+            <pre><code class="algorithm">Algorithme Ex4
+Début
+  Pour i de 10000 à 99999 faire
+    u &larr; i mod 10
+    d &larr; (i div 10) mod 10
+    c &larr; (i div 100) mod 10
+    m &larr; (i div 1000) mod 10
+    dm &larr; i div 10000
+    ii &larr; u * 10000 + d * 1000 + c * 100 + m * 10 + dm
+    Si (i &ne; ii) et (ii &ge; 10000) et (i mod ii = 0) Alors
+      Ecrire(i, "=", ii, "&times;", i div ii)
+    Fin Si
+  Fin Pour
+Fin</code></pre>
+          </div>
+          <div class="col">
+            <h4>2<sup>ème</sup> Méthode</h4>
+            <pre><code class="algorithm">Algorithme Ex4
+Début
+  Pour i de 10000 à 99999 faire
+    chi &larr; convch(i)
+    ii &larr; valeur(chi[4]+chi[3]+chi[2]+chi[1]+chi[0])
+    Si (i &ne; ii) et (ii &ge; 10000) et (i mod ii = 0) Alors
+      Ecrire(i, "=", ii, "&times;", i div ii)
+    Fin Si
+  Fin Pour
+Fin</code></pre>
+          </div>
+        </div>
+      </section>
 
 
+      <section class="d-print-none">
+        <h3>Nombre Parfait</h3>
+
+        <p>Les nombres parfaits sont des entiers égaux à la somme de leurs diviseurs. Ainsi, 6 se divise par 2, 3 et
+          1. En additionnant 2, 3 et 1, on arrive à 6 ! </p>
+        <p>Ecrire l'algorithme d'un programme qui saisit un nombre puis affiche s'il est parfait ou non.</p>
+        <pre><code class="algorithm">Algorithme Ex5
+Début
+Ecrire("Donner un nombre ? "); Lire(n)
+s &larr; 0
+Pour i de 1 à n div 2 faire
+  Si n mod i = 0 Alors
+   s &larr; s + 1
+Fin Pour
+Si n = s Alors
+  Ecrire(n, "est un nombre parfait")
+Sinon
+  Ecrire(n, "n'est pas un nombre parfait")
+Fin Si
+Fin</code></pre>
+      </section>
+
+      <section class="d-print-none">
+        <h3>Nombre de mots dans une phrase</h3>
+
+        <p>La phrase suivante :</p>
+        <p class="text-center">Ikram est allée au supermarché.</p>
+        <p>est composée de 5 mots.</p>
+
+        <p>Ecrire l'algorithme d'un programme qui calcule le nombre de mots dans une phrase saisie par
+          l'utilisateur.
+        </p>
+
+        <pre><code class="algorithm">Algorithme Ex6
+Début
+Ecrire("Donner une phrase ? "); Lire(ph)
+nbm &larr; 1
+Pour i de 0 à Long(ph)-1 faire
+  Si ph[i] = " " Alors
+   nbm &larr; nbm + 1
+Fin Pour
+Ecrire("La phrase contient", nbm, "mots")
+Fin</code></pre>
+      </section>
+
+      <div class="d-none d-print-block">
+        <div class="row">
+          <div class="col-6">
+
+            <h3>Nombre Parfait</h3>
+
+            <p>Les nombres parfaits sont des entiers égaux à la somme de leurs diviseurs. Ainsi, 6 se divise par 2, 3 et
+              1. En additionnant 2, 3 et 1, on arrive à 6 ! </p>
+            <p>Ecrire l'algorithme d'un programme qui saisit un nombre puis affiche s'il est parfait ou non.</p>
+            <pre><code class="algorithm">Algorithme Ex5
+Début
+  Ecrire("Donner un nombre ? "); Lire(n)
+  s &larr; 0
+  Pour i de 1 à n div 2 faire
+    Si n mod i = 0 Alors
+      s &larr; s + 1
+  Fin Pour
+  Si n = s Alors
+    Ecrire(n, "est un nombre parfait")
+  Sinon
+    Ecrire(n, "n'est pas un nombre parfait")
+  Fin Si
+Fin</code></pre>
+          </div>
+          <div class="col-6">
+            <h3>Nombre de mots dans une phrase</h3>
+
+            <p>La phrase suivante :</p>
+            <p class="text-center">Ikram est allée au supermarché.</p>
+            <p>est composée de 5 mots.</p>
+
+            <p>Ecrire l'algorithme d'un programme qui calcule le nombre de mots dans une phrase saisie par
+              l'utilisateur.
+            </p>
+
+            <pre><code class="algorithm">Algorithme Ex6
+Début
+  Ecrire("Donner une phrase ? "); Lire(ph)
+  nbm &larr; 1
+  Pour i de 0 à Long(ph)-1 faire
+    Si ph[i] = " " Alors
+      nbm &larr; nbm + 1
+  Fin Pour
+  Ecrire("La phrase contient", nbm, "mots")
+Fin</code></pre>
+          </div>
+        </div>
+      </div>
     </article>
   </main>
   <footer class="d-print-none bg-dark text-white p-2">
