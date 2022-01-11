@@ -135,7 +135,7 @@ mainloop()</code></pre>
 
         <p>Molka est une élève en 3<sup>ème</sup> année de base. Aujourd'hui, elle veut s'entrainer sur la table de
           multiplication des nombres de 1 à 9.</p>
-        <p>Le frère cadet de Molka est un élève en 2<sup>ème</sup> TI. Il en profite pour aider sa soeur et réviser un
+        <p>Le frère aîné de Molka est un élève en 2<sup>ème</sup> TI. Il en profite pour aider sa soeur et réviser un
           peu.</p>
         <p>Il commence par écrire le <strong>code incomplet</strong> suivant :</p>
         <pre><code class="python">from random import randint
@@ -162,7 +162,7 @@ else:
           <li>Afficher un score final à la fin du programme pour indiquer le nombre de bonnes réponses.</li>
           <li>Afficher le numéro de la question.</li>
         </ul>
-<pre><code class="nohighlight shell python" data-text="Exemple d'exécution">Nombre de questions ? 5
+        <pre><code class="nohighlight shell python" data-text="Exemple d'exécution">Nombre de questions ? 5
 Question 1 / 5 : 5 × 4 = ? 20
 Correct!
 Question 2 / 5 : 9 × 1 = ? 9
@@ -173,8 +173,218 @@ Question 4 / 5 : 6 × 7 = ? 42
 Correct!
 Question 5 / 5 : 9 × 5 = ? 45
 Correct!
-Score : 4 / 5</code></pre>        
+Score : 4 / 5</code></pre>
       </section>
+    </article>
+
+    <article>
+      <h2>Résumé</h2>
+
+      <section>
+        <h3>Structure itérative complète</h3>
+
+        <h4>Forme Générale</h4>
+        <p><code>cpt</code> est la variable compteur / <code>V<sub>i</sub></code> est la valeur initiale /
+          <code>V<sub>f</sub></code> est la valeur finale / <code>V<sub>p</sub></code> est la valeur du pas.
+        </p>
+        <div class="row">
+          <div class="col">
+            <pre><code class="algorithm">Pour cpt de V<sub>i</sub> à V<sub>f</sub> Faire [Pas=V<sub>p</sub>]
+  // Traitements
+Fin Pour</code></pre>
+          </div>
+          <div class="col">
+            <pre><code class="python">for cpt in range(V<sub>i</sub>, V<sub>f</sub>+1, V<sub>p</sub>):
+  # Traitements
+  </code></pre>
+          </div>
+        </div>
+
+        <h4>Exemple 1</h4>
+        <p>Compter à partir de 0 à 9 par pas de 1.</p>
+        <div class="row">
+          <div class="col">
+            <pre><code class="algorithm">Pour cpt de 0 à 9 Faire
+  // Traitements
+Fin Pour</code></pre>
+          </div>
+          <div class="col">
+            <pre><code class="python">for cpt in range(10):
+  # Traitements
+  </code></pre>
+          </div>
+        </div>
+
+        <h4>Exemple 2</h4>
+        <p>Compter à partir de 1 à 10 par pas de 1.</p>
+        <div class="row">
+          <div class="col">
+            <pre><code class="algorithm">Pour cpt de 1 à 10 Faire
+  // Traitements
+Fin Pour</code></pre>
+          </div>
+          <div class="col">
+            <pre><code class="python">for cpt in range(1, 11):
+  # Traitements
+  </code></pre>
+          </div>
+        </div>
+
+        <h4>Exemple 3</h4>
+        <p>Compter à partir de 10 à 1 par pas de -1.</p>
+        <div class="row">
+          <div class="col">
+            <pre><code class="algorithm">Pour cpt de 10 à 1 Faire [Pas=-1]
+  // Traitements
+Fin Pour</code></pre>
+          </div>
+          <div class="col">
+            <pre><code class="python">for cpt in range(10, 0, -1):
+  # Traitements
+  </code></pre>
+          </div>
+        </div>
+
+        <h4>Exemple 4</h4>
+        <p>Compter à partir de 1 à 10 par pas de 3.</p>
+        <div class="row">
+          <div class="col">
+            <pre><code class="algorithm">Pour cpt de 1 à 10 Faire [Pas=3]
+  // Traitements
+Fin Pour</code></pre>
+          </div>
+          <div class="col">
+            <pre><code class="python">for cpt in range(1, 11, 3):
+  # Traitements
+  </code></pre>
+          </div>
+        </div>
+
+        <h4>Exemple 4</h4>
+        <p>Compter à partir de 10 à 1 par pas de -3.</p>
+        <div class="row">
+          <div class="col">
+            <pre><code class="algorithm">Pour cpt de 10 à 1 Faire [Pas=-3]
+  // Traitements
+Fin Pour</code></pre>
+          </div>
+          <div class="col">
+            <pre><code class="python">for cpt in range(10, 0, -3):
+  # Traitements
+  </code></pre>
+          </div>
+        </div>
+      </section>
+    </article>
+
+    <article>
+      <h2>Renforcement</h2>
+
+      <section>
+        <h3>Entiers suivants</h3>
+
+        <p>Ecrire un programme qui permet de saisir un entier n et d'afficher les sept entiers suivants.</p>
+        <pre><code class="nohighlight shell python" data-text="Exemple 1">Donner n ? 10
+11 12 13 14 15 16 17</code></pre>
+      </section>
+
+      <section>
+        <h3>Produit de deux nombres</h3>
+
+        <p>Ecrire un programme qui calcule le produit de deux entiers a et b donnés <strong>sans utiliser l'opérateur
+            *</strong>.</p>
+        <p>On rappelle que : </p>
+        <ul>
+          <li>2 &times; 5 = 2 + 2 + 2 + 2 + 2 = 10</li>
+          <li>6 &times; 3 = 6 + 6 + 6 = 18</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Nombre de 8</h3>
+
+        <p>Le chiffre 8 figure dans l'intervalle [1, 10] une seule fois. Il se trouve 20 fois dans l'intervalle [1, 99].
+          Il se trouve 300 fois dans l'intervalle [1, 999].</p>
+        <p>Ecrire un programme qui affiche le nombre d'apparition du chiffre 8 dans un intervalle [a, b] donné avec 1
+          &le; a &lt; b &le; 9999.</p>
+
+          <div class="row">
+            <div class="col-3">
+              <pre><code class="nohighlight shell python" data-text="Exemple 1">a ? 19
+b ? 95
+17</code></pre>
+            </div>
+            <div class="col-3">
+              <pre><code class="nohighlight shell python" data-text="Exemple 2">a ? 58
+b ? 88
+13</code></pre>
+            </div>
+            <div class="col-3">
+              <pre><code class="nohighlight shell python" data-text="Exemple 3">a ? 801
+b ? 809
+10</code></pre>
+            </div>
+            <div class="col-3">
+              <pre><code class="nohighlight shell python" data-text="Exemple 4">a ? 9090
+b ? 9999
+281</code></pre>
+            </div>
+      </section>
+
+      <section>
+        <h3>Pagination</h3>
+
+        <p>On retrouve souvent le composant de navigation suivant dans les pages Web :</p>
+        <figure>
+          <img src="images/module05/pagination.png" alt="Composant de pagination">
+          <figcaption>Composant de pagination</figcaption>
+        </figure>
+        <p>En cliquant sur les nombre de ce composant l'utilisateur peut afficher un contenu qui s'étend sur plusieurs
+          pages écran.</p>
+        <p>On demande d'écrire un programme qui saisit le numéro de la page actuelle visualisée par l'utilisateur et
+          affiche les numéros des deux pages qui précèdent et des deux pages qui succèdent sachant qu'il y a 20 pages
+          en tout à consulter.</p>
+        <div class="row">
+          <div class="col-3">
+            <pre><code class="nohighlight shell python" data-text="Exemple 1">Numéro de page ? 1
+[1] 2 3 4 5</code></pre>
+          </div>
+          <div class="col-3">
+            <pre><code class="nohighlight shell python" data-text="Exemple 2">Numéro de page ? 11
+9 10 [11] 12 13</code></pre>
+          </div>
+          <div class="col-3">
+            <pre><code class="nohighlight shell python" data-text="Exemple 3">Numéro de page ? 17
+15 16 [17] 18 19</code></pre>
+          </div>
+          <div class="col-3">
+            <pre><code class="nohighlight shell python" data-text="Exemple 4">Numéro de page ? 19
+16 17 18 [19] 20</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>Mot de passe de 4 chiffres</h3>
+
+        <p>Pour empêcher mon petit frère de jouer trop à l'ordinateur mon père a défini comme mot de passe un nombre
+          composé de 4 chiffres.</p>
+        <p>Le nombre est un multiple de 5, son chiffre de milliers est plus grand que son chiffre de centaines, et le
+          chiffre de dizaines est le double du chiffre de centaines.</p>
+        <p>Le chiffre de centaines est non nul. Et la somme des chiffres du nombre est supérieure ou égale à 22.</p>
+        <p>En essayant de retrouver le mot de passe vous avez écrit un programme qui affiche tous les nombres de quatre
+          chiffres qui vérifient les propriétés indiquées :</p>
+        <p class="text-center">i = u + d * 10 + c * 100 + m * 1000</p>
+        <ul>
+          <li>i mod 5 = 0, Nombre multiple de 5 (i est un nombre de 4 chiffres)</li>
+          <li>m > c, chiffre de milliers supérieur au chiffre de centaines</li>
+          <li>d = 2 * c, chiffre de dizaines double du chiffre de centaines</li>
+          <li>c &ne; 0, chiffre de centaines non nul</li>
+          <li>u+d+c+m &ge; 22, somme des chiffres supérieure ou égale à 22</li>
+        </ul>
+      </section>
+
+
     </article>
   </main>
   <footer class="d-print-none bg-dark text-white p-2">
