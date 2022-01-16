@@ -53,9 +53,9 @@
     </table>
 
     <div class="row my-2">
-      <div class="col-6"><label for="nom-prenom">Nom & Prénom</label><input type="text" id="nom-prenom"
-          class="form-control"></div>
-      <div class="col-6"><label for="classe">Classe</label><input type="text" id="classe" class="form-control"></div>
+      <div class="col-8"><label for="nom-prenom">Nom & Prénom</label><input type="text" id="nom-prenom"
+          class="form-control border-dark"></div>
+      <div class="col-4"><label for="classe">Classe</label><input type="text" id="classe" class="form-control border-dark"></div>
     </div>
 
     <h1>Evaluation n°2 - 2<sup>ème</sup>TI</h1>
@@ -63,7 +63,6 @@
       <h2>Exercice</h2>
 
       <section>
-        <h3>Question 0</h3>
         <ol>
           <li>Créer un dossier portant votre nom & prénom sur le bureau.</li>
           <li>Ouvrir ce dossier dans Visual Studio Code.</li>
@@ -72,7 +71,6 @@
       </section>
 
       <section>
-        <h3>Question 1</h3>
         <p><strong>(1) Copier le code suivant :</strong></p>
         <pre><code class="python">from random import randint
 seq = ""
@@ -84,26 +82,23 @@ print(seq)</code></pre>
       </section>
 
       <section>
-        <h3>Question 2</h3>
         <p><strong>(3) Modifier le programme précédent pour qu'il génère une séquence alétaoire de 8 chiffres.</strong>
         </p>
       </section>
 
       <section>
-        <h3>Question 3</h3>
         <p><strong>(4) Implémenter la séquence suivante à la suite du programme précédent :</strong></p>
         <pre><code class="algorithm">Pour i de 0 à 1 Faire
   pos &larr; alea(4*i, 4*i+3)
   seq &larr; sous_chaine(seq, 0, pos) + "?" + sous_chaine(seq, pos+1, long(seq))
 Fin Pour
 Ecrire(seq)</code></pre>
-        <p><strong>(5) Exécuter le programme plusieurs fois, puis indiquer quelle est la fonction du code ajouté dans la
+        <p><strong>(5) Exécuter le programme, puis indiquer quelle est la fonction du code ajouté dans la
             question (4) ?</strong></p>
         <p class="pointille">&nbsp;</p>
       </section>
 
       <section>
-        <h3>Question 4</h3>
         <p>Le code suivant calcule la somme des chiffres de la 1<sup>ère</sup> moitié de <code>seq</code>.</p>
         <pre><code class="python">pg = 0
 for i in range(4):
@@ -117,13 +112,13 @@ print("Somme('" + seq[:4] + "') =", pg)</code></pre>
       </section>
 
       <section>
-        <h3>Question 5</h3>
-        <p>Un nombre est dit heureux si la somme des chiffres de sa partie droite est égale à la somme des chiffres de
+        <p>Un nombre est dit <strong>heureux</strong> si la somme des chiffres de sa partie droite est égale à la somme
+          des chiffres de
           sa partie gauche.</p>
         <p><b>Exemples :</b></p>
         <p>Le nombre 33391962 est dit heureux car : 3+3+3+9=1+9+6+2</p>
         <p>Le nombre 52967069 est dit heureux car : 5+2+9+6=7+0+6+9</p>
-        <p><strong>(8) Compléter le tableau suivant tout en indiquant si le nombre est heureux ou pas.</strong></p>
+        <p class="p-break"><strong>(8) Compléter le tableau suivant tout en indiquant si le nombre est heureux ou pas.</strong></p>
         <table class="table table-sm table-bordered border-dark align-middle my-2">
           <tr>
             <th>Nombre</th>
@@ -150,17 +145,22 @@ print("Somme('" + seq[:4] + "') =", pg)</code></pre>
             <td></td>
           </tr>
         </table>
-        <p>On veut déterminer quelles sont les valeurs minimales à affecter aux chiffres manquants au nombre
+        <p>On veut déterminer <strong><ins>quelles sont les valeurs minimales</ins></strong> à affecter aux chiffres
+          manquants au nombre
           <code>seq</code> pour le rendre heureux.
         </p>
         <p><b>Exemple 1</b></p>
-        <p>Le nombre <b>97?1939?</b> contient deux chiffres manquantes.</p>
-        <p>pg = somme('97?1) = 17 - pd = somme('939?') = 21 : en remplaçant les ? par 4 et 0 on obtient 97419390 qui est
-          un nombre heureux.</p>
+        <p>Le nombre <b>97?1939?</b> contient deux chiffres manquants.</p>
+        <p>pg = somme('97?1) = 17 - pd = somme('939?') = 21 : en remplaçant les ? par 4 et 0 on obtient
+          <strong>97<u>4</u>1939<u>0</u></strong> qui est
+          un nombre heureux.
+        </p>
         <p><b>Exemple 2</b></p>
         <p>Le nombre <b>6?701?51</b> contient deux chiffres manquants.</p>
-        <p>pg = somme('6?70') = 13 - pd = somme('1?51') = 7 : en remplaçant les ? par 0 et 6 on obtient 60701651 qui est
-          un nombre heureux.</p>
+        <p>pg = somme('6?70') = 13 - pd = somme('1?51') = 7 : en remplaçant les ? par 0 et 6 on obtient
+          <strong>6<u>0</u>701<u>6</u>51</strong> qui est
+          un nombre heureux.
+        </p>
         <p><strong>(9) Compléter le tableau suivant pour que les nombres soient heureux :</strong></p>
         <table class="table table-sm table-bordered border-dark align-middle my-2">
           <tr>
@@ -180,6 +180,31 @@ print("Somme('" + seq[:4] + "') =", pg)</code></pre>
             <td></td>
           </tr>
         </table>
+        <p><strong>(10) Sachant que l'expression suivante permet de trouver le minimum de deux nombres <code>a</code> et
+            <code>b</code>. En déduire une expression qui calcule le maximum <code>mx</code> de <code>pg</code> et
+            <code>pd</code></strong></p>
+        <p class="text-center"><code>mn = (a &lt;= b) * a + (a &gt b) * b</code></p>
+        <p class="pointille">&nbsp;</p>
+        <p><strong>(11) Copier. Puis, compléter le code Python suivant :</strong></p>
+        <pre><code class="python">if pg == mx:
+    man1 = "0"
+    man2 = str(mx - .......)
+else:
+    man2 = "0"
+    man1 = str(mx - .......)
+print("Les chiffres manquants sont :", ......, "et", ......)</code></pre>
+        <p><strong>(12) Que contiennent les variables <code>man1</code> et <code>man2</code>.</strong></p>
+        <p class="pointille">&nbsp;</p>
+      </section>
+
+      <section>
+        <p><strong>(13) Compléter le programme :</strong></p>
+        <ul>
+          <li>Chercher la première position du "?" dans <code>seq</code>, puis le remplacer par <code>man1</code></li>
+          <li>Répéter la même chose une seconde fois pour remplacer le deuxième "?" de <code>seq</code> par
+            <code>man2</code></li>
+          <li>Afficher le nombre heureux.</li>
+        </ul>
       </section>
     </article>
   </main>
