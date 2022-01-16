@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evaluation n°1 en Programmation - 2TI</title>
+  <link rel="stylesheet" href="resources/css/bootstrap.min.css">
+  <link rel="stylesheet" href="resources/css/default.css">
+  <link rel="stylesheet" href="resources/css/style.css">
+  <link rel="stylesheet" href="resources/css/seance03.css">
+  <style>
+    .pointille {
+      line-height: 0.6cm;
+      border-bottom: #666 dotted 2px;
+    }
+
+    @media print {
+      h1 {
+        font-size: 1.6em;
+      }
+
+      h2 {
+        font-size: 1.4em;
+      }
+
+      h3 {
+        font-size: 1.2em;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <aside>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#aside_navbar"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span> Menu
+      </button>
+      <div class="collapse navbar-collapse" id="aside_navbar"></div>
+    </nav>
+  </aside>
+  <main class="container">
+    <table class="table table-sm table-bordered border-dark align-middle my-2">
+      <tr>
+        <td width="33.3%" class="text-center fs-6">Lycée secondaire Hammam-Sousse<br><em><small>Année scolaire
+              2021/2022</small></em></td>
+        <td width="33.3%" class="text-center fs-3"><strong>Evaluation n°2</strong><br>Programmation</td>
+        <td><strong>Classe :</strong> 2TI<br><strong>Durée :</strong> 1 heure<br><strong>Enseignant :</strong> Mohamed
+          Anis MANI</td>
+      </tr>
+    </table>
+
+    <div class="row my-2">
+      <div class="col-6"><label for="nom-prenom">Nom & Prénom</label><input type="text" id="nom-prenom"
+          class="form-control"></div>
+      <div class="col-6"><label for="classe">Classe</label><input type="text" id="classe" class="form-control"></div>
+    </div>
+
+    <h1>Evaluation n°2 - 2<sup>ème</sup>TI</h1>
+    <article>
+      <h2>Exercice</h2>
+
+      <section>
+        <h3>Question 0</h3>
+        <ol>
+          <li>Créer un dossier portant votre nom & prénom sur le bureau.</li>
+          <li>Ouvrir ce dossier dans Visual Studio Code.</li>
+          <li>Créer un fichier nommé <strong>heureux_malheureux.py</strong> dans le dossier précédent.</li>
+        </ol>
+      </section>
+
+      <section>
+        <h3>Question 1</h3>
+        <p><strong>(1) Copier le code suivant :</strong></p>
+        <pre><code class="python">from random import randint
+seq = ""
+for i in range(4):
+    seq = seq + chr(65 + randint(0, 25))
+print(seq)</code></pre>
+        <p><strong>(2) Exécuter le programme plusieurs fois, puis indiquer qu'est-ce qu'il fait ?</strong></p>
+        <p class="pointille">&nbsp;</p>
+      </section>
+
+      <section>
+        <h3>Question 2</h3>
+        <p><strong>(3) Modifier le programme précédent pour qu'il génère une séquence alétaoire de 8 chiffres.</strong>
+        </p>
+      </section>
+
+      <section>
+        <h3>Question 3</h3>
+        <p><strong>(4) Implémenter la séquence suivante à la suite du programme précédent :</strong></p>
+        <pre><code class="algorithm">Pour i de 0 à 1 Faire
+  pos &larr; alea(4*i, 4*i+3)
+  seq &larr; sous_chaine(seq, 0, pos) + "?" + sous_chaine(seq, pos+1, long(seq))
+Fin Pour
+Ecrire(seq)</code></pre>
+        <p><strong>(5) Exécuter le programme plusieurs fois, puis indiquer quelle est la fonction du code ajouté dans la
+            question (4) ?</strong></p>
+        <p class="pointille">&nbsp;</p>
+      </section>
+
+      <section>
+        <h3>Question 4</h3>
+        <p>Le code suivant calcule la somme des chiffres de la 1<sup>ère</sup> moitié de <code>seq</code>.</p>
+        <pre><code class="python">pg = 0
+for i in range(4):
+    if seq[i] != '?':
+        pg = pg + int(seq[i])
+print("Somme('" + seq[:4] + "') =", pg)</code></pre>
+        <p><strong>(6) Copier ce code à la suite de votre programme, puis le tester pour vérifier qu'il fonctionne
+            correctement.</strong></p>
+        <p><strong>(7) Maintenant nous voulons calculer la somme des chiffres de la partie droite de <code>seq</code>.
+            Ajouter le code nécessaire.</strong></p>
+      </section>
+
+      <section>
+        <h3>Question 5</h3>
+        <p>Un nombre est dit heureux si la somme des chiffres de sa partie droite est égale à la somme des chiffres de
+          sa partie gauche.</p>
+        <p><b>Exemples :</b></p>
+        <p>Le nombre 33391962 est dit heureux car : 3+3+3+9=1+9+6+2</p>
+        <p>Le nombre 52967069 est dit heureux car : 5+2+9+6=7+0+6+9</p>
+        <p><strong>(8) Compléter le tableau suivant tout en indiquant si le nombre est heureux ou pas.</strong></p>
+        <table class="table table-sm table-bordered border-dark align-middle my-2">
+          <tr>
+            <th>Nombre</th>
+            <th>Somme(Partie gauche)</th>
+            <th>Somme(Partie droite)</th>
+            <th>Est heureux ?</th>
+          </tr>
+          <tr>
+            <td>33391962</td>
+            <td>3+3+3+9 = 18</td>
+            <td>1+9+6+2 = 18</td>
+            <td>Oui</td>
+          </tr>
+          <tr>
+            <td>97219396</td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>90813690</td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+        <p>On veut déterminer quelles sont les valeurs minimales à affecter aux chiffres manquants au nombre
+          <code>seq</code> pour le rendre heureux.
+        </p>
+        <p><b>Exemple 1</b></p>
+        <p>Le nombre <b>97?1939?</b> contient deux chiffres manquantes.</p>
+        <p>pg = somme('97?1) = 17 - pd = somme('939?') = 21 : en remplaçant les ? par 4 et 0 on obtient 97419390 qui est
+          un nombre heureux.</p>
+        <p><b>Exemple 2</b></p>
+        <p>Le nombre <b>6?701?51</b> contient deux chiffres manquants.</p>
+        <p>pg = somme('6?70') = 13 - pd = somme('1?51') = 7 : en remplaçant les ? par 0 et 6 on obtient 60701651 qui est
+          un nombre heureux.</p>
+        <p><strong>(9) Compléter le tableau suivant pour que les nombres soient heureux :</strong></p>
+        <table class="table table-sm table-bordered border-dark align-middle my-2">
+          <tr>
+            <th>Nombre</th>
+            <th>Chiffres manquants</th>
+          </tr>
+          <tr>
+            <td>6?701?51</td>
+            <td>0 et 6</td>
+          </tr>
+          <tr>
+            <td>45?648?0</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>46?9776?</td>
+            <td></td>
+          </tr>
+        </table>
+      </section>
+    </article>
+  </main>
+  <script src="resources/js/jquery.min.js"></script>
+  <script src="resources/js/bootstrap.min.js"></script>
+  <script src="resources/js/highlight.pack.js"></script>
+  <script src="resources/js/hljs.algorithm.js"></script>
+  <script src="resources/js/draggable.js"></script>
+  <script src="resources/js/clipboard.min.js"></script>
+  <script src="resources/js/pages.js"></script>
+  <script src="resources/js/savecontent.js"></script>
+  <script src="resources/js/vue.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+    document.querySelectorAll('.language-algorithm,.language-python')
+      .forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'bd-clipboard d-print-none';
+        const btn = document.createElement('button');
+        btn.className = 'btn-clipboard';
+        btn.textContent = "📋";
+        btn.title = "Copier";
+        div.appendChild(btn);
+        item.parentElement.insertBefore(div, item);
+      });
+    new ClipboardJS('.btn-clipboard', {
+      target: (trigger) => {
+        return trigger.parentElement.nextElementSibling;
+      }
+    });
+    $(() => {
+      const localStore = new PagePersistance();
+      const serverStore = new ServerSaves('DS_3T');
+      const userInputSaver = new UserInputSaver(
+        document.querySelector('.user-input-saver'),
+        localStore,
+        serverStore);
+    });
+  </script>
+</body>
+
+</html>
