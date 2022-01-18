@@ -67,13 +67,12 @@
         <ol>
           <li>Créer un dossier portant votre nom & prénom sur le bureau.</li>
           <li>Ouvrir ce dossier dans Visual Studio Code.</li>
-          <li>Créer un fichier nommé <strong>solhofat.py</strong> dans le dossier précédent.</li>
         </ol>
       </section>
 
       <section>
-        <p><strong>(1) Copier et compléter le code suivant. La longueur de tous les cotés est égale à 20 pixels
-            :</strong></p>
+        <p><strong>(1) Copier et compléter le code suivant dans un fichier nommé <em>solhofet.py</em>. La longueur de
+            tous les cotés est égale à 20 pixels :</strong></p>
         <pre><code class="python">from turtle import Turtle, mainloop
 tr = Turtle()
 # Dessiner un carré
@@ -104,7 +103,103 @@ mainloop()</code></pre>
     </article>
 
     <article>
-      <h2>Exercice 2</h2>
+      <h2>Exercice 2 - 40 Points</h2>
+
+      <section>
+        <p>Louay veut créer un générateur de mots de passes pour sécuriser ses comptes emails, facebook, instagram, etc.
+        </p>
+        <p><strong>(1) Copier le code suivant :</strong></p>
+        <pre><code class="python">from random import randint
+seq = ""
+for i in range(4):
+    seq = seq + chr(65 + randint(0, 25))
+print(seq)</code></pre>
+        <p><strong>(2) Exécuter le programme plusieurs fois, puis indiquer qu'est-ce qu'il fait ?</strong></p>
+        <p class="pointille">&nbsp;</p>
+      </section>
+      <section>
+        <p><strong>(3) Modifier le code précédent pour qu'il génère une séquence <code>seq</code> composée de 15
+            <ins>lettres minuscules</ins>.</strong></p>
+        <p><strong>(4) Modifier le programme pour qu'il génère un mélange de 15 lettres majuscules, lettres minuscules
+            et de nombres.</strong></p>
+      </section>
+
+      <section>
+        <p>Maintenant, Louay veut choisir la longueur du mot de passe.</p>
+        <p><strong>(5) Modifier le programme précédent afin qu'il génère des mots de passes ayant une longueur
+            <code>long</code> donnée.</strong></p>
+      </section>
+
+      <section>
+        <p>La force d'un mot de passe est calculée en utilisant la formule suivante :</p>
+        <p class="text-center">force = (nbre(lettres majuscules) + 1) * (nbre(lettres minuscules) + 1) * (nbre(chiffres)
+          + 1)</p>
+        <p>On donne le code suivant :</p>
+        <pre><code class="python">ch = "4A1B2C3"
+nbchiff = 0
+for i in range(len(ch)):
+    if "0" &lt;= ch[i] &lt;= "9":
+        nbchiff = nbchiff + 1
+print(nbchiff)</code></pre>
+        <p><strong>(6) Copier la séquence précédente à la suite de votre programme. Tester-la pour les valeurs
+            suivantes de ch et compléter le tableau suivant.</strong></p>
+        <table class="table table-sm table-bordered border-dark align-middle my-2">
+          <tr>
+            <th width="50%">ch</th>
+            <th width="50%">nbchiff</th>
+          </tr>
+          <tr>
+            <td>"4A1B2C3"</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>"OUSSEMA"</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>"0uma1ma"</td>
+            <td></td>
+          </tr>
+        </table>
+        <p><strong>(7) Quelle est l'utilité de ce code ?</strong></p>
+        <p class="pointille">&nbsp;</p>
+        <p><strong>(8) Modifier cette partie du code pour qu'elle calcule et affiche le nombre de chiffres
+            <code>nbchiff</code>, de lettres majuscules <code>nblettmaj</code> et de lettres minuscules
+            <code>nblettmin</code> dans le mot de passe généré <code>seq</code>.</strong></p>
+        <p><strong>(9) Calculer et afficher la force du mot de passe <code>seq</code> généré en utilisant la formule
+            indiquée ci-dessus.</strong></p>
+      </section>
+
+      <section>
+        <p><strong>(10) Améliorer l'affichage de votre programme pour obtenir un affichage qui ressemble aux exemples
+            suivants :</strong></p>
+        <div class="row">
+          <div class="col-4">
+            <pre><code class="nohighlight shell python" data-text="Exemple 1">Longueur du mot de passe ? 15
+Mot de passe : 5q9N21EBkSqt8yi
+Nb. de chiffres : 5
+Nb. de lettres majuscules : 4
+Nb. de lettres minuscules : 6
+Force du mot de passe : 210</code></pre>
+          </div>
+          <div class="col-4">
+            <pre><code class="nohighlight shell python" data-text="Exemple 2">Longueur du mot de passe ? 9
+Mot de passe : 1H3Jdvp2o
+Nb. de chiffres : 3
+Nb. de lettres majuscules : 2
+Nb. de lettres minuscules : 4
+Force du mot de passe : 60</code></pre>
+          </div>
+          <div class="col-4">
+            <pre><code class="nohighlight shell python" data-text="Exemple 3">Longueur du mot de passe ? 3
+Mot de passe : pzy
+Nb. de chiffres : 0
+Nb. de lettres majuscules : 0
+Nb. de lettres minuscules : 3
+Force du mot de passe : 4</code></pre>
+          </div>
+        </div>
+      </section>
     </article>
   </main>
   <script src="resources/js/jquery.min.js"></script>
