@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evaluation n°1 en Programmation - 2TI</title>
+  <link rel="stylesheet" href="resources/css/bootstrap.min.css">
+  <link rel="stylesheet" href="resources/css/default.css">
+  <link rel="stylesheet" href="resources/css/style.css">
+  <link rel="stylesheet" href="resources/css/seance03.css">
+  <style>
+    .pointille {
+      line-height: 0.6cm;
+      border-bottom: #666 dotted 2px;
+    }
+
+    @media print {
+      h1 {
+        font-size: 1.6em;
+      }
+
+      h2 {
+        font-size: 1.4em;
+      }
+
+      h3 {
+        font-size: 1.2em;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <aside>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#aside_navbar"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span> Menu
+      </button>
+      <div class="collapse navbar-collapse" id="aside_navbar"></div>
+    </nav>
+  </aside>
+  <main class="container">
+    <table class="table table-sm table-bordered border-dark align-middle my-2">
+      <tr>
+        <td width="33.3%" class="text-center fs-6">Lycée secondaire Hammam-Sousse<br><em><small>Année scolaire
+              2021/2022</small></em></td>
+        <td width="33.3%" class="text-center fs-3"><strong>Evaluation n°2</strong><br>Programmation</td>
+        <td><strong>Classe :</strong> 2TI<br><strong>Durée :</strong> 1 heure<br><strong>Enseignant :</strong> Mohamed
+          Anis MANI</td>
+      </tr>
+    </table>
+
+    <div class="row my-2">
+      <div class="col-8"><label for="nom-prenom">Nom & Prénom</label><input type="text" id="nom-prenom"
+          class="form-control border-dark"></div>
+      <div class="col-4"><label for="classe">Classe</label><input type="text" id="classe"
+          class="form-control border-dark"></div>
+    </div>
+
+    <h1>Evaluation Pratique n°2 - 2<sup>ème</sup>TI</h1>
+    <article>
+      <h2>Exercice 1 - 20 Points</h2>
+
+      <section>
+        <ol>
+          <li>Créer un dossier portant votre nom & prénom sur le bureau.</li>
+          <li>Ouvrir ce dossier dans Visual Studio Code.</li>
+          <li>Créer un fichier nommé <strong>solhofat.py</strong> dans le dossier précédent.</li>
+        </ol>
+      </section>
+
+      <section>
+        <p><strong>(1) Copier et compléter le code suivant. La longueur de tous les cotés est égale à 20 pixels
+            :</strong></p>
+        <pre><code class="python">from turtle import Turtle, mainloop
+tr = Turtle()
+# Dessiner un carré
+for ............:
+    tr.forward(?)
+    tr.left(?)
+tr.penup()
+tr.forward(25)
+tr.pendown()
+# Dessiner un triangle
+for ............:
+    tr.forward(?)
+    tr.left(?)
+tr.penup()
+tr.forward(25)
+tr.pendown()
+mainloop()</code></pre>
+        <p>Safa a remarqué qu'il est possible de réduire ce code afin de dessiner les mêmes formes
+          précédentes.</p>
+        <p><strong>(2) Encercler le code qui se répète. Utiliser une autre boucle <strong><em>for</em></strong> pour le
+            remplacer.</strong>
+        </p>
+      </section>
+      <section>
+        <p><strong>(3) Modifier le code précédent afin d'obtenir le tracé suivant :</strong></p>
+        <figure><img src="resources/images/dc02_02-01.png" alt=""></figure>
+      </section>
+    </article>
+
+    <article>
+      <h2>Exercice 2</h2>
+    </article>
+  </main>
+  <script src="resources/js/jquery.min.js"></script>
+  <script src="resources/js/bootstrap.min.js"></script>
+  <script src="resources/js/highlight.pack.js"></script>
+  <script src="resources/js/hljs.algorithm.js"></script>
+  <script src="resources/js/draggable.js"></script>
+  <script src="resources/js/clipboard.min.js"></script>
+  <script src="resources/js/pages.js"></script>
+  <script src="resources/js/savecontent.js"></script>
+  <script src="resources/js/vue.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+    document.querySelectorAll('.language-algorithm,.language-python')
+      .forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'bd-clipboard d-print-none';
+        const btn = document.createElement('button');
+        btn.className = 'btn-clipboard';
+        btn.textContent = "📋";
+        btn.title = "Copier";
+        div.appendChild(btn);
+        item.parentElement.insertBefore(div, item);
+      });
+    new ClipboardJS('.btn-clipboard', {
+      target: (trigger) => {
+        return trigger.parentElement.nextElementSibling;
+      }
+    });
+    $(() => {
+      const localStore = new PagePersistance();
+      const serverStore = new ServerSaves('DS_3T');
+      const userInputSaver = new UserInputSaver(
+        document.querySelector('.user-input-saver'),
+        localStore,
+        serverStore);
+    });
+  </script>
+</body>
+
+</html>

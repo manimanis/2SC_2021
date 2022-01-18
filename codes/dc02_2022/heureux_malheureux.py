@@ -38,7 +38,3 @@ pos = heureux.find('?')
 heureux = heureux[:pos] + man1 + heureux[pos+1:]
 
 print("Le nombre heureux est : ", heureux)
-
-
-
-
