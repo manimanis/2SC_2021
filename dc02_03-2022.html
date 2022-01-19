@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evaluation n°1 en Programmation - 2TI</title>
+  <link rel="stylesheet" href="resources/css/bootstrap.min.css">
+  <link rel="stylesheet" href="resources/css/default.css">
+  <link rel="stylesheet" href="resources/css/style.css">
+  <link rel="stylesheet" href="resources/css/seance03.css">
+  <style>
+    .pointille {
+      line-height: 0.6cm;
+      border-bottom: #666 dotted 2px;
+    }
+
+    @media print {
+      h1 {
+        font-size: 1.6em;
+      }
+
+      h2 {
+        font-size: 1.4em;
+      }
+
+      h3 {
+        font-size: 1.2em;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <aside>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#aside_navbar"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span> Menu
+      </button>
+      <div class="collapse navbar-collapse" id="aside_navbar"></div>
+    </nav>
+  </aside>
+  <main class="container">
+    <table class="table table-sm table-bordered border-dark align-middle my-2">
+      <tr>
+        <td width="33.3%" class="text-center fs-6">Lycée secondaire Hammam-Sousse<br><em><small>Année scolaire
+              2021/2022</small></em></td>
+        <td width="33.3%" class="text-center fs-3"><strong>Evaluation n°2</strong><br>Programmation</td>
+        <td><strong>Classe :</strong> 2TI<br><strong>Durée :</strong> 1 heure<br><strong>Enseignant :</strong> Mohamed
+          Anis MANI</td>
+      </tr>
+    </table>
+
+    <div class="row my-2">
+      <div class="col-8"><label for="nom-prenom">Nom & Prénom</label><input type="text" id="nom-prenom"
+          class="form-control border-dark"></div>
+      <div class="col-4"><label for="classe">Classe</label><input type="text" id="classe"
+          class="form-control border-dark"></div>
+    </div>
+
+    <h1>Evaluation Pratique n°2 - 2<sup>ème</sup>TI</h1>
+    <article>
+      <h2>Exercice 1 - 20 Points</h2>
+
+      <section>
+        <ol>
+          <li>Créer un dossier portant votre nom & prénom sur le bureau.</li>
+          <li>Ouvrir ce dossier dans Visual Studio Code.</li>
+        </ol>
+      </section>
+
+      <section>
+        <p><strong>(1) Copier le code suivant :</strong></p>
+        <pre><code class="python">from random import randint
+seq = ""
+for i in range(10):
+    seq = seq + chr(48 + randint(0, 9))
+print(seq)</code></pre>
+        <p><strong>(2) Exécuter le programme plusieurs fois, puis indiquer qu'est-ce qu'il fait ? (3 pts)</strong></p>
+        <p class="pointille">&nbsp;</p>
+        <p><strong>(3) Modifier le programme précédent pour qu'il génère une séquence alétaoire de 32 chiffres
+            binaires (0 ou 1).</strong>
+        </p>
+      </section>
+
+      <section>
+        <p>Un ingénieur veut étudier les vibrations mécaniques d'une machine dans une usine. Pour celà il utilise un
+          détecteur de vibrations. Ce disositif fonctionne comme suit :</p>
+        <ul>
+          <li>Les <strong>vibrations importantes</strong> sont représentées par des zéros logiques.</li>
+          <li>Les <strong>vibrations normales</strong> sont représentées par des uns logiques.</li>
+        </ul>
+        <p><strong>(4) Compléter le tableau suivant correspondant aux lectures suivantes du capteur. La formule utilisée
+            pour calculer le pourcentage de vibrations est :</strong></p>
+        <p class="text-center">pv = nv * 100 / tm</p>
+        <table class="table table-sm table-bordered border-dark align-middle my-2">
+          <tr>
+            <th width="25%">Lecture capteur (seq)</th>
+            <th width="25%">Taille du message (tm)</th>
+            <th width="25%">Nombre de vibrations (nv)</th>
+            <th width="25%">Pourcentage de vibrations (pv)</th>
+          </tr>
+          <tr>
+            <td>"1100100011"</td>
+            <td>10</td>
+            <td>5</td>
+            <td>5 * 100 / 10 = 50%</td>
+          </tr>
+          <tr>
+            <td>"0101000011010011010"</td>
+            <td>19</td>
+            <td>11</td>
+            <td>11 * 100 / 19 = 57.89%</td>
+          </tr>
+          <tr>
+            <td>"01110100001100011001"</td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>"000101"</td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+        <p><strong>(5) Copier et corriger le code suivant :</strong></p>
+        <pre><code class="python">tm = ........ # longueur de seq
+nv = 0
+for i in range(tm):
+    if ................: # si vibration détectée
+        nv = nv + 1
+pv = nv * 100 / tm
+print Taille du message : tm
+print Nombre de vibrations : nv
+print Pourcentage de vibrations : round(pv, 2) %</code></pre>
+      </section>
+
+      <section>
+        <p>L'ingénieur a identifié que le responsable des vibrations n'est autre que le roulement à bille du moteur de
+          la machine. Ce dernier doit être remplacé pour assurer un fonctionnement normal de la machine.</p>
+        <p>Le roulement doit être remplacé lorsque le pourcentage de vibration <strong>pv</strong> calculé dans la
+          question précédente dépasse 65%.</p>
+        <p><strong>(6) Compléter le tableau suivant :</strong></p>
+        <table class="table table-sm table-bordered border-dark align-middle my-2">
+          <tr>
+            <th width="50%">Pourcentage de vibrations (vb)</th>
+            <th width="50%">Remplacer le roulement</th>
+          </tr>
+          <tr>
+            <td>50%</td>
+            <td>Non</td>
+          </tr>
+          <tr>
+            <td>80%</td>
+            <td>Oui</td>
+          </tr>
+          <tr>
+            <td>59%</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>67%</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>66.67%</td>
+            <td></td>
+          </tr>
+        </table>
+        <p><strong>(7) Ajouter une instruction qui affiche :</strong></p>
+        <ul>
+          <li><strong>Le roulement doit être remplacé</strong>, si le pourcentage de vibrations : pv &ge; 65</li>
+          <li><strong>Le roulement est usé</strong>, si le pourcentage de vibrations : 55 &le; pv &lt; 65</li>
+          <li><strong>Le roulement est en bon état</strong>, si le pourcentage de vibrations : pv &lt; 55</li>
+        </ul>
+      </section>
+
+      <section>
+        
+      </section>
+    </article>
+  </main>
+  <script src="resources/js/jquery.min.js"></script>
+  <script src="resources/js/bootstrap.min.js"></script>
+  <script src="resources/js/highlight.pack.js"></script>
+  <script src="resources/js/hljs.algorithm.js"></script>
+  <script src="resources/js/draggable.js"></script>
+  <script src="resources/js/clipboard.min.js"></script>
+  <script src="resources/js/pages.js"></script>
+  <script src="resources/js/savecontent.js"></script>
+  <script src="resources/js/vue.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+    document.querySelectorAll('.language-algorithm,.language-python')
+      .forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'bd-clipboard d-print-none';
+        const btn = document.createElement('button');
+        btn.className = 'btn-clipboard';
+        btn.textContent = "📋";
+        btn.title = "Copier";
+        div.appendChild(btn);
+        item.parentElement.insertBefore(div, item);
+      });
+    new ClipboardJS('.btn-clipboard', {
+      target: (trigger) => {
+        return trigger.parentElement.nextElementSibling;
+      }
+    });
+    $(() => {
+      const localStore = new PagePersistance();
+      const serverStore = new ServerSaves('DS_3T');
+      const userInputSaver = new UserInputSaver(
+        document.querySelector('.user-input-saver'),
+        localStore,
+        serverStore);
+    });
+  </script>
+</body>
+
+</html>
