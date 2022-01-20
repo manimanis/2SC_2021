@@ -91,13 +91,54 @@ print(seq)</code></pre>
           <li>Les <strong>vibrations importantes</strong> sont représentées par des zéros logiques.</li>
           <li>Les <strong>vibrations normales</strong> sont représentées par des uns logiques.</li>
         </ul>
-        <p><strong>(4) Compléter le tableau suivant correspondant aux lectures suivantes du capteur. La formule utilisée
+        <p>Le capteur effectue une mesure toutes les 10ms et l'ingénieur est libre de faire des mesures pendant le temps
+          qu'il souhaite.</p>
+        <p><strong>(4) Le programme précédent effectue 32 mesures. On demande de le modifier afin que l'ingénieur soit
+            capable de saisir le nombre de mesures souhaitées.</strong></p>
+      </section>
+      <section>
+        <p><strong>(5) Copier le code suivant à la suite de votre programme :</strong></p>
+        <pre><code class="python">for i in range(randint(1, nm // 5 + (nm % 5 != 0))):
+    pos = randint(0, nm-1)
+    seq = seq[:pos] + "2" + seq[pos+1:]
+print(seq)</code></pre>
+        <p><strong>(6) Exécuter le programme plusieurs fois. Puis indiquer quelle est la fonction du code ajouté dans la
+            question 5.</strong></p>
+        <p class="pointille">&nbsp;</p>
+      </section>
+      <section>
+        <p>L'ingénieur a remarqué que le détecteur de vibrations fait parfois des mesures incorrectes représentées par
+          le chiffre "2" dans une lecture.</p>
+        <p><strong>(7) Compléter le tableau suivant :</strong></p>
+        <table class="table table-sm table-bordered border-dark align-middle my-2">
+          <tr>
+            <th width="50%">Lecture capetur (seq)</th>
+            <th width="50%">Nombre de mesures incorrectes (nmi)</th>
+          </tr>
+          <tr>
+            <td>"1012201001000210"</td>
+            <td>3</td>
+          </tr>
+          <tr>
+            <td>"2112001021022111012211111"</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>"1012122010200200"</td>
+            <td></td>
+          </tr>
+        </table>
+        <p><strong>(8) Ajouter un code qui permet de supprimer les mesures incorrectes. Ne pas oublier de mettre à jour
+            les variables <code>seq</code> et <code>nm</code>.</strong></p>
+      </section>
+      <section>
+        <p><strong>(9) Compléter le tableau suivant correspondant aux lectures suivantes du capteur. La formule utilisée
             pour calculer le pourcentage de vibrations est :</strong></p>
-        <p class="text-center">pv = nv * 100 / tm</p>
+        <p class="text-center">pv = nv * 100 / nm</p>
         <table class="table table-sm table-bordered border-dark align-middle my-2">
           <tr>
             <th width="25%">Lecture capteur (seq)</th>
-            <th width="25%">Taille du message (tm)</th>
+            <th width="25%">Nombre de mesures (nm)</th>
             <th width="25%">Nombre de vibrations (nv)</th>
             <th width="25%">Pourcentage de vibrations (pv)</th>
           </tr>
@@ -126,24 +167,22 @@ print(seq)</code></pre>
             <td></td>
           </tr>
         </table>
-        <p><strong>(5) Copier et corriger le code suivant :</strong></p>
-        <pre><code class="python">tm = ........ # longueur de seq
-nv = 0
-for i in range(tm):
+        <p><strong>(10) Copier, compléter et corriger le code suivant :</strong></p>
+        <pre><code class="python">nv = 0
+for i in ..........:
     if ................: # si vibration détectée
         nv = nv + 1
 pv = nv * 100 / tm
-print Taille du message : tm
+print Nombre de mesures : nm
 print Nombre de vibrations : nv
 print Pourcentage de vibrations : round(pv, 2) %</code></pre>
       </section>
-
       <section>
-        <p>L'ingénieur a identifié que le responsable des vibrations n'est autre que le roulement à bille du moteur de
+        <p>L'ingénieur a identifié que le responsable des vibrations n'est autre que le roulement à billes du moteur de
           la machine. Ce dernier doit être remplacé pour assurer un fonctionnement normal de la machine.</p>
         <p>Le roulement doit être remplacé lorsque le pourcentage de vibration <strong>pv</strong> calculé dans la
           question précédente dépasse 65%.</p>
-        <p><strong>(6) Compléter le tableau suivant :</strong></p>
+        <p><strong>(11) Compléter le tableau suivant :</strong></p>
         <table class="table table-sm table-bordered border-dark align-middle my-2">
           <tr>
             <th width="50%">Pourcentage de vibrations (vb)</th>
@@ -170,16 +209,12 @@ print Pourcentage de vibrations : round(pv, 2) %</code></pre>
             <td></td>
           </tr>
         </table>
-        <p><strong>(7) Ajouter une instruction qui affiche :</strong></p>
+        <p><strong>(12) Ajouter une instruction qui affiche :</strong></p>
         <ul>
-          <li><strong>Le roulement doit être remplacé</strong>, si le pourcentage de vibrations : pv &ge; 65</li>
-          <li><strong>Le roulement est usé</strong>, si le pourcentage de vibrations : 55 &le; pv &lt; 65</li>
-          <li><strong>Le roulement est en bon état</strong>, si le pourcentage de vibrations : pv &lt; 55</li>
+          <li><strong>Le roulement doit être remplacé</strong>, si le pourcentage de vibrations : pv &ge; 60</li>
+          <li><strong>Le roulement est usé</strong>, si le pourcentage de vibrations : 50 &le; pv &lt; 60</li>
+          <li><strong>Le roulement est en bon état</strong>, si le pourcentage de vibrations : pv &lt; 50</li>
         </ul>
-      </section>
-
-      <section>
-        
       </section>
     </article>
   </main>
