@@ -386,6 +386,154 @@ b ? 9999
     </article>
 
     <article>
+      <h2>Révision</h2>
+      <section>
+        <h3>Générateur de nombres</h3>
+        <p>Ecrire un programme qui génère une séquence de <strong>n</strong> chiffres aléatoires.</p>
+      </section>
+      <section>
+        <h3>Générateur de lettres</h3>
+        <p>Ecrire un programme qui génère une séquence de <strong>n</strong> lettres majuscules d'une façon aléatoire.
+        </p>
+      </section>
+      <section>
+        <h3>Supprimer les chiffres</h3>
+        <p>Ecrire un programme qui supprime les chiffres dans une chaîne.</p>
+      </section>
+      <section>
+        <h3>Conserver les chiffres</h3>
+        <p>Ecrire un programme qui laisse uniquement les chiffres dans une chaîne.</p>
+      </section>
+      <section>
+        <h3>Nombre de chiffres</h3>
+        <p>Ecrire un programme qui calcule le nombre de chiffres dans une chaîne.</p>
+      </section>
+      <section>
+        <h3>Somme des chiffres</h3>
+        <p>Ecrire un programme qui calcule la somme des chiffres dans une chaîne.</p>
+      </section>
+      <section>
+        <h3>Remplacer des lettres par des chiffres</h3>
+        <p>Ecrire un programme qui remplace les lettres suivantes par les chiffres indiqués dans une chaîne.</p>
+        <ul>
+          <li>a &rarr; 6</li>
+          <li>e &rarr; 3</li>
+          <li>g &rarr; 9</li>
+          <li>i &rarr; 1</li>
+          <li>o &rarr; 0</li>
+          <li>s &rarr; 5</li>
+        </ul>
+      </section>
+      <section>
+        <h3>Remplacer des chiffres par des lettres</h3>
+        <p>Ecrire un programme qui remplace les chiffres indiqués par les lettres suivantes dans une chaîne.</p>
+        <ul>
+          <li>a &larr; 6</li>
+          <li>e &larr; 3</li>
+          <li>g &larr; 9</li>
+          <li>i &larr; 1</li>
+          <li>o &larr; 0</li>
+          <li>s &larr; 5</li>
+        </ul>
+      </section>
+      <section>
+        <h3>Correction</h3>
+        <div class="row">
+          <div class="col-6">
+            <h4>Générateur de nombres</h4>
+            <pre><code class="python">from random import randint
+n = int(input("Nombre de chiffres ? "))
+ch = ""
+for i in range(n):
+    ch = ch + chr(48 + randint(0, 9))
+print(ch)</code></pre>
+          </div>
+          <div class="col-6">
+            <h4>Générateur de lettres</h4>
+            <pre><code class="python">from random import randint
+n = int(input("Nombre de lettres ? "))
+ch = ""
+for i in range(n):
+    ch = ch + chr(65 + randint(0, 25))
+print(ch)</code></pre>
+          </div>
+          <div class="col-6">
+            <h4>Supprimer les chiffres</h4>
+            <pre><code class="python">ch = input("Donner une chaine ? ")
+ch1 = ""
+for i in range(len(ch)):
+    if not ("0" &lt;= ch[i] &lt;= "9"):
+        ch1 = ch1 + ch[i]
+ch = ch1
+print(ch)</code></pre>
+          </div>
+          <div class="col-6">
+            <h4>Conserver les chiffres</h4>
+            <pre><code class="python">ch = input("Donner une chaine ? ")
+ch1 = ""
+for i in range(len(ch)):
+    if "0" &lt;= ch[i] &lt;= "9":
+        ch1 = ch1 + ch[i]
+ch = ch1
+print(ch)</code></pre>
+          </div>
+          <div class="col-6">
+            <h4>Nombre de chiffres</h4>
+            <pre><code class="python">ch = input("Donner une chaine ? ")
+nc = 0
+for i in range(len(ch)):
+    if "0" &lt;= ch[i] &lt;= "9":
+        nc = nc + 1
+print(ch, "contient", nc, "chiffres")</code></pre>
+          </div>
+          <div class="col-6">
+            <h4>Somme des chiffres</h4>
+            <pre><code class="python">ch = input("Donner une chaine ? ")
+s = 0
+for i in range(len(ch)):
+    if "0" &lt;= ch[i] &lt;= "9":
+        s = s + int(ch[i])
+print("Somme des chiffres de", ch, "est", s)</code></pre>
+          </div>
+          <div class="col-6">
+            <h4>Remplacer des lettres par des chiffres</h4>
+            <pre><code class="python">ch = input("Donner une chaine ? ")
+remp = "a6e3g9i1o0s5"
+ch1 = ""
+for i in range(len(ch)):
+    if "a" &lt;= ch[i].lower() &lt;= "z":
+        pos = remp.find(ch[i])
+        if pos != -1:
+            ch1 = ch1 + remp[pos+1]
+        else:
+            ch1 = ch1 + ch[i]
+    else:
+        ch1 = ch1 + ch[i]
+ch = ch1
+print(ch)</code></pre>
+          </div>
+          <div class="col-6">
+            <h4>Remplacer des chiffres par des lettres</h4>
+            <pre><code class="python">ch = input("Donner une chaine ? ")
+remp = "a6e3g9i1o0s5"
+ch1 = ""
+for i in range(len(ch)):
+    if "0" &lt;= ch[i] &lt;= "9":
+        pos = remp.find(ch[i])
+        if pos != -1:
+            ch1 = ch1 + remp[pos-1]
+        else:
+            ch1 = ch1 + ch[i]
+    else:
+        ch1 = ch1 + ch[i]
+ch = ch1
+print(ch)</code></pre>
+          </div>
+        </div>
+      </section>
+    </article>
+
+    <article>
       <h2 class="p-break">Implémentation</h2>
 
       <section>
@@ -468,7 +616,6 @@ Fin</code></pre>
           </div>
         </div>
       </section>
-
 
       <section class="d-print-none">
         <h3>Nombre Parfait</h3>
