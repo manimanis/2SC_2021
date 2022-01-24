@@ -383,6 +383,87 @@ b ? 9999
           <li>u+d+c+m &ge; 22, somme des chiffres supérieure ou égale à 22</li>
         </ul>
       </section>
+
+      <section>
+        <h3 class="p-break">Correction</h3>
+
+        <div class="row">
+          <div class="col-6">
+            <h4>Entiers suivants</h4>
+            <pre><code class="python">n = int(input("Donner n ? "))
+for i in range(n+1, n+8):
+    print(i, end=" ")
+</code></pre>
+            <pre><code class="python">n = int(input("Donner n ? "))
+  for i in range(1, 8):
+      print(i+n, end=" ")
+  </code></pre>
+          </div>
+          <div class="col-6">
+            <h4>Produit de deux nombres</h4>
+            <pre><code class="python">a = int(input("Donner a ? "))
+b = int(input("Donner b ? "))
+s = 0
+for i in range(abs(b)):
+    s = s + a
+if b &lt; 0:
+    s = -s
+print(a, "×", b, "=", s)</code></pre>
+          </div>
+          <div class="col-6">
+            <h4>Nombre de 8</h4>
+            <pre><code class="python">a = int(input("Donner a ? "))
+b = int(input("Donner b ? "))
+cpt = 0
+for i in range(a, b+1):
+    ch = str(i)
+    for j in range(len(ch)):
+        if ch[j] == '8':
+            cpt = cpt + 1
+print("Il y a", cpt, "apparition du chiffre 8")</code></pre>
+            <h4>Mot de passe de 4 chiffres</h4>
+            <pre><code class="python">for i in range(1000, 9999, 5):
+    u = i % 10
+    d = (i // 10) % 10
+    c = (i // 100) % 10
+    m = (i // 1000) % 10
+    s = u+d+c+m
+    if c != 0 and m > c and d*2 == c and s >= 22:
+        print(i)</code></pre>
+          </div>
+          <div class="col-6">
+            <h4>Pagination</h4>
+            <pre><code class="python">nbp = int(input("Nombre de pages ? "))
+np = int(input("Page actuelle ? "))
+npa = int(input("Nombre de pages affichées ? "))
+# 3 pages au minimum
+npa = (npa >= 3) * npa + (npa &lt; 3) * 3
+# Le nombre de pages ne doit pas être inférieur
+# à npa (nombre de pages affichées)
+nbp = (nbp >= npa) * nbp + (nbp &lt; npa) * npa
+if np &lt; 1: 
+    np = 1
+elif np > nbp:
+    np = nbp
+mnpa = npa // 2
+if 1 + mnpa &lt;= np &lt;= 20 - mnpa:
+    deb = np - mnpa
+    fin = deb + npa - 1
+elif np &lt;= 1 + mnpa:
+    deb = 1
+    fin = deb + npa - 1
+else:
+    fin = nbp
+    deb = fin - npa + 1
+for i in range(deb, fin+1):
+    if i == np:
+        print("["+str(i)+"]", end=" ")
+    else:
+        print(i, end=" ")
+print()</code></pre>
+          </div>
+        </div>
+      </section>
     </article>
 
     <article>
@@ -415,25 +496,25 @@ b ? 9999
       <section>
         <h3>Remplacer des lettres par des chiffres</h3>
         <p>Ecrire un programme qui remplace les lettres suivantes par les chiffres indiqués dans une chaîne.</p>
-        <ul>
-          <li>a &rarr; 6</li>
-          <li>e &rarr; 3</li>
-          <li>g &rarr; 9</li>
-          <li>i &rarr; 1</li>
-          <li>o &rarr; 0</li>
-          <li>s &rarr; 5</li>
+        <ul class="row">
+          <li class="col-2">a &rarr; 6</li>
+          <li class="col-2">e &rarr; 3</li>
+          <li class="col-2">g &rarr; 9</li>
+          <li class="col-2">i &rarr; 1</li>
+          <li class="col-2">o &rarr; 0</li>
+          <li class="col-2">s &rarr; 5</li>
         </ul>
       </section>
       <section>
         <h3>Remplacer des chiffres par des lettres</h3>
         <p>Ecrire un programme qui remplace les chiffres indiqués par les lettres suivantes dans une chaîne.</p>
-        <ul>
-          <li>a &larr; 6</li>
-          <li>e &larr; 3</li>
-          <li>g &larr; 9</li>
-          <li>i &larr; 1</li>
-          <li>o &larr; 0</li>
-          <li>s &larr; 5</li>
+        <ul class="row">
+          <li class="col-2">a &larr; 6</li>
+          <li class="col-2">e &larr; 3</li>
+          <li class="col-2">g &larr; 9</li>
+          <li class="col-2">i &larr; 1</li>
+          <li class="col-2">o &larr; 0</li>
+          <li class="col-2">s &larr; 5</li>
         </ul>
       </section>
       <section>
