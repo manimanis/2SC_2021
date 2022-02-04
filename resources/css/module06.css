@@ -1,0 +1,152 @@
+#turtle_rabbit_game {
+	background-color: #4CAF50;
+	padding: 10px 0;
+	border-radius: 8px;
+	width: 600px;
+	margin: 1.5em auto;
+	border: #438643 solid 2px;
+	box-shadow: 0 0 6px 5px #438643;
+}
+
+.chemin {
+  min-width: 770px;
+}
+
+.tortue {
+  background: url(../../images/module06/tortue.jpg) center center no-repeat;
+  background-size: cover;
+}
+
+.lievre {
+  background: url(../../images/module06/lievre.jpg) center center no-repeat;
+  background-size: cover;
+}
+
+.case, .case-depart, .case-arrivee {
+  width: 70px;
+  height: 70px;
+  display: inline-block;
+  margin: 10px 10px 25px 0;
+  border: #000 solid 1px;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 80px;
+}
+
+.case {
+  counter-increment: cases;
+}
+
+.case-depart:first-child {
+  margin-left: 10px;
+  border: none;
+}
+
+.case::after, .case-depart::after, .case-arrivee::after {
+  display: block;
+  position: relative;
+  top: 83px;
+  left: 0;
+  width: 70px;
+  line-height: initial;
+  color: #fff;
+  text-shadow: 0 0 2px #000;
+}
+
+.case-depart::after {
+  content: 'Départ';
+}
+
+.case-arrivee::after {
+  content: 'Arrivée';
+}
+
+.case::after {
+  content: counter(cases);
+}
+
+.dice-roll {
+  text-align: center;
+  margin-top: 25px;
+}
+
+.de {
+  display: block;
+  padding: 5px;
+  background-color: #fff;
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  margin: 0 auto;
+  cursor: pointer;
+  /* border: transparent solid 5px; */
+}
+
+.de:hover {
+  box-shadow: 0 0 10px #F44336;
+}
+
+.de1, .de2, .de3, .de4, .de5, .de6 {
+  width: 70px;
+  height: 70px;
+  background: url(../../images/module06/de_1.jpg) center center no-repeat;
+  background-size: contain;
+  border-radius: 5px;
+}
+
+.de2 {
+  background-image: url(../../images/module06/de_2.jpg);
+}
+
+.de3 {
+  background-image: url(../../images/module06/de_3.jpg);
+}
+
+.de4 {
+  background-image: url(../../images/module06/de_4.jpg);
+}
+
+.de5 {
+  background-image: url(../../images/module06/de_5.jpg);
+}
+
+.de6 {
+  background-image: url(../../images/module06/de_6.jpg);
+}
+
+.message {
+  position: relative;
+}
+
+.message>.text {
+  position: absolute;
+  top: -351px;
+  width: 100%;
+  text-align: center;
+  font-size: 40pt;
+  background-color: #00000099;
+  color: #fff;
+  padding: 25px 0;
+}
+
+.message>.text>button {
+  font-size: 12pt;
+  padding: 16px 32px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  color: #F44336;
+}
+
+.dice-table {
+	width: 100%;
+	height: 90px;
+	border-collapse: collapse;
+	margin: 20px 0 10px;
+	background-color: #559133;
+}
+
+.dice-table td {
+  width: 80px;
+  padding: 5px;
+}

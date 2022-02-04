@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="resources/css/bootstrap.min.css">
+  <link rel="stylesheet" href="resources/css/default.css">
+  <link rel="stylesheet" href="resources/css/style.css">
+  <link rel="stylesheet" href="resources/css/module06.css">
+  <title>Structure Itérative à condition</title>
+</head>
+
+<body>
+  <aside>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#aside_navbar"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span> Menu
+      </button>
+      <div class="collapse navbar-collapse" id="aside_navbar"></div>
+    </nav>
+  </aside>
+
+  <main class="container my-3">
+    <h1>Module 6 : Structure itérative à condition</h1>
+
+    <article>
+      <h2>Situations</h2>
+
+      <section>
+        <h3>Le lièvre et la tortue</h3>
+
+        <h4>Règles du jeu</h4>
+        <ul>
+          <li>On lance un dé :
+            <ul>
+              <li>Si on obtient 6, le lièvre gagne</li>
+              <li>Si on obtient une autre valeur, la tortue avance d'un pas</li>
+            </ul>
+          </li>
+          <li>Si la tortue a avancé de six cases elle gagne, sinon on rejoue une autre fois.</li>
+        </ul>
+        <div class="row">
+          <div class="col-sm-4">
+            <figure>
+              <img src="images/module06/lievre.jpg" alt="Le lièvre">
+              <figcaption>Lièvre</figcaption>
+            </figure>
+          </div>
+          <div class="col-sm-4">
+            <figure>
+              <img src="images/module06/tortue.jpg" alt="La tortue">
+              <figcaption>Tortue</figcaption>
+            </figure>
+          </div>
+          <div class="col-sm-4">
+            <figure>
+              <img src="images/module06/de.jpg" alt="Un dé">
+              <figcaption>Dé</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <h4>Simulation</h4>
+        <div id="turtle_rabbit_game">
+          <div class="chemin">
+            <div class="case-depart" v-bind:class="{'lievre': rabbit_pos === 0}"></div>
+            <div class="case" v-bind:class="{'lievre': rabbit_pos === 1}"></div>
+            <div class="case" v-bind:class="{'lievre': rabbit_pos === 2}"></div>
+            <div class="case" v-bind:class="{'lievre': rabbit_pos === 3}"></div>
+            <div class="case" v-bind:class="{'lievre': rabbit_pos === 4}"></div>
+            <div class="case" v-bind:class="{'lievre': rabbit_pos === 5}"></div>
+            <div class="case-arrivee" v-bind:class="{'lievre': rabbit_pos === 6}"></div>
+          </div>
+          <div class="chemin">
+            <div class="case-depart" v-bind:class="{'tortue': turtle_pos === 0}"></div>
+            <div class="case" v-bind:class="{'tortue': turtle_pos === 1}"></div>
+            <div class="case" v-bind:class="{'tortue': turtle_pos === 2}"></div>
+            <div class="case" v-bind:class="{'tortue': turtle_pos === 3}"></div>
+            <div class="case" v-bind:class="{'tortue': turtle_pos === 4}"></div>
+            <div class="case" v-bind:class="{'tortue': turtle_pos === 5}"></div>
+            <div class="case-arrivee" v-bind:class="{'tortue': turtle_pos === 6}"></div>
+          </div>
+          <div class="dice-roll">
+            <div class="de" v-on:click="clicked()">
+              <div v-bind:class="current_dice"></div>
+            </div>
+            <div class="text-center text-white">Cliquer &uArr;</div>
+          </div>
+          <div v-if="game_ended()" class="game-control">
+            <div class="message">
+              <div class="text">
+                <p>{{winner_message}}</p>
+                <button v-on:click="reset()">Rejouer</button>
+              </div>
+            </div>
+          </div>
+          <table class="dice-table">
+            <tbody>
+              <tr>
+                <td v-for="de in dice_arr" width="16.67%">
+                  <div class="de">
+                    <div v-bind:class="{[`de${de}`]: true}"></div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h4>Travail demandé</h4>
+        <p>On demande de :</p>
+        <ol>
+          <li>Copier/coller le code suivant.</li>
+          <li>Tester ce code, puis dire qu'est ce qu'il fait ?<p class="d-none d-print-block text-danger fw-bold">Permet
+              de lancer un dé et puis de modifier la position de l'un des deux joueurs en fonction de la valeur obtenue.
+            </p>
+          </li>
+          <li>Combien faut-t-il jouer de fois pour que l'un des joueurs gagne ?<p
+              class="d-none d-print-block text-danger fw-bold">Tout dépend de la valeur du dé. Normalement, dès que l'un
+              des joueurs atteint la position d'arrivée le jeu se termine.</p>
+          </li>
+          <li>Est-ce qu'on peut utiliser la boucle <strong>for</strong> pour compléter ce programme ?<p
+              class="d-none d-print-block text-danger fw-bold">La boucle <em>for</em> est utilisable dans les cas où le
+              nombre de répétitions est connu à l'avance. Dans ce jeu on ne sait pas combien de fois il faudra rejouer
+              avant que l'un des deux joueurs gagne.</p>
+          </li>
+          <li>Quelle est la structure itérative à utiliser dans ce jeu ?<p
+              class="d-none d-print-block text-danger fw-bold">Il convient d'utiliser la boucle <em>while</em> dans ce
+              jeu.</p>
+          </li>
+        </ol>
+
+        <pre><code class="python">from random import randint
+
+# (1) Placer les joueurs en position de départ
+pos_lievre = 0
+pos_tortue = 0
+
+# (2) Lancer un dé
+de = randint(1, 6)
+print("Dé =", de)
+
+# (3) Déplacer les joueurs
+if de != 6:
+    pos_tortue = pos_tortue + 1
+    print("La tortue avance à la case", pos_tortue)
+else:
+    pos_lievre = 6
+    print("Le lièvre avance à la position", pos_lievre)</code></pre>
+      </section>
+
+      <section>
+        <h3>Structure itérative à condition</h3>
+
+        <p>(1) Tester le code suivant pour les valeurs suivantes de a : -2, 11, 5, 1, 10, 9, 29. Quelles sont les
+          valeurs
+          acceptées ?</p>
+        <p class="d-none d-print-block text-danger fw-bold">5, 1, 10, 9 sont acceptées car elles sont comprise dans
+          l'intervalle [1, 10].</p>
+        <pre><code class="python">a = 0
+while not 1 &lt;= a &lt;= 10:
+    a = int(input("Donner un entier ? "))
+print(a)</code></pre>
+        <p>(2) Exploiter le code précédent pour écrire un programme qui permet de saisir deux entiers positifs a et b
+          avec 0 &lt; a &le; b &le; 100. Puis d'afficher la moyenne des deux nomrbes.</p>
+        <div class="d-none d-print-block">
+          <pre><code class="python">a = -1
+while not 0 &lt; a &lt;= 100:
+    a = int(input("Donner 0 &lt; a &lt;= 100 ? "))
+b = -1
+while not a &lt;= b &lt;= 100:
+    b = int(input(f"Donner {a} &lt;= b &lt;= 100 ? "))
+print((a + b) / 2)</code></pre>
+        </div>
+        <p>(3) Compléter le jeu du <strong>lièvre et de la tortue</strong> pour que l'un des joueurs gagne lorsqu'il
+          atteint la case d'arrivée (position 6) ?</p>
+          <div class="d-none d-print-block"><pre><code class="python">from random import randint
+
+# (1) Placer les joueurs en position de départ
+pos_lievre = 0
+pos_tortue = 0
+
+while pos_lievre != 6 and pos_tortue != 6:
+    # (2) Lancer un dé
+    de = randint(1, 6)
+    print("Dé =", de)
+
+    # (3) Déplacer les joueurs
+    if de != 6:
+        pos_tortue = pos_tortue + 1
+        print("La tortue avance à la case", pos_tortue)
+    else:
+        pos_lievre = 6
+        print("Le lièvre avance à la case", pos_lievre)
+
+print("Le lièvre est en poition", pos_lievre)
+print("La tortue est en poition", pos_tortue)
+
+if pos_lievre == 6:
+    print("Le lièvre a gagné.")
+else:
+    print("La tortue a gagné.")</code></pre></div>
+      </section>
+    </article>
+  </main>
+  <footer class="d-print-none bg-dark text-white p-2">
+    <div class="text-center">Page créée avec ♥ par Mohamed Anis MANI</div>
+    <div class="text-center small">Année scolaire : 2021/2022</div>
+  </footer>
+
+  <script src="resources/js/jquery.min.js"></script>
+  <script src="resources/js/bootstrap.bundle.min.js"></script>
+  <script src="resources/js/highlight.pack.js"></script>
+  <script src="resources/js/hljs.algorithm.js"></script>
+  <script src="resources/js/clipboard.min.js"></script>
+  <script src="resources/js/pages.js"></script>
+  <script src="resources/js/vue.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+
+    document.querySelectorAll('.language-algorithm,.language-python')
+      .forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'bd-clipboard d-print-none';
+        const btn = document.createElement('button');
+        btn.className = 'btn-clipboard';
+        btn.textContent = "📋";
+        btn.title = "Copier";
+        div.appendChild(btn);
+        item.parentElement.insertBefore(div, item);
+      });
+    new ClipboardJS('.btn-clipboard', {
+      target: (trigger) => {
+        return trigger.parentElement.nextElementSibling;
+      }
+    });
+    $(() => {
+      new Vue({
+        el: '#turtle_rabbit_game',
+        data: {
+          turtle_winner: false,
+          rabbit_winner: false,
+          dice_face: 3,
+          rabbit_pos: 0,
+          turtle_pos: 0,
+          winner_message: '',
+          dice_arr: new Array(6).fill(0)
+        },
+        computed: {
+          current_dice: function () {
+            return { [`de${this.dice_face}`]: true };
+          }
+        },
+        mounted: function () {
+          this.reset();
+          do {
+            this.clicked();
+          } while (!this.game_ended());
+          this.$forceUpdate();
+        },
+        methods: {
+          reset: function () {
+            this.turtle_winner = false;
+            this.rabbit_winner = false;
+            this.dice_face = 1 + Math.floor(Math.random() * 6);
+            this.rabbit_pos = 0;
+            this.turtle_pos = 0;
+            this.winner_message = '';
+            this.dice_arr = new Array(6).fill(0);
+          },
+          game_ended: function () {
+            return this.turtle_winner || this.rabbit_winner;
+          },
+          clicked: function () {
+            if (this.game_ended()) {
+              return;
+            }
+
+            this.dice_face = 1 + Math.floor(Math.random() * 6);
+            this.dice_arr[this.turtle_pos] = this.dice_face;
+            if (this.dice_face == 6) {
+              this.rabbit_pos = 6;
+              this.rabbit_winner = true;
+              this.winner_message = 'Lièvre gagne';
+            } else {
+              this.turtle_pos += 1;
+              if (this.turtle_pos == 6) {
+                this.turtle_winner = true;
+                this.winner_message = 'Tortue gagne';
+              }
+            }
+            this.$forceUpdate();
+          }
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
