@@ -164,8 +164,8 @@ else:
 while not 1 &lt;= a &lt;= 10:
     a = int(input("Donner un entier ? "))
 print(a)</code></pre>
-        <p>(2) Exploiter le code précédent pour écrire un programme qui permet de saisir deux entiers positifs a et b
-          avec 0 &lt; a &le; b &le; 100. Puis d'afficher la moyenne des deux nomrbes.</p>
+        <p>(2) Exploiter le code précédent pour écrire un programme qui permet de <strong>saisir deux entiers positifs a
+            et b avec 0 &lt; a &le; b &le; 100</strong>. Puis d'afficher la moyenne des deux nomrbes.</p>
         <div class="d-none d-print-block">
           <pre><code class="python">a = -1
 while not 0 &lt; a &lt;= 100:
@@ -177,7 +177,8 @@ print((a + b) / 2)</code></pre>
         </div>
         <p>(3) Compléter le jeu du <strong>lièvre et de la tortue</strong> pour que l'un des joueurs gagne lorsqu'il
           atteint la case d'arrivée (position 6) ?</p>
-          <div class="d-none d-print-block"><pre><code class="python">from random import randint
+        <div class="d-none d-print-block">
+          <pre><code class="python">from random import randint
 
 # (1) Placer les joueurs en position de départ
 pos_lievre = 0
@@ -202,7 +203,167 @@ print("La tortue est en poition", pos_tortue)
 if pos_lievre == 6:
     print("Le lièvre a gagné.")
 else:
-    print("La tortue a gagné.")</code></pre></div>
+    print("La tortue a gagné.")</code></pre>
+        </div>
+      </section>
+
+      <section>
+        <h3>Jeu de l'oie</h3>
+
+        <h4>Principe de jeu</h4>
+        <p>Le jeu de l'oie est un jeu classique qui se joue à 2, 3 ou 4 joueurs.</p>
+        <p>Chaque joueur, à son tour, lance deux dés à six faces et avance son pion du nombre tiré.</p>
+        <p>Le gagnant est celui qui atteint la case d'arrivée (case 31).</p>
+        <p>On désire implémenter une version simplifiée, sans pièges, de ce jeu où un joueur humain joue contre
+          l'ordinateur. <strong>La case d'arrivée est la case 31.</strong></p>
+        <p><strong>Remarque :</strong> Si la nouvelle position du joueur dépasse la case finale il recule au lieu
+          d'avancer.</p>
+        <p><strong>Exemple :</strong> Je suis dans la position 26 et j’obtiens 6, je recule à la position 20.</p>
+
+        <div id="jeu-oie">
+          <table>
+            <tr>
+              <td class="start-cell">
+                <img src="images/module06/oie.png" alt="">
+              </td>
+              <td class="game-cell">
+                <div class="cell"></div>
+                <div class="num">1</div>
+              </td>
+              <td class="game-cell">
+                <div class="cell"></div>
+                <div class="num">2</div>
+              </td>
+              <td class="game-cell">
+                <div class="cell"></div>
+                <div class="num">3</div>
+              </td>
+              <td class="game-cell">
+                <div class="cell"></div>
+                <div class="num">4</div>
+              </td>
+              <td class="game-cell">
+                <div class="cell"></div>
+                <div class="num">5</div>
+              </td>
+              <td class="game-cell">
+                <div class="cell"></div>
+                <div class="num">6</div>
+              </td>
+            </tr>
+            <tr>
+              <td class="game-cell">
+                <div class="cell"></div>
+                <div class="num">19</div>
+              </td>
+              <td class="game-cell">
+                <div class="cell"></div>
+                <div class="num">20</div>
+              </td>
+              <td class="game-cell">
+                <div class="cell"></div>
+                <div class="num">21</div>
+              </td>
+              <td class="game-cell">
+                <div class="cell"></div>
+                <div class="num">22</div>
+              </td>
+              <td class="game-cell">
+                <div class="cell"></div>
+                <div class="num">23</div>
+              </td>
+              <td class="game-cell">
+                <div class="cell"></div>
+                <div class="num">24</div>
+              </td>
+              <td class="game-cell">
+                <div class="cell"></div>
+                <div class="num">7</div>
+              </td>
+            </tr>
+            <tr>
+              <td class="game-cell">
+                <div class="cell"></div>
+                <div class="num">18</div>
+              </td>
+              <td class="game-cell">
+                <div class="cell"></div>
+                <div class="num">31</div>
+              </td>
+              <td class="end-cell"></td>
+              <td><div class="de"><div class="de6"></div></div></td>
+              <td><div class="de"><div class="de6"></div></div></td>
+              <td class="game-cell">
+                <div class="cell"></div>
+                <div class="num">25</div>
+              </td>
+              <td class="game-cell">
+                <div class="cell"></div>
+                <div class="num">8</div>
+              </td>
+            </tr>
+            <tr>
+              <td class="game-cell">
+                <div class="cell"></div>
+                <div class="num">17</div>
+              </td>
+              <td class="game-cell">
+                <div class="cell"></div>
+                <div class="num">30</div>
+              </td>
+              <td class="game-cell">
+                <div class="cell"></div>
+                <div class="num">29</div>
+              </td>
+              <td class="game-cell">
+                <div class="cell"></div>
+                <div class="num">28</div>
+              </td>
+              <td class="game-cell">
+                <div class="cell"></div>
+                <div class="num">27</div>
+              </td>
+              <td class="game-cell">
+                <div class="cell"></div>
+                <div class="num">26</div>
+              </td>
+              <td class="game-cell">
+                <div class="cell"></div>
+                <div class="num">9</div>
+              </td>
+            </tr>
+            <tr>
+              <td class="game-cell">
+                <div class="cell"></div>
+                <div class="num">16</div>
+              </td>
+              <td class="game-cell">
+                <div class="cell"></div>
+                <div class="num">15</div>
+              </td>
+              <td class="game-cell">
+                <div class="cell"></div>
+                <div class="num">14</div>
+              </td>
+              <td class="game-cell">
+                <div class="cell"></div>
+                <div class="num">13</div>
+              </td>
+              <td class="game-cell">
+                <div class="cell"></div>
+                <div class="num">12</div>
+              </td>
+              <td class="game-cell">
+                <div class="cell"></div>
+                <div class="num">11</div>
+              </td>
+              <td class="game-cell">
+                <div class="cell"></div>
+                <div class="num">10</div>
+              </td>
+            </tr>
+          </table>
+        </div>
       </section>
     </article>
   </main>

@@ -150,3 +150,40 @@
   width: 80px;
   padding: 5px;
 }
+
+/****************************/
+
+#jeu-oie {
+  background-color: #4CAF50;
+	padding: 10px;
+	border-radius: 8px;
+	margin: 1.5em auto;
+	border: #438643 solid 2px;
+	box-shadow: 0 0 6px 5px #438643;
+}
+
+#jeu-oie table {
+  width: 100%;
+}
+
+#jeu-oie table td {
+  width: calc(100% / 7);
+  text-align: center;
+}
+
+#jeu-oie table td.game-cell { 
+  border: #000 solid 3px;
+  border-radius: 10px;
+}
+
+#jeu-oie .cell {
+  height: 100px;
+}
+
+#jeu-oie .num {
+  color: #fff;
+  box-shadow: 0 0 6px 5px #438643;
+  font-weight: bold;
+  font-size: x-small;
+}
+
