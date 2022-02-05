@@ -1,11 +1,11 @@
 #turtle_rabbit_game {
-	background-color: #4CAF50;
-	padding: 10px 0;
-	border-radius: 8px;
-	width: 600px;
-	margin: 1.5em auto;
-	border: #438643 solid 2px;
-	box-shadow: 0 0 6px 5px #438643;
+  background-color: #4CAF50;
+  padding: 10px 0;
+  border-radius: 8px;
+  width: 600px;
+  margin: 1.5em auto;
+  border: #438643 solid 2px;
+  box-shadow: 0 0 6px 5px #438643;
 }
 
 .chemin {
@@ -22,7 +22,9 @@
   background-size: cover;
 }
 
-.case, .case-depart, .case-arrivee {
+.case,
+.case-depart,
+.case-arrivee {
   width: 70px;
   height: 70px;
   display: inline-block;
@@ -42,7 +44,9 @@
   border: none;
 }
 
-.case::after, .case-depart::after, .case-arrivee::after {
+.case::after,
+.case-depart::after,
+.case-arrivee::after {
   display: block;
   position: relative;
   top: 83px;
@@ -86,7 +90,12 @@
   box-shadow: 0 0 10px #F44336;
 }
 
-.de1, .de2, .de3, .de4, .de5, .de6 {
+.de1,
+.de2,
+.de3,
+.de4,
+.de5,
+.de6 {
   width: 70px;
   height: 70px;
   background: url(../../images/module06/de_1.jpg) center center no-repeat;
@@ -139,11 +148,11 @@
 }
 
 .dice-table {
-	width: 100%;
-	height: 90px;
-	border-collapse: collapse;
-	margin: 20px 0 10px;
-	background-color: #559133;
+  width: 100%;
+  height: 90px;
+  border-collapse: collapse;
+  margin: 20px 0 10px;
+  background-color: #559133;
 }
 
 .dice-table td {
@@ -151,19 +160,29 @@
   padding: 5px;
 }
 
+
 /****************************/
 
 #jeu-oie {
   background-color: #4CAF50;
-	padding: 10px;
-	border-radius: 8px;
-	margin: 1.5em auto;
-	border: #438643 solid 2px;
-	box-shadow: 0 0 6px 5px #438643;
+  padding: 10px;
+  border-radius: 8px;
+  margin: 1.5em auto;
+  border: #438643 solid 2px;
+  box-shadow: 0 0 6px 5px #438643;
+  width: 960px;
+  height: 660px;
+}
+
+#jeu-oie .game {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 #jeu-oie table {
-  width: 100%;
+  width: 700px;
+  border-collapse: separate;
+  border-spacing: 4px;
 }
 
 #jeu-oie table td {
@@ -171,13 +190,35 @@
   text-align: center;
 }
 
-#jeu-oie table td.game-cell { 
+#jeu-oie table td.game-cell {
   border: #000 solid 3px;
   border-radius: 10px;
 }
 
 #jeu-oie .cell {
   height: 100px;
+}
+
+#jeu-oie .start-cell .cell {
+  position: relative;
+}
+
+#jeu-oie .start-cell .cell::after,
+#jeu-oie .end-cell .cell::after {
+  content: "Départ";
+  display: block;
+  position: absolute;
+  text-align: center;
+  width: 100px;
+  font-weight: 100;
+  color: #fff;
+  background: #000;
+  padding: 5px 0;
+  border-radius: 10px;
+}
+
+#jeu-oie .end-cell .cell::after {
+  content: "Arrivée";
 }
 
 #jeu-oie .num {
@@ -187,3 +228,33 @@
   font-size: x-small;
 }
 
+#jeu-oie .movements {
+  color: #fff;
+  overflow-y: auto;
+  font-size: 0.9rem;
+  width: 236px;
+  height: 636px;
+}
+
+#jeu-oie .game-control {
+  position: relative;
+}
+
+#jeu-oie .game-control .message {
+  position: absolute;
+  width: 700px;
+  background-color: #00000099;
+  color: #fff;
+  padding: 25px 0;
+  height: 636px;
+  z-index: 100;
+}
+
+#jeu-oie .game-control .message>.text {
+  position: initial;
+  top: initial;
+  width: initial;
+  text-align: center;
+  font-size: 80pt;
+  background-color: initial;
+}

@@ -65,7 +65,7 @@
       <section>
         <p>Un fermier met des &oelig;ufs fécondés dans une couveuse éléctrique. Après 21 jours, un poussin percera la
           coquille de son &oelig;uf et sortira tout en piaillant joyeusement.</p>
-        <p>Dans trois mois, les petits poussins deviennent poulette et coquelet. Pour devenir adulte il faudra attendre
+        <p>Dans trois mois, les petits poussins deviennent poulettes et coquelets. Pour devenir adulte il faudra attendre
           encore trois autres mois.</p>
         <p>Aujourd'hui, le fermer a mis 10 &oelig;ufs dans la couveuse. Après 21 jours, 7/10 des &oelig;ufs donneront
           des poussins représentés par la lettre miniscule <strong>"p"</strong> et les 3/10 ne donneront rien et sont
@@ -114,10 +114,80 @@ print(seq3)</code></pre>
           coquelet.</p>
         <p><strong>(6) Copier le code précédent à la suite de votre programme et lui apporter les modifications
             nécessaires afin qu'il ajoute aussi la lettre <code>"x"</code> pour les poussins morts.</strong></p>
-        <p>Les poules pondent des oeufs. Une poule pond un &oelig;uf tous les jours pendant 3 ans et son espérance de
+        <p>Les poules pondent des &oelig;ufs. Une poule pond un &oelig;uf tous les jours pendant 3 ans et son espérance de
           vie est de 8 ans.</p>
         <p>Les coqs, eux, seront vendus au marché. Un coq produit en moyenne 1,8Kg de viande.</p>
-        
+        <p><strong>(7) Compléter le tableau suivant :</strong></p>
+        <table class="table table-sm table-bordered border-dark align-middle my-2">
+          <tr>
+            <td><strong>seq3</strong></td>
+            <td><strong>nbp</strong><br>Nombre de poulettes</td>
+            <td><strong>nbc</strong><br>Nombre de coquelets</td>
+            <td><strong>nb_oeufs</strong><br>Nombre d'&oelig;ufs</td>
+            <td><strong>qte_viande</strong><br>Quantité de viande</td>
+          </tr>
+          <tr>
+            <td>"PxxCPCCPCP"</td>
+            <td>4</td>
+            <td>4</td>
+            <td>4 &times; 365 &times; 3 = 4380 &oelig;ufs</td>
+            <td>4 &times; 1.8 = 7.5 kg</td>
+          </tr>
+          <tr>
+            <td>"xxPCxCCxxPPPPxCPxPCxxPCx"</td>
+            <td>8</td>
+            <td>6</td>
+            <td>8 &times; 365 &times; 3 = 8760 &oelig;ufs</td>
+            <td>4 &times; 1.8 = 10.8 kg</td>
+          </tr>
+          <tr>
+            <td>"xxCPCCPPPPCCPCCPxxxPPxCCxxCxPPPP"</td>
+            <td>13</td>
+            <td>10</td>
+            <td>13 &times; 365 &times; 3 = 14235 œufs</td>
+            <td>10 &times; 1.8 = 18 kg</td>
+          </tr>
+          <tr>
+            <td>"PxPxCP"</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>"CxxPxCCCCCPxCC"</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+        <p><strong>(8) Terminer le programme en calculant le nombre de poulettes et de coquelets, ainsi que le nombre
+            d'&oelig;ufs produits pendant trois ans et la quantité de viandes produite par les coquelets.</strong></p>
+        <div class="row">
+          <div class="col-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple 1">Donner le nombre d'&oelig;ufs ? 20
+pxppppxppxppppxppppp
+Nombre de poussins vifs : 16 / 20
+PxPCxPPCCCCCxPxP
+Nombre de poulettes : 6
+Nombre de coquelets : 6
+Les poulettes produiront 6570 œufs
+Les coquelets produiront 10.8 kg de viande</code></pre>
+          </div>
+          <div class="col-6">
+            <pre><code class="nohighlight shell python" data-text="Exemple 2">Donner le nombre d'&oelig;ufs ? 50
+ppxxxpxpppxxxxxpxxxpxxppppxppxpppxpppppppxpxppppxp
+Nombre de poussins vifs : 30 / 50
+PxCCxCPPPxxxPxCCPPxPCxxPPCPxxP
+Nombre de poulettes : 12
+Nombre de coquelets : 7
+Les poulettes produiront 13140 œufs
+Les coquelets produiront 12.6 kg de viande</code></pre>
+          </div>
+        </div>
+
+
       </section>
     </article>
   </main>

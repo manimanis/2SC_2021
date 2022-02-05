@@ -212,157 +212,48 @@ else:
 
         <h4>Principe de jeu</h4>
         <p>Le jeu de l'oie est un jeu classique qui se joue à 2, 3 ou 4 joueurs.</p>
-        <p>Chaque joueur, à son tour, lance deux dés à six faces et avance son pion du nombre tiré.</p>
-        <p>Le gagnant est celui qui atteint la case d'arrivée (case 31).</p>
-        <p>On désire implémenter une version simplifiée, sans pièges, de ce jeu où un joueur humain joue contre
-          l'ordinateur. <strong>La case d'arrivée est la case 31.</strong></p>
+        <p>Chaque joueur, à son tour, lance un dé à six faces et avance son pion du nombre tiré.</p>
+        <p>Le gagnant est celui qui atteint la case d'arrivée (case 32).</p>
+        <p>On désire implémenter une version simplifiée, sans pièges, de ce jeu où un joueur humain joue tout seul.
+          <strong>La case d'arrivée est la case 31.</strong>
+        </p>
         <p><strong>Remarque :</strong> Si la nouvelle position du joueur dépasse la case finale il recule au lieu
           d'avancer.</p>
-        <p><strong>Exemple :</strong> Je suis dans la position 26 et j’obtiens 6, je recule à la position 20.</p>
+        <p><strong>Exemple :</strong> Je suis dans la position 27 et j’obtiens 6, je recule à la position 21.</p>
 
         <div id="jeu-oie">
-          <table>
-            <tr>
-              <td class="start-cell">
-                <img src="images/module06/oie.png" alt="">
-              </td>
-              <td class="game-cell">
-                <div class="cell"></div>
-                <div class="num">1</div>
-              </td>
-              <td class="game-cell">
-                <div class="cell"></div>
-                <div class="num">2</div>
-              </td>
-              <td class="game-cell">
-                <div class="cell"></div>
-                <div class="num">3</div>
-              </td>
-              <td class="game-cell">
-                <div class="cell"></div>
-                <div class="num">4</div>
-              </td>
-              <td class="game-cell">
-                <div class="cell"></div>
-                <div class="num">5</div>
-              </td>
-              <td class="game-cell">
-                <div class="cell"></div>
-                <div class="num">6</div>
-              </td>
-            </tr>
-            <tr>
-              <td class="game-cell">
-                <div class="cell"></div>
-                <div class="num">19</div>
-              </td>
-              <td class="game-cell">
-                <div class="cell"></div>
-                <div class="num">20</div>
-              </td>
-              <td class="game-cell">
-                <div class="cell"></div>
-                <div class="num">21</div>
-              </td>
-              <td class="game-cell">
-                <div class="cell"></div>
-                <div class="num">22</div>
-              </td>
-              <td class="game-cell">
-                <div class="cell"></div>
-                <div class="num">23</div>
-              </td>
-              <td class="game-cell">
-                <div class="cell"></div>
-                <div class="num">24</div>
-              </td>
-              <td class="game-cell">
-                <div class="cell"></div>
-                <div class="num">7</div>
-              </td>
-            </tr>
-            <tr>
-              <td class="game-cell">
-                <div class="cell"></div>
-                <div class="num">18</div>
-              </td>
-              <td class="game-cell">
-                <div class="cell"></div>
-                <div class="num">31</div>
-              </td>
-              <td class="end-cell"></td>
-              <td><div class="de"><div class="de6"></div></div></td>
-              <td><div class="de"><div class="de6"></div></div></td>
-              <td class="game-cell">
-                <div class="cell"></div>
-                <div class="num">25</div>
-              </td>
-              <td class="game-cell">
-                <div class="cell"></div>
-                <div class="num">8</div>
-              </td>
-            </tr>
-            <tr>
-              <td class="game-cell">
-                <div class="cell"></div>
-                <div class="num">17</div>
-              </td>
-              <td class="game-cell">
-                <div class="cell"></div>
-                <div class="num">30</div>
-              </td>
-              <td class="game-cell">
-                <div class="cell"></div>
-                <div class="num">29</div>
-              </td>
-              <td class="game-cell">
-                <div class="cell"></div>
-                <div class="num">28</div>
-              </td>
-              <td class="game-cell">
-                <div class="cell"></div>
-                <div class="num">27</div>
-              </td>
-              <td class="game-cell">
-                <div class="cell"></div>
-                <div class="num">26</div>
-              </td>
-              <td class="game-cell">
-                <div class="cell"></div>
-                <div class="num">9</div>
-              </td>
-            </tr>
-            <tr>
-              <td class="game-cell">
-                <div class="cell"></div>
-                <div class="num">16</div>
-              </td>
-              <td class="game-cell">
-                <div class="cell"></div>
-                <div class="num">15</div>
-              </td>
-              <td class="game-cell">
-                <div class="cell"></div>
-                <div class="num">14</div>
-              </td>
-              <td class="game-cell">
-                <div class="cell"></div>
-                <div class="num">13</div>
-              </td>
-              <td class="game-cell">
-                <div class="cell"></div>
-                <div class="num">12</div>
-              </td>
-              <td class="game-cell">
-                <div class="cell"></div>
-                <div class="num">11</div>
-              </td>
-              <td class="game-cell">
-                <div class="cell"></div>
-                <div class="num">10</div>
-              </td>
-            </tr>
-          </table>
+          <div v-if="gameEnded()" class="game-control">
+            <div class="message">
+              <div class="text">
+                <p>{{winner_message}}</p>
+                <button v-on:click="reset()">Rejouer</button>
+              </div>
+            </div>
+          </div>
+          <div class="game">
+            <table>
+              <tr v-for="line in positions">
+                <td v-for="pos in line"
+                  v-bind:class="{'start-cell': pos==0, 'end-cell': pos==32, 'game-cell': pos > 0 && pos < 32}">
+                  <div v-if="pos >= 0 && pos <= 32" class="cell">
+                    <img v-if="pos_oie == pos" src="images/module06/oie.png" alt="">
+                  </div>
+                  <div v-if="pos > 0 && pos <= 31" class="num">{{pos}}</div>
+                  <div v-if="pos == 33" class="de" v-on:click="clicked()">
+                    <div v-bind:class="first_dice"></div>
+                  </div>
+                  <div v-if="pos == 34" class="text-white fs-3">
+                    &lArr; Click
+                  </div>
+                </td>
+              </tr>
+            </table>
+            <div class="movements">
+              <ol>
+                <li v-for="movement in movements">{{movement}}</li>
+              </ol>
+            </div>
+          </div>
         </div>
       </section>
     </article>
@@ -379,6 +270,7 @@ else:
   <script src="resources/js/clipboard.min.js"></script>
   <script src="resources/js/pages.js"></script>
   <script src="resources/js/vue.min.js"></script>
+  <script src="resources/apps/module06.js"></script>
   <script>
     hljs.initHighlightingOnLoad();
 

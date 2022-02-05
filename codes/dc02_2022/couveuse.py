@@ -24,9 +24,25 @@ print("Nombre de poussins vifs :", np , "/", no)
 
 seq3 = ""
 for i in range(np):
-    tp = randint(0, 1)
+    tp = randint(0, 2)
     if tp == 0:
         seq3 = seq3 + "P"
-    else:
+    elif tp == 1:
         seq3 = seq3 + "C"
+    else:
+        seq3 = seq3 + "x"
 print(seq3)
+
+nbp = 0
+nbc = 0
+for i in range(np):
+    if seq3[i] == "P":
+        nbp = nbp + 1
+    elif seq3[i] == "C":
+        nbc = nbc + 1
+print("Nombre de poulettes :", nbp)
+print("Nombre de coquelets :", nbc)
+qte_viande = nbc * 1.8
+nb_oeufs = nbp * 365 * 3
+print("Les poulettes produiront", nb_oeufs, "œufs")
+print("Les coquelets produiront", qte_viande, "kg de viande")
