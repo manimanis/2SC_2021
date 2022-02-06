@@ -165,7 +165,7 @@ while not 1 &lt;= a &lt;= 10:
     a = int(input("Donner un entier ? "))
 print(a)</code></pre>
         <p>(2) Exploiter le code précédent pour écrire un programme qui permet de <strong>saisir deux entiers positifs a
-            et b avec 0 &lt; a &le; b &le; 100</strong>. Puis d'afficher la moyenne des deux nomrbes.</p>
+            et b avec 0 &lt; a &le; b &le; 100</strong>. Puis d'afficher la moyenne des deux nombres.</p>
         <div class="d-none d-print-block">
           <pre><code class="python">a = -1
 while not 0 &lt; a &lt;= 100:
@@ -213,13 +213,13 @@ else:
         <h4>Principe de jeu</h4>
         <p>Le jeu de l'oie est un jeu classique qui se joue à 2, 3 ou 4 joueurs.</p>
         <p>Chaque joueur, à son tour, lance un dé à six faces et avance son pion du nombre tiré.</p>
-        <p>Le gagnant est celui qui atteint la case d'arrivée (case 32).</p>
+        <p>Le gagnant est celui qui atteint la case d'arrivée (case 63).</p>
         <p>On désire implémenter une version simplifiée, sans pièges, de ce jeu où un joueur humain joue tout seul.
-          <strong>La case d'arrivée est la case 31.</strong>
+          <strong>La case d'arrivée est la case 32.</strong>
         </p>
         <p><strong>Remarque :</strong> Si la nouvelle position du joueur dépasse la case finale il recule au lieu
           d'avancer.</p>
-        <p><strong>Exemple :</strong> Je suis dans la position 27 et j’obtiens 6, je recule à la position 21.</p>
+        <p><strong>Exemple :</strong> Je suis dans la position 27 et j'obtiens 6, je recule à la position 21.</p>
 
         <div id="jeu-oie">
           <div v-if="gameEnded()" class="game-control">
@@ -238,11 +238,10 @@ else:
                   <div v-if="pos >= 0 && pos <= 32" class="cell">
                     <img v-if="pos_oie == pos" src="images/module06/oie.png" alt="">
                   </div>
-                  <div v-if="pos > 0 && pos <= 31" class="num">{{pos}}</div>
                   <div v-if="pos == 33" class="de" v-on:click="clicked()">
                     <div v-bind:class="first_dice"></div>
                   </div>
-                  <div v-if="pos == 34" class="text-white fs-3">
+                  <div v-if="pos == 34" class="text-drak fs-3">
                     &lArr; Click
                   </div>
                 </td>
@@ -255,6 +254,38 @@ else:
             </div>
           </div>
         </div>
+
+        <h4>Code départ</h4>
+        <pre><code class="python">from random import randint
+
+case_finale = 32 # 1. ?
+pos_j = 0        # 2. ?
+gagne = False    # 3. ?
+nbre_tours = 0   # 4. ?
+
+# 4. ?
+nbre_tours = nbre_tours + 1
+# 5. ?
+de = randint(1, 6)
+
+# 6. ?
+nouv_pos = pos_j + de
+# 7. ?
+action = "Av"
+
+# 8. ?
+print(f"Tour {nbre_tours:2} - Dé : {de} - {action} {pos_j:2} → {nouv_pos:2}")
+
+# 9. ?
+pos_j = nouv_pos
+# 10. ?
+gagne = pos_j == case_finale</code></pre>
+        <p>Travail demandé</p>
+        <ul>
+          <li>Copier/Coller le code précédent.</li>
+          <li>Commenter ce code pour expliquer la fonction de chaque partie du code.</li>
+          <li>Est-ce que le jeu est complet ?</li>
+        </ul>
       </section>
     </article>
   </main>

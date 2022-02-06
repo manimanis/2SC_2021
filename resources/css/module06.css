@@ -183,42 +183,26 @@
   width: 700px;
   border-collapse: separate;
   border-spacing: 4px;
+  background: transparent url(../../images/module06/jeu-oie-piste.png);
 }
 
 #jeu-oie table td {
   width: calc(100% / 7);
   text-align: center;
+  vertical-align: middle;
 }
 
 #jeu-oie table td.game-cell {
-  border: #000 solid 3px;
+  border: transparent solid 3px;
   border-radius: 10px;
 }
 
 #jeu-oie .cell {
-  height: 100px;
+  height: 80px;
 }
 
 #jeu-oie .start-cell .cell {
   position: relative;
-}
-
-#jeu-oie .start-cell .cell::after,
-#jeu-oie .end-cell .cell::after {
-  content: "Départ";
-  display: block;
-  position: absolute;
-  text-align: center;
-  width: 100px;
-  font-weight: 100;
-  color: #fff;
-  background: #000;
-  padding: 5px 0;
-  border-radius: 10px;
-}
-
-#jeu-oie .end-cell .cell::after {
-  content: "Arrivée";
 }
 
 #jeu-oie .num {
