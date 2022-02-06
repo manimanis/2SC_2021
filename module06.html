@@ -43,28 +43,28 @@
           <li>Si la tortue a avancé de six cases elle gagne, sinon on rejoue une autre fois.</li>
         </ul>
         <div class="row">
-          <div class="col-sm-4">
+          <div class="col-4">
             <figure>
-              <img src="images/module06/lievre.jpg" alt="Le lièvre">
+              <img src="images/module06/lievre.jpg" alt="Le lièvre" class="h3cm">
               <figcaption>Lièvre</figcaption>
             </figure>
           </div>
-          <div class="col-sm-4">
+          <div class="col-4">
             <figure>
-              <img src="images/module06/tortue.jpg" alt="La tortue">
+              <img src="images/module06/tortue.jpg" alt="La tortue" class="h3cm">
               <figcaption>Tortue</figcaption>
             </figure>
           </div>
-          <div class="col-sm-4">
+          <div class="col-4">
             <figure>
-              <img src="images/module06/de.jpg" alt="Un dé">
+              <img src="images/module06/de.jpg" alt="Un dé" class="h3cm">
               <figcaption>Dé</figcaption>
             </figure>
           </div>
         </div>
 
         <h4>Simulation</h4>
-        <div id="turtle_rabbit_game">
+        <div id="turtle_rabbit_game" class="d-print-none">
           <div class="chemin">
             <div class="case-depart" v-bind:class="{'lievre': rabbit_pos === 0}"></div>
             <div class="case" v-bind:class="{'lievre': rabbit_pos === 1}"></div>
@@ -110,6 +110,13 @@
           </table>
         </div>
 
+        <div class="d-none d-print-block">
+          <figure>
+            <img src="images/module06/simulation-jeu.png" alt="Simulation jeu lièvre et tortue" class="h7cm">
+            <figcaption>Simulation du jeu lièvre et tortue</figcaption>
+          </figure>
+        </div>
+
         <h4>Travail demandé</h4>
         <p>On demande de :</p>
         <ol>
@@ -133,16 +140,14 @@
           </li>
         </ol>
 
+        <h4 class="p-break">Code Python</h4>
         <pre><code class="python">from random import randint
-
 # (1) Placer les joueurs en position de départ
 pos_lievre = 0
 pos_tortue = 0
-
 # (2) Lancer un dé
 de = randint(1, 6)
 print("Dé =", de)
-
 # (3) Déplacer les joueurs
 if de != 6:
     pos_tortue = pos_tortue + 1
@@ -158,7 +163,7 @@ else:
         <p>(1) Tester le code suivant pour les valeurs suivantes de a : -2, 11, 5, 1, 10, 9, 29. Quelles sont les
           valeurs
           acceptées ?</p>
-        <p class="d-none d-print-block text-danger fw-bold">5, 1, 10, 9 sont acceptées car elles sont comprise dans
+        <p class="d-none d-print-block text-danger fw-bold">5, 1, 10, 9 sont acceptées car elles sont comprises dans
           l'intervalle [1, 10].</p>
         <pre><code class="python">a = 0
 while not 1 &lt;= a &lt;= 10:
@@ -179,16 +184,13 @@ print((a + b) / 2)</code></pre>
           atteint la case d'arrivée (position 6) ?</p>
         <div class="d-none d-print-block">
           <pre><code class="python">from random import randint
-
 # (1) Placer les joueurs en position de départ
 pos_lievre = 0
 pos_tortue = 0
-
 while pos_lievre != 6 and pos_tortue != 6:
     # (2) Lancer un dé
     de = randint(1, 6)
     print("Dé =", de)
-
     # (3) Déplacer les joueurs
     if de != 6:
         pos_tortue = pos_tortue + 1
@@ -196,10 +198,9 @@ while pos_lievre != 6 and pos_tortue != 6:
     else:
         pos_lievre = 6
         print("Le lièvre avance à la case", pos_lievre)
-
-print("Le lièvre est en poition", pos_lievre)
-print("La tortue est en poition", pos_tortue)
-
+print("Le lièvre est en position", pos_lievre)
+print("La tortue est en position", pos_tortue)
+# (4) Afficher le gagnant
 if pos_lievre == 6:
     print("Le lièvre a gagné.")
 else:
@@ -221,7 +222,7 @@ else:
           d'avancer.</p>
         <p><strong>Exemple :</strong> Je suis dans la position 27 et j'obtiens 6, je recule à la position 21.</p>
 
-        <div id="jeu-oie">
+        <div id="jeu-oie" class="d-print-none">
           <div v-if="gameEnded()" class="game-control">
             <div class="message">
               <div class="text">
@@ -255,37 +256,81 @@ else:
           </div>
         </div>
 
-        <h4>Code départ</h4>
-        <pre><code class="python">from random import randint
+        <div class="d-none d-print-block">
+          <figure>
+            <img src="images/module06/simulation-jeu-oie.png" alt="Simulation du jeu de l'oie" class="h9cm">
+            <figcaption>Simulation du jeu de l'oie</figcaption>
+          </figure>
+        </div>
 
+        <h4>Code départ</h4>
+        <pre class="d-print-none"><code class="python">from random import randint
 case_finale = 32 # 1. ?
 pos_j = 0        # 2. ?
 gagne = False    # 3. ?
 nbre_tours = 0   # 4. ?
-
 # 4. ?
 nbre_tours = nbre_tours + 1
 # 5. ?
 de = randint(1, 6)
-
 # 6. ?
 nouv_pos = pos_j + de
 # 7. ?
 action = "Av"
-
 # 8. ?
 print(f"Tour {nbre_tours:2} - Dé : {de} - {action} {pos_j:2} → {nouv_pos:2}")
-
 # 9. ?
 pos_j = nouv_pos
 # 10. ?
 gagne = pos_j == case_finale</code></pre>
-        <p>Travail demandé</p>
+        <pre class="d-none d-print-block"><code class="python">from random import randint
+case_finale = 32 # 1. n° de la case d'arrivée
+pos_j = 0        # 2. position du joueur
+gagne = False    # 3. gagne = True lorsqu'il atteint la case d'arrivée
+nbre_tours = 0   # 4. nombre de lancées du dé
+# 4. incrémenter le nombre de lancées de dé
+nbre_tours = nbre_tours + 1
+de = randint(1, 6)     # 5. lancée du dé
+nouv_pos = pos_j + de  # 6. nouvelle position du joueur s'il avance de (de) pas
+action = "Av"          # 7. "Av" : le joueur avance - "Re" : il recule
+# 8. Afficher la nouvelle position du joueur
+print(f"Tour {nbre_tours:2} - Dé : {de} - {action} {pos_j:2} → {nouv_pos:2}")
+pos_j = nouv_pos       # 9. Après son avancement le joueur atteint la position (nouv_pos)
+# 10. gagne = True lorsqu'il atteint la case d'arrivée, sinon False
+gagne = pos_j == case_finale</code></pre>
+        <p><strong>Travail demandé</strong></p>
         <ul>
           <li>Copier/Coller le code précédent.</li>
           <li>Commenter ce code pour expliquer la fonction de chaque partie du code.</li>
-          <li>Est-ce que le jeu est complet ?</li>
+          <li>Est-ce que le jeu est complet ?<p class="d-none d-print-block text-danger fw-bold">Le jeu est
+              incomplet.<br>
+              Le joueur effectue uniquement une seule lancée de dé. Il est impossible qu'il atteigne la position
+              d'arrivée avec une seule lancée.</p>
+          </li>
+          <li>Quelles sont les étapes qui devront être répétées ? Combien de fois ?<p
+              class="d-none d-print-block text-danger fw-bold">Les <u>étapes 4 à 10</u> devront être répétées <u>tant
+                que le joueur n'a pas encore gagné</u>.</p>
+          </li>
+          <li>Compléter le code pour que le joueur continue de jouer jusqu'à ce qu'il gagne.</li>
         </ul>
+        <pre class="d-none d-print-block"><code class="python">from random import randint
+
+case_finale = 32
+pos_j = 0
+gagne = False
+nbre_tours = 0
+while not gagne:
+    nbre_tours = nbre_tours + 1
+    de = randint(1, 6)
+    if pos_j + de &lt;= case_finale:
+        nouv_pos = pos_j + de
+        action = "Av"
+    else:
+        nouv_pos = pos_j - de
+        action = "Re"
+    print(f"Tour {nbre_tours:2} - Dé : {de} - {action} {pos_j:2} → {nouv_pos:2}")
+    pos_j = nouv_pos
+    gagne = pos_j == case_finale</code></pre>
       </section>
     </article>
   </main>
