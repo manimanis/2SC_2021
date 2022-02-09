@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="resources/css/bootstrap.min.css">
+  <link rel="stylesheet" href="resources/css/default.css">
+  <link rel="stylesheet" href="resources/css/style.css">
+  <link rel="stylesheet" href="resources/css/module06.css">
+  <title>Algorithmes Séance 5</title>
+  <style>
+    .de1,
+    .de2,
+    .de3,
+    .de4,
+    .de5,
+    .de6 {
+      height: 40px;
+      width: 40px;
+    }
+
+    .de {
+      width: 50px;
+      height: 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <aside>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#aside_navbar"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span> Menu
+      </button>
+      <div class="collapse navbar-collapse" id="aside_navbar"></div>
+    </nav>
+  </aside>
+
+  <main class="container my-3">
+    <h1>Algorithmes Séance 5</h1>
+
+    <article>
+      <h2>Structures Itéartives à Condition</h2>
+
+      <section>
+        <h3>Chiffres aléatoires</h3>
+
+        <p><strong>(1) Ecrire un algorithme qui génère une séquence de 5 chiffres aléatoires.</strong></p>
+
+        <div class="row">
+          <div class="col-4">
+            <pre><code class="nohighlight shell python" data-text="Exemple 1">14828</code></pre>
+          </div>
+          <div class="col-4">
+            <pre><code class="nohighlight shell python" data-text="Exemple 2">02989</code></pre>
+          </div>
+          <div class="col-4">
+            <pre><code class="nohighlight shell python" data-text="Exemple 3">50163</code></pre>
+          </div>
+        </div>
+
+        <div class="d-none d-print-block">
+          <pre><code class="algorithm">Algorithme Sequence_Aléatoire_1
+Début
+  seq &larr; ""
+  Pour i de 0 à 4 faire
+    seq &larr; seq + ConvCh(aléa(0, 9))
+  Fin Pour 
+  Ecrire(seq)
+Fin</code></pre>
+        </div>
+
+        <p><strong>(2) Ecrire un algorithme qui génère une séquence de chiffres aléatoires qui se termine deux chiffres
+            égaux.</strong></p>
+
+        <ul>
+          <li>Est-ce qu'on peut utiliser la structure <strong>pour</strong> de l'algorithme précédent ?</li>
+          <li>Quelle est la structure la plus appropriée ?</li>
+        </ul>
+
+        <div class="row">
+          <div class="col-4">
+            <pre><code class="nohighlight shell python" data-text="Exemple 1">4932966</code></pre>
+          </div>
+          <div class="col-4">
+            <pre><code class="nohighlight shell python" data-text="Exemple 2">77</code></pre>
+          </div>
+          <div class="col-4">
+            <pre><code class="nohighlight shell python" data-text="Exemple 3">92645656207383713411</code></pre>
+          </div>
+        </div>
+
+        <div class="d-none d-print-block">
+          <div class="row">
+            <div class="col-6">
+              <pre><code class="algorithm">Algorithme Sequence_Aléatoire_2
+Début
+ seq &larr; ""
+ Répéter
+   seq &larr; seq + ConvCh(aléa(0, 9))
+ Jusqu'à (Long(seq) >= 2) et 
+         (seq[Long(seq)-1] = seq[Long(seq)-2])
+ Ecrire(seq)
+Fin</code></pre>
+            </div>
+            <div class="col-6">
+              <pre><code class="algorithm">Algorithme Sequence_Aléatoire_3
+Début
+ seq &larr; ""
+ TantQue (Long(seq) &lt; 2) ou 
+         (seq[Long(seq)-1]&ne;seq[Long(seq)-2]) Faire
+   seq &larr; seq + ConvCh(aléa(0, 9))
+ Fin TantQue
+ Ecrire(seq)
+Fin</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <p><strong>(3) Ecrire un algorithme qui génère une séquence aléatoire de 5 chiffres distincts (différents).
+            Utiliser deux méthodes.</strong></p>
+        <div class="row">
+          <div class="col-4">
+            <pre><code class="nohighlight shell python" data-text="Exemple 1">71980</code></pre>
+          </div>
+          <div class="col-4">
+            <pre><code class="nohighlight shell python" data-text="Exemple 2">72891</code></pre>
+          </div>
+          <div class="col-4">
+            <pre><code class="nohighlight shell python" data-text="Exemple 3">65218</code></pre>
+          </div>
+        </div>
+
+        <div class="d-none d-print-block">
+          <div class="row">
+            <div class="col-6">
+              <pre><code class="algorithm">Algorithme Sequence_Aléatoire_4
+Début
+ seq &larr; ""
+ Pour i de 0 à 4 Faire
+   Répéter
+     car &larr; ConvCh(aléa(0, 9))
+   Jusqu'à (pos(car, seq) = -1)
+   seq &larr; seq + car
+ Fin pour 
+ Ecrire(seq)
+Fin</code></pre>
+            </div>
+            <div class="col-6">
+              <pre><code class="algorithm">Algorithme Sequence_Aléatoire_1
+Début
+ seq &larr; ""
+ Pour i de 0 à 4 Faire
+   existe &larr; Vrai
+   TantQue existe Faire
+      car &larr; ConvCh(aléa(0, 9))
+      existe &larr; pos(car, seq) &ne; -1
+   Fin TantQue
+   seq &larr; seq + car
+ Fin pour 
+ Ecrire(seq)
+Fin</code></pre>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>Puzzle Game</h3>
+
+        <div class="row">
+          <div class="col-9">
+            <p>Pour s'amuser un peu le petit abdou a inventé un jeu. Le jeu nécessite un puzzle à six pièces et un dé à
+              six faces.</p>
+            <p>Le but du jeu est de reconstituer le puzzle en suivant les règles en un minimum de coups.</p>
+            <p>Au début, le puzzle est démonté et le jeu se déroule comme suit :</p>
+            <ul>
+              <li>On lance le dé deux fois en notant sa valeur à chaque fois <code>de1</code> et <code>de2</code></li>
+              <li>On décide de :
+                <ul>
+                  <li>Monter une pièce du puzzle, si <code>de2 &gt; de1</code></li>
+                  <li>Monter deux pièces du puzzle, si <code>de2 = de1</code></li>
+                  <li>Démonter une pièce du puzzle, si <code>de2 &lt; de1</code></li>
+                </ul>
+              </li>
+              <li>Le jeu se termine lorsque le puzzle est reconstitué.</li>
+            </ul>
+          </div>
+          <div class="col-3">
+            <figure>
+              <img src="images/DS01-2TI-2021/puzzle_completed.png" alt="Puzzle Complet">
+              <figcaption>Puzzle Complet</figcaption>
+            </figure>
+
+            <figure>
+              <img src="images/DS01-2TI-2021/dice.jpg" alt="Dé à six faces">
+              <figcaption>Dé à six faces</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <p>Le tableau suivant indique l'état du puzzle avant et après le lancement du dé.</p>
+
+        <div class="row">
+          <div class="col-3 text-center border-bottom border-dark mb-1">
+            <p class="explication">Avant</p>
+          </div>
+          <div class="col-2 text-center border-bottom border-dark mb-1">
+            <p class="explication">de1 / de2</p>
+          </div>
+          <div class="col-3 text-center border-bottom border-dark mb-1">
+            <p class="explication">Après</p>
+          </div>
+          <div class="col-4 text-center border-bottom border-dark mb-1">
+            <p class="explication">Explication</p>
+          </div>
+
+          <div class="col-3 border-bottom border-dark mb-1">
+            <figure><img src="images/DS01-2TI-2021/puzzle_02.jpg" alt="Puzzle 2 pièces"></figure>
+          </div>
+          <div class="col-2 text-center border-bottom border-dark mb-1">
+            de1
+            <div class="de border">
+              <div class="de6"></div>
+            </div>
+            de2
+            <div class="de border">
+              <div class="de5"></div>
+            </div>
+          </div>
+          <div class="col-3 border-bottom border-dark mb-1">
+            <figure><img src="images/DS01-2TI-2021/puzzle_01.jpg" alt="Puzzle 1 pièce"></figure>
+
+          </div>
+          <div class="col-4 border-bottom border-dark mb-1">de2 &lt; de1<br>→ enlèver une pièce</div>
+
+          <div class="col-3 border-bottom border-dark mb-1">
+            <figure><img src="images/DS01-2TI-2021/puzzle_01.jpg" alt="Puzzle 1 pièce"></figure>
+          </div>
+          <div class="col-2 text-center border-bottom border-dark mb-1">
+            de1
+            <div class="de border">
+              <div class="de3"></div>
+            </div>
+            de2
+            <div class="de border">
+              <div class="de3"></div>
+            </div>
+          </div>
+          <div class="col-3 border-bottom border-dark mb-1">
+            <figure><img src="images/DS01-2TI-2021/puzzle_03.jpg" alt="Puzzle 3 pièces"></figure>
+
+          </div>
+          <div class="col-4 border-bottom border-dark mb-1">de2 = de1<br>→ ajouter deux pièces</div>
+
+          <div class="col-3 border-bottom border-dark mb-1">
+            <figure><img src="images/DS01-2TI-2021/puzzle_03.jpg" alt="Puzzle  pièces"></figure>
+          </div>
+          <div class="col-2 text-center border-bottom border-dark mb-1">
+            de1
+            <div class="de border">
+              <div class="de2"></div>
+            </div>
+            de2
+            <div class="de border">
+              <div class="de5"></div>
+            </div>
+          </div>
+          <div class="col-3 border-bottom border-dark mb-1">
+            <figure><img src="images/DS01-2TI-2021/puzzle_04.jpg" alt="Puzzle 4 pièces"></figure>
+          </div>
+          <div class="col-4 border-bottom border-dark mb-1">de2 &gt; de1<br>→ ajouter une pièce</div>
+        </div>
+
+        <h5 class="p-break">Travail demandé</h5>
+        <ol>
+          <li>Utiliser les briques suivantes pour compléter les étapes du programme, <strong>Utiliser uniquement la
+              lettre adéquate</strong> :
+            <ol type="A">
+              <li>Ajouter/Enlever des pièces au puzzle (variable <code>pieces</code>) en fonction de la valeur des dés
+                <code>de1</code> et <code>de2</code>
+              </li>
+              <li>Initialiser à zéro le nombre de pièces <code>pieces</code> du puzzle</li>
+              <li>Répéter les étapes 2, 3 et 4 jusqu'à <code>pieces = 6</code></li>
+              <li>Afficher le nombre actuel des pièces <code>pieces</code> du puzzle</li>
+              <li>Lancer le dé deux fois, noter la 1<sup>ère</sup> valeur dans <code>de1</code> et noter la
+                2<sup>ème</sup> valeur dans <code>de2</code></li>
+            </ol>
+            <table class="table table-bordered border-dark table-sm">
+              <tbody>
+                <tr>
+                  <th width="16.6%">Num. étape</th>
+                  <td width="16.6%">1</td>
+                  <td width="16.6%">2</td>
+                  <td width="16.6%">3</td>
+                  <td width="16.6%">4</td>
+                  <td width="16.6%">5</td>
+                </tr>
+                <tr>
+                  <th>Etape</th>
+                  <td>B</td>
+                  <td>
+                    <p class="pointille">&nbsp;</p>
+                  </td>
+                  <td>
+                    <p class="pointille">&nbsp;</p>
+                  </td>
+                  <td>
+                    <p class="pointille">&nbsp;</p>
+                  </td>
+                  <td>
+                    <p class="pointille">&nbsp;</p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+          <li>Ecrire l'algorithme de chaque étape.</li>
+        </ol>
+
+        <div class="d-none d-print-block">
+          <pre><code class="algorithm">Algorithme Puzzle_Game
+Début
+  pieces &larr; 0
+  Répéter
+    de1 &larr; aléa(1, 6)
+    de2 &larr; aléa(1, 6)
+    Ecrire("Dé 1 =", de1, "- Dé 2 =", de2)
+    Si de2 > de1 Alors
+      pieces &larr; pieces + 1
+    Sinon Si de1 > de2 et pieces - 1 &ge; 0 Alors
+      pieces &larr; pieces - 1
+    Sinon Si de1 = de2 et pieces + 2 &le; 6 Alors
+      pieces &larr; pieces + 2
+    Fin Si
+    Ecrire(pieces, "sont montées")
+  Jusqu'à pieces = 6
+Fin</code></pre>
+        </div>
+      </section>
+
+      <section>
+        <h3>Jeu d'alumettes</h3>
+
+        <p>Le jeu d'allumettes se joue entre deux joueurs :</p>
+        <ul>
+          <li>On saisit le nombre d'allumettes <code>n</code> (un entier impair entre 15 et 35).</li>
+          <li>On saisit les pseudos des deux joueurs <code>jo[0]</code> et <code>jo[1]</code>.</li>
+          <li>Chaque joueur prend de 1 à 3 alumettes. Celui qui prend la dernière perd.</li>
+        </ul>
+
+        <figure>
+          <img src="algo/images/algo05/jeu_alumettes.jpg" alt="Jeu d'allumettes" class="h3cm">
+          <figcaption>Jeu d'allumettes</figcaption>
+        </figure>
+
+        <p class="p-break">On demande d'écrire un algorithme qui simule ce jeu.</p>
+
+        <div class="d-none d-print-block">
+          <pre><code class="algorithm">Algorithme allumettes
+Début
+  Répéter
+    Ecrire("Nombre d'allumettes [15, 35] ? "); Lire(n)
+  Jusqu'à (15 &le; n &le; 35)
+  Pour i de 0 à 1 Faire
+    Répéter
+      Ecrire("Pseudo joueur", i+1, "? ");Lire(jo[i])
+    Jusqu'à jo[i] &ne; ""
+  Fin Pour
+  gagne &larr; -1
+  nj &larr; 0
+  nma &larr; 3
+  TantQue gagne = -1 Faire
+    Ecrire(jo[nj], "joue")
+    si nma &gt; n alors nma &larr; n fin si
+    Répéter
+      Ecrire("Nbre d'allumettes [1,", nma,"] ? "); Lire(nba)
+    Jusqu'à 1 &le; nba &le; nma
+    n = n - nba
+    Ecrire("Nombre d'allumettes restantes :", n)
+    nj &larr; (nj + 1) mod 2
+    Si n = 0 Alors
+      gagne &larr; nj
+    Fin Si
+  Fin TantQue
+  Ecrire(jo[gagne], "gagne la partie.")
+Fin</code></pre>
+        </div>
+      </section>
+    </article>
+  </main>
+  <footer class="d-print-none bg-dark text-white p-2">
+    <div class="text-center">Page créée avec ♥ par Mohamed Anis MANI</div>
+    <div class="text-center small">Année scolaire : 2021/2022</div>
+  </footer>
+
+  <script src="resources/js/jquery.min.js"></script>
+  <script src="resources/js/bootstrap.bundle.min.js"></script>
+  <script src="resources/js/highlight.pack.js"></script>
+  <script src="resources/js/hljs.algorithm.js"></script>
+  <script src="resources/js/clipboard.min.js"></script>
+  <script src="resources/js/pages.js"></script>
+  <script src="resources/js/vue.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+
+    document.querySelectorAll('.language-algorithm,.language-python')
+      .forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'bd-clipboard d-print-none';
+        const btn = document.createElement('button');
+        btn.className = 'btn-clipboard';
+        btn.textContent = "📋";
+        btn.title = "Copier";
+        div.appendChild(btn);
+        item.parentElement.insertBefore(div, item);
+      });
+    new ClipboardJS('.btn-clipboard', {
+      target: (trigger) => {
+        return trigger.parentElement.nextElementSibling;
+      }
+    });
+  </script>
+</body>
+
+</html>
