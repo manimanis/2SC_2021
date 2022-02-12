@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QCM Module n°4</title>
+  <link rel="stylesheet" href="resources/css/bootstrap.min.css">
+  <link rel="stylesheet" href="resources/css/default.css">
+  <link rel="stylesheet" href="resources/css/style.css">
+</head>
+
+<body>
+  <aside>
+    <nav class="navbar navbar-expand-xl navbar-dark bg-dark">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#aside_navbar"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span> Menu
+      </button>
+      <div class="collapse navbar-collapse" id="aside_navbar"></div>
+    </nav>
+  </aside>
+  <main class="container my-4">
+    <h1>QCM Module n°4 - Structures conditionnelles</h1>
+
+    <article>
+      <h2>QCM</h2>
+
+      <div id="qcm">
+        <div id="enonce-qcm" class="d-none" data-titre="Structures itératives" data-classe="2TI"
+          data-description="QCM Structures itératives">
+          <div class="question">
+            <div class="enonce">
+              <p><strong>Qu'affiche le programme suivant (le "/" indique un retour à la ligne)</strong></p>
+              <pre><code class="python">for k in range(3):
+    print(k)</code></pre>
+            </div>
+            <div class="propositions" data-issingle="true">
+              <div class="proposition">0 / 1 / 2</div>
+              <div class="proposition">0 / 3 / 6</div>
+              <div class="proposition">1 / 2 / 3</div>
+              <div class="proposition">0 / 1 / 2 / 3</div>
+            </div>
+          </div>
+          <div class="question">
+            <div class="enonce">
+              <p><strong>Qu'affiche le programme suivant (le "/" indique un retour à la ligne)</strong></p>
+              <pre><code class="python">for k in range(1, 7, 2):
+    print(k)</code></pre>
+            </div>
+            <div class="propositions" data-issingle="true">
+              <div class="proposition">1 / 3 / 5</div>
+              <div class="proposition">1 / 3 / 5 / 7</div>
+              <div class="proposition">1 / 2 / 3 / 4 / 5 / 6</div>
+              <div class="proposition">1 / 2 / 3 / 4 / 5 / 6 / 1 / 2 / 3 / 4 / 5 / 6</div>
+            </div>
+          </div>
+          <div class="question">
+            <div class="enonce">
+              <p><strong>Qu'affiche le programme suivant (le "/" indique un retour à la ligne)</strong></p>
+              <pre><code class="python">for k in range(1, -8, -2):
+    print(k)</code></pre>
+            </div>
+            <div class="propositions" data-issingle="true">
+              <div class="proposition">-1 / -3 / -5 / -7</div>
+              <div class="proposition">-1 / -3 / -5 / -7 / -8</div>
+              <div class="proposition">1 / -1 / -3 / -5 / -7</div>
+              <div class="proposition">1 / -1 / -3 / -5 / -7 / -9</div>
+            </div>
+          </div>
+          <div class="question">
+            <div class="enonce">
+              <p><strong>Qu'affiche le programme suivant (le "/" indique un retour à la ligne)</strong></p>
+              <pre><code class="python">ch = "ab cd"
+for k in range(len(ch)):
+    print(k)</code></pre>
+            </div>
+            <div class="propositions" data-issingle="true">
+              <div class="proposition">ab / cd</div>
+              <div class="proposition">ab cd</div>
+              <div class="proposition">a / b / / c / d</div>
+              <div class="proposition">a / b / c / d</div>
+            </div>
+          </div>
+          <div class="question">
+            <div class="enonce">
+              <p><strong>Soit t un tableau qui contient les éléments : 1, 4, 3, 8, 2</strong></p>
+              <p><strong>On exécute le programme suivant :</strong></p>
+              <pre><code class="python">s = 0
+for i in range(5):
+    s += t[i]</code></pre>
+              <p><strong>Quelle est la valeur de <code>s</code> à la fin de l'exécution ?</strong></p>
+            </div>
+            <div class="propositions" data-issingle="true">
+              <div class="proposition">1</div>
+              <div class="proposition">18</div>
+              <div class="proposition">8</div>
+              <div class="proposition">36</div>
+            </div>
+          </div>
+          <div class="question">
+            <div class="enonce">
+              <p><strong>Soit t un tableau qui contient les éléments : 1, 2, 3, 4, 1, 2, 3, 4, 0, 2</strong></p>
+              <p><strong>On exécute le programme suivant :</strong></p>
+              <pre><code class="python">c = 0
+for i in range(10):
+    if t[i] == t[1]:
+        c += 1</code></pre>
+              <p><strong>Quelle est la valeur de <code>c</code> à la fin de l'exécution ?</strong></p>
+            </div>
+            <div class="propositions" data-issingle="true">
+              <div class="proposition">0</div>
+              <div class="proposition">2</div>
+              <div class="proposition">3</div>
+              <div class="proposition">10</div>
+            </div>
+          </div>
+          <div class="question">
+            <div class="enonce">
+              <p><strong>Que contient la variable <code>a</code> sachant que :</strong></p>
+              <pre><code class="python">a = 0
+while a &lt;= 14:
+    a = a + 4</code></pre>
+            </div>
+            <div class="propositions" data-issingle="true">
+              <div class="proposition">1</div>
+              <div class="proposition">14</div>
+              <div class="proposition">15</div>
+              <div class="proposition">17</div>
+            </div>
+          </div>
+          <div class="question">
+            <div class="enonce">
+              <p><strong>Que contient la variable <code>a</code> sachant que :</strong></p>
+              <pre><code class="python">a = 5
+while a > 13:
+    a = a + 3</code></pre>
+            </div>
+            <div class="propositions" data-issingle="true">
+              <div class="proposition">1</div>
+              <div class="proposition">5</div>
+              <div class="proposition">13</div>
+              <div class="proposition">15</div>
+            </div>
+          </div>
+          <div class="question">
+            <div class="enonce">
+              <p><strong>Que contient la variable <code>s</code> sachant que :</strong></p>
+              <pre><code class="python">s = 0
+n = 0
+while n >= 0:
+    s = s + n
+    n = n - 1</code></pre>
+            </div>
+            <div class="propositions" data-issingle="true">
+              <div class="proposition">0</div>
+              <div class="proposition">6</div>
+              <div class="proposition">15</div>
+              <div class="proposition">21</div>
+            </div>
+          </div>
+          <div class="question">
+            <div class="enonce">
+              <p><strong>Quelle est la valeur du couple <code>(s, i)</code> à la fin de l'exécution du programme
+                  suivant :</strong></p>
+              <pre><code class="python">s = 0
+i = 1
+while i &lt; 5:
+    s = s + i
+    i = i + 1</code></pre>
+            </div>
+            <div class="propositions" data-issingle="true">
+              <div class="proposition">(4, 5)</div>
+              <div class="proposition">(10, 4)</div>
+              <div class="proposition">(10, 5)</div>
+              <div class="proposition">(15, 5)</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-2 mb-4">
+          <label for="nom_prenom">Nom & Prénom</label>
+          <input id="nom_prenom" type="text" class="form-control" placeholder="Nom & Prénom" v-model="nom_prenom">
+          <div v-if="nom_prenom.length == 0" class="fst-italic text-danger"><small>Vous devez indiquer votre nom &
+              prénom pour pouvoir soumettre vos réponses.</small></div>
+        </div>
+
+        <div class="card">
+          <div class="card-body">
+            <h3 class="card-title">Question n°{{num_question+1}} / {{nbr_questions}}</h3>
+            <div class="question" v-for="question, idx in questions" v-if="num_question == idx">
+              <div class="enonce" v-html="question.enonce"></div>
+              <div class="propositions">
+                <div class="proposition" v-for="proposition, idxprop in question.propositions">
+                  <label class="d-flex">
+                    <div><input v-bind:type="(question.is_single) ? 'radio' : 'checkbox'"
+                        v-bind:value="(idx+1) + String.fromCharCode(idxprop + 65)" v-model="rep_array[idx]"></div>
+                    <div class="mx-2" v-html="proposition"></div>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <small class="fst-italic fw-bold">Vous avez répondu à {{nbr_questions - nbr_questions_vides}} question(s)
+            parmi
+            {{nbr_questions}}.</small>
+          <progress v-bind:value="nbr_questions - nbr_questions_vides" v-bind:max="nbr_questions" style="width: 200px;"
+            class="mx-2"></progress>
+          <div v-if="nbr_questions_vides > 0" class="text-center fst-italic text-danger"><small>Répondre à toutes les
+              questions.</small></div>
+          <div class="d-flex justify-content-between">
+            <input type="button" value="Précédent" class="btn btn-primary" style="width: 130px;"
+              v-bind:disabled="num_question == 0" v-on:click="prevQuestion()">
+            <input type="button" value="Soumettre" class="btn btn-primary" style="width: 130px;"
+              v-bind:disabled="nbr_questions_vides > 0" v-on:click="submitAnswers()">
+            <input type="button" value="Suivant" class="btn btn-primary" style="width: 130px;"
+              v-bind:disabled="num_question == nbr_questions - 1" v-on:click="nextQuestion()">
+          </div>
+          <div class="m-3">
+            <div v-if="is_sent" class="text-center">
+              <span v-if="errors.length == 0" class="badge bg-success text-center">{{error_message}}</span>
+              <span v-if="errors.length > 0" class="badge bg-danger text-center">{{error_message}}</span>
+            </div>
+            <ul v-if="is_sent && errors.length > 0" class="text-danger">
+              <li v-for="error in errors">{{error}}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </article>
+
+  </main>
+  <footer class="d-print-none bg-dark text-white p-2">
+    <div class="text-center">Page créée avec ♥ par Mohamed Anis MANI</div>
+    <div class="text-center small">Année scolaire : 2021/2022</div>
+  </footer>
+  <script src="resources/js/jquery.min.js"></script>
+  <script src="resources/js/bootstrap.min.js"></script>
+  <script src="resources/js/highlight.pack.js"></script>
+  <script src="resources/js/hljs.algorithm.js"></script>
+  <script src="resources/js/clipboard.min.js"></script>
+  <script src="resources/js/pages.js"></script>
+  <script src="resources/js/savecontent.js"></script>
+  <script src="resources/js/vue.min.js"></script>
+  <script>
+    // hljs.initHighlightingOnLoad();
+    document.querySelectorAll('.language-algorithm,.language-python')
+      .forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'bd-clipboard d-print-none';
+        const btn = document.createElement('button');
+        btn.className = 'btn-clipboard';
+        btn.textContent = "📋";
+        btn.title = "Copier";
+        div.appendChild(btn);
+        item.parentElement.insertBefore(div, item);
+      });
+    new ClipboardJS('.btn-clipboard', {
+      target: (trigger) => {
+        return trigger.parentElement.nextElementSibling;
+      }
+    });
+    $(() => {
+      const localStore = new PagePersistance();
+      const serverStore = new ServerSaves('QCM-Module1');
+      const userInputSaver = new UserInputSaver(
+        document.querySelector('.user-input-saver'),
+        localStore,
+        serverStore);
+    });
+  </script>
+  <script src="resources/apps/qcm06.js"></script>
+</body>
+
+</html>
