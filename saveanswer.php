@@ -21,7 +21,7 @@ q10	"10B"
 REMOTE_ADDR	"127.0.0.1"
 AT_TIME	"2022-02-12 17:55:55"
 */
-$fields = ["nom_prenom", "questions_count", "classe", "titre", "description", "REMOTE_ADDR", "AT_TIME"];
+$fields = ["nom_prenom", "questions_count", "qcm_id", "REMOTE_ADDR", "AT_TIME"];
 $errors = [];
 foreach ($fields as $field) {
     if (!isset($_POST[$field])) {
@@ -47,13 +47,10 @@ if (count($errors)) {
     exit();
 }
 
-$stmt = $dbh->prepare("INSERT INTO answers (classe, titre, `description`, `nbr_questions`, nom_prenom, date_rep, ip_addr, reponse) 
-                       VALUES (:classe,	:titre, :description, :nbr_questions, :nom_prenom, :date_rep, :ip_addr, :reponse)");
+$stmt = $dbh->prepare("INSERT INTO answers (qcm_id, nom_prenom, date_rep, ip_addr, reponse) 
+                       VALUES (:qcm_id, :nom_prenom, :date_rep, :ip_addr, :reponse)");
 $data = [
-    ':classe' => $_POST['classe'],
-    ':titre' => $_POST['titre'],
-    ':description'=> $_POST['description'],
-    ':nbr_questions'=> $_POST['questions_count'],
+    ':qcm_id'=> $_POST['qcm_id'],
     ':nom_prenom' => $_POST['nom_prenom'],
     ':date_rep' => $_POST['AT_TIME'],
     ':ip_addr' => $_POST['REMOTE_ADDR'],

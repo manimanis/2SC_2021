@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
       num_question: 0,
       nbr_questions: questions.length,
       questions: questions,
+      id: enonce_qcm.dataset['id'],
       titre: enonce_qcm.dataset['titre'],
       classe: enonce_qcm.dataset['classe'],
       description: enonce_qcm.dataset['description'],
@@ -28,9 +29,9 @@ document.addEventListener("DOMContentLoaded", () => {
       rep_array: questions
         .map((question, idx) => {
           if (question.is_single) {
-            return ""; //`${idx+1}${String.fromCharCode(65+Math.floor(Math.random() * 4))}`; 
+            return ""; // `${idx+1}${String.fromCharCode(65+Math.floor(Math.random() * 4))}`; 
           }
-          return []; //[`${idx+1}${String.fromCharCode(65+Math.floor(Math.random() * 4))}`];
+          return []; // [`${idx+1}${String.fromCharCode(65+Math.floor(Math.random() * 4))}`];
         }),
       nom_prenom: "", // "Mohamed Anis MANI",
       errors: [],
@@ -38,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
       is_sent: false
     },
     computed: {
-      nbr_questions_vides: function() {
+      nbr_questions_vides: function () {
         this._nbr_questions_vides = 0;
         for (let rep of this.rep_array) {
           if (rep.length == 0) {
@@ -49,20 +50,20 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     },
     methods: {
-      nextQuestion: function() {
+      nextQuestion: function () {
         if (this.num_question < this.nbr_questions - 1) {
           this.gotoQuestion(this.num_question + 1);
         }
       },
-      prevQuestion: function() {
+      prevQuestion: function () {
         if (this.num_question > 0) {
           this.gotoQuestion(this.num_question - 1);
         }
       },
-      gotoQuestion: function(num_question) {
+      gotoQuestion: function (num_question) {
         this.num_question = num_question;
       },
-      resetForm: function() {
+      resetForm: function () {
         this.rep_array = questions
           .map((question, idx) => {
             if (question.is_single) {
@@ -70,9 +71,9 @@ document.addEventListener("DOMContentLoaded", () => {
             }
             return [];
           });
-          this.nom_prenom = "";
+        this.nom_prenom = "";
       },
-      submitAnswers: function() {
+      submitAnswers: function () {
         if (this.nbr_questions_vides > 0) {
           alert("Soumission impossible vous devez répondre à toutes les questions !");
           return;
@@ -84,23 +85,21 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         const data = new FormData();
-        data.append("titre", this.titre);
+        data.append("qcm_id", this.id);
         data.append("nom_prenom", this.nom_prenom);
         data.append("questions_count", this.rep_array.length);
-        data.append("classe", this.classe);
-        data.append("description", this.description);
         this.rep_array.forEach((rep, idx) => {
           if (Array.isArray(rep)) {
-            data.append(`q${idx+1}`, rep.join(""));
+            data.append(`q${idx + 1}`, rep.join(""));
           } else {
-            data.append(`q${idx+1}`, rep);
+            data.append(`q${idx + 1}`, rep);
           }
         });
         this.errors = [];
         fetch("saveanswer.php", {
-            method: 'post',
-            body: data,
-          })
+          method: 'post',
+          body: data,
+        })
           .then(response => response.json())
           .then(data => {
             this.is_sent = true;
@@ -115,7 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
           .catch(err => {
             this.is_sent = true;
             this.errors = [err];
-            this.error_message = "Votre réponse n'a pas été envoyée.";
+            this.error_message = "Erreur : votre réponse n'a pas été envoyée.";
           });
       }
     }
