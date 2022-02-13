@@ -1,5 +1,6 @@
 <?php
 $user = "root";
-$pass = "mysqlroot"; // "";
+$pass = "";
+// $pass = "mysqlroot";
 $base = "qcm_answers";
 $host = "127.0.0.1";
