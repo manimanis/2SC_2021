@@ -1,0 +1,73 @@
+#anniv {
+  width: 600px;
+  margin: 0 auto;
+  border: 5px darkgrey solid;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+#anniv .params {
+  display: flex;
+  padding-bottom: 20px;
+}
+
+#anniv .nb-bonbons, #anniv .nb-amis, #anniv .bonbons-dispo {
+  font-size: 70px;
+  width: 50%;
+  position: relative;
+  text-align: center;
+}
+
+#anniv .bonbons-dispo {
+  width: 100%;
+}
+
+#anniv .nb-bonbons::after, #anniv .nb-amis::after, #anniv .bonbons-dispo::after {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  content: 'Nombre de Bonbons';
+  display: block;
+  font-size: 13pt;
+  bottom: -16px;
+}
+
+#anniv .nb-amis::after {
+  content: "Nombre d'amis";
+}
+
+#anniv .bonbons-dispo::after {
+  content: "Bonbons à distribuer";
+}
+
+#anniv .range input[type=range] {
+  display: inline-block;
+  box-sizing: border-box;
+  width: calc(50% - 20px);
+  margin: 5px 9px;
+}
+
+#anniv .boxes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 30px;
+}
+
+#anniv .boxes .box {
+  width: 50px;
+  border: 3px solid black;
+  border-top: 3px solid transparent;
+  text-align: center;
+  position: relative;
+}
+
+#anniv .boxes .box::after {
+  content: "Boîte " attr(data-index);
+  display: block;
+  position: absolute;
+  bottom: -22px;
+  font-size: 9pt;
+  text-align: center;
+  width: 100%;
+}

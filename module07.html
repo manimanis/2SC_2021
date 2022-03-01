@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="resources/css/bootstrap.min.css">
   <link rel="stylesheet" href="resources/css/default.css">
   <link rel="stylesheet" href="resources/css/style.css">
-  <link rel="stylesheet" href="resources/css/module06.css">
+  <link rel="stylesheet" href="resources/css/module07.css">
   <title>Les Tableaux</title>
 </head>
 
@@ -47,6 +47,29 @@
           <li>tire un nombre au hazard, <code>nbh</code>, compris entre 0 et <code>na-1</code></li>
           <li>met le bonbon dans la boîte numéro <code>nbh</code></li>
         </ul>
+        <div class="d-print-none">
+          <div id="anniv" class="my-3">
+            <div class="params">
+              <div class="nb-bonbons">{{nb}}</div>
+              <div class="nb-amis">{{na}}</div>
+            </div>
+            <div class="range">
+              <input type="range" name="nb" min="10" max="200" step="5" v-model="nb">
+              <input type="range" name="na" min="3" max="10" step="1" v-model="na">
+            </div>
+            <div class="bonbons-dispo">
+              {{bonbons}}
+            </div>
+            <div class="boxes">
+              <div class="box" v-for="box, idx in boxes" v-bind:data-index="idx">{{box}}</div>
+            </div>
+            <div class="text-center">
+              <button class="btn btn-primary" v-bind:disabled="bonbons == 0" v-on:click="mettreBonbon()">Mettre un bonbon</button>
+              <button class="btn btn-primary" v-bind:disabled="bonbons == 0" v-on:click="distribuerBonbons()">Distribuer tous les bonbons</button>
+              <button class="btn btn-primary" v-bind:disabled="bonbons != 0" v-on:click="reinitialiser()">Réinitialiser</button>
+            </div>
+          </div>
+        </div>
         <p>Pour quelques bonbons le jeu semble amuser l'enfant, mais très vite le petit se lasse et il ne veut plus
           continuer son jeu.</p>
         <p>Observant son petit frère, Youssef, un lycéen en 2TI a décidé de l'aider. Pour celà, il a pensé à écrire un
@@ -78,7 +101,7 @@ Boîte 4 contient 7 bonbons.</code></pre>
   <script src="resources/js/clipboard.min.js"></script>
   <script src="resources/js/pages.js"></script>
   <script src="resources/js/vue.min.js"></script>
-  <script src="resources/apps/module06.js"></script>
+  <script src="resources/apps/module07.js"></script>
   <script>
     hljs.initHighlightingOnLoad();
 
@@ -97,66 +120,6 @@ Boîte 4 contient 7 bonbons.</code></pre>
       target: (trigger) => {
         return trigger.parentElement.nextElementSibling;
       }
-    });
-    $(() => {
-      new Vue({
-        el: '#turtle_rabbit_game',
-        data: {
-          turtle_winner: false,
-          rabbit_winner: false,
-          dice_face: 3,
-          rabbit_pos: 0,
-          turtle_pos: 0,
-          winner_message: '',
-          dice_arr: new Array(6).fill(0)
-        },
-        computed: {
-          current_dice: function () {
-            return { [`de${this.dice_face}`]: true };
-          }
-        },
-        mounted: function () {
-          this.reset();
-          do {
-            this.clicked();
-          } while (!this.game_ended());
-          this.$forceUpdate();
-        },
-        methods: {
-          reset: function () {
-            this.turtle_winner = false;
-            this.rabbit_winner = false;
-            this.dice_face = 1 + Math.floor(Math.random() * 6);
-            this.rabbit_pos = 0;
-            this.turtle_pos = 0;
-            this.winner_message = '';
-            this.dice_arr = new Array(6).fill(0);
-          },
-          game_ended: function () {
-            return this.turtle_winner || this.rabbit_winner;
-          },
-          clicked: function () {
-            if (this.game_ended()) {
-              return;
-            }
-
-            this.dice_face = 1 + Math.floor(Math.random() * 6);
-            this.dice_arr[this.turtle_pos] = this.dice_face;
-            if (this.dice_face == 6) {
-              this.rabbit_pos = 6;
-              this.rabbit_winner = true;
-              this.winner_message = 'Lièvre gagne';
-            } else {
-              this.turtle_pos += 1;
-              if (this.turtle_pos == 6) {
-                this.turtle_winner = true;
-                this.winner_message = 'Tortue gagne';
-              }
-            }
-            this.$forceUpdate();
-          }
-        }
-      });
     });
   </script>
 </body>
