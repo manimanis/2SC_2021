@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="resources/css/bootstrap.min.css">
+  <link rel="stylesheet" href="resources/css/default.css">
+  <link rel="stylesheet" href="resources/css/style.css">
+  <link rel="stylesheet" href="resources/css/module06.css">
+  <title>Les Tableaux</title>
+</head>
+
+<body>
+  <aside>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#aside_navbar"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span> Menu
+      </button>
+      <div class="collapse navbar-collapse" id="aside_navbar"></div>
+    </nav>
+  </aside>
+
+  <main class="container my-3">
+    <h1>Module 7 : Les Tableaux</h1>
+
+    <article>
+      <h2>Situations</h2>
+
+      <section>
+        <h3>Anniversaire de Yassine</h3>
+
+        <p>A l'occasion de son anniversaire le petit Yassine va distribuer des petites boîtes surprises contenant des
+          bonbons à ses amis.</p>
+        <figure>
+          <img src="images/module07/bonbon-box.webp" alt="Boîtes surprises bonbons">
+          <figcaption>Boîtes surprises bonbons</figcaption>
+        </figure>
+        <p>Les boîtes ne contiennent pas un nombre équitable de bonbons car le petit Yassine a imaginé la méthode de
+          distribution suivante de bonbons.</p>
+        <p>Les boîtes sont numérotées de 0 à na-1, avec <code>na</code> étant le nombre d'amis de Yassine qui sont
+          invités à l'anniversaire.</p>
+        <p>Pour chaque bonbon l'enfant :</p>
+        <ul>
+          <li>tire un nombre au hazard, <code>nbh</code>, compris entre 0 et <code>na-1</code></li>
+          <li>met le bonbon dans la boîte numéro <code>nbh</code></li>
+        </ul>
+        <p>Pour quelques bonbons le jeu semble amuser l'enfant, mais très vite le petit se lasse et il ne veut plus
+          continuer son jeu.</p>
+        <p>Observant son petit frère, Youssef, un lycéen en 2TI a décidé de l'aider. Pour celà, il a pensé à écrire un
+          programme qui :</p>
+        <ul>
+          <li>Lit le nombre total de bonbons à distribuer, 10 &le; nb &le; 200</li>
+          <li>Lit le nombre d'amis invités, 3 &le; na &le; 10</li>
+          <li>Calcule, puis affiche le nombre de bonbons à mettre dans chacune des boîtes.</li>
+        </ul>
+        <pre><code class="nohighlight shell python" data-text="Exemple">Nombre de bonbons [10, 200] ? 30
+Nombre d'amis [3, 10] ? 5
+Boîte 0 contient 4 bonbons.
+Boîte 1 contient 8 bonbons.
+Boîte 2 contient 6 bonbons.
+Boîte 3 contient 5 bonbons.
+Boîte 4 contient 7 bonbons.</code></pre>
+      </section>
+    </article>
+  </main>
+  <footer class="d-print-none bg-dark text-white p-2">
+    <div class="text-center">Page créée avec ♥ par Mohamed Anis MANI</div>
+    <div class="text-center small">Année scolaire : 2021/2022</div>
+  </footer>
+
+  <script src="resources/js/jquery.min.js"></script>
+  <script src="resources/js/bootstrap.bundle.min.js"></script>
+  <script src="resources/js/highlight.pack.js"></script>
+  <script src="resources/js/hljs.algorithm.js"></script>
+  <script src="resources/js/clipboard.min.js"></script>
+  <script src="resources/js/pages.js"></script>
+  <script src="resources/js/vue.min.js"></script>
+  <script src="resources/apps/module06.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+
+    document.querySelectorAll('.language-algorithm,.language-python')
+      .forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'bd-clipboard d-print-none';
+        const btn = document.createElement('button');
+        btn.className = 'btn-clipboard';
+        btn.textContent = "📋";
+        btn.title = "Copier";
+        div.appendChild(btn);
+        item.parentElement.insertBefore(div, item);
+      });
+    new ClipboardJS('.btn-clipboard', {
+      target: (trigger) => {
+        return trigger.parentElement.nextElementSibling;
+      }
+    });
+    $(() => {
+      new Vue({
+        el: '#turtle_rabbit_game',
+        data: {
+          turtle_winner: false,
+          rabbit_winner: false,
+          dice_face: 3,
+          rabbit_pos: 0,
+          turtle_pos: 0,
+          winner_message: '',
+          dice_arr: new Array(6).fill(0)
+        },
+        computed: {
+          current_dice: function () {
+            return { [`de${this.dice_face}`]: true };
+          }
+        },
+        mounted: function () {
+          this.reset();
+          do {
+            this.clicked();
+          } while (!this.game_ended());
+          this.$forceUpdate();
+        },
+        methods: {
+          reset: function () {
+            this.turtle_winner = false;
+            this.rabbit_winner = false;
+            this.dice_face = 1 + Math.floor(Math.random() * 6);
+            this.rabbit_pos = 0;
+            this.turtle_pos = 0;
+            this.winner_message = '';
+            this.dice_arr = new Array(6).fill(0);
+          },
+          game_ended: function () {
+            return this.turtle_winner || this.rabbit_winner;
+          },
+          clicked: function () {
+            if (this.game_ended()) {
+              return;
+            }
+
+            this.dice_face = 1 + Math.floor(Math.random() * 6);
+            this.dice_arr[this.turtle_pos] = this.dice_face;
+            if (this.dice_face == 6) {
+              this.rabbit_pos = 6;
+              this.rabbit_winner = true;
+              this.winner_message = 'Lièvre gagne';
+            } else {
+              this.turtle_pos += 1;
+              if (this.turtle_pos == 6) {
+                this.turtle_winner = true;
+                this.winner_message = 'Tortue gagne';
+              }
+            }
+            this.$forceUpdate();
+          }
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
