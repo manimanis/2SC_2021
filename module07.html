@@ -35,7 +35,7 @@
         <p>A l'occasion de son anniversaire le petit Yassine va distribuer des petites boîtes surprises contenant des
           bonbons à ses amis.</p>
         <figure>
-          <img src="images/module07/bonbon-box.webp" alt="Boîtes surprises bonbons">
+          <img src="images/module07/bonbon-box.webp" alt="Boîtes surprises bonbons" class="h3cm">
           <figcaption>Boîtes surprises bonbons</figcaption>
         </figure>
         <p>Les boîtes ne contiennent pas un nombre équitable de bonbons car le petit Yassine a imaginé la méthode de
@@ -90,14 +90,312 @@ Boîte 1 contient 8 bonbons.
 Boîte 2 contient 6 bonbons.
 Boîte 3 contient 5 bonbons.
 Boîte 4 contient 7 bonbons.</code></pre>
+        <div class="d-none d-print-block">
+          <h4>Correction</h4>
+          <pre><code class="python">from random import randint
+nb = 0
+while not 10 &lt;= nb &lt;= 200:
+    nb = int(input("Nombre de bonbons [10, 200] ? "))
+na = 0
+while not 3 &lt;= na &lt;= 10:
+    na = int(input("Nombre d'amis [3, 10] ? "))
+boite = [0]*na
+for i in range(nb):
+    nbh = randint(0, na-1)
+    boite[nbh] = boite[nbh] + 1
+for i in range(na):
+    print(f"Boîte {i} contient {boite[i]} bonbons.")</code></pre>
+        </div>
       </section>
 
       <section>
-        <h3>Top five gamers</h3>
+        <h3>Tombola</h3>
 
-        <p>Certains petits jeux tels que Tetris et le jeu de serpent conservent une liste des cinq meilleurs scores.</p>
-        <p>Les meilleurs scores sont stockés dans un tableau de 5 cases <code>scores</code>.</p>
-        
+        <h4>Principe</h4>
+
+        <div>
+          <figure>
+            <img src="images/module07/image-tombola.png" alt="Tombola" class="h3cm">
+            <figcaption>Tombola</figcaption>
+          </figure>
+        </div>
+
+        <p>A l'occasion de son anniversaire, une entreprise organise un Tombola pour ces employés. Tous les employés
+          peuvent
+          s'inscrire au Tombola sans frais dans le but de gagner des prix de valeur.</p>
+
+        <div class="d-print-none">
+          <h4>Simulation</h4>
+
+          <div id="ex1" class="border border-dark p-2 bg-light">
+            <div class="my-1" v-if="etape >= 0">
+              <label for="nb_prix">Donner le nombre de prix (1 &le; np &le; 10) ? </label>
+              <input v-if="etape == 0" type="number" name="nb_prix" id="nb_prix" v-model="np" min="1" max="10" step="1">
+              <span v-if="etape != 0">{{np}}</span>
+              <button class="btn btn-primary" v-if="etape == 0" v-on:click="onValiderEtape(0)"
+                v-bind:disabled="np < 1 || np > 10">Valider</button>
+            </div>
+
+            <div v-if="etape >= 1">
+              <div class="my-1"><strong>Liste des prix</strong></div>
+              <div class="my-1" v-for="(pr, i) in prix">
+                <label v-bind:for="'prix_' + i">{{i+1}}{{(i==0) ? 'er' : 'ème'}} prix ? </label>
+                <input v-if="etape == 1" type="text" v-bind:name="'prix_' + i" v-bind:id="'prix_' + i"
+                  v-model="prix[i]">
+                <span v-if="etape != 1">{{pr}}</span>
+              </div>
+              <button class="btn btn-primary" v-if="etape == 1" v-on:click="onValiderEtape(1)">Valider</button>
+            </div>
+
+            <div class="my-1" v-if="etape >= 2">
+              <label for="nb_parts">Donner le nombre de participants ({{np}} &le; n &le; 20) ? </label>
+              <input v-if="etape == 2" type="number" name="nb_parts" id="nb_parts" v-model="n" v-bind:min="np" max="20"
+                step="1">
+              <span v-if="etape != 2">{{n}}</span>
+              <button class="btn btn-primary" v-if="etape == 2" v-on:click="onValiderEtape(2)"
+                v-bind:disabled="n < np || n > 20">Valider</button>
+            </div>
+
+            <div v-if="etape >= 3">
+              <div class="my-1"><strong>Noms des participants</strong></div>
+              <div class="my-1" v-for="(nom, i) in noms">
+                <label v-bind:for="'nom_' + i">Nom du {{i+1}}{{(i==0) ? 'er' : 'ème'}} participant ? </label>
+                <input v-if="etape == 3" type="text" v-bind:name="'nom_' + i" v-bind:id="'nom_' + i" v-model="noms[i]">
+                <span v-if="etape != 3">{{nom}}</span>
+              </div>
+              <button class="btn btn-primary" v-if="etape == 3" v-on:click="onValiderEtape(3)">Valider</button>
+            </div>
+
+            <div v-if="etape >= 4">
+              <div class="my-1"><strong>Liste des gagnants</strong></div>
+              <div class="my-1" v-for="(cadeau, i) in cadeaux">
+                <strong>{{cadeau}}</strong> gagne <strong>{{prix[i]}}</strong>
+              </div>
+              <button class="btn btn-primary d-print-none" v-if="etape == 4"
+                v-on:click="onValiderEtape(-1)">Rejouer</button>
+            </div>
+          </div>
+        </div>
+
+        <h4>Deux gagnants / Deux Prix</h4>
+        <p>On suppose qu'il y a deux participants et deux prix à gagner.</p>
+        <ul>
+          <li>iPad</li>
+          <li>iPhone</li>
+        </ul>
+        <p>On remarque que dans ce premier cas il existe deux possibilités.</p>
+        <table class="table table-bordered border-dark table-sm w-50 m-auto">
+          <tbody>
+            <tr>
+              <th>Cas</th>
+              <td>1</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <th>P1</th>
+              <td>iPad</td>
+              <td>iPhone</td>
+            </tr>
+            <tr>
+              <th>P2</th>
+              <td>iPhone</td>
+              <td>iPad</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>Ecrire un programme pour traiter ce cas.</p>
+
+        <h5>Solution Algorithmique</h5>
+        <div class="row">
+          <div class="col-8">
+            <pre><code class="algorithm">Programme tombola_v1
+Début
+  Ecrire("Nom du 1er participant : "); Lire(p1)
+  Ecrire("Nom du 2nd participant : "); Lire(p2)
+  t ← alea(1, 2)
+  Si t = 1 Alors
+    g1 ← "iPad"
+    g2 ← "iPhone"
+  Sinon
+    g2 ← "iPad"
+    g1 ← "iPhone"
+  Fin Si
+  Ecrire(p1, "gagne", g1)
+  Ecrire(p2, "gagne", g2)
+Fin</code></pre>
+          </div>
+          <div class="col-4">
+            <table class="table table-bordered border-dark table-sm m-auto">
+              <thead>
+                <tr>
+                  <th>Objet</th>
+                  <th>Type</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>p1, p2<br>t<br>g1, g2</td>
+                  <td>chaine<br>entier<br>chaine</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+
+        <h4>Trois participants, trois gagnants</h4>
+        <p>On suppose qu'il y a trois participants et trois prix à gagner. Les deux prix précédents et un Samsung S9.
+        </p>
+        <p>On remarque que dans ce second cas il existe six possibilités.</p>
+        <table class="table table-bordered border-dark table-sm w-100 m-auto">
+          <tbody>
+            <tr>
+              <th>Cas</th>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+              <td>4</td>
+              <td>5</td>
+              <td>6</td>
+            </tr>
+            <tr>
+              <th>P1</th>
+              <td>iPad</td>
+              <td>iPad</td>
+              <td>iPhone</td>
+              <td>iPhone</td>
+              <td>Samsung S9</td>
+              <td>Samsung S9</td>
+            </tr>
+            <tr>
+              <th>P2</th>
+              <td>iPhone</td>
+              <td>Samsung S9</td>
+              <td>iPad</td>
+              <td>Samsung S9</td>
+              <td>iPhone</td>
+              <td>iPad</td>
+            </tr>
+            <tr>
+              <th>P3</th>
+              <td>Samsung S9</td>
+              <td>iPhone</td>
+              <td>Samsung S9</td>
+              <td>iPad</td>
+              <td>iPad</td>
+              <td>iPhone</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>Ecrire un programme pour traiter ce cas.</p>
+
+        <h5 class="p-break">Solution Algorithmique</h5>
+        <div class="row">
+          <div class="col-8">
+            <pre><code class="algorithm">Programme tombola_v2
+Début
+  Ecrire("Nom du 1er participant : "); Lire(p1)
+  Ecrire("Nom du 2nd participant : "); Lire(p2)
+  Ecrire("Nom du 3ème participant : "); Lire(p3)
+  t ← alea(1, 6)
+  Si t = 1 Alors
+    g1 ← "iPad"
+    g2 ← "iPhone"
+    g3 ← "Samsung S9"
+  Sinon Si t = 2 Alors
+    g1 ← "iPad"
+    g2 ← "Samsung S9"
+    g3 ← "iPhone"
+  Sinon Si t = 3 Alors
+    g1 ← "iPhone"
+    g2 ← "iPad"
+    g3 ← "Samsung S9"
+  Sinon Si t = 4 Alors
+    g1 ← "iPhone"
+    g2 ← "Samsung S9"
+    g3 ← "iPad"
+  Sinon Si t = 5 Alors
+    g1 ← "Samsung S9"
+    g2 ← "iPhone"
+    g3 ← "iPad"
+  Sinon
+    g1 ← "Samsung S9"
+    g2 ← "iPad"  
+    g3 ← "iPhone"
+  Fin Si
+  Ecrire(p1, "gagne", g1)
+  Ecrire(p2, "gagne", g2)
+  Ecrire(p3, "gagne", g3)
+Fin</code></pre>
+          </div>
+          <div class="col-4">
+            <table class="table table-bordered border-dark table-sm m-auto">
+              <thead>
+                <tr>
+                  <th>Objet</th>
+                  <th>Type</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>p1, p2, p3<br>t<br>g1, g2, g3</td>
+                  <td>chaine<br>entier<br>chaine</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+
+        <h4>Cas réel</h4>
+        <p>Dans le cas réel le nombre de participants est toujours très grand par rapport au nombre de prix. Il existe
+          120 cas où cinq participants gagnent cinq prix. Dans ce cas le nombre de possibilités est très grand et il
+          n'est pas pratique d'écrire un programme qui dénombre tous ces cas possibles.</p>
+        <p>On demande d'écrire un programme qui :</p>
+        <ul>
+          <li>Saisit le nombre de prix (1 ≤ np ≤ 10)</li>
+          <li>Saisit les noms des prix</li>
+          <li>Saisit le nombre de participants (np ≤ n ≤ 20)</li>
+          <li>Saisit les noms des participants</li>
+          <li>Effectue le tirage aux sorts</li>
+          <li>Affiche le nom des gagnants ainsi que leurs prix</li>
+        </ul>
+
+        <p>Pour simplifier la résolution de ce problème on peut, par exemple :</p>
+        <ul>
+          <li>Stocker les noms des <code>np</code> prix dans un tableau <code>prix</code></li>
+          <li>Stocker les noms des <code>n</code> participants dans un second tableau <code>noms</code></li>
+          <li>Mélanger l'ordre des participants d'une manière aléatoire</li>
+          <li>Prendre les <code>np</code> premiers participants</li>
+        </ul>
+
+        <div class="d-none d-print-block">
+          <h4>Solution</h4>
+          <pre><code class="python">from random import randint
+# Saisie du nombre de prix
+while not 1 &lt;= np &lt;= 10:
+    np = int(input("Donner le nombre de prix (1 ≤ np ≤ 10) ? "))
+# Déclaration du tableau des prix
+prix = [""] * np
+# Saisie des prix
+for i in range(np):
+    prix[i] = input(f"Donner le nom du {i+1}ème prix ? ")
+# Saisie du nombre de participants
+while not np &lt;= n &lt;= 20:
+    n = int(input(f"Donner le nombre de participants ({np} ≤ n ≤ 20) ? "))
+# Déclaration du tableau de participants
+noms = [""] * n
+# Saisie des noms des participants
+for i in range(n):
+    noms[i] = input(f"Donner le nom du {i+1}ème participant ? ")
+# Mélanger l'ordre des noms
+for i in range(n):
+    j = randint(0, n-1)
+    noms[i], noms[j] = noms[j], noms[i]
+# Affichage des gagnants
+for i in range(np):
+    print(noms[i], "gagne", prix[i])</code></pre>
+        </div>
       </section>
     </article>
   </main>
