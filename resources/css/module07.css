@@ -12,7 +12,7 @@
 }
 
 #anniv .nb-bonbons, #anniv .nb-amis, #anniv .bonbons-dispo {
-  font-size: 70px;
+  font-size: 40px;
   width: 50%;
   position: relative;
   text-align: center;
@@ -20,15 +20,16 @@
 
 #anniv .bonbons-dispo {
   width: 100%;
+  font-size: 80px;
 }
 
 #anniv .nb-bonbons::after, #anniv .nb-amis::after, #anniv .bonbons-dispo::after {
   position: absolute;
   width: 100%;
   text-align: center;
-  content: 'Nombre de Bonbons';
+  content: 'Nombre total de Bonbons';
   display: block;
-  font-size: 13pt;
+  font-size: 10pt;
   bottom: -16px;
 }
 
@@ -50,7 +51,7 @@
 #anniv .boxes {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: center;
   padding: 30px;
 }
 
@@ -60,6 +61,7 @@
   border-top: 3px solid transparent;
   text-align: center;
   position: relative;
+  margin: 2px;
 }
 
 #anniv .boxes .box::after {
@@ -67,7 +69,17 @@
   display: block;
   position: absolute;
   bottom: -22px;
-  font-size: 9pt;
+  font-size: 8pt;
   text-align: center;
   width: 100%;
+}
+
+#anniv .boxes .box.selected {
+  animation-name: example;
+  animation-duration: 4s;
+}
+
+@keyframes example {
+  from {background-color: red;}
+  to {background-color: transparent;}
 }

@@ -61,12 +61,16 @@
               {{bonbons}}
             </div>
             <div class="boxes">
-              <div class="box" v-for="box, idx in boxes" v-bind:data-index="idx">{{box}}</div>
+              <div class="box" v-bind:class="{'selected': selectedBox == idx}" v-for="box, idx in boxes"
+                v-bind:data-index="idx">{{box}}</div>
             </div>
             <div class="text-center">
-              <button class="btn btn-primary" v-bind:disabled="bonbons == 0" v-on:click="mettreBonbon()">Mettre un bonbon</button>
-              <button class="btn btn-primary" v-bind:disabled="bonbons == 0" v-on:click="distribuerBonbons()">Distribuer tous les bonbons</button>
-              <button class="btn btn-primary" v-bind:disabled="bonbons != 0" v-on:click="reinitialiser()">Réinitialiser</button>
+              <button class="btn btn-primary" v-bind:disabled="bonbons == 0" v-on:click="mettreBonbon()">Mettre un
+                bonbon</button>
+              <button class="btn btn-primary" v-bind:disabled="bonbons == 0" v-on:click="distribuerBonbons()">Distribuer
+                tous les bonbons</button>
+              <button class="btn btn-primary" v-bind:disabled="bonbons != 0"
+                v-on:click="reinitialiser()">Réinitialiser</button>
             </div>
           </div>
         </div>
@@ -86,6 +90,14 @@ Boîte 1 contient 8 bonbons.
 Boîte 2 contient 6 bonbons.
 Boîte 3 contient 5 bonbons.
 Boîte 4 contient 7 bonbons.</code></pre>
+      </section>
+
+      <section>
+        <h3>Top five gamers</h3>
+
+        <p>Certains petits jeux tels que Tetris et le jeu de serpent conservent une liste des cinq meilleurs scores.</p>
+        <p>Les meilleurs scores sont stockés dans un tableau de 5 cases <code>scores</code>.</p>
+        
       </section>
     </article>
   </main>

@@ -4,6 +4,7 @@ const app = new Vue({
     bonbons: 30,
     mnb: 30,
     mna: 8,
+    selectedBox: -1,
     boxes: []
   },
   computed: {
@@ -31,6 +32,8 @@ const app = new Vue({
     mettreBonbon: function () {
       if (this.bonbons > 0) {
         const nbh = Math.floor(Math.random() * this.na);
+        this.selectedBox = nbh;
+        setTimeout(() => this.selectedBox = -1, 4000);
         this.boxes[nbh]++;
         this.bonbons--;
         this.$forceUpdate();
