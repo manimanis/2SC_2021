@@ -130,7 +130,7 @@ for i in range(na):
           <div id="ex1" class="border border-dark p-2 bg-light">
             <div class="my-1" v-if="etape >= 0">
               <label for="nb_prix">Donner le nombre de prix (1 &le; np &le; 10) ? </label>
-              <input v-if="etape == 0" type="number" name="nb_prix" id="nb_prix" v-model="np" min="1" max="10" step="1">
+              <input v-if="etape == 0" type="number" name="nb_prix" id="nb_prix" v-model.number="np" min="1" max="10" step="1">
               <span v-if="etape != 0">{{np}}</span>
               <button class="btn btn-primary" v-if="etape == 0" v-on:click="onValiderEtape(0)"
                 v-bind:disabled="np < 1 || np > 10">Valider</button>
@@ -149,7 +149,7 @@ for i in range(na):
 
             <div class="my-1" v-if="etape >= 2">
               <label for="nb_parts">Donner le nombre de participants ({{np}} &le; n &le; 20) ? </label>
-              <input v-if="etape == 2" type="number" name="nb_parts" id="nb_parts" v-model="n" v-bind:min="np" max="20"
+              <input v-if="etape == 2" type="number" name="nb_parts" id="nb_parts" v-model.number="n" v-bind:min="np" max="20"
                 step="1">
               <span v-if="etape != 2">{{n}}</span>
               <button class="btn btn-primary" v-if="etape == 2" v-on:click="onValiderEtape(2)"

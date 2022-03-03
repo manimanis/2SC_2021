@@ -113,21 +113,21 @@ const app2 = new Vue({
   },
   mounted: function () {
     this.np = randint(2, 10);
-    this.initHasardPrix(this.np);
-    this.n = randint(this.np, 20);
+    this.initHasardPrix(+this.np);
+    this.n = randint(+this.np, 20);
     this.initHasardNoms(this.n);
     this.tirageAuSort();
     this.etape = 4;
   },
   methods: {
     initNbreNoms: function () {
-      this.n = randint(5, 20)
+      this.n = randint(+this.np, 20);
     },
     initHasardNoms: function (n) {
       this.noms = choix_elements(liste_noms, n);
     },
     initNbrePrix: function () {
-      this.np = randint(1, Math.min(this.n, 10));
+      this.np = randint(1, 10);
     },
     initHasardPrix: function (n) {
       this.prix = choix_elements(liste_prix, n);
@@ -137,10 +137,10 @@ const app2 = new Vue({
     },
     onValiderEtape: function (etape) {
       switch (etape) {
-        case 1: this.initNbreNoms(); break;
-        case 2: this.initHasardNoms(this.n); break;
         case -1: this.initNbrePrix(); break;
         case 0: this.initHasardPrix(this.np); break;
+        case 1: this.initNbreNoms(); break;
+        case 2: this.initHasardNoms(this.n); break;
         case 3: this.tirageAuSort();
       }
       this.etape = etape + 1;
