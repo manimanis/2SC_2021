@@ -266,6 +266,179 @@ Fin Pour</code></pre>
 Fin Pour</code></pre>
       </section>
     </article>
+    <article>
+      <h2>Activités</h2>
+      <section>
+        <h3>Parking Vertical</h3>
+        <p>Dans les villes on préfère les parking verticaux parce qu'il permettent de gagner de l'espace.</p>
+        <p>Un parking possède une capacité comptée en nombre de places <code>n</code>, avec
+          <code>4 &le; n &le; 200</code>
+        </p>
+        <p>En supposant qu'un parking peut être représenté par un tableau qui contient les états suivants :</p>
+        <ul>
+          <li>0 Emplacement vide</li>
+          <li>1 Emplacement occupé</li>
+          <li>2 Emplacement réservé</li>
+        </ul>
+        <h4>Travail demandé</h4>
+        <p>On demande d'écrire un programme qui :</p>
+        <ol>
+          <li>Remplit le parking.</li>
+          <li>Calcule le nombre d'étages occupés.</li>
+          <li>Déterminer l'indice du premier étage vide.</li>
+          <li>Insère un nouveau véhicule.</li>
+          <li>Affiche l'état du parking.</li>
+        </ol>
+        <h4>Solution</h4>
+        <div class="row">
+          <div class="col-8">
+            <pre><code class="algorithm">Algorithme Parking
+Début
+  // Question 1
+  Répéter
+    Ecrire("Nbre d'étages du parking (4 &le; n &le; 200) ? "); Lire(n)
+  Jusqu'à (4 &le; n &le; 200)
+  Pour i de 1 à n Faire
+    Répéter
+      Ecrire("L'état de l'étage n°", i, " ? "); Lire(park[i])
+    Jusqu'à (0 &le; park[i] &le; 2)
+  Fin Pour
+  // Question 2
+  occ &larr; 0
+  Pour i de 1 à n Faire
+    Si park[i] &ne; 0 Alors
+      occ &larr; occ + 1
+    Fin Si
+  Fin Pour
+  Ecrire("Il y'a", occ, "places occupées et", n-occ, "places libres")
+  // Question 3
+  p &larr; -1
+  i &larr; 1
+  TantQue (p = -1) et (i &le; n) Faire
+    Si park[i] = 0 Alors
+      p &larr; i
+    Sinon
+      i &larr; i + 1
+    Fin Si
+  Fin TantQue
+  Si p &ne; -1 Alors
+    Ecrire("L'étage", p, "est vide")
+  Sinon
+    Ecrire("Aucun étage vide")
+  Fin Si
+  // Question 4
+  Si p &ne; -1 Alors
+    park[0] &larr; 1
+    Pour i de p-1 à 0 Faire
+      park[i+1] &larr; park[i]
+    Fin Pour
+    park[0] &larr; 0
+  Fin Si
+  // Question 5
+  Pour i de 1 à n Faire
+    Si park[i] = 0 Alors etat &larr; "vide"
+    Sinon Si park[i] = 1 Alors etat &larr; "occupé"
+    Sinon etat &larr; "réservé"
+    Fin Si
+    Ecrire("L'étage",i,"est",etat)
+  Fin Pour
+Fin</code></pre>
+          </div>
+          <div class="col-4">
+            <table class="table table-bordered table-sm border-dark">
+              <thead>
+                <tr>
+                  <th>Objet</th>
+                  <th>Type</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    park<br>
+                    n, i, occ, p
+                  </td>
+                  <td>
+                    tableau de 201 entier<br>
+                    entier
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>Activité 2</h3>
+        <p>Ecrire un programme qui saisit un tableau de <code>n</code> entiers non nuls (5 &le; n &le; 20) puis supprime
+          les duplications.</p>
+        <h4>Solution</h4>
+        <div class="row">
+          <div class="col-8">
+            <pre><code class="algorithm">Algorithme Activité2
+Début
+  Répéter
+    Ecrire("Donner n (5 &le; n &le; 20) ? "); Lire(n)
+  Jusqu'à (5 &le; n &le; 20)
+  Pour i de 1 à n Faire
+    Répéter
+      Ecrire("t[", i, "] ? "); Lire(t[i])
+    Jusqu'à (t[i] &ne; 0)
+  Fin Pour
+  // Remplacer les duplications par des 0
+  Pour i de 1 à n-1 Faire
+    p &larr; -1
+    j &larr; i-1
+    TantQue (p = -1) et (j &ge; 0) Faire
+      Si t[i] = t[j] Alors
+         t[i] &larr; 0
+         p &larr; j
+      Sinon
+        j &larr; j - 1
+      Fin Si
+    Fin TantQue
+  Fin Pour
+  // Supprimer les cases vides
+  j &larr; -1
+  Pour i de 0 à n-1 Faire
+    Si t[i] &ne; 0 Alors
+      j &larr; j + 1
+      t[j] &larr; t[i]
+    Fin Si
+  Fin Pour
+  // Afficher le nouveau tableau sans duplications
+  n &larr; j + 1
+  Pour i de 0 à n-1 Faire
+    Ecrire(t[i], ", ")
+  Fin Pour
+Fin</code></pre>
+          </div>
+          <div class="col-4">
+            <table class="table table-bordered table-sm border-dark">
+              <thead>
+                <tr>
+                  <th>Objet</th>
+                  <th>Type</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    t<br>
+                    n, i, j, p
+                  </td>
+                  <td>
+                    tableau de 20 entier<br>
+                    entier
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </article>
   </main>
   <footer class="d-print-none bg-dark text-white p-2">
     <div class="text-center">Page créée avec ♥ par Mohamed Anis MANI</div>
