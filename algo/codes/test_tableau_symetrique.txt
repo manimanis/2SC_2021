@@ -1,0 +1,60 @@
+# Symétrique
+7
+1
+2
+3
+4
+3
+2
+1
+# Non Symétrique
+7
+1
+5
+3
+4
+3
+2
+1
+# Non Symétrique
+7
+1
+2
+3
+4
+3
+5
+1
+
+# Symétrisable
+8
+1
+5
+2
+3
+4
+3
+2
+1
+
+# Symétrisable
+8
+1
+2
+3
+4
+3
+2
+5
+1
+
+# Non Symétrisable
+8
+1
+7
+3
+4
+3
+2
+5
+1
