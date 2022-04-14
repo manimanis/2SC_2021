@@ -267,7 +267,7 @@ Fin Pour</code></pre>
       </section>
     </article>
     <article>
-      <h2>Activités</h2>
+      <h2 class="p-break">Activités</h2>
       <section>
         <h3>Parking Vertical</h3>
         <p>Dans les villes on préfère les parking verticaux parce qu'il permettent de gagner de l'espace.</p>
@@ -296,11 +296,13 @@ Fin Pour</code></pre>
 Début
   // Question 1
   Répéter
-    Ecrire("Nbre d'étages du parking (4 &le; n &le; 200) ? "); Lire(n)
+    Ecrire("Nbre d'étages du parking (4 &le; n &le; 200) ? ")
+    Lire(n)
   Jusqu'à (4 &le; n &le; 200)
   Pour i de 1 à n Faire
     Répéter
-      Ecrire("L'état de l'étage n°", i, " ? "); Lire(park[i])
+      Ecrire("L'état de l'étage n°", i, " ? ")
+      Lire(park[i])
     Jusqu'à (0 &le; park[i] &le; 2)
   Fin Pour
   // Question 2
@@ -310,7 +312,8 @@ Début
       occ &larr; occ + 1
     Fin Si
   Fin Pour
-  Ecrire("Il y'a", occ, "places occupées et", n-occ, "places libres")
+  Ecrire("Il y'a", occ, "places occupées et", 
+         n-occ, "places libres")
   // Question 3
   p &larr; -1
   i &larr; 1
@@ -379,11 +382,13 @@ Fin</code></pre>
             <pre><code class="algorithm">Algorithme Activité2
 Début
   Répéter
-    Ecrire("Donner n (5 &le; n &le; 20) ? "); Lire(n)
+    Ecrire("Donner n (5 &le; n &le; 20) ? ")
+    Lire(n)
   Jusqu'à (5 &le; n &le; 20)
   Pour i de 1 à n Faire
     Répéter
-      Ecrire("t[", i, "] ? "); Lire(t[i])
+      Ecrire("t[", i, "] ? ")
+      Lire(t[i])
     Jusqu'à (t[i] &ne; 0)
   Fin Pour
   // Remplacer les duplications par des 0
@@ -445,12 +450,38 @@ Fin</code></pre>
         <p>Le tableau [1,2,3,2,1] est symétrique alors que le tableau [1,2,3,1,2] n'est pas symétrique.</p>
         <p>Ecrire un programme qui saisit un tableau de n entiers (5 &le; n &le; 20) puis détermine si le tableau est
           symétrique ou non.</p>
-        <p>Partie 2</p>
+        <h4>Partie 2</h4>
         <p>Le tableau [1,2,3,8,2,1] n'est pas symétrique en supprimant la valeur 8 il devient symétrique.</p>
         <p>Ecrire un programme qui détermine si le tableau saisit précédemment peut devevnir symétrique en supprimant
           exactement un seul de ses éléments.</p>
       </section>
 
+      <section>
+        <h3>Top 5 Scores</h3>
+        <p>Hachem a conçu un clone du jeu snake. Il veut maintenir un Top 5 des scores des joueurs. Pour celà on veut
+          écrire un programme qui :</p>
+        <ul>
+          <li>Saisit le <code>score</code> d'un joueur, <code>score &ge; 0</code>.</li>
+          <li>Saisit le <code>nom</code> d'un joueur, composé uniquement de lettres majuscules.</li>
+          <li>Insère les données dans deux tableaux <code>sj</code> et <code>nj</code>, le premier est utilisé pour
+            stocker les scores des joueurs et le second est utilisé pour stocker leurs noms.</li>
+          <li>Répète les opérations précédentes tant que le score est positif.</li>
+          <li>Affiche le Top 5 Scores : Les noms des joueurs ainsi que leurs scores.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Montagne la plus culminente</h3>
+        <p>Un chercheur veut déterminer les deux montagnes les plus hautes dans un relief montagneux. Pour celà il a
+          pris des mesures de l'hauteur de la croute terrestre sur une ligne de <code>n</code> points,
+          <code>3 &le; n &le; 15</code> dans un tableau <code>haut</code>.</p>
+        <p>Ecrire un programme qui :</p>
+        <ul>
+          <li>Saisit les hauteurs de <code>n</code> points du relief étudié dans un tableau <code>haut</code></li>
+          <li>Détermine le point le plus haut de ce relief montagneux.</li>
+          <li>Détermine le 2<sup>ème</sup> point le plus haut.</li>
+        </ul>
+      </section>
     </article>
   </main>
   <footer class="d-print-none bg-dark text-white p-2">
