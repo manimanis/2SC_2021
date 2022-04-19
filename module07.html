@@ -537,6 +537,58 @@ Les éléments communs sont : 1, 2, 7,</code></pre>
       </section>
 
       <section>
+        <h3>Le marchand de légumes</h3>
+        <p>Le marchand de légumes vend les pommes dans des sacs de la façon suivante :</p>
+        <ul>
+          <li>Des sacs d'une seule pomme,</li>
+          <li>Des sacs de deux pommes,</li>
+          <li>Des sacs de quatre pommes,</li>
+          <li>Des sacs de huit pommes,</li>
+        </ul>
+        <p>Le marchand refuse de vendre deux sacs qui contiennent le même nombre de pommes à un seul client.</p>
+        <ol>
+          <li>Calculer le nombre minimal de sacs achetés par les clients suivants :
+            <ul>
+              <li>Islem veut 14 pommes,</li>
+              <li>Ayoub veut 3 pommes,</li>
+              <li>Alaa veut 8 pommes,</li>
+              <li>Amine veut 10 pommes.</li>
+            </ul>
+          </li>
+          <li>Comment faire si je veux acheter 16 pommes sachant qu'il est interdit de prendre plus d'un sac des quatre
+            catégories disponibles ?</li>
+          <li>Je veux achter <code>n</code> pommes, <code>0 &le; n &le; 31</code>. Comment calculer le nombre de sacs de
+            chaque catégorie ?</li>
+          <li>Ecrire le programme qui calcule le nombre de sacs nécessaires pour satisfaire la commande d'un client
+            donné.</li>
+          <li>Ecrire le programme qui calcule le nombre de pommes qui correspond à un nombre de sacs donné.</li>
+        </ol>
+        <p><strong>Exemple (premier programme) :</strong></p>
+        <pre><code class="nohighlight shell python" data-text="Exemple">Nombre de pommes : 25
+un sac de 1 pommes
+un sac de 8 pommes
+un sac de 16 pommes</code></pre>
+        <p><strong>Exemple (second programme) :</strong></p>
+        <pre><code class="nohighlight shell python" data-text="Exemple">
+Nbre de sac de 1 pommes ? 1
+Nbre de sac de 2 pommes ? 0
+Nbre de sac de 4 pommes ? 1
+Nbre de sac de 8 pommes ? 0
+Nbre de sac de 16 pommes ? 0
+Vous avez acheté : 5 pommes</code></pre>
+
+      </section>
+
+      <section>
+        <h3>Conversion de la base 10 à la base 16</h3>
+
+        <p>Ecrire un programme qui saisit un nombre n compris entre 0 et 255 et le convertit en hexadécimal.</p>
+        <p><strong>Exemple :</strong></p>
+        <pre><code class="nohighlight shell python" data-text="Exemple">Nombre à convertir : 241
+241(10) = F1(2)</code></pre>
+      </section>
+
+      <section>
         <h3>Fusion de deux tableaux de même longueur</h3>
         <p>Ecrire un programme qui fusionne deux tableaux t1 et t2, de même longueur n dans un troisième
           tableau t3 de longueur n3 = 2 * n.</p>
@@ -545,6 +597,77 @@ Les éléments communs sont : 1, 2, 7,</code></pre>
           <li>Placer les éléments de t1 dans des cases impaires de t3</li>
           <li>Placer les éléments de t2 dans des cases paires de t3</li>
         </ul>
+        <div class="row">
+          <div class="col-3">
+            <table class="table table-sm table-borderless">
+              <tbody>
+                <tr>
+                  <td>t1</td>
+                  <td class="border border-dark text-danger">9</td>
+                  <td class="border border-dark text-danger">2</td>
+                  <td class="border border-dark text-danger">4</td>
+                  <td class="border border-dark text-danger">7</td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td>0</td>
+                  <td>1</td>
+                  <td>2</td>
+                  <td>3</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="col-3">
+            <table class="table table-sm table-borderless">
+              <tbody>
+                <tr>
+                  <td>t2</td>
+                  <td class="border border-dark text-success">7</td>
+                  <td class="border border-dark text-success">3</td>
+                  <td class="border border-dark text-success">2</td>
+                  <td class="border border-dark text-success">1</td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td>0</td>
+                  <td>1</td>
+                  <td>2</td>
+                  <td>3</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="col-6">
+            <table class="table table-sm table-borderless">
+              <tbody>
+                <tr>
+                  <td>t3</td>
+                  <td class="border border-dark text-success">7</td>
+                  <td class="border border-dark text-danger">9</td>
+                  <td class="border border-dark text-success">3</td>
+                  <td class="border border-dark text-danger">2</td>
+                  <td class="border border-dark text-success">2</td>
+                  <td class="border border-dark text-danger">4</td>
+                  <td class="border border-dark text-success">1</td>
+                  <td class="border border-dark text-danger">7</td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td>0</td>
+                  <td>1</td>
+                  <td>2</td>
+                  <td>3</td>
+                  <td>4</td>
+                  <td>5</td>
+                  <td>6</td>
+                  <td>7</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
 
         <p><strong>Exemple :</strong></p>
         <pre><code class="nohighlight shell python" data-text="Exemple">Taille du tableau t1 (>=2) : 4
@@ -640,7 +763,9 @@ Après segmentation :  [19, 32, 157, 203, 762, 884, 762, 459, 337, 515]</code></
         <p>Ecrire un programme qui :</p>
         <ul>
           <li>saisit la caractéristique de l'acteur principal <code>0 &le; car &le; 100</code>,</li>
-          <li>saisit le nombre de doublures (nombre de personnes qui peuvent remplacer l'acteur) <code>2 &le; n &le; 10</code>,</li>
+          <li>saisit le nombre de doublures (nombre de personnes qui peuvent remplacer l'acteur)
+            <code>2 &le; n &le; 10</code>,
+          </li>
           <li>remplit un tableau <code>t</code> par les caractéristiques des doublures,</li>
           <li>affiche le candidat qui ressemble le plus à l'acteur principal.</li>
         </ul>
