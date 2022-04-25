@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evaluation n°3 en Programmation - 2TI</title>
+  <link rel="stylesheet" href="resources/css/bootstrap.min.css">
+  <link rel="stylesheet" href="resources/css/default.css">
+  <link rel="stylesheet" href="resources/css/style.css">
+  <link rel="stylesheet" href="resources/css/seance03.css">
+  <style>
+    .pointille {
+      line-height: 0.6cm;
+      border-bottom: #666 dotted 2px;
+    }
+
+    @media print {
+      body {
+        font-family: 'Book Antiqua';
+        font-size: 11pt;
+      }
+
+      h1 {
+        font-size: 1.6em;
+        margin: 1rem 0 0.25rem;
+      }
+
+      h2 {
+        font-size: 1.3em;
+        margin: 1rem 0 0.25rem;
+      }
+
+      h3 {
+        font-size: 1.1em;
+        margin: 1rem 0 0.25rem;
+      }
+
+      .entete {
+        font-size: 10pt;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <aside>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#aside_navbar"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span> Menu
+      </button>
+      <div class="collapse navbar-collapse" id="aside_navbar"></div>
+    </nav>
+  </aside>
+  <main class="container">
+    <table class="table table-sm table-bordered border-dark align-middle my-2 entete">
+      <tr>
+        <td width="33.3%" class="text-center">Lycée secondaire Hammam-Sousse<br><em><small>Année scolaire
+              2021/2022</small></em></td>
+        <td width="33.3%" class="text-center fs-4"><strong>Evaluation n°3</strong><br>Programmation</td>
+        <td><strong>Classe :</strong> 2TI<br><strong>Durée :</strong> 1 heure<br><strong>Enseignant :</strong> Mohamed
+          Anis MANI</td>
+      </tr>
+    </table>
+
+    <div class="row my-2">
+      <div class="col-6"><label for="nom-prenom">Nom & Prénom</label><input type="text" id="nom-prenom"
+          class="form-control"></div>
+      <div class="col-6"><label for="classe">Classe</label><input type="text" id="classe" class="form-control"></div>
+    </div>
+
+    <h1>Evaluation n°3 - 2<sup>ème</sup>TI</h1>
+    <article>
+      <h2>Exercice</h2>
+      <p>Le lycée <strong>Hammam-Sousse</strong> organise une compétition en <i>Counter-Strike GO</i> entre les élèves.
+      </p>
+      <p>Pour financer l'évènement "StarTEK" une société IT a exigé que le nombre de joueurs soit compris entre 3 et
+        100.</p>
+      <p>Les élèves de la 2TI ont contribué aussi par la mise au point ي'un petit programme qui permet de gérer
+        l'évènement.</p>
+      <section>
+        <h3>Question 1</h3>
+        <p>Le programme commence par demander le nombre de joueurs inscrits, <strong>nbj</strong>. Ce
+          nombre doit être compris entre 3 et 100.</p>
+        <p>Copier/coller le code suivant :</p>
+        <pre><code class="python">nbj = int(input("Nombre de joueurs (3 &le; nbj &le; 100) ? "))</code></pre>
+        <p><strong>(1) Apporter les modifications nécessaires au programme pour vous assurer qu'il n'accepte que des
+            valeurs valides.</strong></p>
+      </section>
+
+      <section>
+        <h3>Question 2</h3>
+        <p>Ensuite, il faudra saisir les noms de joueurs dans un tableau intitulé <strong>joueur</strong>.</p>
+        <p>Copier/coller le code suivant :</p>
+        <pre><code class="python">i = 0
+joueur[i] = int(input(f"Joueur n°{i+1} ? "))</code></pre>
+        <p><strong>(2) Tester le code, puis le corriger pour qu'il accepte les noms de <code>nbj</code>
+            joueurs.</strong></p>
+        <p><strong>(3) Modifier votre code pour qu'il n'accepte que les noms de joueurs contenant au moins trois
+            caractères.</strong><br><strong>Exemple :</strong> <b><i>ALA</i></b> est accepté car il contient 3
+          caractères,
+          <b><i>MI</i></b> n'est pas accepté car il contient moins de trois caractères.
+        </p>
+        <p><strong>(4) Modifier votre code pour qu'il n'accepte pas les noms de joueurs qui se répètent.</strong> La
+          vérification est insensible à la casse, exemple <b><i>AhMeD</i></b>, <b><i>AHMED</i></b> et
+          <b><i>Ahmed</i></b> désignent le même nom.
+        </p>
+      </section>
+
+      <section>
+        <h3>Question 3</h3>
+        <p>Maintenant, le programme va saisir les scores des joueurs dans un tableau <strong>scores</strong>. La
+          i<sup>ème</sup> case de <strong>scores</strong> correspond au score du i<sup>ème</sup>
+          <strong>joueur</strong>.
+        </p>
+
+        <div class="m-auto w-50">
+          <table class="text-center w-100 col-6">
+            <tr>
+              <td>joueur</td>
+              <td class="border border-dark">Ahmed</td>
+              <td class="border border-dark">Youssef</td>
+              <td class="border border-dark">Akram</td>
+              <td class="border border-dark">Amine</td>
+              <td class="border border-dark">Salem</td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td><small>0</small></td>
+              <td><small>1</small></td>
+              <td><small>2</small></td>
+              <td><small>3</small></td>
+              <td><small>4</small></td>
+            </tr>
+          </table>
+
+          <table class="text-center w-100 col-6">
+            <tr>
+              <td>scores</td>
+              <td class="border border-dark">20</td>
+              <td class="border border-dark">100</td>
+              <td class="border border-dark">30</td>
+              <td class="border border-dark">45</td>
+              <td class="border border-dark">50</td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td><small>0</small></td>
+              <td><small>1</small></td>
+              <td><small>2</small></td>
+              <td><small>3</small></td>
+              <td><small>4</small></td>
+            </tr>
+          </table>
+        </div>
+
+        <p><strong>(5) Ecrire un code qui remplit le tableau <strong>scores</strong> par les scores des
+            joueurs.</strong><br>Un score valide est compris entre 0 à 1000.</p>
+      </section>
+
+      <section>
+        <h3>Question 4</h3>
+        <p>A la fin de la compétition les <strong>joueur</strong>s sont triés (ordonnés) par ordre décroissant de leurs
+          <strong>scores</strong>.
+        </p>
+        <p>On donne l'algorithme qui permet de trier un tableau <code>t</code> de <code>n</code> entiers :</p>
+        <pre><code class="algorithm">Pour i de 0 à n-2 Faire
+  Pour j de i + 1 à n-1 Faire
+    Si t[j] &lt; t[i] Alors
+      aux &larr; t[j] 
+      t[j] &larr; t[i]
+      t[i] &larr; aux
+    Fin Si
+  Fin Pour
+Fin Pour</code></pre>
+        <p><strong>(6) Exploiter l'algorithme précédent pour ordonner les joueurs en fonction de leurs scores.</strong>
+        </p>
+      </section>
+
+      <section>
+        <h3>Question 5</h3>
+        <p><strong>(7) Afficher les noms des joueurs et leurs scores.</strong> Est-ce qu'ils sont ordonnés en ordre
+          décroissant de leurs scores ?</p>
+        <p><strong>(8) Corriger votre programme pour qu'il les affiche dans le bon ordre.</strong></p>
+        <div class="row">
+          <div class="col-6">
+            <p><strong>Exemple :</strong> Pour les joueurs et les scores suivants (après tri) :</p>
+            <div>
+              <table class="text-center w-100 col-6">
+                <tr>
+                  <td>joueur</td>
+                  <td class="border border-dark">Youssef</td>
+                  <td class="border border-dark">Salem</td>
+                  <td class="border border-dark">Amine</td>
+                  <td class="border border-dark">Akram</td>
+                  <td class="border border-dark">Ahmed</td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td><small>0</small></td>
+                  <td><small>1</small></td>
+                  <td><small>2</small></td>
+                  <td><small>3</small></td>
+                  <td><small>4</small></td>
+                </tr>
+              </table>
+
+              <table class="text-center w-100 col-6">
+                <tr>
+                  <td>scores</td>
+                  <td class="border border-dark">100</td>
+                  <td class="border border-dark">50</td>
+                  <td class="border border-dark">45</td>
+                  <td class="border border-dark">30</td>
+                  <td class="border border-dark">20</td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td><small>0</small></td>
+                  <td><small>1</small></td>
+                  <td><small>2</small></td>
+                  <td><small>3</small></td>
+                  <td><small>4</small></td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <div class="col">
+            <p>Le programme doit afficher</p>
+            <pre class="bg-light p-2"><code class="nohighlight">Liste des joueurs triés par scores
+Youssef - 100
+Salem   - 50
+Amine   - 45
+Akram   - 30
+Ahmed   - 20</code></pre>
+          </div>
+        </div>
+
+
+      </section>
+
+      <section>
+        <h3>Question 6</h3>
+        <p><strong>(9) Afficher le TOP 3 des joueurs ayant les trois meilleurs scores.</strong><br>Attention : Plusieurs
+          joueurs peuvent avoir le même score, dans ce cas ils possèdent le même rang.</p>
+        <p><strong>Exemple :</strong> Pour les joueurs et les scores suivants (après tri) :</p>
+        <div class="m-auto w-75">
+          <table class="text-center w-100 col-9">
+            <tr>
+              <td>joueur</td>
+              <td class="border border-dark">Sahbi</td>
+              <td class="border border-dark">Adem</td>
+              <td class="border border-dark">Youssef</td>
+              <td class="border border-dark">Salem</td>
+              <td class="border border-dark">Amine</td>
+              <td class="border border-dark">Akram</td>
+              <td class="border border-dark">Ahmed</td>
+              <td class="border border-dark">Saber</td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td><small>0</small></td>
+              <td><small>1</small></td>
+              <td><small>2</small></td>
+              <td><small>3</small></td>
+              <td><small>4</small></td>
+              <td><small>5</small></td>
+              <td><small>6</small></td>
+              <td><small>7</small></td>
+            </tr>
+          </table>
+
+          <table class="text-center w-100 col-9">
+            <tr>
+              <td>scores</td>
+              <td class="border border-dark">100</td>
+              <td class="border border-dark">100</td>
+              <td class="border border-dark">50</td>
+              <td class="border border-dark">50</td>
+              <td class="border border-dark">45</td>
+              <td class="border border-dark">45</td>
+              <td class="border border-dark">45</td>
+              <td class="border border-dark">30</td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td><small>0</small></td>
+              <td><small>1</small></td>
+              <td><small>2</small></td>
+              <td><small>3</small></td>
+              <td><small>4</small></td>
+              <td><small>5</small></td>
+              <td><small>6</small></td>
+              <td><small>7</small></td>
+            </tr>
+          </table>
+        </div>
+        <p>Le programme doit afficher</p>
+        <pre class="bg-light p-2"><code class="nohighlight">TOP 3 des joueurs
+Rang 1 - 100 pts
+Sahbi, Adem
+Rang 2 - 50 pts
+Youssef, Salem
+Rang 3 - 45 pts
+Amine, Akram, Ahmed</code></pre>
+      </section>
+    </article>
+  </main>
+  <script src="resources/js/jquery.min.js"></script>
+  <script src="resources/js/bootstrap.min.js"></script>
+  <script src="resources/js/highlight.pack.js"></script>
+  <script src="resources/js/hljs.algorithm.js"></script>
+  <script src="resources/js/draggable.js"></script>
+  <script src="resources/js/clipboard.min.js"></script>
+  <script src="resources/js/pages.js"></script>
+  <script src="resources/js/savecontent.js"></script>
+  <script src="resources/js/vue.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+    document.querySelectorAll('.language-algorithm,.language-python')
+      .forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'bd-clipboard d-print-none';
+        const btn = document.createElement('button');
+        btn.className = 'btn-clipboard';
+        btn.textContent = "📋";
+        btn.title = "Copier";
+        div.appendChild(btn);
+        item.parentElement.insertBefore(div, item);
+      });
+    new ClipboardJS('.btn-clipboard', {
+      target: (trigger) => {
+        return trigger.parentElement.nextElementSibling;
+      }
+    });
+    $(() => {
+      const localStore = new PagePersistance();
+      const serverStore = new ServerSaves('DS_3T');
+      const userInputSaver = new UserInputSaver(
+        document.querySelector('.user-input-saver'),
+        localStore,
+        serverStore);
+    });
+  </script>
+</body>
+
+</html>

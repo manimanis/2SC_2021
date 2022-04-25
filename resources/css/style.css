@@ -289,11 +289,8 @@ table.col-20 td {
   margin: initial;
 }
 @media print {
-  body { 
-    font-size: 10pt;
-  }
   h1, h2, h3, h4 {
-    font-size: initial !important;
+    font-size: auto !important;
   }
   .row .col-sm-6 {
     width: 50%;
@@ -363,9 +360,9 @@ table.col-20 td {
       content: "Page " counter(page) " of " counter(pages);
     }
   }
-  table th, table td {
+  /* table th, table td {
     border: thin solid #000;
-  }
+  } */
   .list-group-item {
     padding: initial;
     border: initial;
