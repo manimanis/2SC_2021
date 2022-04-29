@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evaluation n°3 en Programmation - 2TI</title>
+  <link rel="stylesheet" href="resources/css/bootstrap.min.css">
+  <link rel="stylesheet" href="resources/css/default.css">
+  <link rel="stylesheet" href="resources/css/style.css">
+  <link rel="stylesheet" href="resources/css/seance03.css">
+  <style>
+    .pointille {
+      line-height: 0.6cm;
+      border-bottom: #666 dotted 2px;
+    }
+
+    @media print {
+      body {
+        font-family: 'Book Antiqua';
+        font-size: 11pt;
+      }
+
+      h1 {
+        font-size: 1.6em;
+        margin: 1rem 0 0.25rem;
+      }
+
+      h2 {
+        font-size: 1.3em;
+        margin: 1rem 0 0.25rem;
+      }
+
+      h3 {
+        font-size: 1.1em;
+        margin: 1rem 0 0.25rem;
+      }
+
+      .entete {
+        font-size: 10pt;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <aside>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#aside_navbar"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span> Menu
+      </button>
+      <div class="collapse navbar-collapse" id="aside_navbar"></div>
+    </nav>
+  </aside>
+  <main class="container">
+    <table class="table table-sm table-bordered border-dark align-middle my-2 entete">
+      <tr>
+        <td width="33.3%" class="text-center">Lycée secondaire Hammam-Sousse<br><em><small>Année scolaire
+              2021/2022</small></em></td>
+        <td width="33.3%" class="text-center fs-4"><strong>Evaluation n°3</strong><br>Programmation</td>
+        <td><strong>Classe :</strong> 2TI<br><strong>Durée :</strong> 1 heure<br><strong>Enseignant :</strong> Mohamed
+          Anis MANI</td>
+      </tr>
+    </table>
+
+    <div class="row my-2">
+      <div class="col-6"><label for="nom-prenom">Nom & Prénom</label><input type="text" id="nom-prenom"
+          class="form-control"></div>
+      <div class="col-6"><label for="classe">Classe</label><input type="text" id="classe" class="form-control"></div>
+    </div>
+
+    <h1>Evaluation n°3 - 2<sup>ème</sup>TI</h1>
+    <article>
+      <h2>Exercice</h2>
+      <p>Dans les villes surpeuplées on préfère les parking verticaux parce qu'ils permettent de gagner de l'espace. Le
+        parking dans cette évaluation possède <code>n</code> étages (2 &le; ne &le; 10) et chaque étage peut contenir
+        jusqu'à 2 véhicules.</p>
+      <p>On suppose que le parking est représenté par un tableau <code>etages</code> de <code>ne</code> cases où chaque
+        case indique le nombre de places occupées dans l'étage.</p>
+      <p>On veut écrire un programme pour gérer ce parking.</p>
+      <section>
+        <h3>Question 1</h3>
+        <p>On commence par saisir le nombre d'étages <code>ne</code>, calculer et afficher sa capacité totale
+          <code>cp</code>.
+        </p>
+        <p><strong>Exemple :</strong></p>
+        <pre class="bg-light p-2"><code class="nohighlight">Nombre d'étages du parking (2 &le; ne &le; 10) ? 5
+Capacité du parking : 10 véhicules</code></pre>
+        <p><strong>(1) Ecrire un code qui permet de saisir le nombre d'étages <code>ne</code> et d'afficher la capacité
+            totale du parking <code>cp</code>.</strong></p>
+      </section>
+      <section>
+        <h3>Question 2</h3>
+        <p>Initialement, le parking n'est pas vide, il contient un nombre aléatoire de véhicules dans chacun des étages.
+          Le rez-de-chaussée est toujours vide.</p>
+        <p><strong>(2) Remplir le tableau étages par des valeurs aléatoires comprises entre 0 et 2, puis
+            l'afficher.</strong></p>
+      </section>
+      <section>
+        <h3>Question 3</h3>
+        <p>Maintenant, nous souhaitons calculer et afficher le nombre de places libres et occupées dans le parking.</p>
+        <p>Copier/coller le code suivant :</p>
+        <pre><code class="python">npv = 0
+for i in range(1, ne+1):
+  npv = npv + etages[i]
+npo = 0
+print("Nombre de places vides : {npv}")
+print("Nombre de places occupées : {npo}")</code></pre>
+        <p><strong>(3) Tester le code précédent et apporter les modifications et les corrections nécessaires pour qu'il
+            affiche correctement le nombre de places vides <code>npv</code> et occupées <code>npo</code>.</strong></p>
+        <p>
+          <strong>Exemple :</strong> Pour le tableau suivant :
+        </p>
+        <div class="m-auto">
+          <table class="text-center w-100 col-8">
+            <tr>
+              <td>etages</td>
+              <td class="border border-dark">0</td>
+              <td class="border border-dark">1</td>
+              <td class="border border-dark">2</td>
+              <td class="border border-dark">1</td>
+              <td class="border border-dark">1</td>
+              <td class="border border-dark">2</td>
+              <td class="border border-dark">2</td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td><small>0</small></td>
+              <td><small>1</small></td>
+              <td><small>2</small></td>
+              <td><small>3</small></td>
+              <td><small>4</small></td>
+              <td><small>5</small></td>
+              <td><small>6</small></td>
+            </tr>
+          </table>
+        </div>
+        <p class="p-break">Le programme affiche :</p>
+        <pre class="bg-light p-2"><code class="nohighlight">Nombre de places vides : 3
+Nombre de places occupées : 9</code></pre>
+      </section>
+      <section>
+        <h3>Question 4</h3>
+        <p>Des véhicules entrent dans le parking, d'autres en sortent. Lorsqu'un véhicule entre le nombre de places
+          vides est décrémenté, et le nombre de places occupées est incrémenté.</p>
+        <p>Durant la journée, le responsable supervise les opérations d'entrée/de sortie dans le parking.</p>
+        <ul>
+          <li>0 : Symbolise qu'un véhicule veut entrer dans le parking.</li>
+          <li>1 : Symbolise qu'un véhicule veut en sortir.</li>
+        </ul>
+        <p><strong>(4) Saisir <code>no</code> le nombre d'opérations supervisées par le responsable du parking (0 &le;
+            no &le; 600).</strong></p>
+        <p><strong>(5) Implémenter l'algorithme suivant afin de simuler les opérations d'entrée sortie au parking. Le
+            tableau <code>to</code> contient le type d'opérations.</strong></p>
+        <pre><code class="algorithm">Pour i de 0 à no-1 Faire
+  Ecrire("Opération", i+1)
+  to[i] &larr; aléa(0, 1)
+  Si to[i] = 0 Alors Ecrire("Entrée au parking")
+  Sinon Ecrire("Sortie du parking")
+  Fin Si
+Fin Pour</code></pre>
+        <p><strong>(6) Remplacer l'instruction conditionnelle dans l'algorithme par une autre instruction qui possède le
+            même effet (sans utiliser d'instruction <strong>if</strong>).</strong></p>
+      </section>
+      <section>
+        <h3>Question 5</h3>
+        <p>On souhaite mettre-à-jour le nombre de places occupées, ainsi que le nombre de places vides dans le parking.
+        </p>
+        <p><strong>(7) Compléter l'algorithme suivant afin de calculer et afficher le nombre de véhicules dans le
+            parking et le nombre de places vides, de la même façon que dans la question 3.</strong></p>
+        <pre><code class="algorithm">Pour i de 0 à no-1 Faire
+  Si to[i] = 0 Alors 
+    // Entrée d'un véhicule
+    Si .......... Alors npv &larr; npv - 1 Fin Si
+  Sinon
+    // Sortie d'un véhicule
+    Si .......... Alors npv &larr; npv + 1 Fin Si
+  Fin Si
+Fin Pour</code></pre>
+      </section>
+      <section>
+        <h3>Question 6</h3>
+        <p><strong>(8) Mettre-à-jour le tableau <code>etages</code>, distribuer les <code>npo</code> places occupées sur
+            les derniers étages pour vider les premiers étages.</strong></p>
+        <p><strong>Exemple :</strong> Pour ne = 8, nvo = 12 et le tableau <code>etages</code> devient :</p>
+        <div class="m-auto">
+          <table class="text-center w-100 col-9">
+            <tr>
+              <td>etages</td>
+              <td class="border border-dark">0</td>
+              <td class="border border-dark">0</td>
+              <td class="border border-dark">2</td>
+              <td class="border border-dark">2</td>
+              <td class="border border-dark">2</td>
+              <td class="border border-dark">2</td>
+              <td class="border border-dark">2</td>
+              <td class="border border-dark">2</td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td><small>0</small></td>
+              <td><small>1</small></td>
+              <td><small>2</small></td>
+              <td><small>3</small></td>
+              <td><small>4</small></td>
+              <td><small>5</small></td>
+              <td><small>6</small></td>
+              <td><small>7</small></td>
+              <td><small>8</small></td>
+            </tr>
+          </table>
+        </div>
+        <p><strong>(9) Afficher le contenu du tableau <code>etages</code> pour vérifier le succés de
+            l'opération.</strong></p>
+      </section>
+    </article>
+  </main>
+  <script src="resources/js/jquery.min.js"></script>
+  <script src="resources/js/bootstrap.min.js"></script>
+  <script src="resources/js/highlight.pack.js"></script>
+  <script src="resources/js/hljs.algorithm.js"></script>
+  <script src="resources/js/draggable.js"></script>
+  <script src="resources/js/clipboard.min.js"></script>
+  <script src="resources/js/pages.js"></script>
+  <script src="resources/js/savecontent.js"></script>
+  <script src="resources/js/vue.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+    document.querySelectorAll('.language-algorithm,.language-python')
+      .forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'bd-clipboard d-print-none';
+        const btn = document.createElement('button');
+        btn.className = 'btn-clipboard';
+        btn.textContent = "📋";
+        btn.title = "Copier";
+        div.appendChild(btn);
+        item.parentElement.insertBefore(div, item);
+      });
+    new ClipboardJS('.btn-clipboard', {
+      target: (trigger) => {
+        return trigger.parentElement.nextElementSibling;
+      }
+    });
+    $(() => {
+      const localStore = new PagePersistance();
+      const serverStore = new ServerSaves('DS_3T');
+      const userInputSaver = new UserInputSaver(
+        document.querySelector('.user-input-saver'),
+        localStore,
+        serverStore);
+    });
+  </script>
+</body>
+
+</html>

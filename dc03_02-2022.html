@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evaluation n°3 en Programmation - 2TI</title>
+  <link rel="stylesheet" href="resources/css/bootstrap.min.css">
+  <link rel="stylesheet" href="resources/css/default.css">
+  <link rel="stylesheet" href="resources/css/style.css">
+  <link rel="stylesheet" href="resources/css/seance03.css">
+  <style>
+    .pointille {
+      line-height: 0.6cm;
+      border-bottom: #666 dotted 2px;
+    }
+
+    @media print {
+      body {
+        font-family: 'Book Antiqua';
+        font-size: 11pt;
+      }
+
+      h1 {
+        font-size: 1.6em;
+        margin: 1rem 0 0.25rem;
+      }
+
+      h2 {
+        font-size: 1.3em;
+        margin: 1rem 0 0.25rem;
+      }
+
+      h3 {
+        font-size: 1.1em;
+        margin: 1rem 0 0.25rem;
+      }
+
+      .entete {
+        font-size: 10pt;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <aside>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#aside_navbar"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span> Menu
+      </button>
+      <div class="collapse navbar-collapse" id="aside_navbar"></div>
+    </nav>
+  </aside>
+  <main class="container">
+    <table class="table table-sm table-bordered border-dark align-middle my-2 entete">
+      <tr>
+        <td width="33.3%" class="text-center">Lycée secondaire Hammam-Sousse<br><em><small>Année scolaire
+              2021/2022</small></em></td>
+        <td width="33.3%" class="text-center fs-4"><strong>Evaluation n°3</strong><br>Programmation</td>
+        <td><strong>Classe :</strong> 2TI<br><strong>Durée :</strong> 1 heure<br><strong>Enseignant :</strong> Mohamed
+          Anis MANI</td>
+      </tr>
+    </table>
+
+    <div class="row my-2">
+      <div class="col-6"><label for="nom-prenom">Nom & Prénom</label><input type="text" id="nom-prenom"
+          class="form-control"></div>
+      <div class="col-6"><label for="classe">Classe</label><input type="text" id="classe" class="form-control"></div>
+    </div>
+
+    <h1>Evaluation n°3 - 2<sup>ème</sup>TI</h1>
+    <article>
+      <h2>Exercice</h2>
+      <p>Une boutique en ligne accepte des commandes des quatre coins du globe. Les commandes sont livrées à domicile
+        par
+        voie postale.</p>
+      <p>On veut écrire un programme qui trie les commandes des clients selon leurs destinations.</p>
+      <section>
+        <h3>Question 1</h3>
+        <p>On commence par saisir le nombre de commandes <code>nbc</code>. Ce nombre doit être positif
+          (<code>nbc &ge; 0</code>).</p>
+        <p>Copier/Coller le code suivant :</p>
+        <pre><code class="python">nbc = input("Nombre de commandes (nbc &ge; 0) ? ")</code></pre>
+        <p><strong>(1) Apporter les modifications nécessaires au programme pour qu'il accepte des valeurs valides et du
+            bon type.</strong></p>
+      </section>
+      <section>
+        <h3>Question 2</h3>
+        <p>Ensuite, il faudra saisir les numéros des commandes dans un tableau intitulé <code>cmd</code>.</p>
+        <p>Le numéro d'une commande est une chaine de 11 caractères composée comme suit : "cmdxxxyyyyy"</p>
+        <ul>
+          <li>xxx : est un nombre de trois chiffres qui indique le jour de l'année auquel la commande a été faite. (1
+            &le; xxx &le; 366)</li>
+          <li>yyyyy : est un nombre de cinq chiffres qui indique le numéro d'une commande au cours d'une journée. (1
+            &le; yyyyy &le; 99999)</li>
+        </ul>
+        <p><strong>Exemples :</strong> "cmd00100001" est la 1<sup>ère</sup> commande de la 1<sup>ère</sup> journée de
+          l'année, "cmd15004260" est la 4260<sup>ème</sup> commande effectuée le 150<sup>ème</sup> jour de l'année.</p>
+        <p>Copier/coller le code suivant :</p>
+        <pre><code class="python">i, jour, numc = 0, 3, 15
+cmd[i] = f"cmd{jour:08}{numc:03}"
+print(cmd[i])</code></pre>
+        <p><strong>(2) Tester le code précédent, puis le corriger pour afficher le jour sur trois chiffres et le numéro
+            de commande sur 5 chiffres.</strong></p>
+        <p><strong>(3) Modifier le code précédent pour qu'il génère aléatoirement le contenu du tableau
+            <code>cmd</code> :</strong></p>
+        <ul>
+          <li>Le jour est sélectionné aléatoirement entre 1 et 366</li>
+          <li>Le numéro de commande est choisi aléatoirement entre 1 et 99999</li>
+        </ul>
+        <p><strong>Exemple :</strong></p>
+        <div class="m-auto">
+          <table class="text-center w-100 col-7">
+            <tr>
+              <td>cmd</td>
+              <td class="border border-dark">cmd29304271</td>
+              <td class="border border-dark">cmd22063251</td>
+              <td class="border border-dark">cmd29601945</td>
+              <td class="border border-dark">cmd10660632</td>
+              <td class="border border-dark">cmd25236376</td>
+              <td class="border border-dark">cmd33521002</td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td><small>0</small></td>
+              <td><small>1</small></td>
+              <td><small>2</small></td>
+              <td><small>3</small></td>
+              <td><small>4</small></td>
+              <td><small>5</small></td>
+            </tr>
+          </table>
+        </div>
+      </section>
+      <section>
+        <h3>Question 3</h3>
+        <p>Maintenant, le programme va saisir les destinations des commandes dans un tableau intitulé <code>dest</code>.
+          La i<sup>ème</sup> case de <code>dest</code> correspond à la i<sup>ème</sup> commande <code>cmd</code>.</p>
+        <div class="m-auto">
+          <table class="text-center w-100 col-7">
+            <tr>
+              <td>dest</td>
+              <td class="border border-dark">Tunisia</td>
+              <td class="border border-dark">Germany</td>
+              <td class="border border-dark">United Kingdom</td>
+              <td class="border border-dark">France</td>
+              <td class="border border-dark">Tunisie</td>
+              <td class="border border-dark">Algeria</td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td><small>0</small></td>
+              <td><small>1</small></td>
+              <td><small>2</small></td>
+              <td><small>3</small></td>
+              <td><small>4</small></td>
+              <td><small>5</small></td>
+            </tr>
+          </table>
+        </div>
+        <p><strong>(4) Ecrire un code qui remplit le tableau <code>dest</code> par les noms des pays de destination des
+            commandes.</strong></p>
+        <p><strong>(5) Modifier le code précédent afin de normaliser les noms des pays :</strong></p>
+        <ul>
+          <li>La première lettre de chaque mot doit être en majuscules.</li>
+          <li>Les lettres suivantes sont transformées en miniscules.</li>
+        </ul>
+        <p><strong>Exemples :</strong> "UNITED states" &rArr; "United States", "tUnIsIa" &rArr; "Tunisia"</p>
+        <p>Utiliser l'algorithme suivant (on suppose que le nom du pays est composé uniquement de lettres alphabétiques
+          et d'espaces).</p>
+        <pre><code class="algorithm">pays &larr; "UNITED states"
+pays1 &larr; ""
+Pour i de 0 à Long(pays) - 1 Faire
+  Si (i = 0) ou (pays[i-1] = " " et pays[i] &ne; " ") Alors pays1 &larr; pays1 + Majus(pays[i])
+  Sinon Si "A" &le; pays[i] &le; "Z" Alors pays1 &larr; pays1 + chr(ord(pays[i]) + 32)
+  Sinon pays1 &larr; pays1 + pays[i]
+  Fin Si
+Fin Pour</code></pre>
+      </section>
+
+      <section>
+        <h3>Question 4</h3>
+        <p>On veut rechercher et afficher toutes les commandes destinées à un pays donné.</p>
+        <p>Pour celà on :</p>
+        <ul>
+          <li>Saisit le nom du pays recherché <code>pr</code></li>
+          <li>Cherche le nom du pays <code>pr</code> dans le tableau <code>dest</code></li>
+          <li>Affiche les numéros de commandes relatives à ce pays.</li>
+        </ul>
+        <p><strong>Exemples :</strong></p>
+        <div class="row">
+          <div class="col-6">
+            <pre class="bg-light p-2"><code class="nohighlight">Indiquer le nom du pays ? Tunisia
+1. cmd29304271
+2. cmd25236376</code></pre>
+          </div>
+          <div class="col-6">
+            <pre class="bg-light p-2"><code class="nohighlight">Indiquer le nom du pays ? Libya
+Aucune commande destinée à Libya</code></pre>
+          </div>
+        </div>
+        <p><strong>(6) Saisir le nom du pays recherché dans une variable nommée <code>pr</code>.</strong></p>
+        <p><strong>(7) Chercher et afficher les commandes qui sont destinées au pays indiqué dans la variable
+            <code>pr</code>.</strong></p>
+      </section>
+
+      <section>
+        <h3>Question 5</h3>
+        <p>On veut supprimer les commandes qui ont expiré pour celà on :</p>
+        <ul>
+          <li>Saisit le numéro de la journée actuelle <code>ja</code></li>
+          <li>Supprime toutes les commandes expirées avec leurs destinations.</li>
+          <li>Affiche les commandes restantes ainsi que leurs destinations.</li>
+        </ul>
+        <p class="p-break"><strong>Exemples :</strong></p>
+        <div class="row">
+          <div class="col-6">
+            <pre class="bg-light p-2"><code class="nohighlight">Journée actuelle ? 250
+cmd29304271 - Tunisia
+cmd29601945 - Germany
+cmd25236376 - United Kingdom
+cmd33521002 - France</code></pre>
+          </div>
+          <div class="col-6">
+            <pre class="bg-light p-2"><code class="nohighlight">Journée actuelle ? 300
+cmd33521002 - Tunisia</code></pre>
+          </div>
+        </div>
+        <p><strong>(8) Saisir la journée actuelle <code>ja</code>, vérifier qu'elle appartient bien à l'intervalle [1,
+            366].</strong></p>
+        <p><strong>(9) Exploiter l'algorithme suivant pour supprimer les commandes expirées. Attention, il faut veiller
+            aussi à supprimer les destinations des commandes expirées.</strong></p>
+        <pre><code class="algorithm">j &larr; 0
+Pour i de 0 à nbc-1 Faire
+  jcmd &larr; valeur(souschaine(cmd[i], 3, 6))
+  Si jcmd &ge; ja Alors
+    cmd[j] &larr; cmd[i]
+    j &larr; j + 1
+  Fin Si
+Fin Pour
+nbc &larr; j</code></pre>
+        <p><strong>(10) Afficher la liste des commandes non expirées, comme indiqué dans les exemples
+            ci-dessus.</strong></p>
+      </section>
+    </article>
+  </main>
+  <script src="resources/js/jquery.min.js"></script>
+  <script src="resources/js/bootstrap.min.js"></script>
+  <script src="resources/js/highlight.pack.js"></script>
+  <script src="resources/js/hljs.algorithm.js"></script>
+  <script src="resources/js/draggable.js"></script>
+  <script src="resources/js/clipboard.min.js"></script>
+  <script src="resources/js/pages.js"></script>
+  <script src="resources/js/savecontent.js"></script>
+  <script src="resources/js/vue.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+    document.querySelectorAll('.language-algorithm,.language-python')
+      .forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'bd-clipboard d-print-none';
+        const btn = document.createElement('button');
+        btn.className = 'btn-clipboard';
+        btn.textContent = "📋";
+        btn.title = "Copier";
+        div.appendChild(btn);
+        item.parentElement.insertBefore(div, item);
+      });
+    new ClipboardJS('.btn-clipboard', {
+      target: (trigger) => {
+        return trigger.parentElement.nextElementSibling;
+      }
+    });
+    $(() => {
+      const localStore = new PagePersistance();
+      const serverStore = new ServerSaves('DS_3T');
+      const userInputSaver = new UserInputSaver(
+        document.querySelector('.user-input-saver'),
+        localStore,
+        serverStore);
+    });
+  </script>
+</body>
+
+</html>
