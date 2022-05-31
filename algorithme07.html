@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="resources/css/bootstrap.min.css">
+  <link rel="stylesheet" href="resources/css/default.css">
+  <link rel="stylesheet" href="resources/css/style.css">
+  <link rel="stylesheet" href="resources/css/module07.css">
+  <title>Exercices de révision</title>
+</head>
+
+<body>
+  <aside>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#aside_navbar"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span> Menu
+      </button>
+      <div class="collapse navbar-collapse" id="aside_navbar"></div>
+    </nav>
+  </aside>
+
+  <main class="container my-3">
+    <h1>Exercices de révision</h1>
+
+    <article>
+      <h2>Exercices</h2>
+
+      <section>
+        <h3>Exercice 1 : Les pools</h3>
+        <p>Dans la coupe de monde les 20 équipes participantes sont divisées en cinq pools A, B, C, D et E. Chaque pool
+          contient quatre équipes sélectionnées d'une façon aléatoire. On demande d'écrire l'algorithme d'un programme
+          qui distribue les équipes sur les différents pools.</p>
+
+        <h4>Solution</h4>
+        <pre><code class="algorithm">Algorithme Ex1
+Début
+  // Saisie des noms des équipes dans le tableau A
+  Pour i de 0 à 19 faire
+    Répéter
+      Ecrire("Equipe n°", i + 1, " ? ")
+      Lire(A[i])
+
+      trouve &larr; Faux
+      j &larr; 0
+      TantQue non trouve et j &lt; i Faire
+        Si Majus(A[i]) = Majus(A[i]) Alors 
+          trouve &larr; Vrai
+        Sinon
+          j &larr; j + 1
+        Fin Si
+      Fin TantQue
+    Jusqu'à non trouve
+  Fin Pour
+
+  // Distribuer les équipes aléatoirement
+  Pour i de 0 à 19 Faire
+    num &larr; aléa(0, 19)
+    temp &larr; A[i]
+    A[i] &larr; A[num]
+    A[num] &larr; temp
+  Fin Pour
+
+  // Afficher les pools
+  Pour i de 0 à 19 Faire
+    Si i mod 4 = 0 Alors
+      Ecrire("Equipes du pool :", chr(65 + i div 4))
+    Fin Si
+    Ecrire(A[i])
+Fin</code></pre>
+      </section>
+
+      <section>
+        <h3 class="p-break">Exercice 2 : Anagrammes</h3>
+        <p>Deux mots sont dits anagrammes ssi ils sont de même longueur et qu'ils sont formés par les mêmes lettres.</p>
+        <p><strong>Exemples :</strong> chien, niche, chine ; ordre, dorer, roder</p>
+
+        <h4>Solution</h4>
+        <pre><code class="algorithm">Algorithme Ex2
+Début
+  // Saisie des mots
+  Répéter
+    Ecrire("Donner le premier mot ? ") ; Lire(mot1)
+  Jusqu'à long(mot1) > 0
+
+  Répéter
+    Ecrire("Donner le second mot ? ") ; Lire(mot2)
+  Jusqu'à long(mot1) = long(mot2)
+
+  // Est-ce que les mots sont anagrammes
+  i &larr; 0
+  anagrammes &larr; Vrai
+  mot3 &larr; mot2
+  TantQue anagrammes et  i &lt; Long(mot1) Faire
+    p &larr; Pos(mot1[i], mot3)
+    Si p &ne; -1 Alors
+      mot3 &larr; efface(mot3, p, p+1)
+      i &larr; i + 1
+    Sinon
+      anagrammes &larr; Faux
+    Fin Si
+  Fin TantQue
+
+  // Afficher si les mots sont anagrammes
+  Si anagrammes Alors
+    Ecrire(mot1, "et", mot2, "sont anagrammes.")
+  Sinon
+    Ecrire(mot1, "et", mot2, "ne sont pas anagrammes.")
+  Fin Si
+Fin</code></pre>
+      </section>
+
+      <section>
+        <h3>Exercice3 : Inconnu</h3>
+        <p>Soit l'algorithme suivant :</p>
+        <pre><code class="algorithm">TantQue b &ne; 0 Faire
+  r &larr; a mod b
+  a &larr; b
+  b &larr; r
+Fin TantQue</code></pre>
+        <p>Calculer les valeurs de a et b dans les cas suivants :</p>
+        <ul>
+          <li>a = 10, b = 15</li>
+          <li>a = 3, b = 7</li>
+          <li>a = 26, b = 18</li>
+        </ul>
+        <p>Quel est le rôle de cet algorithme ?</p>
+
+        <h4>Solution</h4>
+        <div class="row">
+          <div class="col-4">
+            <table class="table table-bordered table-sm border-dark">
+
+              <body>
+                <tr>
+                  <td>a</td>
+                  <td>b</td>
+                  <td>b &ne; 0</td>
+                  <td>r</td>
+                </tr>
+                <tr>
+                  <td>10</td>
+                  <td>15</td>
+                  <td>V</td>
+                  <td>10</td>
+                </tr>
+                <tr>
+                  <td>15</td>
+                  <td>10</td>
+                  <td>V</td>
+                  <td>5</td>
+                </tr>
+                <tr>
+                  <td>10</td>
+                  <td>5</td>
+                  <td>V</td>
+                  <td>0</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>0</td>
+                  <td>F</td>
+                  <td>-</td>
+                </tr>
+              </body>
+            </table>
+            <p>a = 5, b = 0</p>
+          </div>
+          <div class="col-4">
+            <table class="table table-bordered table-sm border-dark">
+
+              <body>
+                <tr>
+                  <td>a</td>
+                  <td>b</td>
+                  <td>b &ne; 0</td>
+                  <td>r</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>7</td>
+                  <td>V</td>
+                  <td>3</td>
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td>3</td>
+                  <td>V</td>
+                  <td>1</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>1</td>
+                  <td>V</td>
+                  <td>0</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>0</td>
+                  <td>F</td>
+                  <td>-</td>
+                </tr>
+              </body>
+            </table>
+            <p>a = 1, b = 0</p>
+          </div>
+          <div class="col-4">
+            <table class="table table-bordered table-sm border-dark">
+
+              <body>
+                <tr>
+                  <td>a</td>
+                  <td>b</td>
+                  <td>b &ne; 0</td>
+                  <td>r</td>
+                </tr>
+                <tr>
+                  <td>26</td>
+                  <td>18</td>
+                  <td>V</td>
+                  <td>8</td>
+                </tr>
+                <tr>
+                  <td>18</td>
+                  <td>8</td>
+                  <td>V</td>
+                  <td>2</td>
+                </tr>
+                <tr>
+                  <td>8</td>
+                  <td>2</td>
+                  <td>V</td>
+                  <td>0</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>0</td>
+                  <td>F</td>
+                  <td>-</td>
+                </tr>
+              </body>
+            </table>
+            <p>a = 2, b = 0</p>
+          </div>
+        </div>
+
+        <p>L'algorithme calcule le Plus Grand Commun Diviseur de a et b</p>
+      </section>
+
+      <section>
+        <h3>Exercice 4 : Correction</h3>
+
+        <p>Corriger l'algorithme suivant :</p>
+        <pre><code class="algorithm">TantQue 8 &ge; n &ge; 12 Faire
+  Ecrire("Donner n ?") ; Lire(n)
+Fin TantQue</code></pre>
+
+<h4>Solution</h4>
+<pre><code class="algorithm">n &larr; 7
+TantQue non (8 &le; n &le; 12) Faire
+  Ecrire("Donner n ?") ; Lire(n)
+Fin TantQue</code></pre>
+      </section>
+
+    </article>
+
+  </main>
+  <footer class="d-print-none bg-dark text-white p-2">
+    <div class="text-center">Page créée avec ♥ par Mohamed Anis MANI</div>
+    <div class="text-center small">Année scolaire : 2021/2022</div>
+  </footer>
+
+  <script src="resources/js/jquery.min.js"></script>
+  <script src="resources/js/bootstrap.bundle.min.js"></script>
+  <script src="resources/js/highlight.pack.js"></script>
+  <script src="resources/js/hljs.algorithm.js"></script>
+  <script src="resources/js/clipboard.min.js"></script>
+  <script src="resources/js/pages.js"></script>
+  <script src="resources/js/vue.min.js"></script>
+  <script src="resources/apps/module07.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+
+    document.querySelectorAll('.language-algorithm,.language-python')
+      .forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'bd-clipboard d-print-none';
+        const btn = document.createElement('button');
+        btn.className = 'btn-clipboard';
+        btn.textContent = "📋";
+        btn.title = "Copier";
+        div.appendChild(btn);
+        item.parentElement.insertBefore(div, item);
+      });
+    new ClipboardJS('.btn-clipboard', {
+      target: (trigger) => {
+        return trigger.parentElement.nextElementSibling;
+      }
+    });
+  </script>
+</body>
+
+</html>
