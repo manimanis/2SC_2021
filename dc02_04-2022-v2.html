@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluation n°2 en Programmation - 2TI</title>
+    <link rel="stylesheet" href="resources/css/bootstrap.min.css">
+    <link rel="stylesheet" href="resources/css/default.css">
+    <link rel="stylesheet" href="resources/css/style.css">
+    <link rel="stylesheet" href="resources/css/seance03.css">
+    <style>
+        .pointille {
+            line-height: 0.8cm;
+            border-bottom: #666 dotted 2px;
+        }
+
+        @media print {
+            h1 {
+                font-size: 1.6em;
+            }
+
+            h2 {
+                font-size: 1.4em;
+            }
+
+            h3 {
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <aside>
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#aside_navbar"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span> Menu
+            </button>
+            <div class="collapse navbar-collapse" id="aside_navbar"></div>
+        </nav>
+    </aside>
+    <main class="container">
+        <table class="table table-sm table-bordered border-dark align-middle my-2">
+            <tr>
+                <td width="33.3%" class="text-center fs-6">Lycée secondaire Hammam-Sousse<br><em><small>Année scolaire
+                            2022/2023</small></em></td>
+                <td width="33.3%" class="text-center fs-3"><strong>Evaluation n°2</strong><br>Programmation</td>
+                <td><strong>Classe :</strong> 2TI<br><strong>Durée :</strong> 1 heure<br><strong>Enseignant :</strong>
+                    Mohamed
+                    Anis MANI</td>
+            </tr>
+        </table>
+
+        <div class="row my-2">
+            <div class="col-8"><label for="nom-prenom">Nom & Prénom</label><input type="text" id="nom-prenom"
+                    class="form-control border-dark"></div>
+            <div class="col-4"><label for="classe">Classe</label><input type="text" id="classe"
+                    class="form-control border-dark"></div>
+        </div>
+
+        <h1>Devoir de contrôle n°2 - 2<sup>ème</sup>TI</h1>
+        <article>
+            <section>
+                <h3>Exercice 1 - Nombre de mots dans une phrase</h3>
+                <p>La phrase suivante :</p>
+                <p class="text-center">"Ikram est allée au supermarché."</p>
+                <p>est composée de 5 mots séparés par un seul espace.</p>
+                <p>Ecrire l'algorithme d'un programme qui calcule le nombre de mots dans une phrase saisie par
+                    l'utilisateur. </p>
+                <p class="pointille">&nbsp;</p>
+                <p class="pointille">&nbsp;</p>
+                <p class="pointille">&nbsp;</p>
+                <p class="pointille">&nbsp;</p>
+                <p class="pointille">&nbsp;</p>
+                <p class="pointille">&nbsp;</p>
+                <p class="pointille">&nbsp;</p>
+                <p class="pointille">&nbsp;</p>
+                <p class="pointille">&nbsp;</p>
+                <p class="pointille">&nbsp;</p>
+                <p class="pointille">&nbsp;</p>
+                <p class="pointille">&nbsp;</p>
+                <p class="pointille">&nbsp;</p>
+                <p class="pointille">&nbsp;</p>
+            </section>
+            <section>
+                <h3>Exercice 2 - Couveuse</h3>
+                <p>Un fermier met des &oelig;ufs fécondés dans une couveuse éléctrique. Après 21 jours, un poussin
+                    percera la
+                    coquille de son &oelig;uf et sortira tout en piaillant joyeusement.</p>
+                <p>Dans trois mois, les petits poussins deviennent poulettes et coquelets. Pour devenir adulte il faudra
+                    attendre
+                    encore trois autres mois.</p>
+                <p>Aujourd'hui, le fermer a mis 10 &oelig;ufs dans la couveuse. Après 21 jours, 11/15 de ces &oelig;ufs
+                    donneront des poussins représentés par la lettre miniscule <strong>"p"</strong> et les 4/15 ne
+                    donneront rien
+                    et sont représentés par la lettre minuscule <strong>"x"</strong>.</p>
+                <p><strong>(1) Copier le programme suivant, et vérifier qu'il fonctionne correctement.</strong></p>
+                <pre><code class="python">oeufs = "ppppxppppxpppxx"
+seq = ""
+for i in range(10):
+    seq = seq + oeufs[randint(0, len(oeufs) - 1)]
+print(seq)</code></pre>
+                <p>(2) En réalité le fermier ne met pas seulement 10 &oelig;ufs dans la couveuse. Il en met
+                    <code>no</code> &oelig;ufs. <code>no</code> est donné par le fermier. <strong>Modifier le programme
+                        précédent
+                        pour lui permettre de choisir le nombre d'&oelig;ufs qui doit être strictement supérieur à
+                        10.</strong>
+                </p>
+                <p>Maintenant, le fermier souhaite uniquement conserver les poussins (lettre "p") et jeter les
+                    &oelig;ufs
+                    infertiles (lettre "x").</p>
+                <p><strong>(3) Copier le code suivant tout en le complétant à la suite de votre programme :</strong></p>
+                <ul>
+                    <li>La séquence <code>seq1</code> contient uniquement les poussins (lettre "p"), les lettres "x"
+                        seront
+                        supprimées.</li>
+                    <li>Calculer le nombre de poussins vifs <code>npv</code>.</li>
+                    <li>Afficher le nombre de poussins vifs.</li>
+                </ul>
+                <pre><code class="python">seq1 = ""
+for i in range(.......):
+    if ............:
+        seq1 = seq1 + seq[i]
+npv = ........ # Nombre de poussins vifs
+print("Nombre de poussins vifs :", ......)</code></pre>
+                <p>Après trois mois, les poussins deviennent des poulettes et des coquelets. Certaines meurent.</p>
+                <p>Le code suivant permet de simuler ce processus :</p>
+                <pre><code class="python">seq2 = ""
+for i in range(npv):
+    tp = ........ # choisir un nombre au hasard entre 0 et 99
+    d = ......... # calculer le chiffre de dizaines
+    u = ......... # calculer le chiffre des unités
+    # Si d &gt; u &rarr; le poussin devient une poulette (lettre "P")
+    # Si d &lt; u &rarr; le poussin devient un coquelet (lettre "C")
+    # Si d = u &rarr; le poussin meurt (lettre "x")
+    .............
+print(seq2)</code></pre>
+                <p><strong>(4) Copier le code précédent à la suite de votre programme et tout en le complétant.</strong>
+                </p>
+                <p><strong>(5) Compléter le programme pour qu'il calcule et affiche :</strong></p>
+                <ul>
+                    <li>Le nombre de poulettes <code>nbp</code>.</li>
+                    <li>Le nombre de coquelets <code>nbc</code>.</li>
+                    <li>Le nombre de poussins morts <code>nbx</code>.</li>
+                </ul>
+                <div class="row">
+                    <div class="col-6">
+                        <pre><code class="nohighlight shell python" data-text="Exemple 1">Nbre d'œufs ? 20
+ppxpxppxpxppppxppppp
+Nombre de poussins vifs : 15
+PPxCPCCPCCCPPCC
+Nombre de poulettes : 6
+Nombre de coquelets : 8
+Nombre de poussins morts : 1</code></pre>
+                    </div>
+                    <div class="col-6">
+                        <pre><code class="nohighlight shell python" data-text="Exemple 2">Nbre d'œufs ? 50
+xxppxpppppppppxxpppppxpxpxppxpppppppxpppppppxppxpp
+Nombre de poussins vifs : 38
+PPCCPPPCPCxPPCPxxCCPPxCCPPPCPCPPPPCPCP
+Nombre de poulettes : 21
+Nombre de coquelets : 13
+Nombre de poussins morts : 4</code></pre>
+                    </div>
+                </div>
+            </section>
+        </article>
+        <div id="pageFooter"></div>
+    </main>
+    <script src="resources/js/jquery.min.js"></script>
+    <script src="resources/js/bootstrap.min.js"></script>
+    <script src="resources/js/highlight.pack.js"></script>
+    <script src="resources/js/hljs.algorithm.js"></script>
+    <script src="resources/js/draggable.js"></script>
+    <script src="resources/js/clipboard.min.js"></script>
+    <script src="resources/js/pages.js"></script>
+    <script src="resources/js/savecontent.js"></script>
+    <script src="resources/js/vue.min.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad();
+        document.querySelectorAll('.language-algorithm,.language-python')
+            .forEach(item => {
+                const div = document.createElement('div');
+                div.className = 'bd-clipboard d-print-none';
+                const btn = document.createElement('button');
+                btn.className = 'btn-clipboard';
+                btn.textContent = "📋";
+                btn.title = "Copier";
+                div.appendChild(btn);
+                item.parentElement.insertBefore(div, item);
+            });
+        new ClipboardJS('.btn-clipboard', {
+            target: (trigger) => {
+                return trigger.parentElement.nextElementSibling;
+            }
+        });
+        $(() => {
+            const localStore = new PagePersistance();
+            const serverStore = new ServerSaves('DS_3T');
+            const userInputSaver = new UserInputSaver(
+                document.querySelector('.user-input-saver'),
+                localStore,
+                serverStore);
+        });
+    </script>
+    
+    
+</body>
+
+</html>
