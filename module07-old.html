@@ -30,426 +30,6 @@
       <h2>Situations</h2>
 
       <section>
-        <h3>Pairs / Impairs</h3>
-        <p>Ahmed a conçu un petit jeu pour sa s&oelig;ur Sarra.</p>
-        <figure>
-          <img src="images/module07/pair-impair.jpg" alt="Nombres pairs et nombres impairs" class="h5cm">
-          <figcaption>Nombres pairs et nombres impairs</figcaption>
-        </figure>
-        <p>L'ordinateur présente à la petite <code>n</code> nombres (<code>5 &le; n &le; 15</code>) choisis au hasard
-          entre 1 et 40.</p>
-        <p>Et Sarra doit les classer en deux groupes :</p>
-        <ul>
-          <li>Les nombres pairs ensembles.</li>
-          <li>Les nombres impairs ensembles.</li>
-        </ul>
-        <p>Après que la petite réponde le programme lui donne la correction.</p>
-        <div class="row">
-          <div class="col-6">
-            <p><strong>Exemple 1 : </strong> Pour <code>n = 10</code> et les nombres suivants :</p>
-            <table width="80%" class="m-auto col-10 text-center">
-              <tr>
-                <script>
-                  let t = [1, 31, 8, 5, 15, 19, 2, 37, 36, 25];
-                  document.write("<tr>");
-                  for (let v of t) {
-                    document.write("<td class=\"border border-dark\">", v, "</td>");
-                  }
-                  document.write("</tr><tr>");
-                  for (let i = 0; i < t.length; i++) {
-                    document.write("<td>", i, "</td>");
-                  }
-                  document.write("</tr>");
-                </script>
-              </tr>
-            </table>
-            <p><strong>Le programme affiche :</strong></p>
-            <pre><code class="nohighlight">Liste des nombres impairs : <script>let i = 0;
-              for (let v of t) {
-                if (v % 2 != 0) {
-                  if (i > 0) {
-                    document.write(',');
-                  }
-                  document.write(v);
-                  i++;
-                }
-              }</script>
-Liste des nombres pairs : <script>i = 0;
-  for (let v of t) {
-    if (v % 2 == 0) {
-      if (i > 0) {
-        document.write(',');
-      }
-      document.write(v);
-      i++;
-    }
-  }</script></code></pre>
-          </div>
-          <div class="col-6">
-            <p><strong>Exemple 2 : </strong> Pour <code>n = 5</code> et les nombres suivants :</p>
-            <table width="80%" class="m-auto col-10 text-center">
-              <tr>
-                <script>
-                  t = [16, 25, 14, 5, 24];
-                  document.write("<tr>");
-                  for (let v of t) {
-                    document.write("<td class=\"border border-dark\">", v, "</td>");
-                  }
-                  document.write("</tr><tr>");
-                  for (let i = 0; i < t.length; i++) {
-                    document.write("<td>", i, "</td>");
-                  }
-                  document.write("</tr>");
-                </script>
-              </tr>
-            </table>
-            <p><strong>Le programme affiche :</strong></p>
-            <pre><code class="nohighlight">Liste des nombres impairs : <script>i = 0;
-              for (let v of t) {
-                if (v % 2 != 0) {
-                  if (i > 0) {
-                    document.write(',');
-                  }
-                  document.write(v);
-                  i++;
-                }
-              }</script>
-Liste des nombres pairs : <script>i = 0;
-  for (let v of t) {
-    if (v % 2 == 0) {
-      if (i > 0) {
-        document.write(',');
-      }
-      document.write(v);
-      i++;
-    }
-  }</script></code></pre>
-          </div>
-        </div>
-        <h4>Travail demandé</h4>
-        <ol>
-          <li><strong>Quels sont les objets nécessaires pour résoudre ce problème ? Tracer le TDO.</strong>
-            <div class="d-none d-print-block">
-              <p>Dans ce problème nous nous connaissons pas le nombre exact de valeurs à classer. Aussi, le nombre de
-                valeurs à classer est plus important que les exercices précédents.</p>
-              <p>Il n'est pas facile de créer et de gérer 15 variables le programme deviendra très difficile à écrire et
-                à comprendre.</p>
-              <p>&rArr; Il est conseillé dans notre cas d'utiliser des <strong>tableaux</strong> pour recueillir
-                l'ensemble des informations.</p>
-              <p>Pour ce problème nous avons besoin des objets suivants :</p>
-              <ul>
-                <li><code>n</code> : le nombre de valeurs à classer.</li>
-                <li><code>t</code> : les valeurs à classer doivent être mises dans un tableau nommé <code>t</code> car
-                  il n'est pas logique de créer et de gérer 15 variables.</li>
-                <li><code>tp, ti</code> : les valeurs paires et les valeurs impaires seront, aussi, stockées dans deux
-                  tableaux différents.</li>
-                <li><code>np, ni</code> : le nombre de valeurs paires et le nombre de valeurs impaires.</li>
-              </ul>
-              <div class="row p-break">
-                <div class="col-6">
-                  <p class="text-center"><b>TDO</b></p>
-                  <table width="80%" class="m-auto text-center">
-                    <tr>
-                      <th class="border border-dark">Objet</th>
-                      <th class="border border-dark">Type/Nature</th>
-                    </tr>
-                    <tr>
-                      <td class="border border-dark">n, np, ni</td>
-                      <td class="border border-dark">entier</td>
-                    </tr>
-                    <tr>
-                      <td class="border border-dark">t, tp, ti</td>
-                      <td class="border border-dark">tab</td>
-                    </tr>
-                  </table>
-                  <p class="text-center"><b>TDNT</b></p>
-                  <table width="80%" class="m-auto text-center">
-                    <tr>
-                      <th class="border border-dark">Type</th>
-                    </tr>
-                    <tr>
-                      <td class="border border-dark">tab = Tableau de 15 entier</td>
-                    </tr>
-                  </table>
-                </div>
-                <div class="col-6">
-                  <p>Déclaration des tableaux en Python</p>
-                  <pre><code class="python">import numpy as np
-t = np.array([0]*15)
-tp = np.array([0]*15)
-ti = np.array([0]*15)</code></pre>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li><strong>Ecrire l'algorithme du programme ci-dessus.</strong></li>
-        </ol>
-      </section>
-      <section>
-        <h3>Correction Pair / Impair</h3>
-        <div class="row">
-          <div class="col-6">
-            <h4>Algorithme</h4>
-            <pre><code class="algorithm">Programme Pair_Impair
-Début
-  // Saisie de n (5 ≤ n ≤ 15)
-  Répéter
-    Ecrire("Donner n [5, 15] ? ")
-    Lire(n)
-  Jusqu'à (5 ≤ n ≤ 15)
-  
-  
-  
-  // Remplir le tableau t de valeurs aléatoires
-  Pour i de 0 à n-1 faire
-    t[i] &larr; aléa(1, 40)
-  Fin Pour
-  // Afficher les valeurs du tableau
-  Ecrire("Classer les nombres : pairs/impairs")
-  Pour i de 0 à n-1 faire
-    Ecrire(t[i])
-  Fin Pour
-  // Classer les valeurs
-  ni &larr; 0
-  np &larr; 0
-  Pour i de 0 à n-1 Faire
-    Si t[i] mod 2 = 0 Alors
-      tp[np] &larr; t[i]
-      np &larr; np + 1
-    Sinon
-      ti[ni] &larr; t[i]
-      ni &larr; ni + 1
-    Fin Si
-  Fin Pour
-  // Afficher les nombres impairs
-  Ecrire("Liste des nombres impairs")
-  Pour i de 0 à ni-1 Faire
-    Ecrire(ti[i])
-  Fin Pour
-  // Afficher les nombres pairs
-  Ecrire("Liste des nombres pairs")
-  Pour i de 0 à np-1 Faire
-    Ecrire(tp[i])
-  Fin Pour
-Fin</code></pre>
-          </div>
-          <div class="col-6">
-            <h4>Python</h4>
-            <pre><code class="python">from random import randint
-from numpy import array
-# Saisie de n (5 ≤ n ≤ 15)
-n = 0
-while not (5 <= n <= 15):
-    n= int(input("Donner n [5, 15] ? "))
-# Déclaration des tableaux
-t = array([0]*15)
-tp = array([0]*15)
-ti = array([0]*15)
-# Remplir le tableau t de valeurs aléatoires
-for i in range(n):
-    t[i] = randint(1, 40)
-
-# Afficher les valeurs du tableau
-print("Classer les nombres : pairs/impairs")
-for i in range(n):
-    print(t[i])
-
-# Classer les valeurs
-ni = 0
-np = 0
-for i in range(n):
-    if t[i] % 2 == 0:
-        tp[np] = t[i]
-        np = np + 1
-    else:
-        ti[ni] = t[i]
-        ni = ni + 1
-
-
-# Afficher les nombres impairs
-print("Liste des nombres impairs")
-for i in range(ni):
-    print(ti[i])
-
-# Afficher les nombres pairs
-print("Liste des nombres pairs")
-for i in range(np):
-    print(tp[i])
-
- </code></pre>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <h3>Tableaux</h3>
-        <h4>Définition</h4>
-        <p>Un tableau est une structure de données qui est utilisée pour stocker <u>plusieurs valeurs de même type</u>.
-        </p>
-        <p>Les éléments d'un tableau sont <u>accessibles</u> grâce à leurs <strong>indices</strong>, commençant du zéro.
-        </p>
-        <h4>Exemple</h4>
-        <p>Soit le tableau suivant :</p>
-        <table class="table table-borderless table-sm col-5 m-auto small" style="width: 300px;">
-          <tbody>
-            <tr>
-              <td>tn</td>
-              <td class="border border-dark">Amine</td>
-              <td class="border border-dark">Israa</td>
-              <td class="border border-dark">Sirine</td>
-              <td class="border border-dark">Eya</td>
-            </tr>
-            <tr>
-              <td>&nbsp;</td>
-              <td>0</td>
-              <td>1</td>
-              <td>2</td>
-              <td>3</td>
-            </tr>
-          </tbody>
-        </table>
-        <ul>
-          <li>Quel est le nom de ce tableaux ?</li>
-          <li>Quel est le nombre de ces éléments ?</li>
-          <li>Quel est le type de chacun de ces éléments ?</li>
-        </ul>
-        <h4>Déclaration en algorithme</h4>
-        <p>En algorithme, un tableau est déclaré dans le TDO. Puis, dans le TDNT.</p>
-        <div class="row">
-          <div class="col-6">
-            <p class="text-center"><b>TDO</b></p>
-            <table width="80%" class="m-auto text-center">
-              <tr>
-                <th class="border border-dark">Objet</th>
-                <th class="border border-dark">Type/Nature</th>
-              </tr>
-              <tr>
-                <td class="border border-dark">nom_tableau</td>
-                <td class="border border-dark"><span class="text-info">type_tableau</span></td>
-              </tr>
-            </table>
-          </div>
-          <div class="col-6">
-            <p class="text-center"><b>TDNT</b></p>
-            <table width="80%" class="m-auto text-center">
-              <tr>
-                <th class="border border-dark">Type</th>
-              </tr>
-              <tr>
-                <td class="border border-dark"><span class="text-info">type_tableau</span> = Tableau de <span
-                    class="text-danger">x</span> <span class="text-success">type</span></td>
-              </tr>
-            </table>
-          </div>
-          <h5>Exemple</h5>
-          <p>Pour déclarer le tableau <code>tn</code> utilisé précedemment on écrit :</p>
-          <div class="row">
-            <div class="col-6">
-              <p class="text-center"><b>TDO</b></p>
-              <table width="80%" class="m-auto text-center">
-                <tr>
-                  <th class="border border-dark">Objet</th>
-                  <th class="border border-dark">Type/Nature</th>
-                </tr>
-                <tr>
-                  <td class="border border-dark">tn</td>
-                  <td class="border border-dark"><span class="text-info">tab_ch</span></td>
-                </tr>
-              </table>
-            </div>
-            <div class="col-6">
-              <p class="text-center"><b>TDNT</b></p>
-              <table width="80%" class="m-auto text-center">
-                <tr>
-                  <th class="border border-dark">Type</th>
-                </tr>
-                <tr>
-                  <td class="border border-dark"><span class="text-info">tab_ch</span> = Tableau de <span
-                      class="text-danger">4</span> <span class="text-success">chaine</span></td>
-                </tr>
-              </table>
-            </div>
-          </div>
-        </div>
-        <h4>Déclaration en Python</h4>
-        <p>En Python, il faut utiliser la fonction <code>array</code> bibliothèque <code>numpy</code> pour déclarer un
-          tableau.</p>
-        <h5>Exemple</h5>
-        <p>Pour déclarer le tableau <code>tn</code> utilisé précedemment on écrit :</p>
-        <pre><code class="python">from numpy import array
-tn = array([str]*4)     # tableau de 4 chaînes
-te = array([int()]*10)  # tableau de 10 entiers
-tf = array([float()]*6) # tableau de 6 réels
-tb = array([bool()]*20) # tableau de 20 booléens</code></pre>
-        <h4>Accès aux éléments</h4>
-        <p>L'accès à un élément d'un tableau se fait à l'aide de son indice dans le tableau.</p>
-        <h5>Exemples</h5>
-        <p>Pour remplir le tableau <code>tn</code> on peut écrire :</p>
-        <div class="row">
-          <div class="col-6">
-            <pre><code class="algorithm">tn[0] &larr; "Amine"
-tn[1] &larr; "Israa"
-tn[2] &larr; "Sirine"
-tn[3] &larr; "Eya"</code></pre>
-          </div>
-          <div class="col-6">
-            <pre><code class="python">tn[0] = "Amine"
-tn[1] = "Israa"
-tn[2] = "Sirine"
-tn[3] = "Eya"</code></pre>
-          </div>
-        </div>
-
-
-        <p>Un tableau peut être, aussi, rempli par des valeurs saisies par l'utilisateur.</p>
-        <div class="row">
-          <div class="col-6">
-            <pre><code class="algorithm">Pour i de 0 à 3 Faire
-  Ecrire("Nom de la ", i, "ème personne ? ")
-  Lire(tn[i])
-Fin Pour</code></pre>
-          </div>
-          <div class="col-6">
-            <pre><code class="python">for i in range(4):
-  tn[i] = input("Nom de la " + str(i) + 
-                " ème personne ? ")
- </code></pre>
-          </div>
-        </div>
-
-
-        <p>Pour afficher le contenu du tableau <code>tn</code> on peut écrire :</p>
-        <div class="row">
-          <div class="col-6">
-            <pre><code class="algorithm">Ecrire(tn[0])
-Ecrire(tn[1])
-Ecrire(tn[2])
-Ecrire(tn[3])</code></pre>
-          </div>
-          <div class="col-6">
-            <pre><code class="python">print(tn[0])
-print(tn[1])
-print(tn[2])
-print(tn[3])</code></pre>
-          </div>
-        </div>
-
-        <p>On peut aussi utiliser une boucle :</p>
-        <div class="row">
-          <div class="col-6">
-            <pre><code class="algorithm">Pour i de 0 à 3 Faire
-  Ecrire(tn[i])
-Fin Pour</code></pre>
-          </div>
-          <div class="col-6">
-            <pre><code class="python">for i in range(4):
-  print(tn[i])
- </code></pre>
-          </div>
-        </div>
-
-      </section>
-      <section>
         <h3>Anniversaire de Yassine</h3>
 
         <p>A l'occasion de son anniversaire le petit Yassine va distribuer des petites boîtes surprises contenant des
@@ -511,16 +91,15 @@ Boîte 2 contient 6 bonbons.
 Boîte 3 contient 5 bonbons.
 Boîte 4 contient 7 bonbons.</code></pre>
         <div class="d-none d-print-block">
-          <h4 class="p-break">Correction</h4>
+          <h4>Correction</h4>
           <pre><code class="python">from random import randint
-from numpy import array
 nb = 0
 while not 10 &lt;= nb &lt;= 200:
     nb = int(input("Nombre de bonbons [10, 200] ? "))
 na = 0
 while not 3 &lt;= na &lt;= 10:
     na = int(input("Nombre d'amis [3, 10] ? "))
-boite = array([0]*na)
+boite = [0]*na
 for i in range(nb):
     nbh = randint(0, na-1)
     boite[nbh] = boite[nbh] + 1
@@ -599,6 +178,180 @@ for i in range(na):
           </div>
         </div>
 
+        <h4>Deux gagnants / Deux Prix</h4>
+        <p>On suppose qu'il y a deux participants et deux prix à gagner.</p>
+        <ul>
+          <li>iPad</li>
+          <li>iPhone</li>
+        </ul>
+        <p>On remarque que dans ce premier cas il existe deux possibilités.</p>
+        <table class="table table-bordered border-dark table-sm w-50 m-auto">
+          <tbody>
+            <tr>
+              <th>Cas</th>
+              <td>1</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <th>P1</th>
+              <td>iPad</td>
+              <td>iPhone</td>
+            </tr>
+            <tr>
+              <th>P2</th>
+              <td>iPhone</td>
+              <td>iPad</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>Ecrire un programme pour traiter ce cas.</p>
+
+        <h5>Solution Algorithmique</h5>
+        <div class="row">
+          <div class="col-8">
+            <pre><code class="algorithm">Programme tombola_v1
+Début
+  Ecrire("Nom du 1er participant : "); Lire(p1)
+  Ecrire("Nom du 2nd participant : "); Lire(p2)
+  t ← alea(1, 2)
+  Si t = 1 Alors
+    g1 ← "iPad"
+    g2 ← "iPhone"
+  Sinon
+    g2 ← "iPad"
+    g1 ← "iPhone"
+  Fin Si
+  Ecrire(p1, "gagne", g1)
+  Ecrire(p2, "gagne", g2)
+Fin</code></pre>
+          </div>
+          <div class="col-4">
+            <table class="table table-bordered border-dark table-sm m-auto">
+              <thead>
+                <tr>
+                  <th>Objet</th>
+                  <th>Type</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>p1, p2<br>t<br>g1, g2</td>
+                  <td>chaine<br>entier<br>chaine</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+
+        <h4>Trois participants, trois gagnants</h4>
+        <p>On suppose qu'il y a trois participants et trois prix à gagner. Les deux prix précédents et un Samsung S9.
+        </p>
+        <p>On remarque que dans ce second cas il existe six possibilités.</p>
+        <table class="table table-bordered border-dark table-sm w-100 m-auto">
+          <tbody>
+            <tr>
+              <th>Cas</th>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+              <td>4</td>
+              <td>5</td>
+              <td>6</td>
+            </tr>
+            <tr>
+              <th>P1</th>
+              <td>iPad</td>
+              <td>iPad</td>
+              <td>iPhone</td>
+              <td>iPhone</td>
+              <td>Samsung S9</td>
+              <td>Samsung S9</td>
+            </tr>
+            <tr>
+              <th>P2</th>
+              <td>iPhone</td>
+              <td>Samsung S9</td>
+              <td>iPad</td>
+              <td>Samsung S9</td>
+              <td>iPhone</td>
+              <td>iPad</td>
+            </tr>
+            <tr>
+              <th>P3</th>
+              <td>Samsung S9</td>
+              <td>iPhone</td>
+              <td>Samsung S9</td>
+              <td>iPad</td>
+              <td>iPad</td>
+              <td>iPhone</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>Ecrire un programme pour traiter ce cas.</p>
+
+        <h5 class="p-break">Solution Algorithmique</h5>
+        <div class="row">
+          <div class="col-8">
+            <pre><code class="algorithm">Programme tombola_v2
+Début
+  Ecrire("Nom du 1er participant : "); Lire(p1)
+  Ecrire("Nom du 2nd participant : "); Lire(p2)
+  Ecrire("Nom du 3ème participant : "); Lire(p3)
+  t ← alea(1, 6)
+  Si t = 1 Alors
+    g1 ← "iPad"
+    g2 ← "iPhone"
+    g3 ← "Samsung S9"
+  Sinon Si t = 2 Alors
+    g1 ← "iPad"
+    g2 ← "Samsung S9"
+    g3 ← "iPhone"
+  Sinon Si t = 3 Alors
+    g1 ← "iPhone"
+    g2 ← "iPad"
+    g3 ← "Samsung S9"
+  Sinon Si t = 4 Alors
+    g1 ← "iPhone"
+    g2 ← "Samsung S9"
+    g3 ← "iPad"
+  Sinon Si t = 5 Alors
+    g1 ← "Samsung S9"
+    g2 ← "iPhone"
+    g3 ← "iPad"
+  Sinon
+    g1 ← "Samsung S9"
+    g2 ← "iPad"  
+    g3 ← "iPhone"
+  Fin Si
+  Ecrire(p1, "gagne", g1)
+  Ecrire(p2, "gagne", g2)
+  Ecrire(p3, "gagne", g3)
+Fin</code></pre>
+          </div>
+          <div class="col-4">
+            <table class="table table-bordered border-dark table-sm m-auto">
+              <thead>
+                <tr>
+                  <th>Objet</th>
+                  <th>Type</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>p1, p2, p3<br>t<br>g1, g2, g3</td>
+                  <td>chaine<br>entier<br>chaine</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+
+        <h4>Cas réel</h4>
+        <p>Dans le cas réel le nombre de participants est toujours très grand par rapport au nombre de prix. Il existe
+          120 cas où cinq participants gagnent cinq prix. Dans ce cas le nombre de possibilités est très grand et il
+          n'est pas pratique d'écrire un programme qui dénombre tous ces cas possibles.</p>
         <p>On demande d'écrire un programme qui :</p>
         <ul>
           <li>Saisit le nombre de prix (1 ≤ np ≤ 10)</li>
@@ -618,7 +371,7 @@ for i in range(na):
         </ul>
 
         <div class="d-none d-print-block">
-          <h4 class="p-break">Solution</h4>
+          <h4>Solution</h4>
           <pre><code class="python">from random import randint
 # Saisie du nombre de prix
 while not 1 &lt;= np &lt;= 10:
@@ -679,6 +432,22 @@ Minimum : 2 - Maximum : 67</code></pre>
       </section>
 
       <section>
+        <h3 class="p-break">Eclatement selon la parité</h3>
+        <p>Ecrire un programme qui permet de saisir les éléments d'un tableau t de n entiers non nuls (n≥2) et l'éclater
+          en deux selon la parité de chaque nombre.</p>
+        <p><strong>Exemple :</strong></p>
+        <pre><code class="nohighlight shell python" data-text="Exemple">Donner la taille du tableau (>=2) : 6
+t [ 0 ]= 5
+t [ 1 ]= 4
+t [ 2 ]= 2
+t [ 3 ]= 7
+t [ 4 ]= 6
+t [ 5 ]= 5
+Nombres pairs : 4, 2, 6,
+Nombres impairs : 5, 7, 5</code></pre>
+      </section>
+
+      <section>
         <h3>Eclatement selon le signe</h3>
         <p>Ecrire un programme qui permet de remplir un tableau t par n entiers non nuls (n≥2) et d'éclater
           en deux tableaux : tn (contenant les éléments négatifs de t) et tp (contenant les éléments positifs
@@ -715,7 +484,7 @@ t2 : 45, 6, 19, 38, 26, 12,</code></pre>
         <h3>Première occurence</h3>
         <p>Ecrire un programme qui permet de remplir un tableau t par n entiers non nuls (n≥2), de garder la
           première occurrence de chaque élément.</p>
-        <p><strong>Exemple :</strong></p>
+        <p class="p-break"><strong>Exemple :</strong></p>
         <pre><code class="nohighlight shell python" data-text="Exemple">Donner la taille du tableau (>=2) : 10
 t [ 0 ]= 10
 t [ 1 ]= 7
@@ -775,7 +544,6 @@ Les éléments communs sont : 1, 2, 7,</code></pre>
           <li>Des sacs de deux pommes,</li>
           <li>Des sacs de quatre pommes,</li>
           <li>Des sacs de huit pommes,</li>
-          <li>Des sacs de seize pommes,</li>
         </ul>
         <p>Le marchand refuse de vendre deux sacs qui contiennent le même nombre de pommes à un seul client.</p>
         <ol>
@@ -787,14 +555,28 @@ Les éléments communs sont : 1, 2, 7,</code></pre>
               <li>Amine veut 10 pommes.</li>
             </ul>
           </li>
+          <li>Comment faire si je veux acheter 16 pommes sachant qu'il est interdit de prendre plus d'un sac des quatre
+            catégories disponibles ?</li>
+          <li>Je veux achter <code>n</code> pommes, <code>0 &le; n &le; 31</code>. Comment calculer le nombre de sacs de
+            chaque catégorie ?</li>
           <li>Ecrire le programme qui calcule le nombre de sacs nécessaires pour satisfaire la commande d'un client
             donné.</li>
+          <li>Ecrire le programme qui calcule le nombre de pommes qui correspond à un nombre de sacs donné.</li>
         </ol>
-        <p><strong>Exemple :</strong></p>
+        <p><strong>Exemple (premier programme) :</strong></p>
         <pre><code class="nohighlight shell python" data-text="Exemple">Nombre de pommes : 25
 un sac de 1 pommes
 un sac de 8 pommes
 un sac de 16 pommes</code></pre>
+        <p><strong>Exemple (second programme) :</strong></p>
+        <pre><code class="nohighlight shell python" data-text="Exemple">
+Nbre de sac de 1 pommes ? 1
+Nbre de sac de 2 pommes ? 0
+Nbre de sac de 4 pommes ? 1
+Nbre de sac de 8 pommes ? 0
+Nbre de sac de 16 pommes ? 0
+Vous avez acheté : 5 pommes</code></pre>
+
       </section>
 
       <section>
@@ -885,7 +667,9 @@ un sac de 16 pommes</code></pre>
             </table>
           </div>
         </div>
-        <p><strong>Exemple :</strong></p>
+
+
+        <p class="p-break"><strong>Exemple :</strong></p>
         <pre><code class="nohighlight shell python" data-text="Exemple">Taille du tableau t1 (>=2) : 4
 t1[ 0 ]= 9
 t1[ 1 ]= 2
@@ -994,7 +778,7 @@ Le candidat est n° 2 sa caractéristique est 79</code></pre>
   </main>
   <footer class="d-print-none bg-dark text-white p-2">
     <div class="text-center">Page créée avec ♥ par Mohamed Anis MANI</div>
-    <div class="text-center small">Année scolaire : 2022/2023</div>
+    <div class="text-center small">Année scolaire : 2021/2022</div>
   </footer>
 
   <script src="resources/js/jquery.min.js"></script>
