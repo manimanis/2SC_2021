@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="resources/css/bootstrap.min.css">
+  <link rel="stylesheet" href="resources/css/default.css">
+  <link rel="stylesheet" href="resources/css/style.css">
+  <link rel="stylesheet" href="resources/css/module07.css">
+  <title>Les Tableaux (complément)</title>
+</head>
+
+<body>
+  <aside>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#aside_navbar"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span> Menu
+      </button>
+      <div class="collapse navbar-collapse" id="aside_navbar"></div>
+    </nav>
+  </aside>
+
+  <main class="container my-3">
+    <h1>Module 7 : Les Tableaux (complément)</h1>
+
+    <article>
+      <h2>Rappel</h2>
+
+      <section>
+        <p>Répondre en algorithmique et en Python aux questions suivantes :</p>
+        <ol>
+          <li>Déclarer un tableau <code>t</code> de 20 réels. (TDNT + TDO)</li>
+          <li>Saisir la taille <code>n</code> du tableau <code>t</code>. <code>2 &le; n &le; 30</code></li>
+          <li>Remplir le tableau avec <code>n</code> réels compris dans l'intervalle [0, 20].</li>
+          <li>Chercher, puis afficher, le nombre de valeurs du tableau <code>t</code> qui sont supérieurs ou égaux à 0.
+          </li>
+          <li>Calculer, puis afficher, la moyenne du tableau <code>t</code>.</li>
+          <li>Calculer, puis afficher, les valeurs minimale et maximale du tableau <code>t</code>.</li>
+        </ol>
+      </section>
+    </article>
+  </main>
+  <footer class="d-print-none bg-dark text-white p-2">
+    <div class="text-center">Page créée avec ♥ par Mohamed Anis MANI</div>
+    <div class="text-center small">Année scolaire : 2022/2023</div>
+  </footer>
+
+  <script src="resources/js/jquery.min.js"></script>
+  <script src="resources/js/bootstrap.bundle.min.js"></script>
+  <script src="resources/js/highlight.pack.js"></script>
+  <script src="resources/js/hljs.algorithm.js"></script>
+  <script src="resources/js/clipboard.min.js"></script>
+  <script src="resources/js/pages.js"></script>
+  <script src="resources/js/vue.min.js"></script>
+  <script src="resources/apps/module07.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+
+    document.querySelectorAll('.language-algorithm,.language-python')
+      .forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'bd-clipboard d-print-none';
+        const btn = document.createElement('button');
+        btn.className = 'btn-clipboard';
+        btn.textContent = "📋";
+        btn.title = "Copier";
+        div.appendChild(btn);
+        item.parentElement.insertBefore(div, item);
+      });
+    new ClipboardJS('.btn-clipboard', {
+      target: (trigger) => {
+        return trigger.parentElement.nextElementSibling;
+      }
+    });
+  </script>
+</body>
+
+</html>
