@@ -15,7 +15,9 @@ categories = array(["XX"]*n)
 prices = array([int()]*n)
 for i in range(n):
     print("-- Item", i)
-    items[i] = input("Name? ")
+    items[i] = ""
+    while len(items[i]) < 3:
+        items[i] = input("Name? ")
     while categories[i] not in cats:
         categories[i] = input("Category [SW, AR, SH, WE]? ")
     prices[i] = -1
