@@ -1,9 +1,5 @@
 from numpy import array
 
-gold = -1
-while gold < 0:
-    gold = int(input("Player's gold? "))
-
 n = -1
 while n < 2 or n > 30:
     n = int(input("Number of items [2, 30]? "))
@@ -22,16 +18,20 @@ for i in range(n):
         categories[i] = input("Category [SW, AR, SH, WE]? ")
     prices[i] = -1
     while prices[i] < 0:
-        prices[i] = int(input("Price >=0?"))
+        prices[i] = int(input("Price (>=0)? "))
 
-selcat = ''
-while selcat not in cats:
-    selcat  = input("Select a category? ")
+budget = -1
+while budget < 0:
+    budget = int(input("Your budget? "))
+
+catsel = ''
+while catsel not in cats:
+    catsel  = input("Select a category? ")
 
 print("Affordable items:")
 ic = 0
 for i in range(n):
-    if categories[i] == selcat and prices[i] < gold:
+    if categories[i] == catsel and prices[i] < budget:
         print("Item:", items[i], "- Price:", prices[i])
         ic = ic + 1
 if ic == 0:

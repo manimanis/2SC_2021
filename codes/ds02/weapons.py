@@ -17,7 +17,7 @@ for item, category, price in items:
     print(category)
     print(price)
 
-gold = randint(100, 400)
+gold = randint(20, 300)
 print("Player's gold?", gold)
 
 n = len(items)
@@ -29,6 +29,7 @@ for i in range(n):
     print("Item category [SW, AR, SH, WE]?", items[i][1])
     print("Item price >=0 ?", items[i][2])
 
+print("Your budget?", gold)
 category = categories[randint(0, len(categories) - 1)]
 print("Select a category?", category)
 

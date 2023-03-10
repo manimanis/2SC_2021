@@ -1,4 +1,3 @@
-391
 7
 The Sword of Jon Snow
 SW
@@ -21,4 +20,5 @@ SH
 The Red Viper’s Spear
 WE
 299
+391
 SW
