@@ -2,12 +2,23 @@ from random import randint
 
 
 mot1 = ""
-while len(mot1) != 6:
+valide = False
+while not valide:
     mot1 = input("Mot joueur 1 ? ")
+    valide = len(mot1) == 6
+    i = 0
+    while valide and i < len(mot1):
+        valide = 'a' <= mot1[i] <= 'z'
+        i += 1
 
 mot2 = ""
 while len(mot2) != 6:
     mot2 = input("Mot joueur 2 ? ")
+    valide = len(mot2) == 6
+    i = 0
+    while valide and i < len(mot2):
+        valide = 'a' <= mot2[i] <= 'z'
+        i += 1
 
 score1, score2 = 0, 0
 for i in range(1, 6):
