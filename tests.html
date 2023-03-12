@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="resources/css/bootstrap.min.css">
+  <link rel="stylesheet" href="resources/css/default.css">
+  <link rel="stylesheet" href="resources/css/style.css">
+  <title>Algorithmes Séance 1</title>
+</head>
+
+<body>
+  <aside>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#aside_navbar"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span> Menu
+      </button>
+      <div class="collapse navbar-collapse" id="aside_navbar"></div>
+    </nav>
+  </aside>
+
+  <main class="container my-3">
+    <h1>Algorithmes séance 1</h1>
+
+    <article>
+      <h2></h2>
+      <section>
+        <h3></h3>
+        <pre><code class="algorithm">ch &larr; "Israa Amor Yassmine Adem"
+ch1 &larr; ""
+Pour i de 2 à Long(ch)-1 Faire
+  Si i = 2 ou ch[i-3] = " " Alors
+    ch1 &larr; ch1 + ch[i]
+  Fin Si
+Fin Si
+Ecrire(ch1)</code></pre>
+<pre><code class="algorithm">s &larr; 0
+Pour i de 0 à 7 Faire
+  Pour j de 0 à 7 Faire
+    Si (i+j) mod 3 = 0 Alors
+      s &larr; s + 1
+    Fin Si
+  Fin Pour
+Fin Pour
+Ecrire(s)</code></pre>
+
+<pre><code class="algorithm">ch &larr; "Ahmed Eya"
+ch1 &larr; "oiyeau"
+ch2 &larr; ""
+Pour i de 0 à Long(ch) - 1 Faire
+  Si Pos(ch[i], ch1) &ne; -1 Alors
+    ch2 &larr; ch2 + ch[i]
+  Fin Si
+Fin Pour
+Ecrire(ch2)</code></pre>
+<pre><code class="algorithm">ch &larr; "abdoud"
+ch1 &larr; ""
+Pour i de Long(ch) - 1 à 0 Faire [pas=-1]
+  Si ord(ch[i]) - 97 > 10:
+    ch1 &larr; ch1 + Majus(ch[i])
+  Sinon
+    ch1 &larr; ch1 + ch[i]
+  Fin Si
+Fin Pour
+Ecrire(ch1)</code></pre>
+
+<pre><code class="algorithm">a &larr; 5
+b &larr; 6
+c &larr; convch(a) + convch(b)</code></pre>
+
+<pre><code class="algorithm">d &larr; "123"
+e &larr; "abc"
+f &larr; estnum(d) ou estnum(e)</code></pre>
+<pre><code class="algorithm">g &larr; (valeur(d) + valeur(c)) mod 3</code></pre>
+<pre><code class="algorithm">h &larr; ""
+Pour i de 0 à 2 Faire
+  h &larr; h + chr(ord(e[i]) + valeur(d[i]))
+Fin Pour</code></pre>
+<pre><code class="algorithm">j &larr; ""
+Pour i de 0 à Long(e)-1 Faore
+  Pour k de 1 à valeur(d[i]) Faire
+    j &larr; j + e[i]
+  Fin Pour
+Fin Pour</code></pre>
+<pre><code class="algorithm">m &larr; ""
+Pour i de 0 à 9 Faire
+  Si Pos(convch(i), ch) &ne; -1 Alors
+    m &larr; convch(i) + m
+  Fin Si
+Fin Si</code></pre>
+      </section>
+    </article>
+  </main>
+  <footer class="d-print-none bg-dark text-white p-2">
+    <div class="text-center">Page créée avec ♥ par Mohamed Anis MANI</div>
+    <div class="text-center small">Année scolaire : 2021/2022</div>
+  </footer>
+
+  <script src="resources/js/jquery.min.js"></script>
+  <script src="resources/js/bootstrap.bundle.min.js"></script>
+  <script src="resources/js/highlight.pack.js"></script>
+  <script src="resources/js/hljs.algorithm.js"></script>
+  <script src="resources/js/clipboard.min.js"></script>
+  <script src="resources/js/pages.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+
+    document.querySelectorAll('.language-algorithm,.language-python')
+      .forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'bd-clipboard d-print-none';
+        const btn = document.createElement('button');
+        btn.className = 'btn-clipboard';
+        btn.textContent = "📋";
+        btn.title = "Copier";
+        div.appendChild(btn);
+        item.parentElement.insertBefore(div, item);
+      });
+    new ClipboardJS('.btn-clipboard', {
+      target: (trigger) => {
+        return trigger.parentElement.nextElementSibling;
+      }
+    });
+  </script>
+</body>
+
+</html>
