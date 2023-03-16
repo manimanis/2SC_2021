@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="resources/css/default.css">
   <link rel="stylesheet" href="resources/css/style.css">
   <link rel="stylesheet" href="resources/css/module07.css">
-  <title>Les Tableaux (complément)</title>
+  <title>Module 8 : Les sous-programmes</title>
 </head>
 
 <body>
@@ -24,21 +24,213 @@
   </aside>
 
   <main class="container my-3">
-    <h1>Module 7 : Les Tableaux (complément)</h1>
+    <h1>Module 8 : Les sous-programmes</h1>
 
     <article>
-      <h2>Rappel</h2>
+      <h2>Situations</h2>
 
       <section>
-        <p>Répondre en algorithmique et en Python aux questions suivantes :</p>
+        <h3>Problème de lessive</h3>
+
+        <p>Najla, Douja et Zohra ont fait leurs lessives aujourd’hui. Or, <strong>Najla</strong> fait sa lessive
+          <ins>tous les 3 jours</ins>, <strong>Douja</strong> <ins>tous les 4 jours</ins> et <strong>Zohra</strong>
+          <ins>tous les 6 jours</ins>.
+        </p>
+
+        <figure>
+          <img src="images/module08/lessive.webp" alt="Lessive" class="h5cm">
+          <figcaption>Lessive</figcaption>
+        </figure>
+
+        <h4>Questions</h4>
         <ol>
-          <li>Déclarer un tableau <code>t</code> de 20 réels. (TDNT + TDO)</li>
-          <li>Saisir la taille <code>n</code> du tableau <code>t</code>. <code>2 &le; n &le; 30</code></li>
-          <li>Remplir le tableau avec <code>n</code> réels compris dans l'intervalle [0, 20].</li>
-          <li>Chercher, puis afficher, le nombre de valeurs du tableau <code>t</code> qui sont supérieurs ou égaux à 0.
+          <li>Combien passera-t-il de temps avant que les trois femmes ne refassent leurs lessives le même jour ?</li>
+          <li>En supposant que :
+            <ul>
+              <li><strong>Najla</strong> fait la lessive tous les <code>lf1</code> jours. Avec <code>lf1 &gt; 0</code>
+              </li>
+              <li><strong>Douja</strong> fait la lessive tous les <code>lf2</code> jours. Avec <code>lf2 &gt; 0</code>
+              </li>
+              <li><strong>Zohra</strong> fait la lessive tous les <code>lf3</code> jours. Avec <code>lf3 &gt; 0</code>
+              </li>
+            </ul>
+            Déterminer quand les trois femmes referons leurs lessives le même jour ?
           </li>
-          <li>Calculer, puis afficher, la moyenne du tableau <code>t</code>.</li>
-          <li>Calculer, puis afficher, les valeurs minimale et maximale du tableau <code>t</code>.</li>
+          <li>Ecrire l'algorithme d'un programme pour résoudre ce problème.</li>
+        </ol>
+      </section>
+
+      <section>
+        <h3>Solution</h3>
+
+        <ol>
+          <li>On pourra déterminer graphiquement le temps requis pour voir les trois femmes faire leurs lessives le même
+            jour. Et ce en utilisant l'échelle temporelle suivante :
+            <figure>
+              <img src="images/module08/jours-lessive.png" alt="Jours de lessive">
+              <figcaption>Jours de lessive</figcaption>
+            </figure>
+            On en déduit qu'il faudra attendre <strong>12 jours</strong>.
+          </li>
+          <li>On remarque que le temps requis pour voir les trois femmes faire leurs lessives dans une même journée peut
+            être calculé en utilisant la formule suivante :
+            <p class="text-center"><strong>ppcm(3, 4, 6) = ppcm(3, ppcm(4, 6)) = ppcm(ppcm(3, 4), 6)= 12</strong></p>
+            <p>Plus généralement le <strong>temps requis pour voir les femmes faire leurs lessives la même
+                journée</strong> est :</p>
+            <p class="text-center"><strong>ltf = ppcm(lf1, lf2, lf3) = ppcm(ppcm(lf1, lf2), lf3) = ppcm(lf1, ppcm(lf2,
+                lf3))</strong>
+            </p>
+            <p>PPCM = Plus Petit Commun Multiple, c'est le plus petit nombre qui est multiple des trois nombres</p>
+          </li>
+          <li>L'algorithme de cette situation peut être écrit de deux façons :
+            <h5>1<sup>ère</sup> façon : méthode classique</h5>
+            <div class="row">
+              <div class="col-9">
+                <pre><code class="algorithm">Algorithme Lessive
+Début
+  Répéter
+    Ecrire("Lessive femme 1 ? ")
+    Lire(lf1)
+  Jusqu'à (lf1 > 0)
+
+  Répéter
+    Ecrire("Lessive femme 2 ? ")
+    Lire(lf2)
+  Jusqu'à (lf2 > 0)
+
+  Répéter
+    Ecrire("Lessive femme 3 ? ")
+    Lire(lf3)
+  Jusqu'à (lf3 > 0)
+
+  p1 &larr; lf2
+  Tant Que p1 mod lf3 &ne; 0 Faire
+    p1 &larr; p1 + lf2
+  Fin Tant Que
+
+  p2 &larr; lf1
+  Tant Que p2 mod p1 &ne; 0 Faire
+    p2 &larr; p2 + lf1
+  Fin Tant Que
+
+  ltf &larr; p2
+
+  Ecrire("Toutes les femmes feront leurs lessives après", ltf, "jours")
+Fin</code></pre>
+              </div>
+              <div class="col-3">
+                <table class="table table-sm table-bordered border-dark table-striped table-hover col-2 col-2">
+                  <thead>
+                    <tr>
+                      <th>Objet</th>
+                      <th>Type/Nature</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>lf1, lf2, lf3, ltf, p1, p2</td>
+                      <td>entier</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <h5>2<sup>ème</sup> façon : méthode modulaire</h5>
+            <p><strong>Programme Principal</strong></p>
+            <div class="row">
+              <div class="col-9">
+                <pre><code class="algorithm">Algorithme Lessive2
+Début
+  saisie("Lessive femme 1 ? ", lf1)
+  saisie("Lessive femme 2 ? ", lf2)
+  saisie("Lessive femme 3 ? ", lf3)
+
+  ltf &larr; ppcm(lf1, ppcm(lf2, lf3))
+
+  Ecrire("Toutes les femmes feront leurs lessives après", ltf, "jours")
+Fin</code></pre>
+              </div>
+              <div class="col-3">
+                <p><strong>TDOG</strong></p>
+                <table class="table table-sm table-bordered border-dark table-striped table-hover col-2">
+                  <thead>
+                    <tr>
+                      <th>Objet</th>
+                      <th>Type/Nature</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>lf1, lf2, lf3, ltf</td>
+                      <td>entier</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <p><strong>Procédure saisie</strong></p>
+            <div class="row">
+              <div class="col-9">
+                <pre><code class="algorithm">procédure saisie(msg: chaîne, @nj: entier)
+Début
+  Répéter
+    Ecrire(msg)
+    Lire(nj)
+  Jusqu'à (nj > 0)
+Fin</code></pre>
+              </div>
+              <div class="col-3">
+                <p><strong>TDOL</strong></p>
+                <table class="table table-sm table-bordered border-dark table-striped table-hover col-2">
+                  <thead>
+                    <tr>
+                      <th>Objet</th>
+                      <th>Type/Nature</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>-</td>
+                      <td>-</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <p><strong>Fonction ppcm</strong></p>
+            <div class="row">
+              <div class="col-9">
+                <pre><code class="algorithm">fonction ppcm(a, b: entier):entier
+Début
+  p &larr; a
+  Tant Que (p mod b &ne; 0) Faire
+    p &larr; p + a
+  Fin Tant Que
+  retourner p
+Fin</code></pre>
+              </div>
+              <div class="col-3">
+                <p><strong>TDOL</strong></p>
+                <table class="table table-sm table-bordered border-dark table-striped table-hover col-2">
+                  <thead>
+                    <tr>
+                      <th>Objet</th>
+                      <th>Type/Nature</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>p</td>
+                      <td>entier</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </li>
         </ol>
       </section>
     </article>
