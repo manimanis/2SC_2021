@@ -61,7 +61,7 @@
       </section>
 
       <section>
-        <h3>Solution</h3>
+        <h3>Solutions</h3>
 
         <ol>
           <li>On pourra déterminer graphiquement le temps requis pour voir les trois femmes faire leurs lessives le même
@@ -88,33 +88,28 @@
               <div class="col-9">
                 <pre><code class="algorithm">Algorithme Lessive
 Début
+  // Saisie du jour de lessive de chaque femme
   Répéter
-    Ecrire("Lessive femme 1 ? ")
-    Lire(lf1)
+    Ecrire("Lessive femme 1 ? ") ; Lire(lf1)
   Jusqu'à (lf1 > 0)
-
   Répéter
-    Ecrire("Lessive femme 2 ? ")
-    Lire(lf2)
+    Ecrire("Lessive femme 2 ? ") ; Lire(lf2)
   Jusqu'à (lf2 > 0)
-
   Répéter
-    Ecrire("Lessive femme 3 ? ")
-    Lire(lf3)
+    Ecrire("Lessive femme 3 ? ") ; Lire(lf3)
   Jusqu'à (lf3 > 0)
-
+  // Après combien de jours la 2ème et la 3ème femme font leurs lessives
   p1 &larr; lf2
-  Tant Que p1 mod lf3 &ne; 0 Faire
+  TantQue p1 mod lf3 &ne; 0 Faire
     p1 &larr; p1 + lf2
-  Fin Tant Que
-
+  Fin TantQue
+  // Après combien de jours les 3 femmes font leurs lessives
   p2 &larr; lf1
-  Tant Que p2 mod p1 &ne; 0 Faire
+  TantQue p2 mod p1 &ne; 0 Faire
     p2 &larr; p2 + lf1
-  Fin Tant Que
-
+  Fin TantQue
   ltf &larr; p2
-
+  // Affichage du résultat
   Ecrire("Toutes les femmes feront leurs lessives après", ltf, "jours")
 Fin</code></pre>
               </div>
@@ -142,12 +137,13 @@ Fin</code></pre>
               <div class="col-9">
                 <pre><code class="algorithm">Algorithme Lessive2
 Début
+  // Saisie du jour de lessive de chaque femme
   saisie("Lessive femme 1 ? ", lf1)
   saisie("Lessive femme 2 ? ", lf2)
   saisie("Lessive femme 3 ? ", lf3)
-
+  // Après combien de jours les 3 femmes font leurs lessives
   ltf &larr; ppcm(lf1, ppcm(lf2, lf3))
-
+  // Affichage du résultat
   Ecrire("Toutes les femmes feront leurs lessives après", ltf, "jours")
 Fin</code></pre>
               </div>
@@ -206,9 +202,9 @@ Fin</code></pre>
                 <pre><code class="algorithm">fonction ppcm(a, b: entier):entier
 Début
   p &larr; a
-  Tant Que (p mod b &ne; 0) Faire
+  TantQue (p mod b &ne; 0) Faire
     p &larr; p + a
-  Fin Tant Que
+  Fin TantQue
   retourner p
 Fin</code></pre>
               </div>
@@ -232,6 +228,267 @@ Fin</code></pre>
             </div>
           </li>
         </ol>
+      </section>
+
+      <section>
+        <h3 class="p-break">Fraction irréductible</h3>
+
+        <p>En mathématiques, une <strong>fraction est irréductible</strong> s'il n'existe pas de fraction égale ayant
+          des termes plus petits. Autrement dit, une fraction irréductible <strong><u>ne peut pas être
+              simplifiée</u></strong>.</p>
+
+        <h4>Théorème</h4>
+        <p>Soient <strong>a</strong> un entier et <strong>b</strong> un entier naturel non nul. Alors <img
+            src="images/module08/fraction-a-b.svg" alt="a/b" class="h1cm"> est irréductible si et
+          seulement si
+          <strong>a</strong> et <strong>b</strong> sont premiers entre eux.
+        </p>
+
+        <h5>Exemple</h5>
+        <p>La fraction <img src="images/module08/fraction-12-20.svg" alt="12/20" class="h1cm"> n'est pas
+          irréductible
+          car 12 et 20 sont des multiples de 4 : <img src="images/module08/fraction-12-20-01.svg" alt="12/20"
+            class="h1cm"> (simplification par 4).
+          On peut aussi écrire <img src="images/module08/fraction-12-20-02.svg" alt="12/20" class="h1cm">.
+        </p>
+
+        <p>La fraction <img src="images/module08/fraction-3-5.svg" alt="3/5" class="h1cm"> est
+          irréductible car 1 est le
+          seul entier positif qui divise à la fois 3 et 5.</p>
+
+        <h4>Méthode de simplification</h4>
+
+        <p>Pour réduire directement une fraction, il suffit de <strong>diviser le numérateur et le dénominateur par leur
+            plus grand commun diviseur</strong>. D'après le lemme de Gauss, cette forme réduite est unique.</p>
+
+        <h5>Exemple</h5>
+        <p>Pour réduire la fraction <img src="images/module08/fraction-42-390.svg" alt="42/390" class="h1cm">, on
+          calcule <img src="images/module08/pgcd-42-390.svg" alt="PGCD(42, 390)=6" class="h1cm"> puis on
+          simplifie par 6
+          : <img src="images/module08/fraction-42-390-01.svg" alt="42/390=7/65" class="h1cm">.</p>
+
+        <h4>Problème</h4>
+
+        <p>On souhaite écrire l'algorithme d'un <strong>programme modulaire</strong> qui calcule la somme de deux
+          fractions :</p>
+        <figure>
+          <img src="images/module08/fraction-somme.png" alt="p1/q1+p2/q2=ps/qs" class="h1_5cm">
+          <figcaption>Somme de deux fractions avec : p1, p2, ps ∈ 𝕫 et q1, q2, qs ∈ 𝕫<sup>*</sup>
+          </figcaption>
+        </figure>
+      </section>
+
+      <section>
+        <h3>Solutions</h3>
+        <h5>Solution non modulaire</h5>
+        <div class="row">
+          <div class="col-9">
+            <pre><code class="algorithm">Algorithme Somme_Fraction
+Début
+  // Saisie de p1 et q1
+  Ecrire("Fraction : p1 / q1")
+  Ecrire("p1 ? ") ; Lire(p1)
+  Répéter
+    Ecrire("q1 ? ") ; Lire(q1)  
+  Jusqu'à q1 &ne; 0
+  // Saisie de p2 et q2
+  Ecrire("Fraction : p2 / q2")
+  Ecrire("p2 ? ") ; Lire(p2)
+  Répéter
+    Ecrire("q2 ? ") ; Lire(q2)  
+  Jusqu'à q2 &ne; 0
+  // Calcul de la somme des deux fractions
+  ps &larr; p1 * q2 + p2 * q1
+  qs &larr; q1 * q2
+  // Calcul du PGCD(ps, qs)
+  a &larr; ps
+  b &larr; qs
+  TantQue b &ne; 0 Faire
+    r &larr; a mod b
+    a &larr; b
+    b &larr; r
+  Fin TantQue
+  // Simplification
+  ps &larr; ps div a
+  qs &larr; qs div a
+  // Affichage
+  Ecrire(p1, "/", q1, "+", p2, "/", q2, "=", ps, "/", qs)
+Fin</code></pre>
+          </div>
+          <div class="col-3">
+            <p><strong>TDO</strong></p>
+            <table class="table table-sm table-bordered border-dark table-striped table-hover col-2">
+              <thead>
+                <tr>
+                  <th>Objet</th>
+                  <th>Type/Nature</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>p1, q1, p2, q2, ps, qs, a, b, r</td>
+                  <td>entier</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <h5>Solution modulaire</h5>
+        <p><strong>Programme Principal</strong></p>
+        <div class="row">
+          <div class="col-9">
+            <pre><code class="algorithm">Algorithme Somme_Fraction1
+Début
+  // Saisie de p1 et q1 / p2 et q2
+  saisie_frac("Fraction : p1 / q1", p1, q1)
+  saisie_frac("Fraction : p2 / q2", p2, q2)
+  // Calcul de la somme des deux fractions
+  ps, qs &larr; somme_frac(p1, q1, p2, q2)    
+  // Simplification
+  ps, qs &larr; simp_frac(ps, qs)
+  // Affichage
+  Ecrire(p1, "/", q1, "+", p2, "/", q2, "=", ps, "/", qs)
+Fin</code></pre>
+          </div>
+          <div class="col-3">
+            <p><strong>TDOG</strong></p>
+            <table class="table table-sm table-bordered border-dark table-striped table-hover col-2">
+              <thead>
+                <tr>
+                  <th>Objet</th>
+                  <th>Type/Nature</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>p1, q1, p2, q2, ps, qs</td>
+                  <td>entier</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <p><strong>Procédure saisie_frac</strong></p>
+        <div class="row">
+          <div class="col-9">
+            <pre><code class="algorithm">Procédure saisie_frac(msg: chaîne, @p, @q: entier)
+Début
+  Ecrire(msg)
+  Ecrire("Numérateur ? ") ; Lire(p)
+  Répéter
+    Ecrire("Dénominateur ? ") ; Lire(q)  
+  Jusqu'à q ≠ 0  
+Fin</code></pre>
+          </div>
+          <div class="col-3">
+            <p><strong>TDOL</strong></p>
+            <table class="table table-sm table-bordered border-dark table-striped table-hover col-2">
+              <thead>
+                <tr>
+                  <th>Objet</th>
+                  <th>Type/Nature</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>-</td>
+                  <td>-</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <p><strong>Fonction somme_frac</strong></p>
+        <div class="row">
+          <div class="col-9">
+            <pre><code class="algorithm">Fonction somme_frac(a1, b1, a2, b2: entier):(entier, entier)
+Début
+  a &larr; a1 * b2 + a2 * b1
+  b &larr; b1 * b2
+  retourner a, b
+Fin</code></pre>
+          </div>
+          <div class="col-3">
+            <p><strong>TDOL</strong></p>
+            <table class="table table-sm table-bordered border-dark table-striped table-hover col-2">
+              <thead>
+                <tr>
+                  <th>Objet</th>
+                  <th>Type/Nature</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>a, b</td>
+                  <td>entier</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <p><strong>Fonction simp_frac</strong></p>
+        <div class="row">
+          <div class="col-9">
+            <pre><code class="algorithm">Fonction simp_frac(a, b: entier):(entier, entier)
+Début
+  p &larr; pgcd(a, b)
+  retourner a div p, b div p
+Fin</code></pre>
+          </div>
+          <div class="col-3">
+            <p><strong>TDOL</strong></p>
+            <table class="table table-sm table-bordered border-dark table-striped table-hover col-2">
+              <thead>
+                <tr>
+                  <th>Objet</th>
+                  <th>Type/Nature</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>p</td>
+                  <td>entier</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <p><strong>Fonction pgcd</strong></p>
+        <div class="row">
+          <div class="col-9">
+            <pre><code class="algorithm">Fonction pgcd(a, b: entier):entier
+Début
+  TantQue b ≠ 0 Faire
+    r ← a mod b
+    a ← b
+    b ← r
+  Fin TantQue
+  retourner a
+Fin</code></pre>
+          </div>
+          <div class="col-3">
+            <p><strong>TDOL</strong></p>
+            <table class="table table-sm table-bordered border-dark table-striped table-hover col-2">
+              <thead>
+                <tr>
+                  <th>Objet</th>
+                  <th>Type/Nature</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>r</td>
+                  <td>entier</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </section>
     </article>
   </main>
