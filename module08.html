@@ -130,7 +130,10 @@ Fin</code></pre>
                 </table>
               </div>
             </div>
-
+            <div class="d-print-none">
+              <p>Implémentation en <a href="codes/module08/lessive0.py" target="_blank"
+                  rel="noopener noreferrer" download="lessive0.py">Python</a>.</p>
+            </div>
             <h5>2<sup>ème</sup> façon : méthode modulaire</h5>
             <p><strong>Programme Principal</strong></p>
             <div class="row">
@@ -226,8 +229,13 @@ Fin</code></pre>
                 </table>
               </div>
             </div>
+            <div class="d-print-none">
+              <p>Implémentation en <a href="codes/module08/lessive.py" target="_blank"
+                  rel="noopener noreferrer" download="lessive.py">Python</a>.</p>
+            </div>
           </li>
         </ol>
+
       </section>
 
       <section>
@@ -253,8 +261,7 @@ Fin</code></pre>
         </p>
 
         <p>La fraction <img src="images/module08/fraction-3-5.svg" alt="3/5" class="h1cm"> est
-          irréductible car 1 est le
-          seul entier positif qui divise à la fois 3 et 5.</p>
+          irréductible car 1 est le seul entier positif qui divise à la fois 3 et 5.</p>
 
         <h4>Méthode de simplification</h4>
 
@@ -287,15 +294,15 @@ Fin</code></pre>
 Début
   // Saisie de p1 et q1
   Ecrire("Fraction : p1 / q1")
-  Ecrire("p1 ? ") ; Lire(p1)
+  Ecrire("Numérateur ? ") ; Lire(p1)
   Répéter
-    Ecrire("q1 ? ") ; Lire(q1)  
+    Ecrire("Dénominateur ? ") ; Lire(q1)  
   Jusqu'à q1 &ne; 0
   // Saisie de p2 et q2
   Ecrire("Fraction : p2 / q2")
-  Ecrire("p2 ? ") ; Lire(p2)
+  Ecrire("Numérateur ? ") ; Lire(p2)
   Répéter
-    Ecrire("q2 ? ") ; Lire(q2)  
+    Ecrire("Dénominateur ? ") ; Lire(q2)  
   Jusqu'à q2 &ne; 0
   // Calcul de la somme des deux fractions
   ps &larr; p1 * q2 + p2 * q1
@@ -333,6 +340,10 @@ Fin</code></pre>
             </table>
           </div>
         </div>
+        <div class="d-print-none">
+          <p>Implémentation en <a href="codes/module08/frac0.py" target="_blank"
+              rel="noopener noreferrer" download="frac0.py">Python</a>.</p>
+        </div>
 
         <h5>Solution modulaire</h5>
         <p><strong>Programme Principal</strong></p>
@@ -344,9 +355,9 @@ Début
   saisie_frac("Fraction : p1 / q1", p1, q1)
   saisie_frac("Fraction : p2 / q2", p2, q2)
   // Calcul de la somme des deux fractions
-  ps, qs &larr; somme_frac(p1, q1, p2, q2)    
+  somme_frac(p1, q1, p2, q2, ps, qs)    
   // Simplification
-  ps, qs &larr; simp_frac(ps, qs)
+  simp_frac(ps, qs)
   // Affichage
   Ecrire(p1, "/", q1, "+", p2, "/", q2, "=", ps, "/", qs)
 Fin</code></pre>
@@ -401,14 +412,13 @@ Fin</code></pre>
           </div>
         </div>
 
-        <p><strong>Fonction somme_frac</strong></p>
+        <p><strong>Procédure somme_frac</strong></p>
         <div class="row">
           <div class="col-9">
-            <pre><code class="algorithm">Fonction somme_frac(a1, b1, a2, b2: entier):(entier, entier)
+            <pre><code class="algorithm">Procédure somme_frac(a1, b1, a2, b2, @a3, @b3: entier)
 Début
-  a &larr; a1 * b2 + a2 * b1
-  b &larr; b1 * b2
-  retourner a, b
+  a3 &larr; a1 * b2 + a2 * b1
+  b3 &larr; b1 * b2
 Fin</code></pre>
           </div>
           <div class="col-3">
@@ -422,21 +432,22 @@ Fin</code></pre>
               </thead>
               <tbody>
                 <tr>
-                  <td>a, b</td>
-                  <td>entier</td>
+                  <td>-</td>
+                  <td>-</td>
                 </tr>
               </tbody>
             </table>
           </div>
         </div>
 
-        <p><strong>Fonction simp_frac</strong></p>
+        <p><strong>Procédure simp_frac</strong></p>
         <div class="row">
           <div class="col-9">
-            <pre><code class="algorithm">Fonction simp_frac(a, b: entier):(entier, entier)
+            <pre><code class="algorithm">Procédure simp_frac(@a, @b: entier)
 Début
   p &larr; pgcd(a, b)
-  retourner a div p, b div p
+  a &larr; a div p
+  b &larr; b div p
 Fin</code></pre>
           </div>
           <div class="col-3">
@@ -487,6 +498,201 @@ Fin</code></pre>
                 </tr>
               </tbody>
             </table>
+          </div>
+        </div>
+        <div class="d-print-none">
+          <p>Implémentation en <a href="codes/module08/frac.py" target="_blank"
+              rel="noopener noreferrer" download="frac.py">Python</a>.</p>
+        </div>
+      </section>
+
+      <section>
+        <h3>Nombres amicaux</h3>
+
+        <p>Deux nombres entiers naturels distincts sont dits «&nbsp;amicaux&nbsp;» (ou «&nbsp;amiables&nbsp;») si la
+          somme des diviseurs stricts de l'un est égale à l'autre et réciproquement.</p>
+        <p>Les diviseurs de 10 sont 1, 2, 5, 10. Les diviseurs stricts de 10 sont 1, 2, 5.</p>
+
+        <h4>Travail demandé</h4>
+        <ol>
+          <li>Chercher la liste des diviseurs stricts de 220 et de 284.</li>
+          <li>Vérifier que 220 et 284 sont deux nombres amicaux.</li>
+          <li>Ecrire l'algorithme d'un programme qui vérifie si deux nombres données sont amicaux.</li>
+        </ol>
+      </section>
+
+      <section>
+        <h3>Solution</h3>
+
+        <ol>
+          <li>
+            <p>diviseurs(220) = {1, 2, 4, 5, 10, 11, 20, 22, 44, 55, 110}</p>
+            <p>diviseurs(284) = {1, 2, 4, 71, 142}</p>
+          </li>
+          <li>
+            <p>som_div(220) = 1 + 2 + 4 + 5 + 10 + 11 + 20 + 22 + 44 + 55 + 110 = 284</p>
+            <p>som_div(284) = 1 + 2 + 4 + 71 + 142 = 220</p>
+            <p><strong>&rArr; 220 et 284 sont des nombres amicaux.</strong></p>
+          </li>
+          <li>
+            <h5>Solution non modulaire</h5>
+            <div class="row">
+              <div class="col-9">
+                <pre><code class="algorithm">Algorithme amicaux
+Début
+  // Saisie de deux nombres strictement positifs
+  Répéter
+    Ecrire("Donner n ? ") ; Lire(n)
+  Jusqu'à (n > 0)
+  Répéter
+    Ecrire("Donner m ? ") ; Lire(m)
+  Jusqu'à (m > 0)
+  // calcul de la somme diviseurs de n
+  sn &larr; 0
+  Pour i de 1 à n div 2 Faire
+    Si n mod i = 0 Alors
+      sn &larr; sn + i
+    Fin Si
+  Fin Pour
+  // calcul de la somme diviseurs de m
+  sm &larr; 0
+  Pour i de 1 à m div 2 Faire
+    Si m mod i = 0 Alors
+      sm &larr; sm + i
+    Fin Si
+  Fin Pour
+  // Affichage du résultat
+  Si (n = sm) et (m = sn) Alors
+    Ecrire(n, "et", m, "sont amicaux.")
+  Sinon
+    Ecrire(n, "et", m, "ne sont pas amicaux.")
+  Fin Si
+Fin</code></pre>
+              </div>
+              <div class="col-3">
+                <p><strong>TDO</strong></p>
+                <table class="table table-sm table-bordered border-dark table-striped table-hover col-2">
+                  <thead>
+                    <tr>
+                      <th>Objet</th>
+                      <th>Type/Nature</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>n, m, i, sn, sm</td>
+                      <td>entier</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </li>
+        </ol>
+
+        <h4>Travail demandé</h4>
+        <p>Transformer la solution précédente en une solution modulaire.</p>
+        <div class="d-none d-print-block">
+          <h4>Solution</h4>
+          <p><strong>Programme Principal</strong></p>
+          <div class="row">
+            <div class="col-9">
+              <pre><code class="algorithm">Algorithme amicaux
+Début
+  // Saisie de deux nombres strictement positifs
+  saisie("Donner n ? ", n)
+  saisie("Donner m ? ", m)
+  // calcul de la somme diviseurs de n
+  sn &larr; som_div(n)
+  // calcul de la somme diviseurs de m
+  sm &larr; som_div(m)
+  // Affichage du résultat
+  Si (n = sm) et (m = sn) Alors
+    Ecrire(n, "et", m, "sont amicaux.")
+  Sinon
+    Ecrire(n, "et", m, "ne sont pas amicaux.")
+  Fin Si
+Fin</code></pre>
+            </div>
+            <div class="col-3">
+              <p><strong>TDOG</strong></p>
+              <table class="table table-sm table-bordered border-dark table-striped table-hover col-2">
+                <thead>
+                  <tr>
+                    <th>Objet</th>
+                    <th>Type/Nature</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>n, m, i, sn, sm</td>
+                    <td>entier</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <p><strong>Procédure saisie</strong></p>
+          <div class="row">
+            <div class="col-9">
+              <pre><code class="algorithm">Procédure saisie(msg: chaîne, @n: entier)
+Début
+  Répéter
+    Ecrire("Donner n ? ") ; Lire(n)
+  Jusqu'à (n > 0)
+Fin</code></pre>
+            </div>
+            <div class="col-3">
+              <p><strong>TDOL</strong></p>
+              <table class="table table-sm table-bordered border-dark table-striped table-hover col-2">
+                <thead>
+                  <tr>
+                    <th>Objet</th>
+                    <th>Type/Nature</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>-</td>
+                    <td>-</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <p><strong>Fonction som_div</strong></p>
+          <div class="row">
+            <div class="col-9">
+              <pre><code class="algorithm">Fonction som_div(n: entier):entier
+Début
+  sn ← 0
+  Pour i de 1 à n div 2 Faire
+    Si n mod i = 0 Alors
+      sn ← sn + i
+    Fin Si
+  Fin Pour
+  retourner sn
+Fin</code></pre>
+            </div>
+            <div class="col-3">
+              <p><strong>TDOL</strong></p>
+              <table class="table table-sm table-bordered border-dark table-striped table-hover col-2">
+                <thead>
+                  <tr>
+                    <th>Objet</th>
+                    <th>Type/Nature</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>sn, i</td>
+                    <td>entier</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </section>

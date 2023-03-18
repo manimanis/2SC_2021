@@ -21,4 +21,4 @@ lf3 = saisie("Lessive femme 3 ? ")
 
 ltf = ppcm(lf1, ppcm(lf2, lf3))
 
-print(f"Toutes les femmes feront leurs lessives après {ltf} jours")
+print("Toutes les femmes feront leurs lessives après", ltf, "jours")
