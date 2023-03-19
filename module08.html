@@ -84,7 +84,7 @@
           </li>
           <li>L'algorithme de cette situation peut être écrit de deux façons :
             <h5>1<sup>ère</sup> façon : méthode classique</h5>
-            <div class="row">
+            <div class="row p-break">
               <div class="col-9">
                 <pre><code class="algorithm">Algorithme Lessive
 Début
@@ -239,7 +239,7 @@ Fin</code></pre>
       </section>
 
       <section>
-        <h3 class="p-break">Fraction irréductible</h3>
+        <h3>Fraction irréductible</h3>
 
         <p>En mathématiques, une <strong>fraction est irréductible</strong> s'il n'existe pas de fraction égale ayant
           des termes plus petits. Autrement dit, une fraction irréductible <strong><u>ne peut pas être
@@ -587,16 +587,17 @@ Fin</code></pre>
                 </table>
               </div>
             </div>
-
-            <p>Implémentation en <a href="codes/module08/amicaux0.py" target="_blank" rel="noopener noreferrer"
-                download="amicaux0.py">Python</a>.</p>
+            <div class="d-print-none">
+              <p>Implémentation en <a href="codes/module08/amicaux0.py" target="_blank" rel="noopener noreferrer"
+                  download="amicaux0.py">Python</a>.</p>
+            </div>
           </li>
         </ol>
 
         <h4>Travail demandé</h4>
         <p>Transformer la solution précédente en une solution modulaire.</p>
         <div class="d-none d-print-block">
-          <h4>Solution</h4>
+          <h4 class="p-break">Solution</h4>
           <p><strong>Programme Principal</strong></p>
           <div class="row">
             <div class="col-9">
@@ -698,13 +699,15 @@ Fin</code></pre>
             </div>
           </div>
         </div>
-        <p>Implémentation en <a href="codes/module08/amicaux.py" target="_blank" rel="noopener noreferrer"
-            download="amicaux.py">Python</a>.</p>
+        <div class="d-print-none">
+          <p>Implémentation en <a href="codes/module08/amicaux.py" target="_blank" rel="noopener noreferrer"
+              download="amicaux.py">Python</a>.</p>
+        </div>
       </section>
     </article>
 
     <article>
-      <h2>Notes de cours</h2>
+      <h2 class="p-break">Notes de cours</h2>
 
       <section>
         <h3>Décomposition modulaire</h3>
@@ -770,7 +773,7 @@ Sinon
   Ecrire(n, "n'est pas premier")
 Fin Si</code></pre>
           </li>
-          <li>Dans une structure itérative :
+          <li class="p-break">Dans une structure itérative :
 
             <pre><code class="algorithm">// f(x) est une fonction qui admet un extrémum
 // en x0 ∈ [0, +∞[
@@ -835,7 +838,7 @@ permuter(a, b)</code></pre>
           peut, aussi, <ins>modifier la valeur des paramètres transmis par variable</ins>, directement, chez l'appelant.
         </p>
 
-        <h4>Vocabulaire &amp; Syntaxe</h4>
+        <h4 class="p-break">Vocabulaire &amp; Syntaxe</h4>
         <p>Une procédure s'écrit comme suit en algorithmique :</p>
         <pre><code class="algorithm">Procédure NomProcédure(p1: type1, p2: type2, ..., pn: typen)
   //
@@ -893,7 +896,7 @@ Fin</code></pre>
           <figcaption>Passage par valeur</figcaption>
         </figure>
 
-        <h5>Passage par variable</h5>
+        <h5 class="p-break">Passage par variable</h5>
 
         <p>Dans la figure suivante, l'adresse de la variable <strong>y</strong> est transmise à la procédure
           <strong>saisie</strong> sous le nom de <strong>x</strong>. Tout changement de la valeur de <strong>x</strong>
@@ -947,10 +950,233 @@ Fonction existe(v:entier;t:tab;n:entier):booléen</code></pre>
     </article>
 
     <article>
-      <h2>Application</h2>
+      <h2 class="p-break">Applications</h2>
 
       <section>
-        <h3>Game of Thrones shop</h3>
+        <h3>Nombre heureux</h3>
+
+        <p>Un nombre heureux est un entier strictement positif, qui lorsqu'on additionne les carrés de chacun de ses
+          chiffres, puis on additionne les carrés des chiffres de la somme obtenue et ainsi de suite, on obtient un
+          entier à un seul chiffre égal à 9.</p>
+        <p>Ecrire l'algorithme d'un programme qui permet de chercher et afficher tous les nombres heureux de
+          <code>p</code> (2 &le; p &le; 5) chiffres.
+        </p>
+        <p><strong>Exemples</strong></p>
+        <div class="row">
+          <div class="col-6">
+            <pre><code  class="nohighlight shell python" data-text="Exemple 1">Nombre de chiffres ? 3
+122 est heureux.
+125 est heureux.
+...
+954 est heureux.
+28 nombres heureux dans l'intervalle [100, 999].</code></pre>
+          </div>
+          <div class="col-6">
+            <pre><code  class="nohighlight shell python" data-text="Exemple 2">Nombre de chiffres ? 4
+1022 est heureux.
+1025 est heureux.
+...
+9985 est heureux.
+274 nombres heureux dans l'intervalle [1000, 9999].</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>Nombres frères</h3>
+
+        <p>Deux entiers <code>n1</code> et <code>n2</code> sont dits frères ssi chaque chiffre de <code>n1</code>
+          apparaît au moins une fois dans <code>n2</code> et inversement (avec n1 > 0 et n2 > 0).</p>
+        <p>Ecrire l'algorithme d'un programme qui saisit deux entiers <code>n1</code> et <code>n2</code> puis vérifie
+          s'ils sont frères ou non.</p>
+
+        <p><strong>Exemples</strong></p>
+        <div class="row">
+          <div class="col-6">
+            <pre><code  class="nohighlight shell python" data-text="Exemple 1">Donner n1 > 0 ? 1234
+Donner n2 > 0 ? 434212 
+1234 et 434212 sont frères</code></pre>
+          </div>
+          <div class="col-6">
+            <pre><code  class="nohighlight shell python" data-text="Exemple 2">Donner n1 > 0 ? 154
+Donner n2 > 0 ? 341
+154 et 341 ne sont pas frères</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>Nombres super premiers</h3>
+
+        <p>Un nombre est dit super premier ssi il est premier et si en supprimant des chiffres à partir de sa droite, le
+          nombre restant est toujours premier.</p>
+        <p>Ecrire l'algorithme d'un programme qui cherche tous les nombres super premiers dans un intervalle [a, b]
+          donné (100 &lt; a &lt; b &lt; 100000).</p>
+        <p><strong>Exemples</strong></p>
+        <div class="row">
+          <div class="col-6">
+            <pre><code  class="nohighlight shell python" data-text="Exemple 1">a > 100 ? 101
+101 < b < 100000 ? 1000
+233 est super premier.
+239 est super premier.
+...
+739 est super premier.
+797 est super premier.
+14 nombres super premiers dans [101, 1000]</code></pre>
+          </div>
+          <div class="col-6">
+            <pre><code  class="nohighlight shell python" data-text="Exemple 2">a > 100 ? 1000 
+1000 < b < 100000 ? 10000
+2333 est super premier.
+2339 est super premier.
+...
+7333 est super premier.
+7393 est super premier.
+16 nombres super premiers dans [1000, 10000]</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>Billet</h3>
+
+        <p>Sur les billets d'avion d'une companie aérienne figure un code de 11 lettres alphanumériques (chiffres et
+          lettres majuscules).</p>
+        <p>Pour vérifier l'authenticité d'un billet, on remplace la lettre du code par son rang alphabétique pour
+          obtenir un nombre de 12 ou de 13 chiffres.</p>
+        <p>Si le reste de la division par 9 de la somme des chiffres de ce nombre est égale à 8, ce billet est
+          authentique, sinon c'est un faux billet.</p>
+        <p>Ecrire l'algorithme d'un programme qui permet de vérifier l'authenticité d'un billet à partir de son code.
+        </p>
+        <p><strong>Exemples</strong></p>
+        <div class="row">
+          <div class="col-6">
+            <pre><code  class="nohighlight shell python" data-text="Exemple 1">Numéro de billet ? AR798NKV789
+Somme de contrôle : 6
+Billet non authentique.</code></pre>
+          </div>
+          <div class="col-6">
+            <pre><code  class="nohighlight shell python" data-text="Exemple 2">Numéro de billet ? AR798NKV989  
+Somme de contrôle : 8
+Billet authentique.</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>EAN13</h3>
+        <p>Le code EAN13 (European Article Numbering à 13 chiffres) est un code à barres utilisé sur l'ensemble des
+          produits de grande consommation. Ce code est composé de 13 chiffres.</p>
+        <figure>
+          <img src="images/module08/bar_code1.gif" alt="Code à barre">
+          <img src="images/module08/bar_code2.gif" alt="Code à barre">
+          <figcaption>Exemples de codes à barres</figcaption>
+        </figure>
+        <p>Un code EAN13 est formé par :</p>
+        <ul>
+          <li>Un identifiant du produit <code>q</code> formé par les 12 premiers chiffres à gauche.</li>
+          <li>La clé de contrôle <code>cc</code> formé par le dernier chiffre à droite.</li>
+        </ul>
+        <p>Pour vérifier qu'un nombre de 13 chiffres est un code EAN13 valide on applique le principe suivant :</p>
+        <ol>
+          <li>On calcule la somme <code>s</code> des chiffres de <code>q</code> en commençant par le chiffre le plus à
+            gauche et en multipliant les chiffres de rang pair par 3. Le rang du premier chiffre le plus à gauche est 1,
+            celui du deuxième chiffre le plus à gauche est 2, etc.</li>
+          <li>On calcule le reste <code>r</code> de la division euclidienne de <code>s</code> par 10.</li>
+          <li>On calcule <code>p</code> qui est égal à <code>(10-r)</code></li>
+          <li>Si <code>p</code> est égal à <code>cc</code> alors le code est valide.</li>
+        </ol>
+        <p>Ecrire l'algorithme d'un programme qui permet de saisir un nombre <code>n</code> de 13 chiffres et vérifie
+          s'il est un code EAN13 ou non.</p>
+        <p><strong>Exemples</strong></p>
+        <p><strong>Vérification du code à barre : 1234567890128</strong></p>
+        <p>q = "123456789012" et cc = "8"</p>
+        <table class="table table-sm table-bordered border-dark">
+          <tr>
+            <th>q</th>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+            <td>0</td>
+            <td>1</td>
+            <td>2</td>
+            <td>8<br>= 10-2</td>
+          </tr>
+          <tr>
+            <th>s</th>
+            <td>1</td>
+            <td>2 &times; 3</td>
+            <td>3</td>
+            <td>4 &times; 3</td>
+            <td>5</td>
+            <td>6 &times; 3</td>
+            <td>7</td>
+            <td>8 &times; 3</td>
+            <td>9</td>
+            <td>0 &times; 3</td>
+            <td>1</td>
+            <td>2 &times; 3</td>
+            <td>=92</td>
+          </tr>
+        </table>
+
+        <p><strong>Vérification du code à barre : 9780201379624</strong></p>
+        <p>q = "978020137962" et cc = "4"</p>
+        <table class="table table-sm table-bordered border-dark">
+          <tr>
+            <th>q</th>
+            <td>9</td>
+            <td>7</td>
+            <td>8</td>
+            <td>0</td>
+            <td>2</td>
+            <td>0</td>
+            <td>1</td>
+            <td>3</td>
+            <td>7</td>
+            <td>9</td>
+            <td>6</td>
+            <td>2</td>
+            <td>4<br>= 10-6</td>
+          </tr>
+          <tr>
+            <th>s</th>
+            <td>9</td>
+            <td>7 &times; 3</td>
+            <td>8</td>
+            <td>0 &times; 3</td>
+            <td>2</td>
+            <td>0 &times; 3</td>
+            <td>1</td>
+            <td>3 &times; 3</td>
+            <td>7</td>
+            <td>9 &times; 3</td>
+            <td>6</td>
+            <td>2 &times; 3</td>
+            <td>=96</td>
+          </tr>
+        </table>
+
+        <div class="row">
+          <div class="col-6">
+            <pre><code  class="nohighlight shell python" data-text="Exemple 1">Code EAN13 ? 9780201379624
+Code EAN13 valide.</code></pre>
+          </div>
+          <div class="col-6">
+            <pre><code  class="nohighlight shell python" data-text="Exemple 2">Code EAN13 ? 9780201379625
+Code EAN13 invalide.</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="p-break">Game of Thrones shop</h3>
 
         <p>Les statistiques montrent qu’en 2022 environ 2,46 milliards de personnes ont joué à des jeux vidéo sur
           une console, un ordinateur ou un mobile. Vu le nombre important des "gamers" on trouve des centaines
@@ -1074,7 +1300,7 @@ Dragon Leather Bracers Set - Price: 38</code></pre>
       </section>
 
       <section>
-        <h3>Solution non modulaire</h3>
+        <h3 class="p-break">Solution non modulaire</h3>
         <p>On donne la solution non modulaire de ce problème et on demande de le décomposer en modules et d'écrire
           l'algorithme de chaque module.</p>
         <div class="row">

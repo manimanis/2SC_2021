@@ -17,12 +17,16 @@ def chiff_dist(n):
     return cd
 
 
+def freres(n1, n2):
+    return chiff_dist(n1) == chiff_dist(n2)
+
+
 # ----------------------
 # Programme Principal
-a = saisie("Donner a > 0 ? ")
-b = saisie("Donner b > 0 ? ")
+n1 = saisie("Donner n1 > 0 ? ")
+n2 = saisie("Donner n2 > 0 ? ")
 
-if chiff_dist(a) == chiff_dist(b):
-    print(f"{a} et {b} sont frères")
+if freres(n1, n2):
+    print(f"{n1} et {n2} sont frères")
 else:
-    print(f"{a} et {b} ne sont pas frères")
+    print(f"{n1} et {n2} ne sont pas frères")
