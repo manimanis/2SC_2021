@@ -61,7 +61,7 @@
       </section>
 
       <section>
-        <h3>Solutions</h3>
+        <h3>Solution</h3>
 
         <ol>
           <li>On pourra déterminer graphiquement le temps requis pour voir les trois femmes faire leurs lessives le même
@@ -131,8 +131,8 @@ Fin</code></pre>
               </div>
             </div>
             <div class="d-print-none">
-              <p>Implémentation en <a href="codes/module08/lessive0.py" target="_blank"
-                  rel="noopener noreferrer" download="lessive0.py">Python</a>.</p>
+              <p>Implémentation en <a href="codes/module08/lessive0.py" target="_blank" rel="noopener noreferrer"
+                  download="lessive0.py">Python</a>.</p>
             </div>
             <h5>2<sup>ème</sup> façon : méthode modulaire</h5>
             <p><strong>Programme Principal</strong></p>
@@ -230,8 +230,8 @@ Fin</code></pre>
               </div>
             </div>
             <div class="d-print-none">
-              <p>Implémentation en <a href="codes/module08/lessive.py" target="_blank"
-                  rel="noopener noreferrer" download="lessive.py">Python</a>.</p>
+              <p>Implémentation en <a href="codes/module08/lessive.py" target="_blank" rel="noopener noreferrer"
+                  download="lessive.py">Python</a>.</p>
             </div>
           </li>
         </ol>
@@ -286,7 +286,7 @@ Fin</code></pre>
       </section>
 
       <section>
-        <h3>Solutions</h3>
+        <h3>Solution</h3>
         <h5>Solution non modulaire</h5>
         <div class="row">
           <div class="col-9">
@@ -341,8 +341,8 @@ Fin</code></pre>
           </div>
         </div>
         <div class="d-print-none">
-          <p>Implémentation en <a href="codes/module08/frac0.py" target="_blank"
-              rel="noopener noreferrer" download="frac0.py">Python</a>.</p>
+          <p>Implémentation en <a href="codes/module08/frac0.py" target="_blank" rel="noopener noreferrer"
+              download="frac0.py">Python</a>.</p>
         </div>
 
         <h5>Solution modulaire</h5>
@@ -501,8 +501,8 @@ Fin</code></pre>
           </div>
         </div>
         <div class="d-print-none">
-          <p>Implémentation en <a href="codes/module08/frac.py" target="_blank"
-              rel="noopener noreferrer" download="frac.py">Python</a>.</p>
+          <p>Implémentation en <a href="codes/module08/frac.py" target="_blank" rel="noopener noreferrer"
+              download="frac.py">Python</a>.</p>
         </div>
       </section>
 
@@ -587,6 +587,9 @@ Fin</code></pre>
                 </table>
               </div>
             </div>
+
+            <p>Implémentation en <a href="codes/module08/amicaux0.py" target="_blank" rel="noopener noreferrer"
+                download="amicaux0.py">Python</a>.</p>
           </li>
         </ol>
 
@@ -695,6 +698,482 @@ Fin</code></pre>
             </div>
           </div>
         </div>
+        <p>Implémentation en <a href="codes/module08/amicaux.py" target="_blank" rel="noopener noreferrer"
+            download="amicaux.py">Python</a>.</p>
+      </section>
+    </article>
+
+    <article>
+      <h2>Notes de cours</h2>
+
+      <section>
+        <h3>Décomposition modulaire</h3>
+
+        <p>L'<strong>analyse modulaire</strong>, appelée également <strong>décomposition modulaire</strong>, consiste à
+          <ins>diviser un problème en sous problèmes de difficultés moindres</ins>.
+        </p>
+        <p>En algorithmique, les <strong>sous problèmes</strong> correspondent à des <strong>sous-programmes</strong>.
+        </p>
+
+        <h4>Sous-programme</h4>
+        <p>Un <strong>sous-programme</strong> est une <ins>section de code nommée</ins> <strong><em>qui peut être
+              appelée</em></strong> en écrivant son nom dans une instruction du programme.</p>
+
+        <p>L'écriture de <strong>sous-programmes</strong> <ins>rend le code plus lisible et réutilisable</ins>, car le
+          code est subdivisé en des sections plus petites.</p>
+        <figure>
+          <img src="images/module08/decomposition-modulaire-lessives.png" class="h3cm" alt="Décomposition modulaire">
+          <figcaption>Décomposition modulaire du problème de lessive des trois femmes</figcaption>
+        </figure>
+
+        <p>En algorithmique on distingue deux catégories de <strong>sous-progrmmes</strong> : les
+          <strong>procédures</strong> et les <strong>fonctions</strong>.
+        </p>
+        <p>Une <strong>procédure</strong> exécute simplement un ensemble d'instructions, tandis qu'une
+          <strong>fonction</strong> renvoie une valeur une fois son exécution est terminée.
+        </p>
+
+        <figure>
+          <img src="images/module08/fonction-procedure.png" class="h4cm"
+            alt="Différence entre une procédure et une fonction">
+          <figcaption>Différence entre une procédure et une fonction</figcaption>
+        </figure>
+
+        <p>La plupart des langages de programmation sont livrés avec un ensemble de sous-programmes intégrés (fonctions
+          prédéfinies). Ils permettent, aussi, au programmeur d'écrire leurs propres sous-programmes personnalisés.</p>
+      </section>
+
+      <section>
+        <h3>Fonction</h3>
+
+        <h4>Définition</h4>
+        <p>Une <strong>fonction</strong> est un sous-programme <strong>qui retourne <ins>à son appelant</ins> un seul
+            résultat</strong> <em>en fonction de ses paramètres</em>.</p>
+        <p>Une <strong>fonction</strong> peut avoir zéro ou plusieurs paramètres. Ces <strong>paramètres</strong> sont
+          <strong><em>souvent transmis par valeur</em></strong>.
+        </p>
+
+        <h4>Appel</h4>
+        <p>Comme une <strong>fonction renvoie toujours une valeur</strong>, son appel peut se faire de différentes
+          manières :</p>
+        <ul>
+          <li>Dans une affectation :
+            <pre><code class="algorithm">// pgcd(a, b) renvoie le PGCD des deux valeurs
+dc ← pgcd(a, b)</code></pre>
+          </li>
+          <li>Dans une structure conditionnelle :
+            <pre><code class="algorithm">// Afficher si un nombre est premier
+// premier(n) retourne vrai si n est un nombre premier
+Si premier(n) Alors
+  Ecrire(n, "est premier")
+Sinon
+  Ecrire(n, "n'est pas premier")
+Fin Si</code></pre>
+          </li>
+          <li>Dans une structure itérative :
+
+            <pre><code class="algorithm">// f(x) est une fonction qui admet un extrémum
+// en x0 ∈ [0, +∞[
+// Recherche de l'extrémum de f(x)
+x0 ← 0
+TantQue (f(x0+pas) > f(x0)) Faire
+  x0 ← x0 + pas
+Fin TantQue</code></pre>
+
+            <pre><code class="algorithm">// Saisir une chaine alphabétique
+// est_alphabetique(ch) : retrourne Vrai
+// Si ch[i] ∈ ["A", "Z"] ⋃ ["a", "z"] 
+Répéter
+  Ecrire("Une chaine alphabétique ? ")
+  Lire(ch)
+Jusqu'à est_alphabetique(ch)</code></pre>
+          </li>
+          <li>Comme paramètre d'un autre sous-programme :
+            <pre><code class="algorithm">// somme_carre(a, b) renvoie a² + b²
+Ecrire(somme_carre(a, b))</code></pre>
+            <pre><code class="algorithm">// calculer PGCD de a, b et c
+dc ← pgcd(a, pgcd(b, c))</code></pre>
+          </li>
+        </ul>
+
+        <h4>Vocabulaire et Syntaxe</h4>
+
+        <p>Une fonction s'écrit comme suit en algorithmique :</p>
+        <pre><code class="algorithm">Fonction NomFonction(p1: type1, p2: type2, ..., 
+                     pn: typen):typerésultat
+  //
+  // Traitements
+  //
+  Retourner résultat
+Fin</code></pre>
+      </section>
+
+      <section>
+        <h3>Procédure</h3>
+
+        <h4>Définition</h4>
+        <p>Une <strong>procédure</strong> est un sous-programme <strong>qui ne retourne pas, directement, de résultats
+            <ins>à son appelant</ins></strong>.</p>
+        <p>Une <strong>procédure</strong> peut avoir zéro ou plusieurs paramètres. Ces <strong>paramètres</strong>
+          peuvent être, selon le besoin, <strong><em>transmis par <ins>valeur</ins></em></strong> ou
+          <strong><em>transmis par <ins>variable</ins></em></strong>.
+        </p>
+        <p>En algorithmique, le <strong>mode de passage par variable</strong> <em>est utilisé pour renvoyer,
+            indirectement, un ou plusieurs résultats à l'appelant</em>. Lorsqu'une procédure renvoie des résultats à
+          travers ses paramètres, on dit qu'<strong>elle possède un effet de bord</strong>.</p>
+
+        <h4>Appel</h4>
+        <p>Comme une <strong>procédure ne renvoie aucune valeur</strong>, son appel se fait toujours de la même
+          façon :</p>
+        <pre><code class="algorithm">// Saisir une valeur dans n
+saisir(n)
+// Remplir le tableau t par n valeurs distinctes
+remplir_tab(t, n)
+// Echanger le contenu de deux variables
+permuter(a, b)</code></pre>
+        <p>Une <strong>procédure</strong> utilise les paramètres passés par valeur pour réaliser ses traitements. Elle
+          peut, aussi, <ins>modifier la valeur des paramètres transmis par variable</ins>, directement, chez l'appelant.
+        </p>
+
+        <h4>Vocabulaire &amp; Syntaxe</h4>
+        <p>Une procédure s'écrit comme suit en algorithmique :</p>
+        <pre><code class="algorithm">Procédure NomProcédure(p1: type1, p2: type2, ..., pn: typen)
+  //
+  // Traitements
+  //
+Fin</code></pre>
+      </section>
+
+      <section>
+        <h3>Paramètres et Mode de passage</h3>
+
+        <p>Un <strong>sous-programme</strong> défini réellement un <strong><ins>ensemble de traitements effectués sur
+              des données</ins></strong>. Ces <strong>données</strong> doivent être <ins>passées au sous-programme</ins>
+          dans <em><strong>ses paramètres</strong></em>.</p>
+
+        <h4>Types de paramètres</h4>
+
+        <p>On distingue deux types de paramètres :</p>
+        <ul>
+          <li><b>Les paramètres formels&nbsp;:</b> utilisés lors de <u>la définition</u> d'un sous-programme.</li>
+          <li><b>Les paramètres effectifs&nbsp;:</b> utilisés lors de l'utilisation (<u>l'appel</u>) d'un
+            sous-programme.</li>
+        </ul>
+
+        <p>Dans la figure ci-dessous, les paramètres <strong>a</strong>, <strong>b</strong> et <strong>c</strong> qui
+          figurent dans la <span class="bg-dark text-light">définition du sous-programme</span> <strong>somme</strong>
+          sont appelés des paramètres <strong><ins>formels</ins></strong>
+        </p>
+
+        <p>Les paramètres <strong>x</strong>, <strong>y</strong> et <strong>z</strong> utilisés dans le programme
+          principal qui <span class="bg-dark text-light">appelle le sous-programme</span> <strong>somme</strong>
+          sont dits <strong><ins>effectifs</ins></strong> ou <strong><ins>réels</ins></strong>.</p>
+
+        <figure>
+          <img src="images/module08/types-parametres.png" alt="Types de paramètres">
+          <figcaption>Les types de paramètres</figcaption>
+        </figure>
+
+        <h4>Modes de passage des paramètres</h4>
+
+        <p>Il existent deux modes de passage des paramètres&nbsp;: <u>par variable</u> ou <u>par valeur</u>.</p>
+
+        <h5>Passage par valeur</h5>
+
+        <p>Lors d'un <b>passage par valeur</b>, <u>la valeur de l'expression passée en paramètre est copiée dans une
+            variable locale</u>. C'est cette variable qui est utilisée pour faire les traitements dans le sous-programme
+          appelé.
+        </p>
+
+        <p>Dans la figure suivante, la valeur de <strong>y</strong> est copiée dans le paramètre <strong>x</strong> de
+          la fonction lors de l'appel de cette dernière.</p>
+
+        <figure>
+          <img src="images/module08/passage-par-valeur.png" alt="Passage par valeur">
+          <figcaption>Passage par valeur</figcaption>
+        </figure>
+
+        <h5>Passage par variable</h5>
+
+        <p>Dans la figure suivante, l'adresse de la variable <strong>y</strong> est transmise à la procédure
+          <strong>saisie</strong> sous le nom de <strong>x</strong>. Tout changement de la valeur de <strong>x</strong>
+          dans la procédure à pour effet le changement de la valeur de <strong>y</strong>.
+        </p>
+        <p><strong>x</strong> et <strong>y</strong> sont deux noms différents de la même variable. La variable
+          <strong>y</strong> dans le sous-programme est appelée <strong>x</strong>.
+        </p>
+        <figure>
+          <img src="images/module08/passage-par-variable.png" alt="Passage par variable">
+          <figcaption>Passage par variable</figcaption>
+        </figure>
+      </section>
+
+      <section>
+        <h3>Portée des variables</h3>
+
+        <p>Toute <strong>variable</strong> a <ins>une durée de vie bornée</ins> <strong>au bloc</strong> où elle est
+          déclarée. Ce bloc définit <strong>la portée</strong> de la variable.</p>
+
+        <p>Les <strong>variables globales</strong> sont déclarées dans le <u>programme principal</u>. Elles sont
+          utilisables dans tout le programme.</p>
+        <p>Les <strong>variables locales</strong> sont déclarées dans un <u>sous-programme</u>. Elles ont une portée
+          limitée et elles ne sont utilisables qu'à l'intérieur de celui-ci.</p>
+
+        <p>La fonction <strong>existe</strong> dans l'exemple suivant utilise les <u>variables globales</u>
+          <strong>t</strong> et <strong>n</strong> qui sont déclarées dans le programme principal.
+          <strong>trouve</strong> et <strong>i</strong> sont des <u>variables locales</u> car elles sont visibles
+          uniquement à l'intérieur du sous-programme.
+        </p>
+        <figure>
+          <img src="images/module08/variables-globales-locales.png" alt="Variables globales et Variables locales">
+          <figcaption>Variables globales et Variables locales</figcaption>
+        </figure>
+        <p>L'exemple précédent est <span class="text-danger"><strong><ins>à éviter</ins></strong></span> car il
+          contre-dit l'esprit de la modularité. <strong>Il est conseillé <u>vivement</u> d'éviter les variables
+            globales</strong>.</p>
+        <div class="row">
+          <div class="col-6">
+            <pre><code class="algorithm">// A éviter
+// Dépend des variables du PP
+Fonction existe(v:entier):booléen</code></pre>
+          </div>
+          <div class="col-sm-6">
+            <pre><code class="algorithm">// Meilleure écriture
+// Indépendant du PP
+Fonction existe(v:entier;t:tab;n:entier):booléen</code></pre>
+          </div>
+        </div>
+      </section>
+    </article>
+
+    <article>
+      <h2>Application</h2>
+
+      <section>
+        <h3>Game of Thrones shop</h3>
+
+        <p>Les statistiques montrent qu’en 2022 environ 2,46 milliards de personnes ont joué à des jeux vidéo sur
+          une console, un ordinateur ou un mobile. Vu le nombre important des "gamers" on trouve des centaines
+          de boutiques en ligne qui vendent des répliques des articles rencontrés dans les jeux vidéos.
+        </p>
+        <p>Un "gamer" adepte du jeu Games of Thrones se rend sur l’une de ces boutiques, voir figure 1.</p>
+        <p>Le "gamer" dispose d’un budget limité. Et il veut faire un programme qui :</p>
+        <ul>
+          <li>Saisit le nombre d’articles n disponibles dans la boutique. (2 ≤ n ≤ 50)</li>
+          <li>Remplit trois tableaux :
+            <ul>
+              <li>items : contient les noms des articles qui sont des chaînes d’au moins 3 caractères. Les articles
+                doivent être distincts.</li>
+              <li>categories : contient les catégories des articles, les catégories acceptées sont :
+                <table class="table table-sm table-bordered border-dark table-striped table-hover col-5">
+                  <tbody>
+                    <tr>
+                      <th>Catégorie</td>
+                      <td>"SW"</td>
+                      <td>"AR"</td>
+                      <td>"SH"</td>
+                      <td>"WE"</td>
+                    </tr>
+                    <tr>
+                      <th>Signification</th>
+                      <td>Sword (épée)</td>
+                      <td>Armor (Armure)</td>
+                      <td>Shield (Bouclier)</td>
+                      <td>Weapon (Arme)</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </li>
+              <li>prices : contient les prix des articles (des entiers ≥ 0)</li>
+            </ul>
+          </li>
+          <li>Saisit son budget (20 ≤ budget ≤ 300)</li>
+          <li>Saisit une catégories parmi les catégories mentionnées dans le tableau précédent.</li>
+          <li>Affiche la liste des articles de cette catégorie, dont le prix est inférieur ou égal à son budget.</li>
+        </ul>
+        <p><strong>Exemples :</strong> Pour <strong>n = 8</strong> et les articles suivants :</p>
+        <table>
+          <tr>
+            <th>items</th>
+            <td>
+              <table class="table table-sm table-bordered border-dark table-striped table-hover col-8">
+                <tbody>
+                  <tr>
+                    <td>The Sword of Jon Snow</td>
+                    <td>Sword of Arya Stark</td>
+                    <td>Widow’s Wail Sword</td>
+                    <td>Dragon Leather Bracers Set</td>
+                    <td>The Helm of Loras Tyrell</td>
+                    <td>Stark Infantry Shield</td>
+                    <td>Lannister Shield</td>
+                    <td>The Red Viper’s Spear</td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <th>categories</th>
+            <td>
+              <table class="table table-sm table-bordered border-dark table-striped table-hover col-8">
+                <tr>
+                  <td>SW</td>
+                  <td>SW</td>
+                  <td>SW</td>
+                  <td>AR</td>
+                  <td>AR</td>
+                  <td>SH</td>
+                  <td>SH</td>
+                  <td>WE</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <th>prices</th>
+            <td>
+              <table class="table table-sm table-bordered border-dark table-striped table-hover col-8">
+                <tr>
+                  <td>239</td>
+                  <td>179</td>
+                  <td>649</td>
+                  <td>38</td>
+                  <td>249</td>
+                  <td>257</td>
+                  <td>275</td>
+                  <td>299</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+        <div class="row">
+          <div class="col-4">
+            <p><strong>Exemple 1</strong></p>
+            <pre><code class="nohighlight">Your budget? 202
+Select a category? SW
+Affordable items:
+Sword of Arya Stark - Price: 179</code></pre>
+          </div>
+          <div class="col-4">
+            <p><strong>Exemple 2</strong></p>
+            <pre><code class="nohighlight">Your budget? 182
+Select a category? SH
+Affordable items:
+No items</code></pre>
+          </div>
+          <div class="col-4">
+            <p><strong>Exemple 3</strong></p>
+            <pre><code class="nohighlight">Your budget? 54
+Select a category? AR
+Affordable items:
+Dragon Leather Bracers Set - Price: 38</code></pre>
+          </div>
+        </div>
+        <p>Écrire l'algorithme de ce programme. <strong>Ne pas oublier le TDNT et le TDO.</strong></p>
+      </section>
+
+      <section>
+        <h3>Solution non modulaire</h3>
+        <p>On donne la solution non modulaire de ce problème et on demande de le décomposer en modules et d'écrire
+          l'algorithme de chaque module.</p>
+        <div class="row">
+          <div class="col-9">
+            <pre><code class="algorithm">Algorithme Boutique
+Début
+  Répéter
+    Ecrire("Number of items [2, 50] ? ") ; Lire(n)
+  Jusqu'à (2 &le; n &le; 50)
+
+  Pour i de 0 à n-1 Faire
+    Ecrire("Item n°", i)
+    Répéter
+      Ecrire("Name ? ") ; Lire(items[i])
+      existe &larr; Faux
+      j &larr; 0
+      TantQue (non existe) et (j &lt; i) Faire
+        existe &larr; items[j] = items[i]
+        j &larr; j + 1
+      Fin TantQue
+    Jusqu'à (Long(items[i]) &ge; 3) et (non existe)
+
+    Répéter
+      Ecrire("Category ? ") ; Lire(categories[i])
+    Jusqu'à categories[i] &in; ["SW", "AR", "SH", "WE"]
+
+    Répéter
+      Ecrire("Price ? ") ; Lire(prices[i])
+    Jusqu'à prices[i] &ge; 0
+  Fin Pour
+
+  Répéter
+    Ecrire("Your budget ? ") ; Lire(budget)
+  Jusqu'à 20 &le; budget &le; 300
+
+  Répéter
+    Ecrire("Select a category ? ") ; Lire(catsel)
+  Jusqu'à catsel &in; ["SW", "AR", "SH", "WE"]
+
+  ic &larr; 0
+  Ecrire("Affordable items:")
+  Pour i de 0 à n-1 Faire
+    Si (categories[i] = catsel) et (budget &ge; prices[i]) Alors
+      Ecrire("Item:", items[i], " - Price:", prices[i])
+      ic &larr; ic + 1
+    Fin Si
+  Fin Pour
+  
+  Si ic = 0 Alors
+    Ecrire("N items.")
+  Fin Si
+Fin</code></pre>
+          </div>
+          <div class="col-3">
+            <table class="table table-sm table-bordered border-dark table-striped table-hover">
+              <tr>
+                <th>TDNT</th>
+              </tr>
+              <tr>
+                <td>tabe = tableau de 50 entier</td>
+              </tr>
+              <tr>
+                <td>tabch = tableau de 50 chaîne</td>
+              </tr>
+            </table>
+            <p><strong>TDO</strong></p>
+            <table class="table table-sm table-bordered border-dark table-striped table-hover col-2">
+              <thead>
+                <tr>
+                  <th>Objet</th>
+                  <th>Type/Nature</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>n, i, j, ic, budget</td>
+                  <td>entier</td>
+                </tr>
+                <tr>
+                  <td>catsel</td>
+                  <td>chaîne</td>
+                </tr>
+                <tr>
+                  <td>existe</td>
+                  <td>booléen</td>
+                </tr>
+                <tr>
+                  <td>items, categories</td>
+                  <td>tabch</td>
+                </tr>
+                <tr>
+                  <td>prices</td>
+                  <td>tabe</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
       </section>
     </article>
   </main>
