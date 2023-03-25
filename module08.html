@@ -30,7 +30,221 @@
       <h2>Situations</h2>
 
       <section>
-        <h3>Problème de lessive</h3>
+        <h3>Calcul d'une somme</h3>
+
+        <figure>
+          <img src="images/module08/maths-numbers-times-divide.png" alt="Calcul d'une somme" class="h4cm">
+          <figcaption>Calcul d'une somme</figcaption>
+        </figure>
+
+        <p>Comparer les deux programmes suivants :</p>
+        <div class="row">
+          <div class="col-6">
+            <h5>Version 1</h5>
+            <pre><code class="python">a = 0
+while a &lt;= 0:
+    a = int(input("Nbre > 0 ? ")) 
+
+b = 0
+while b &lt;= 0:
+    b = int(input("Nbre > 0 ? ")) 
+
+c = 0
+while c &lt;= 0:
+    c = int(input("Nbre > 0 ? ")) 
+
+res = b + c
+res = a + res
+
+print(a, '+', b, '+', c, '=', res)</code></pre>
+          </div>
+          <div class="col-6">
+            <h5>Version 2</h5>
+            <pre><code class="python">def saisie():
+    n = 0
+    while n &lt;= 0:
+        n = int(input("Nbre > 0 ? ")) 
+    return n
+
+def somme(a, b):
+    s = a + b
+    return s
+
+# PP
+a = saisie()
+b = saisie()
+c = saisie()
+res = somme(a, somme(b, c))
+print(a, '+', b, '+', c, '=', res)</code></pre>
+          </div>
+        </div>
+
+        <h5>Fonction des programmes</h5>
+        <p>Les deux programmes permettent à l'utilisateur de saisir trois nombres positifs et de calculer leur somme.
+          Cependant, ils ont des structures différentes.</p>
+        <h5>Différences dans la structure du programme</h5>
+        <table class="table table-sm table-bordered border-dark table-striped table-hover col-2">
+          <thead>
+            <tr>
+              <th>Version 1</th>
+              <th>Version 2</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <p><strong>Saisie</strong></p>
+                <p>Chaque saisie est effectuée à l'intérieur d'une boucle <code>while</code>, qui se répète tant que
+                  l'utilisateur ne saisit pas un nombre positif.</p>
+              </td>
+              <td>
+                <p><strong>Saisie</strong></p>
+                <p>La fonction <code>saisie()</code> gère la saisie d'un nombre positif.</p>
+                <p>Les trois saisies sont effectuées en appelant la fonction <code>saisie()</code>, et les résultats
+                  sont stockés dans les variables <code>a</code>, <code>b</code> et <code>c</code>.</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p><strong>Calcul de la somme</strong></p>
+                <p>Les trois nombres <code>a</code>, <code>b</code> et <code>c</code> saisis sont ajoutés les uns aux
+                  autres et stockés dans la variable <code>res</code>.</p>
+              </td>
+              <td>
+                <p><strong>Calcul de la somme</strong></p>
+                <p>La fonction <code>somme()</code> est appelée deux fois pour calculer la somme de <code>b</code> et
+                  <code>c</code>, puis la somme de <code>a</code> et du résultat précédent. Le résultat final est stocké
+                  dans la variable <code>res</code>.
+                </p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <h4 class="p-break">Résumé</h4>
+        <p>La deuxième version est dite <b><u>modulaire</u></b>, car elle utilise des fonctions pour séparer les tâches
+          de <u>saisie</u> et de <u>calcul</u> de la somme. Cela rend le code plus facile à comprendre et à maintenir.
+          En outre, cette version :</p>
+        <ul>
+          <li>évite la répétition de code, car la saisie de chaque nombre est effectuée en appelant la même fonction.
+          </li>
+          <li>est plus élégante, car elle est mieux structurée que la première.</li>
+          <li>peut sembler un peu plus complexe pour les débutants en programmation.</li>
+        </ul>
+
+        <h4>Algorithmes</h4>
+        <div class="row">
+          <div class="col-6">
+            <h5>Version 1</h5>
+            <pre><code class="algorithm">Algorithme Somme_V1
+Début
+  Répéter
+    Ecrire("Nbre > 0 ? ") ; Lire(a)
+  Jusqu'à a > 0
+
+  Répéter
+    Ecrire("Nbre > 0 ? ") ; Lire(b)
+  Jusqu'à b > 0
+
+  Répéter
+    Ecrire("Nbre > 0 ? ") ; Lire(c)
+  Jusqu'à c > 0
+
+  res &larr; b + c
+  res &larr; a + res
+
+ Ecrire(a, '+', b, '+', c, '=', res)
+Fin</code></pre>
+            <p class="text-center">TDO</p>
+            <table class="table table-sm table-bordered border-dark table-striped table-hover col-2 w-50 m-auto">
+              <thead>
+                <tr>
+                  <th>Objet</th>
+                  <th>Type/Nature</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>a, b, c, res</td>
+                  <td>entier</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="col-6">
+            <h5>Version 2</h5>
+            <p><strong>Programme Principal</strong></p>
+            <pre><code class="algorithm">Algorithme Somme_V2
+Début
+  saisie(a)
+  saisie(b)
+  saisie(c)
+  res &larr; somme(a, somme(b, c))
+  Ecrire(a, '+', b, '+', c, '=', res)
+Fin</code></pre>
+            <p class="text-center">TDOG</p>
+            <table class="table table-sm table-bordered border-dark table-striped table-hover col-2 w-50 m-auto">
+              <thead>
+                <tr>
+                  <th>Objet</th>
+                  <th>Type/Nature</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>a, b, c, res</td>
+                  <td>entier</td>
+                </tr>
+              </tbody>
+            </table>
+            <p><strong>Procédure Saisie()</strong></p>
+            <pre><code class="algorithm">Procédure Saisie(@n: entier)
+Début
+  Répéter
+    Ecrire("Nbre > 0 ? ") ; Lire(n)
+  Jusqu'à n > 0
+Fin</code></pre>
+            <p class="text-center">TDOL</p>
+            <table class="table table-sm table-bordered border-dark table-striped table-hover col-2 w-50 m-auto">
+              <thead>
+                <tr>
+                  <th>Objet</th>
+                  <th>Type/Nature</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>-</td>
+                  <td>-</td>
+                </tr>
+              </tbody>
+            </table>
+            <p><strong>Fonction somme()</strong></p>
+            <pre><code class="algorithm">Fonction somme(a, b: entier):entier
+Début  
+  s &larr; a + b
+  retourner s
+Fin</code></pre>
+            <p class="text-center">TDOL</p>
+            <table class="table table-sm table-bordered border-dark table-striped table-hover col-2 w-50 m-auto">
+              <thead>
+                <tr>
+                  <th>Objet</th>
+                  <th>Type/Nature</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>s</td>
+                  <td>entier</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="p-break">Problème de lessive</h3>
 
         <p>Najla, Douja et Zohra ont fait leurs lessives aujourd’hui. Or, <strong>Najla</strong> fait sa lessive
           <ins>tous les 3 jours</ins>, <strong>Douja</strong> <ins>tous les 4 jours</ins> et <strong>Zohra</strong>
