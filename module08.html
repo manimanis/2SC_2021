@@ -918,6 +918,260 @@ Fin</code></pre>
               download="amicaux.py">Python</a>.</p>
         </div>
       </section>
+
+      <section>
+        <h3 class="p-break">Problème Inconnu</h3>
+        <p>Soit l'algorithme suivant :</p>
+        <pre><code class="algorithm">Algorithme Inconnu
+Début
+  // Séquence 1
+  Répéter
+    Ecrire("Donner la taille du tableau ? ") ; Lire(n)
+  Jusqu'à (5 &le; n &le; 20)
+  // Séquence 2
+  Pour i de 0 à n-1 Faire
+    Répéter
+      Ecrire("Donner l'élément n°", i, " ? ") ; Lire(t[i])
+    Jusqu'à ((i = 0) et (-10 &le; t[i] &le; 10)) ou ((i > 0) et (t[i] > t[i-1]))
+  Fin Pour
+  // Séquence 3
+  Ecrire("Donner un entier ? ") ; Lire(a)
+  // Séquence 4
+  i &larr; -1
+  Répéter
+    i &larr; i + 1
+  Jusqu'à (i = n) ou (t[i] > a)
+  p &larr; i
+  // Séquence 5
+  Ecrire("p =", p)
+Fin</code></pre>
+        <p class="d-print-none">Implémentation en python : <a href="codes/module08/inconnu0.py" target="_blank"
+            rel="noopener noreferrer">inconnu0.py</a></p>
+        <p><strong>Questions</strong></p>
+        <ol>
+          <li>Remplir le tableau de déclaration des objets (TDO) et le tableau de déclaration de nouveaux types (TDNT)
+            relatifs à l'algorithme Inconnu.
+            <div class="d-none d-print-block">
+              <div class="row">
+                <div class="col">
+                  <p><strong>TDO</strong></p>
+                  <table class="table table-sm text-center border-dark table-bordered col-2">
+                    <tr>
+                      <th>Objet</th>
+                      <th>Type</th>
+                    </tr>
+                    <tr>
+                      <td>n, i, a, p</td>
+                      <td>entier</td>
+                    </tr>
+                    <tr>
+                      <td>t</td>
+                      <td>tab</td>
+                    </tr>
+                  </table>
+                </div>
+                <div class="col">
+                  <p><strong>TDNT</strong></p>
+                  <table class="table table-sm text-center border-dark table-bordered">
+                    <tr>
+                      <td>tab = tableau de 20 entier</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>Donner le rôle des séquences 1, 2.
+            <div class="d-none d-print-block">
+              <p><strong>Séquence 1 :</strong> permet de saisir la taille du tableau <code>n</code>.</p>
+              <p><strong>Séquence 2 :</strong> permet de remplir le tableau <code>t</code> par des valeurs strictement
+                croissantes, le premier élément est dans l'intervalle [-10, 10].</p>
+            </div>
+          </li>
+          <li>Soit le tableau T suivant:
+            <table class="m-auto col-7 text-center">
+              <tr>
+                <th>T</th>
+                <td class="border border-dark">-2</td>
+                <td class="border border-dark">1</td>
+                <td class="border border-dark">5</td>
+                <td class="border border-dark">7</td>
+                <td class="border border-dark">12</td>
+                <td class="border border-dark">26</td>
+              </tr>
+              <tr>
+                <th>&nbsp;</th>
+                <th>0</th>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>4</th>
+                <th>5</th>
+              </tr>
+            </table>
+            <ol type="a">
+              <li>Pour chaque valeur de <code>a</code>, donner la valeur de <code>p</code> correspondante après
+                l'exécution des séquences 4 et 5 de l'algorithme.
+                <table class="table table-sm col-2 text-center border-dark table-bordered">
+                  <tr>
+                    <th>Valeur de a</th>
+                    <th>Valeur de p</th>
+                  </tr>
+                  <tr>
+                    <td>-5</td>
+                    <td>
+                      <span class="d-print-none">&nbsp;</span>
+                      <span class="d-none d-print-inline">0</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>7</td>
+                    <td><span class="d-print-none">&nbsp;</span>
+                      <span class="d-none d-print-inline">4</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>10</td>
+                    <td><span class="d-print-none">&nbsp;</span>
+                      <span class="d-none d-print-inline">4</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>30</td>
+                    <td><span class="d-print-none">&nbsp;</span>
+                      <span class="d-none d-print-inline">6</span>
+                    </td>
+                  </tr>
+                </table>
+              </li>
+              <li>Quel est le rôle de la variable <code>p</code> utilisée dans l'algorithme Inconnu ?
+                <div class="d-none d-print-block">La valeur de <code>p</code> indique l'indice de l'élément du tableau
+                  <code>t</code> dont la valeur est supérieure à <code>a</code>. Elle affiche <code>n</code> si a &ge;
+                  t[n-1].
+                </div>
+              </li>
+            </ol>
+          </li>
+          <li class="p-break">Transformer cet algorithme en un algorithme modulaire, composé de procédures et de
+            fonctions.
+            <div class="d-none d-print-block">
+              <p><strong>Programme Principal</strong></p>
+              <div class="row">
+                <div class="col-9">
+                  <pre><code class="algorithm">Algorithme Inconnu_v2
+Début
+  Saisie(n)
+  Remplir(n, t)
+  Ecrire("Donner un entier ? ") ; Lire(a)
+  p &larr; Position(a, n, t)
+  Ecrire("p =", p)
+Fin</code></pre>
+                </div>
+                <div class="col-3">
+                  <p><strong>TDOG</strong></p>
+                  <table class="table table-sm text-center border-dark table-bordered col-2">
+                    <tr>
+                      <th>Objet</th>
+                      <th>Type</th>
+                    </tr>
+                    <tr>
+                      <td>n, a, p</td>
+                      <td>entier</td>
+                    </tr>
+                    <tr>
+                      <td>t</td>
+                      <td>tab</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+              <p><strong>Procédure Saisie</strong></p>
+              <div class="row">
+                <div class="col-9">
+                  <pre><code class="algorithm">Procédure Saisie(@n: entier)
+Début
+  Répéter
+    Ecrire("Donner la taille du tableau ? ") ; Lire(n)
+  Jusqu'à (5 ≤ n ≤ 20)
+Fin</code></pre>
+                </div>
+                <div class="col-3">
+                  <p><strong>TDOL</strong></p>
+                  <table class="table table-sm text-center border-dark table-bordered col-2">
+                    <tr>
+                      <th>Objet</th>
+                      <th>Type</th>
+                    </tr>
+                    <tr>
+                      <td>-</td>
+                      <td>-</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+              <p><strong>Fonction Position</strong></p>
+              <div class="row">
+                <div class="col-9">
+                  <pre><code class="algorithm">Fonction position(a, n:entier, t:tab):entier
+Début
+  i ← -1
+  Répéter
+    i ← i + 1
+  Jusqu'à (i = n) ou (t[i] > a)
+  retourner i
+Fin</code></pre>
+                </div>
+                <div class="col-3">
+                  <p><strong>TDOL</strong></p>
+                  <table class="table table-sm text-center border-dark table-bordered col-2">
+                    <tr>
+                      <th>Objet</th>
+                      <th>Type</th>
+                    </tr>
+                    <tr>
+                      <td>i</td>
+                      <td>entier</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>Proposer l'Implémentation de votre algorithme en Python.
+            <div class="d-none d-print-block">
+              <pre><code class="python">from numpy import array
+
+def saisie():
+    n = 4
+    while not (5 <= n <= 20):
+        n = int(input("Donner la taille du tableau ? "))
+    return n
+
+def remplir(n):
+    t = array([int()]*n)
+    for i in range(n):
+        t[i] = -11
+        while not ((i == 0 and -10 <= t[i] <= 10) or (i > 0 and t[i] > t[i-1])):
+            t[i] = int(input((f"Donner l'élément n°{i} ? ")))
+    return t
+
+def position(a, n, t):
+    i = -1
+    while True:
+        i = i + 1
+        if (i == n) or (t[i] > a):
+            break
+    return i
+# PP
+n = saisie()
+t = remplir(n)
+a = int(input("Donner un entier ? "))
+p = position(a, n, t)
+print("p =", p)</code></pre>
+            </div>
+          </li>
+        </ol>
+      </section>
     </article>
 
     <article>
