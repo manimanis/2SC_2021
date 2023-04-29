@@ -21,6 +21,14 @@ def est_prem(n):
     return prem
 
 
+def est_prem(n):
+    nd = 0
+    for i in range(1, n+1):
+        if n % i == 0:
+            nd = nd + 1
+    return nd == 2
+
+
 def est_super(n):
     sup = True
     while sup and n > 0:
